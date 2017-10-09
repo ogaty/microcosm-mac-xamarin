@@ -13,6 +13,9 @@ namespace microcosm
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSButton testButton { get; set; }
+
+		[Outlet]
 		AppKit.NSTableColumn userDbDateColumn { get; set; }
 
 		[Outlet]
@@ -23,9 +26,9 @@ namespace microcosm
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (userDbTable != null) {
-				userDbTable.Dispose ();
-				userDbTable = null;
+			if (userDbDateColumn != null) {
+				userDbDateColumn.Dispose ();
+				userDbDateColumn = null;
 			}
 
 			if (userDbNameColumn != null) {
@@ -33,9 +36,14 @@ namespace microcosm
 				userDbNameColumn = null;
 			}
 
-			if (userDbDateColumn != null) {
-				userDbDateColumn.Dispose ();
-				userDbDateColumn = null;
+			if (userDbTable != null) {
+				userDbTable.Dispose ();
+				userDbTable = null;
+			}
+
+			if (testButton != null) {
+				testButton.Dispose ();
+				testButton = null;
 			}
 		}
 	}

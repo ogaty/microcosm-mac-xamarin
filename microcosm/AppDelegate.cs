@@ -19,5 +19,25 @@ namespace microcosm
         {
             // Insert code here to tear down your application
         }
+
+        public override bool ApplicationShouldHandleReopen(NSApplication sender, bool hasVisibleWindows)
+        {
+			if (hasVisibleWindows) {
+//                var mainWindow = new ViewController();
+//                sender.MainWindow. .ShowWindow(this);
+			}
+
+            return true;
+        }
+
+        public override bool ApplicationShouldTerminateAfterLastWindowClosed(NSApplication sender)
+        {
+			return true;
+        }
+
+        public override NSApplicationTerminateReply ApplicationShouldTerminate(NSApplication sender)
+        {
+            return NSApplicationTerminateReply.Now;
+        }
     }
 }
