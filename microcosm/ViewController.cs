@@ -1,12 +1,17 @@
 ﻿using System;
-
+using System.IO;
+using System.IO.IsolatedStorage;
 using AppKit;
 using Foundation;
+using microcosm.Calc;
+using SwissEphNet;
 
 namespace microcosm
 {
     public partial class ViewController : NSViewController
     {
+        public AstroCalc calc;
+
         public ViewController(IntPtr handle) : base(handle)
         {
         }
@@ -15,7 +20,26 @@ namespace microcosm
         {
             base.ViewDidLoad();
 
-            // Do any additional setup after loading the view.
+			// Do any additional setup after loading the view.
+            Console.WriteLine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
+
+
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			var directoryname = Path.Combine(documents, "Library/Containers/jp.ogatism.microcosm/Data/Documents/NewDir");
+            Console.WriteLine(directoryname);
+
+            var directoryname2 = Path.Combine(documents, "NewDir");
+            Directory.CreateDirectory(directoryname2);
+
+            string fileName = "semo18.se1";
+            string localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
+
+            Console.WriteLine(localHtmlUrl);
+            this.calc = new AstroCalc(this);
+            calc.PositionCalc();
+
+            var file = IsolatedStorageFile.GetUserStoreForApplication();
+
         }
 
         public override NSObject RepresentedObject

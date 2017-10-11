@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<userdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>昭和天皇</name>
+  <furigana>しょうわてんのう</furigana>
+  <birth_year>1901</birth_year>
+  <birth_month>4</birth_month>
+  <birth_day>29</birth_day>
+  <birth_hour>22</birth_hour>
+  <birth_minute>10</birth_minute>
+  <birth_second>0</birth_second>
+  <lat>35.6580681</lat>
+  <lng>139.7515992</lng>
+  <birth_place>日本, 東京都港区</birth_place>
+  <memo />
+  <timezone>JST(日本標準)</timezone>
+</userdata>

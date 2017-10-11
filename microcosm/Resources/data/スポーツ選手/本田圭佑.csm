@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<userdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>本田圭佑</name>
+  <furigana>ほんだけいすけ</furigana>
+  <birth_year>1986</birth_year>
+  <birth_month>6</birth_month>
+  <birth_day>13</birth_day>
+  <birth_hour>12</birth_hour>
+  <birth_minute>0</birth_minute>
+  <birth_second>0</birth_second>
+  <lat>34.7773564</lat>
+  <lng>135.5618168</lng>
+  <birth_place>大阪府摂津市</birth_place>
+  <memo></memo>
+  <timezone>JST</timezone>
+  <eventlist>
+    <event>
+      <event_name>ACミラン移籍</event_name>
+      <event_year>2013</event_year>
+      <event_month>12</event_month>
+      <event_day>11</event_day>
+      <event_hour>12</event_hour>
+      <event_minute>0</event_minute>
+      <event_second>0</event_second>
+      <event_place>ミラノ</event_place>
+      <event_lat>45.4654219</event_lat>
+      <event_lng>9.1859243</event_lng>
+      <event_timezone>JST</event_timezone>
+      <event_memo>26歳</event_memo>
+    </event>
+  </eventlist>
+</userdata>

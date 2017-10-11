@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<userdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>松浦勝人</name>
+  <furigana>まつうら まさと</furigana>
+  <birth_year>1964</birth_year>
+  <birth_month>10</birth_month>
+  <birth_day>1</birth_day>
+  <birth_hour>23</birth_hour>
+  <birth_minute>0</birth_minute>
+  <birth_second>0</birth_second>
+  <lat>35.4437078</lat>
+  <lng>139.6380256</lng>
+  <birth_place>日本, 神奈川県横浜市</birth_place>
+  <memo />
+  <timezone>JST(日本標準)</timezone>
+</userdata>
