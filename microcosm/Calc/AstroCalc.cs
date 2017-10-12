@@ -14,7 +14,11 @@ namespace microcosm.Calc
             s = new SwissEph();
         }
 
-        public void PositionCalc() 
+        /// <summary>
+        /// planet position calcurate.
+        /// </summary>
+        /// <param name="timezone">Timezone. JST=9.0</param>
+        public void PositionCalc(double timezone) 
         {
             s.swe_set_ephe_path(NSBundle.MainBundle.BundlePath);
             s.OnLoadFile += (sender, e) => {
@@ -33,7 +37,7 @@ namespace microcosm.Calc
             double[] x = { 0, 0, 0, 0, 0, 0 };
             string serr = "";
 
-            s.swe_utc_time_zone(1980, 12, 21, 12, 0, 0, 9.0,
+            s.swe_utc_time_zone(1980, 12, 21, 12, 0, 0, timezone,
                                 ref utc_year, ref utc_month, ref utc_day, ref utc_hour, ref utc_minute, ref utc_second);
             s.swe_utc_to_jd(utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, 1, dret, ref serr);
 
