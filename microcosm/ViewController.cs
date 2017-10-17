@@ -36,10 +36,13 @@ namespace microcosm
 
             Console.WriteLine(localHtmlUrl);
             this.calc = new AstroCalc(this);
-            calc.PositionCalc();
+            calc.PositionCalc(9.0);
 
             var file = IsolatedStorageFile.GetUserStoreForApplication();
 
+
+            var path = Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "Resources", "system");
+            System.IO.File.ReadAllText(path + "/config.csm");
         }
 
         public override NSObject RepresentedObject

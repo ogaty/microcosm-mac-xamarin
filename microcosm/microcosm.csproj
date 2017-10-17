@@ -79,6 +79,8 @@
     <Folder Include="ephe\" />
     <Folder Include="Common\" />
     <Folder Include="User\" />
+    <Folder Include="Config\" />
+    <Folder Include="system\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -103,9 +105,25 @@
     <Compile Include="User\UserXml.cs" />
     <Compile Include="User\UserData.cs" />
     <Compile Include="User\UserEvent.cs" />
+    <Compile Include="Config\ConfigData.cs" />
+    <Compile Include="Config\ConfigFromXml.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="system\config.csm" />
+    <BundleResource Include="system\addr.csv" />
+    <BundleResource Include="system\setting0.csm" />
+    <BundleResource Include="system\setting1.csm" />
+    <BundleResource Include="system\setting2.csm" />
+    <BundleResource Include="system\setting3.csm" />
+    <BundleResource Include="system\setting4.csm" />
+    <BundleResource Include="system\setting5.csm" />
+    <BundleResource Include="system\setting6.csm" />
+    <BundleResource Include="system\setting7.csm" />
+    <BundleResource Include="system\setting8.csm" />
+    <BundleResource Include="system\setting9.csm" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
