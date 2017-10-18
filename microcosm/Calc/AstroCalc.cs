@@ -20,11 +20,14 @@ namespace microcosm.Calc
         /// <param name="timezone">Timezone. JST=9.0</param>
         public void PositionCalc(double timezone) 
         {
-            s.swe_set_ephe_path(NSBundle.MainBundle.BundlePath);
+
+  //          s.swe_set_ephe_path(path);
             s.OnLoadFile += (sender, e) => {
-                if (File.Exists(e.FileName))
+                var path = Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "Resources", "ephe");
+                var f = e.FileName.Split('\\');
+                if (File.Exists(path + "/" + f[1]))
                 {
-                    e.File = new FileStream(e.FileName, FileMode.Open);
+                    e.File = new FileStream(path + "/" + f[1], FileMode.Open);
                 }
             };
             int utc_year = 0;
@@ -44,8 +47,12 @@ namespace microcosm.Calc
             int flag = SwissEph.SEFLG_SWIEPH | SwissEph.SEFLG_SPEED;
             s.swe_calc_ut(dret[1], 1, flag, x, ref serr);
 
-            Console.WriteLine(x[0]);
-
+            foreach (int planet_number in Common.CommonData.target_numbers)
+            {
+                s.swe_calc_ut(dret[1], planet_number, flag, x, ref serr);
+                Console.WriteLine(planet_number.ToString() + " " + x[0]);
+                Console.WriteLine(serr);
+            }
         }
     }
 }

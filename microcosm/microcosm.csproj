@@ -39,7 +39,7 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnableCodeSigning>true</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
@@ -47,6 +47,8 @@
     <UseRefCounting>true</UseRefCounting>
     <LinkMode>SdkOnly</LinkMode>
     <PlatformTarget>x86</PlatformTarget>
+    <CodeSigningKey>Mac Developer: yuji ogata (DA8C98P36J)</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -74,7 +76,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512x512.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Calc\" />
     <Folder Include="ephe\" />
     <Folder Include="Common\" />
@@ -86,9 +87,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="ephe\seas_18.se1" />
-    <None Include="ephe\semo_18.se1" />
-    <None Include="ephe\sepl_18.se1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -107,6 +105,7 @@
     <Compile Include="User\UserEvent.cs" />
     <Compile Include="Config\ConfigData.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
+    <Compile Include="Common\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -124,6 +123,14 @@
     <BundleResource Include="system\setting7.csm" />
     <BundleResource Include="system\setting8.csm" />
     <BundleResource Include="system\setting9.csm" />
+    <BundleResource Include="ephe\seas_18.se1" />
+    <BundleResource Include="ephe\semo_18.se1" />
+    <BundleResource Include="ephe\sepl_18.se1" />
+    <BundleResource Include="ephe\s136108s.se1" />
+    <BundleResource Include="ephe\s136199s.se1" />
+    <BundleResource Include="ephe\s136472s.se1" />
+    <BundleResource Include="ephe\se90377s.se1" />
+    <BundleResource Include="ephe\seleapsec.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

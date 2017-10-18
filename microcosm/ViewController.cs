@@ -4,6 +4,7 @@ using System.IO.IsolatedStorage;
 using AppKit;
 using Foundation;
 using microcosm.Calc;
+using microcosm.Common;
 using SwissEphNet;
 
 namespace microcosm
@@ -43,6 +44,12 @@ namespace microcosm
 
             var path = Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "Resources", "system");
             System.IO.File.ReadAllText(path + "/config.csm");
+
+            var path2 = Util.ContainerDirectory + "/Documents";
+            Console.WriteLine("dir:" + path2);
+            Directory.CreateDirectory(path2 + "/testDir");
+
+
         }
 
         public override NSObject RepresentedObject
