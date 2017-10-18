@@ -5,6 +5,7 @@ using AppKit;
 using Foundation;
 using microcosm.Calc;
 using microcosm.Common;
+using microcosm.Config;
 using SwissEphNet;
 
 namespace microcosm
@@ -12,6 +13,8 @@ namespace microcosm
     public partial class ViewController : NSViewController
     {
         public AstroCalc calc;
+        public ConfigData config;
+
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -21,7 +24,9 @@ namespace microcosm
         {
             base.ViewDidLoad();
 
-			// Do any additional setup after loading the view.
+            // Do any additional setup after loading the view.
+            MainInit();
+            /*
             Console.WriteLine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
 
 
@@ -48,8 +53,41 @@ namespace microcosm
             var path2 = Util.ContainerDirectory + "/Documents";
             Console.WriteLine("dir:" + path2);
             Directory.CreateDirectory(path2 + "/testDir");
+            */
+        }
 
+        /// <summary>
+        /// 初期化周り
+        /// </summary>
+        private void MainInit() 
+        {
+            var root = Util.ContainerDirectory + "/Documents/microcosm";
+            if (!Directory.Exists(root + "/system"))
+            {
+                Directory.CreateDirectory(root + "/system");
+            }
+            if (!Directory.Exists(root + "/data"))
+            {
+                Directory.CreateDirectory(root + "/data");
+            }
 
+            var bundle = Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "Resources", "system");
+
+            if (!File.Exists(root + "/system/config.csm"))
+            {
+                File.Copy(bundle + "/config.csm", root + "/system/config.csm");
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (!File.Exists(root + "/system/setting" + i.ToString() + ".csm"))
+                {
+                    File.Copy(bundle + "/setting" + i.ToString() + ".csm", root + "/system/setting" + i.ToString() + ".csm");
+                }
+            }
+
+            config = ConfigFromXml.GetConfigFromXml(root + "/system/config.csm");
+//            Console.WriteLine(config.defaultPlace);
         }
 
         public override NSObject RepresentedObject
