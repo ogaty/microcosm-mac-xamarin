@@ -14,6 +14,7 @@ namespace microcosm
     {
         public AstroCalc calc;
         public ConfigData config;
+        public SettingData[] settings;
 
 
         public ViewController(IntPtr handle) : base(handle)
@@ -121,6 +122,21 @@ namespace microcosm
             userDbTable.DataSource = DataSource;
             userDbTable.Delegate = new DbUserTableDelegate(DataSource);
         }
+
+        public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+            switch (segue.Identifier)
+            {
+                case "SettingSegue":
+                    var settingWindow = segue.DestinationController as SettingsViewController;
+                    settingWindow.Title = "設定";
+                    settingWindow.config = config;
+                    settingWindow.settings = settings;
+                    break;
+            }
+        }
+
 
     }
 }

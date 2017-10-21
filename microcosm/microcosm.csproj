@@ -106,9 +106,27 @@
     <Compile Include="Config\ConfigData.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
     <Compile Include="Common\Util.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsView.cs" />
+    <Compile Include="SettingsViewController.cs" />
+    <Compile Include="SettingsView.designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\SettingData.cs" />
+    <Compile Include="Config\SettingFromXml.cs" />
+    <Compile Include="Config\SettingXml.cs" />
+    <Compile Include="Config\SettingXml2.cs" />
+    <Compile Include="Common\AspectInfo.cs" />
+    <Compile Include="Common\Explanation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="SettingsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

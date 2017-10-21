@@ -1,11 +1,13 @@
-﻿using AppKit;
+using AppKit;
 using Foundation;
 
 namespace microcosm
 {
     [Register("AppDelegate")]
-    public class AppDelegate : NSApplicationDelegate
+    public partial class AppDelegate : NSApplicationDelegate
     {
+        public NSWindow window;
+        public SettingsViewController settingWindow;
         public AppDelegate()
         {
         }
@@ -38,6 +40,10 @@ namespace microcosm
         public override NSApplicationTerminateReply ApplicationShouldTerminate(NSApplication sender)
         {
             return NSApplicationTerminateReply.Now;
+        }
+
+        partial void SettingMenuClick(NSObject sender)
+        {
         }
     }
 }
