@@ -123,6 +123,7 @@
     <Compile Include="Config\SettingXml2.cs" />
     <Compile Include="Common\AspectInfo.cs" />
     <Compile Include="Common\Explanation.cs" />
+    <Compile Include="Config\ConfigSave.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
