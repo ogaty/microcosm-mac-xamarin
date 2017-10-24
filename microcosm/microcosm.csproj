@@ -82,6 +82,7 @@
     <Folder Include="User\" />
     <Folder Include="Config\" />
     <Folder Include="system\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -109,14 +110,6 @@
     <Compile Include="AppDelegate.designer.cs">
       <DependentUpon>AppDelegate.cs</DependentUpon>
     </Compile>
-    <Compile Include="SettingsView.cs" />
-    <Compile Include="SettingsViewController.cs" />
-    <Compile Include="SettingsView.designer.cs">
-      <DependentUpon>SettingsView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsViewController.designer.cs">
-      <DependentUpon>SettingsViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\SettingXml.cs" />
@@ -124,10 +117,17 @@
     <Compile Include="Common\AspectInfo.cs" />
     <Compile Include="Common\Explanation.cs" />
     <Compile Include="Config\ConfigSave.cs" />
+    <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\SettingsView.designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsViewController.cs" />
+    <Compile Include="Views\SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="SettingsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

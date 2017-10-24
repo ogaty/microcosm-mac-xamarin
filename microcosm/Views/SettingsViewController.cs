@@ -75,6 +75,74 @@ namespace microcosm
 
         }
 
+        partial void HouseChanged(NSObject sender)
+        {
+            nint row = HouseRadioGroup.SelectedRow;
+            switch (row) {
+                case 1:
+                    config.houseCalc = EHouseCalc.PLACIDUS;
+                    break;
+                case 2:
+                    config.houseCalc = EHouseCalc.KOCH;
+                    break;
+                case 3:
+                    config.houseCalc = EHouseCalc.CAMPANUS;
+                    break;
+                case 4:
+                    config.houseCalc = EHouseCalc.EQUAL;
+                    break;
+                case 5:
+                    config.houseCalc = EHouseCalc.PORPHYRY;
+                    break;
+                case 6:
+                    config.houseCalc = EHouseCalc.REGIOMONTANUS;
+                    break;
+                case 7:
+                    config.houseCalc = EHouseCalc.SOLAR;
+                    break;
+                case 8:
+                    config.houseCalc = EHouseCalc.SOLARSIGN;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        partial void ProgressionChanged(NSObject sender)
+        {
+
+        }
+
+        partial void CentricChanged(NSObject sender)
+        {
+
+        }
+
+        partial void SideRealChanged(NSObject sender)
+        {
+
+        }
+
+        partial void DoubleChanged(NSObject sender)
+        {
+
+        }
+
+        partial void DispTypeChanged(NSObject sender)
+        {
+
+        }
+
+        partial void DispCheckBoxChanged(NSObject sender)
+        {
+
+        }
+
+        partial void SubmitClicked(NSObject sender)
+        {
+
+        }
+
         //strongly typed view accessor
         public new SettingsView View
         {

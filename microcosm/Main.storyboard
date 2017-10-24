@@ -29,6 +29,9 @@
                                                 <segue destination="hfw-Lx-oTS" kind="modal" id="fdb-Ba-8kb"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Item" id="rS0-Lc-WLN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
                                         <menuItem title="microcosmを隠す" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
@@ -152,7 +155,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="299"/>
+            <point key="canvasLocation" x="-246" y="564"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -354,35 +357,35 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="1585"/>
+            <point key="canvasLocation" x="163" y="1713"/>
         </scene>
         <!--設定-->
         <scene sceneID="Rkq-YS-4hP">
             <objects>
                 <viewController title="設定" id="hfw-Lx-oTS" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" identifier="SettingSegoe" id="Wm2-d4-nSm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="449"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="518"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feM-zG-JTM">
-                                <rect key="frame" x="34" y="176" width="533" height="252"/>
+                                <rect key="frame" x="24" y="22" width="653" height="470"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="共通設定" identifier="1" id="DdY-Ve-aHV">
                                         <view key="view" ambiguous="YES" id="FHF-M0-lhB">
-                                            <rect key="frame" x="10" y="33" width="513" height="206"/>
+                                            <rect key="frame" x="10" y="33" width="633" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <box fixedFrame="YES" title="ハウス" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-t8-fTE">
-                                                    <rect key="frame" x="23" y="26" width="199" height="164"/>
+                                                <box fixedFrame="YES" title="ハウス分割方式" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-t8-fTE">
+                                                    <rect key="frame" x="23" y="211" width="199" height="197"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="nkv-Np-8h5">
-                                                        <rect key="frame" x="2" y="2" width="195" height="147"/>
+                                                        <rect key="frame" x="2" y="2" width="195" height="183"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsN-5M-vb6">
-                                                                <rect key="frame" x="20" y="20" width="154" height="108"/>
+                                                                <rect key="frame" x="20" y="20" width="154" height="144"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 <size key="cellSize" width="154" height="18"/>
@@ -416,22 +419,258 @@
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
+                                                                        <buttonCell type="radio" title="Solar" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UzE-ze-t9U">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="SolarSign" bezelStyle="regularSquare" imagePosition="left" inset="2" id="RhF-Ug-L7Z">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
                                                                     </column>
                                                                 </cells>
+                                                                <connections>
+                                                                    <action selector="HouseChanged:" target="hfw-Lx-oTS" id="mzv-f1-TsY"/>
+                                                                </connections>
                                                             </matrix>
                                                         </subviews>
                                                     </view>
+                                                    <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
+                                                <box fixedFrame="YES" title="ハウス計算" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-t2-ndM">
+                                                    <rect key="frame" x="247" y="290" width="295" height="118"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="pla-mL-hXl">
+                                                        <rect key="frame" x="2" y="2" width="291" height="104"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc3-oc-GY5">
+                                                                <rect key="frame" x="20" y="28" width="251" height="54"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="cellSize" width="251" height="18"/>
+                                                                <buttonCell key="prototype" type="radio" title="Radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="6TG-Vi-OFW">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <cells>
+                                                                    <column>
+                                                                        <buttonCell type="radio" title="一度一年法(Primary Progression)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="gWK-od-eeV">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="一日一年法(Secondary Progression)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="EfL-Sg-BEP">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="CPS(Composit Progression)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9iS-GP-0IE">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </column>
+                                                                </cells>
+                                                                <connections>
+                                                                    <action selector="ProgressionChanged:" target="hfw-Lx-oTS" id="Zqc-eT-xqQ"/>
+                                                                </connections>
+                                                            </matrix>
+                                                        </subviews>
+                                                    </view>
+                                                    <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
+                                                </box>
+                                                <box fixedFrame="YES" title="春分点" translatesAutoresizingMaskIntoConstraints="NO" id="SQ9-4t-X7a">
+                                                    <rect key="frame" x="23" y="16" width="177" height="83"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="cFb-qL-v2B">
+                                                        <rect key="frame" x="2" y="2" width="173" height="69"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-Vc-5xM">
+                                                                <rect key="frame" x="20" y="20" width="118" height="36"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="cellSize" width="118" height="18"/>
+                                                                <buttonCell key="prototype" type="radio" title="Radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="wOQ-43-KVJ">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <cells>
+                                                                    <column>
+                                                                        <buttonCell type="radio" title="Tropical" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Pxc-Ti-kqN">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="Sidereal" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="J7U-3j-MCZ">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </column>
+                                                                </cells>
+                                                                <connections>
+                                                                    <action selector="SideRealChanged:" target="hfw-Lx-oTS" id="NcF-Ya-q7U"/>
+                                                                </connections>
+                                                            </matrix>
+                                                        </subviews>
+                                                    </view>
+                                                    <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
+                                                </box>
+                                                <box fixedFrame="YES" title="中心点" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-QY-Sv8">
+                                                    <rect key="frame" x="23" y="113" width="177" height="84"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="lz1-yW-J5j">
+                                                        <rect key="frame" x="2" y="2" width="173" height="70"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMj-Ly-t3Q">
+                                                                <rect key="frame" x="20" y="17" width="120" height="36"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="cellSize" width="120" height="18"/>
+                                                                <buttonCell key="prototype" type="radio" title="Radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="tWD-Fs-Ppi">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <cells>
+                                                                    <column>
+                                                                        <buttonCell type="radio" title="GeoCentric" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="nbQ-YU-4Ia">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="HelioCentric" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="cUG-It-ldy">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </column>
+                                                                </cells>
+                                                                <connections>
+                                                                    <action selector="CentricChanged:" target="hfw-Lx-oTS" id="Pyv-HY-u2u"/>
+                                                                </connections>
+                                                            </matrix>
+                                                        </subviews>
+                                                    </view>
+                                                    <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
+                                                </box>
+                                                <box fixedFrame="YES" title="小数点表記" translatesAutoresizingMaskIntoConstraints="NO" id="JlX-PK-ub4">
+                                                    <rect key="frame" x="247" y="166" width="177" height="86"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="a0n-V0-VWR">
+                                                        <rect key="frame" x="2" y="2" width="173" height="72"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-ZZ-Wls">
+                                                                <rect key="frame" x="20" y="18" width="100" height="36"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="cellSize" width="100" height="18"/>
+                                                                <buttonCell key="prototype" type="radio" title="60進(29.59°)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="rC1-rd-pDt">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <cells>
+                                                                    <column>
+                                                                        <buttonCell type="radio" title="60進(29.59°)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="1eR-Sc-vhE">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="100進(29.99)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="5PX-oH-hKh">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </column>
+                                                                </cells>
+                                                                <connections>
+                                                                    <action selector="DoubleChanged:" target="hfw-Lx-oTS" id="MsO-GD-5UJ"/>
+                                                                </connections>
+                                                            </matrix>
+                                                        </subviews>
+                                                    </view>
+                                                    <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
+                                                </box>
+                                                <box fixedFrame="YES" title="画面表示" translatesAutoresizingMaskIntoConstraints="NO" id="MrT-7N-qGT">
+                                                    <rect key="frame" x="442" y="166" width="177" height="86"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="FGB-42-IQa">
+                                                        <rect key="frame" x="2" y="2" width="173" height="72"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4J-w6-TsJ">
+                                                                <rect key="frame" x="20" y="20" width="128" height="36"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="cellSize" width="128" height="18"/>
+                                                                <buttonCell key="prototype" type="radio" title="Radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="KD8-N0-kUP">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <cells>
+                                                                    <column>
+                                                                        <buttonCell type="radio" title="シンプル(☉29)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="L2h-Bc-tIc">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <buttonCell type="radio" title="フル(☉29♈15°)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="BKa-k8-zOy">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </column>
+                                                                </cells>
+                                                                <connections>
+                                                                    <action selector="DispTypeChanged:" target="hfw-Lx-oTS" id="Qva-p6-NdR"/>
+                                                                </connections>
+                                                            </matrix>
+                                                        </subviews>
+                                                    </view>
+                                                    <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
+                                                </box>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-PA-Vhd">
+                                                    <rect key="frame" x="248" y="129" width="155" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="check" title="特定の度数を目立たせる" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hDj-IN-a3n">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                        <connections>
+                                                            <action selector="DispCheckBoxChanged:" target="hfw-Lx-oTS" id="FpN-aB-TBB"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                </button>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcu-xr-boU">
+                                                    <rect key="frame" x="250" y="101" width="45" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="OdS-Ii-HYT">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-J0-g5a">
+                                                    <rect key="frame" x="301" y="103" width="17" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="度" id="4AN-xw-hbI">
+                                                        <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJq-PO-VXY">
+                                                    <rect key="frame" x="549" y="13" width="65" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tS5-D3-lzY">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="SubmitClicked:" target="hfw-Lx-oTS" id="QJn-Jh-Rv8"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="表示設定" identifier="2" id="N8K-70-U0X">
                                         <view key="view" id="abH-34-Sri">
-                                            <rect key="frame" x="10" y="33" width="513" height="206"/>
+                                            <rect key="frame" x="10" y="33" width="633" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dha-cB-d8X">
-                                                    <rect key="frame" x="17" y="167" width="99" height="26"/>
+                                                    <rect key="frame" x="17" y="385" width="99" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="e9l-YG-C1X">
                                                         <font key="font" metaFont="system"/>
@@ -454,6 +693,25 @@
                                                         </connections>
                                                     </comboBoxCell>
                                                 </comboBox>
+                                                <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKU-pe-eJt">
+                                                    <rect key="frame" x="190" y="248" width="177" height="124"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <tabViewItems>
+                                                        <tabViewItem label="Tab" identifier="1" id="Ynd-rb-lMb">
+                                                            <view key="view" ambiguous="YES" id="FRc-Bg-oTB">
+                                                                <rect key="frame" x="10" y="33" width="157" height="78"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="View" identifier="2" id="n0M-Yp-7De">
+                                                            <view key="view" id="lWQ-by-lBT">
+                                                                <rect key="frame" x="10" y="33" width="157" height="78"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </view>
+                                                        </tabViewItem>
+                                                    </tabViewItems>
+                                                </tabView>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
@@ -462,12 +720,28 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="HouseRadioGroup" destination="xsN-5M-vb6" id="FFt-eP-jKi"/>
+                        <outlet property="CampanusRadio" destination="OO8-pl-YWK" id="aaT-Ix-jvB"/>
+                        <outlet property="CentricRadioGroup" destination="tMj-Ly-t3Q" id="78T-yQ-LFk"/>
+                        <outlet property="DispCheckBox" destination="hxr-PA-Vhd" id="ceq-cs-tAp"/>
+                        <outlet property="DispCheckText" destination="dcu-xr-boU" id="dUp-uO-Qbi"/>
+                        <outlet property="DispTypeRadioGroup" destination="i4J-w6-TsJ" id="eTc-es-PVg"/>
+                        <outlet property="DoubleRadioGroup" destination="BKu-ZZ-Wls" id="ZYa-xP-Ipj"/>
+                        <outlet property="EqualRadio" destination="Xfo-vY-ddB" id="fkZ-ft-4uD"/>
+                        <outlet property="HouseRadioGroup" destination="tMj-Ly-t3Q" id="sdW-Ef-327"/>
+                        <outlet property="KochRadio" destination="Jj8-8G-zXn" id="wCS-sR-HXf"/>
+                        <outlet property="PlacidusRadio" destination="tGe-Li-ooQ" id="X9N-pM-TZq"/>
+                        <outlet property="PorphyryRadio" destination="Fgz-e8-xlj" id="I7a-zt-gYE"/>
+                        <outlet property="ProgressionChanged" destination="oc3-oc-GY5" id="Mq8-Jp-JFa"/>
+                        <outlet property="ProgressionRadioGroup" destination="oc3-oc-GY5" id="isQ-xn-9MF"/>
+                        <outlet property="RegioMontanusRadio" destination="Fgz-e8-xlj" id="gyd-ar-VFf"/>
+                        <outlet property="SideRealRadioGroup" destination="ypa-Vc-5xM" id="Hq7-cs-qaG"/>
+                        <outlet property="SolarRadio" destination="UzE-ze-t9U" id="0tM-Zk-EWz"/>
+                        <outlet property="SolarSignRadio" destination="RhF-Ug-L7Z" id="yrU-UM-nQH"/>
                     </connections>
                 </viewController>
                 <customObject id="yoE-xl-mYd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="925"/>
+            <point key="canvasLocation" x="1113" y="959"/>
         </scene>
         <!--データベース-->
         <scene sceneID="Ob1-A3-ub7">
@@ -580,6 +854,19 @@
                 <customObject id="Bl7-Va-tme" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1212" y="447"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iXA-dx-bil">
+            <objects>
+                <viewController id="DQR-Vb-Bre" sceneMemberID="viewController">
+                    <view key="view" id="hYI-H8-f0I">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="Wax-RI-9ns" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1707" y="924"/>
         </scene>
     </scenes>
 </document>

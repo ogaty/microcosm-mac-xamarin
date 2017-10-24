@@ -33,7 +33,9 @@ namespace microcosm.Config
         CAMPANUS = 2,
         EQUAL = 3,
         PORPHYRY = 4,
-        REGIOMONTANUS = 5
+        REGIOMONTANUS = 5,
+        SOLAR = 6,
+        SOLARSIGN = 7
     }
     public enum EDecimalDisp
     {
