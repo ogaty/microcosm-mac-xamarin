@@ -42,12 +42,12 @@ namespace microcosm.Config
         DECIMAL = 0,
         DEGREE = 1
     }
-    public enum DispPetern
+    public enum EDispPettern
     {
         FULL = 0,
         MINI = 1
     }
-    public enum Color29
+    public enum EColor29
     {
         NOCHANGE = 0,
         CHANGE = 1
@@ -117,7 +117,7 @@ namespace microcosm.Config
 
         // new
         [XmlElement("dispPattern2")]
-        public EDispPetern dispPattern2 { get; set; }
+        public EDispPettern dispPattern2 { get; set; }
 
         // 29度で色変える
         [XmlElement("color29")]
@@ -140,9 +140,9 @@ namespace microcosm.Config
             zodiacCenter = 250;
             defaultTimezone = "JST";
             decimalDisp = EDecimalDisp.DECIMAL;
-            dispPattern = 0;
+            dispPattern2 = EDispPettern.MINI;
             progression = EProgression.PRIMARY;
-            color29 = Color29.NOCHANGE;
+            color29 = EColor29.NOCHANGE;
         }
 
         public ConfigData()
@@ -158,9 +158,9 @@ namespace microcosm.Config
             zodiacCenter = 250;
             defaultTimezone = "JST";
             decimalDisp = EDecimalDisp.DECIMAL;
-            dispPattern = 0;
+            dispPattern2 = EDispPettern.MINI;
             progression = EProgression.PRIMARY;
-            color29 = Color29.NOCHANGE;
+            color29 = EColor29.NOCHANGE;
         }
     }
 }

@@ -26,7 +26,7 @@
                                         <menuItem title="環境設定..." keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
                                                 <action selector="SettingMenuClick:" target="Voe-Tx-rLC" id="Yw9-Kl-7B7"/>
-                                                <segue destination="hfw-Lx-oTS" kind="modal" id="fdb-Ba-8kb"/>
+                                                <segue destination="hfw-Lx-oTS" kind="modal" identifier="settingSeque" id="fdb-Ba-8kb"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Item" id="rS0-Lc-WLN">
@@ -658,7 +658,7 @@
                                                         <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="SubmitClicked:" target="hfw-Lx-oTS" id="QJn-Jh-Rv8"/>
+                                                        <action selector="SubmitClicked:" target="hfw-Lx-oTS" id="Dqt-hV-DRl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -727,14 +727,13 @@
                         <outlet property="DispTypeRadioGroup" destination="i4J-w6-TsJ" id="eTc-es-PVg"/>
                         <outlet property="DoubleRadioGroup" destination="BKu-ZZ-Wls" id="ZYa-xP-Ipj"/>
                         <outlet property="EqualRadio" destination="Xfo-vY-ddB" id="fkZ-ft-4uD"/>
-                        <outlet property="HouseRadioGroup" destination="tMj-Ly-t3Q" id="sdW-Ef-327"/>
+                        <outlet property="HouseRadioGroup" destination="xsN-5M-vb6" id="ukz-Bz-sYV"/>
                         <outlet property="KochRadio" destination="Jj8-8G-zXn" id="wCS-sR-HXf"/>
                         <outlet property="PlacidusRadio" destination="tGe-Li-ooQ" id="X9N-pM-TZq"/>
                         <outlet property="PorphyryRadio" destination="Fgz-e8-xlj" id="I7a-zt-gYE"/>
-                        <outlet property="ProgressionChanged" destination="oc3-oc-GY5" id="Mq8-Jp-JFa"/>
                         <outlet property="ProgressionRadioGroup" destination="oc3-oc-GY5" id="isQ-xn-9MF"/>
                         <outlet property="RegioMontanusRadio" destination="Fgz-e8-xlj" id="gyd-ar-VFf"/>
-                        <outlet property="SideRealRadioGroup" destination="ypa-Vc-5xM" id="Hq7-cs-qaG"/>
+                        <outlet property="SideRealRadioGroup" destination="ypa-Vc-5xM" id="msl-RF-AA6"/>
                         <outlet property="SolarRadio" destination="UzE-ze-t9U" id="0tM-Zk-EWz"/>
                         <outlet property="SolarSignRadio" destination="RhF-Ug-L7Z" id="yrU-UM-nQH"/>
                     </connections>

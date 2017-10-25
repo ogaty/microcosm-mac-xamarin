@@ -42,39 +42,44 @@ namespace microcosm
 
         public override void ViewDidLoad() 
         {
+            config = ((AppDelegate)NSApplication.SharedApplication.Delegate).config;
+
+            for (int i = 0; i < 8; i++) {
+                HouseRadioGroup.Cells[i].State = NSCellStateValue.Off;
+            }
             if (config.houseCalc == EHouseCalc.PLACIDUS) {
-                HouseRadioGroup.SelectCell(0, 0);
+                HouseRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.KOCH) {
-                HouseRadioGroup.SelectCell(1, 0);
+                HouseRadioGroup.Cells[1].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.CAMPANUS)
             {
-                HouseRadioGroup.SelectCell(2, 0);
+                HouseRadioGroup.Cells[2].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.EQUAL)
             {
-                HouseRadioGroup.SelectCell(3, 0);
+                HouseRadioGroup.Cells[3].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.PORPHYRY)
             {
-                HouseRadioGroup.SelectCell(4, 0);
+                HouseRadioGroup.Cells[4].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.REGIOMONTANUS)
             {
-                HouseRadioGroup.SelectCell(5, 0);
+                HouseRadioGroup.Cells[5].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.SOLAR)
             {
-                HouseRadioGroup.SelectCell(6, 0);
+                HouseRadioGroup.Cells[6].State = NSCellStateValue.On;
             }
             else if (config.houseCalc == EHouseCalc.SOLARSIGN)
             {
-                HouseRadioGroup.SelectCell(7, 0);
+                HouseRadioGroup.Cells[7].State = NSCellStateValue.On;
             }
             else 
             {
-                HouseRadioGroup.SelectCell(0, 0);
+                HouseRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
         }
 
@@ -85,30 +90,30 @@ namespace microcosm
 
         partial void HouseChanged(NSObject sender)
         {
-            nint row = HouseRadioGroup.SelectedRow;
+            nint row = ((NSMatrix)sender).SelectedRow;
             switch (row) {
-                case 1:
+                case 0:
                     config.houseCalc = EHouseCalc.PLACIDUS;
                     break;
-                case 2:
+                case 1:
                     config.houseCalc = EHouseCalc.KOCH;
                     break;
-                case 3:
+                case 2:
                     config.houseCalc = EHouseCalc.CAMPANUS;
                     break;
-                case 4:
+                case 3:
                     config.houseCalc = EHouseCalc.EQUAL;
                     break;
-                case 5:
+                case 4:
                     config.houseCalc = EHouseCalc.PORPHYRY;
                     break;
-                case 6:
+                case 5:
                     config.houseCalc = EHouseCalc.REGIOMONTANUS;
                     break;
-                case 7:
+                case 6:
                     config.houseCalc = EHouseCalc.SOLAR;
                     break;
-                case 8:
+                case 7:
                     config.houseCalc = EHouseCalc.SOLARSIGN;
                     break;
                 default:
@@ -156,10 +161,10 @@ namespace microcosm
             nint row = SideRealRadioGroup.SelectedRow;
             switch (row) {
                 case 1:
-                    config.centric = ESideReal.TROPICAL;
+                    config.sidereal = Esidereal.TROPICAL;
                     break;
                 case 2:
-                    config.centric = ESideReal.SIDEREAL;
+                    config.sidereal = Esidereal.SIDEREAL;
                     break;
                 default:
                     break;
@@ -188,10 +193,10 @@ namespace microcosm
             nint row = DispTypeRadioGroup.SelectedRow;
             switch (row) {
                 case 1:
-                    config.dispPatern2 = EDecimalDisp.MINI;
+                    config.dispPattern2 = EDispPettern.MINI;
                     break;
                 case 2:
-                    config.dispPatern2 = EDecimalDisp.FULL;
+                    config.dispPattern2 = EDispPettern.FULL;
                     break;
                 default:
                     break;
@@ -201,20 +206,30 @@ namespace microcosm
 
         partial void DispCheckBoxChanged(NSObject sender)
         {
-            if (DispCheckBox.IsChecked == true) {
-                config.colorChange = EColor29.CHANGE;
-                config.color29 = DispCheckText.stringValue;
+            if (DispCheckBox.State == NSCellStateValue.On) {
+                config.color29 = EColor29.CHANGE;
+                try {
+                    config.colorChange = int.Parse(DispCheckText.StringValue);
+                }
+                catch (InvalidOperationException) {
+                    config.colorChange = -1;
+                }
+                catch (InvalidCastException) {
+                    config.colorChange = -1;
+                }
             }
             else {
-                config.colorChange = EColor29.NOCHANGE;
-                config.color29 = -1;
+                config.color29 = EColor29.NOCHANGE;
+                config.colorChange = -1;
             }
 
         }
 
         partial void SubmitClicked(NSObject sender)
         {
-
+            ConfigSave.SaveXml(config);
+            ((AppDelegate)NSApplication.SharedApplication.Delegate).config = config;
+            DismissViewController(this);
         }
 
         //strongly typed view accessor

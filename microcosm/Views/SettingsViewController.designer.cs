@@ -33,6 +33,9 @@ namespace microcosm
 		[Outlet]
 		AppKit.NSMatrix ProgressionRadioGroup { get; set; }
 
+		[Outlet]
+		AppKit.NSMatrix SideRealRadioGroup { get; set; }
+
 		[Action ("CentricChanged:")]
 		partial void CentricChanged (Foundation.NSObject sender);
 
@@ -62,6 +65,11 @@ namespace microcosm
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (SideRealRadioGroup != null) {
+				SideRealRadioGroup.Dispose ();
+				SideRealRadioGroup = null;
+			}
+
 			if (CentricRadioGroup != null) {
 				CentricRadioGroup.Dispose ();
 				CentricRadioGroup = null;

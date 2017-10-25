@@ -88,6 +88,8 @@ namespace microcosm
             }
 
             config = ConfigFromXml.GetConfigFromXml(root + "/system/config.csm");
+            ((AppDelegate)NSApplication.SharedApplication.Delegate).config = config;
+
 //            Console.WriteLine(config.defaultPlace);
         }
 

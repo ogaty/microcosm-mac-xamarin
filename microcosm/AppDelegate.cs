@@ -1,5 +1,6 @@
 using AppKit;
 using Foundation;
+using microcosm.Config;
 
 namespace microcosm
 {
@@ -8,6 +9,7 @@ namespace microcosm
     {
         public NSWindow window;
         public SettingsViewController settingWindow;
+        public ConfigData config;
         public AppDelegate()
         {
         }
@@ -44,6 +46,7 @@ namespace microcosm
 
         partial void SettingMenuClick(NSObject sender)
         {
+            
         }
     }
 }
