@@ -111,12 +111,20 @@ namespace microcosm.Config
         public EDecimalDisp decimalDisp { get; set; }
 
         // フル表示かミニ表示か
+        // old
         [XmlElement("dispPattern")]
         public int dispPattern { get; set; }
 
+        // new
+        [XmlElement("dispPattern2")]
+        public EDispPetern dispPattern2 { get; set; }
+
         // 29度で色変える
         [XmlElement("color29")]
-        public Color29 color29 { get; set; }
+        public EColor29 color29 { get; set; }
+
+        [XmlElement("colorChange")]
+        public int colorChange { get; set; }
 
         public ConfigData(string path)
         {

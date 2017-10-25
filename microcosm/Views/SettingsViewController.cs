@@ -64,6 +64,14 @@ namespace microcosm
             {
                 HouseRadioGroup.SelectCell(5, 0);
             }
+            else if (config.houseCalc == EHouseCalc.SOLAR)
+            {
+                HouseRadioGroup.SelectCell(6, 0);
+            }
+            else if (config.houseCalc == EHouseCalc.SOLARSIGN)
+            {
+                HouseRadioGroup.SelectCell(7, 0);
+            }
             else 
             {
                 HouseRadioGroup.SelectCell(0, 0);
@@ -110,31 +118,97 @@ namespace microcosm
 
         partial void ProgressionChanged(NSObject sender)
         {
+            nint row = ProgressionRadioGroup.SelectedRow;
+            switch (row) {
+                case 1:
+                    config.progression = EProgression.PRIMARY;
+                    break;
+                case 2:
+                    config.progression = EProgression.SECONDARY;
+                    break;
+                case 3:
+                    config.progression = EProgression.CPS;
+                    break;
+                default:
+                    break;
+            }
 
         }
 
         partial void CentricChanged(NSObject sender)
         {
+            nint row = CentricRadioGroup.SelectedRow;
+            switch (row) {
+                case 1:
+                    config.centric = ECentric.GEO_CENTRIC;
+                    break;
+                case 2:
+                    config.centric = ECentric.HELIO_CENTRIC;
+                    break;
+                default:
+                    break;
+            }
 
         }
 
         partial void SideRealChanged(NSObject sender)
         {
+            nint row = SideRealRadioGroup.SelectedRow;
+            switch (row) {
+                case 1:
+                    config.centric = ESideReal.TROPICAL;
+                    break;
+                case 2:
+                    config.centric = ESideReal.SIDEREAL;
+                    break;
+                default:
+                    break;
+            }
 
         }
 
         partial void DoubleChanged(NSObject sender)
         {
+            nint row = DoubleRadioGroup.SelectedRow;
+            switch (row) {
+                case 1:
+                    config.decimalDisp = EDecimalDisp.DEGREE;
+                    break;
+                case 2:
+                    config.decimalDisp = EDecimalDisp.DECIMAL;
+                    break;
+                default:
+                    break;
+            }
 
         }
 
         partial void DispTypeChanged(NSObject sender)
         {
+            nint row = DispTypeRadioGroup.SelectedRow;
+            switch (row) {
+                case 1:
+                    config.dispPatern2 = EDecimalDisp.MINI;
+                    break;
+                case 2:
+                    config.dispPatern2 = EDecimalDisp.FULL;
+                    break;
+                default:
+                    break;
+            }
 
         }
 
         partial void DispCheckBoxChanged(NSObject sender)
         {
+            if (DispCheckBox.IsChecked == true) {
+                config.colorChange = EColor29.CHANGE;
+                config.color29 = DispCheckText.stringValue;
+            }
+            else {
+                config.colorChange = EColor29.NOCHANGE;
+                config.color29 = -1;
+            }
 
         }
 
