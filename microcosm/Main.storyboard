@@ -704,12 +704,12 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="共通設定" identifier="1" id="DdY-Ve-aHV">
-                                        <view key="view" ambiguous="YES" id="FHF-M0-lhB">
-                                            <rect key="frame" x="10" y="33" width="633" height="424"/>
+                                        <view key="view" id="FHF-M0-lhB">
+                                            <rect key="frame" x="10" y="33" width="156" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box fixedFrame="YES" title="ハウス分割方式" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-t8-fTE">
-                                                    <rect key="frame" x="23" y="211" width="199" height="197"/>
+                                                    <rect key="frame" x="23" y="-213" width="199" height="197"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="nkv-Np-8h5">
                                                         <rect key="frame" x="2" y="2" width="195" height="183"/>
@@ -769,7 +769,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="ハウス計算" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-t2-ndM">
-                                                    <rect key="frame" x="247" y="290" width="295" height="118"/>
+                                                    <rect key="frame" x="247" y="-134" width="295" height="118"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="pla-mL-hXl">
                                                         <rect key="frame" x="2" y="2" width="291" height="104"/>
@@ -809,7 +809,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="春分点" translatesAutoresizingMaskIntoConstraints="NO" id="SQ9-4t-X7a">
-                                                    <rect key="frame" x="23" y="16" width="177" height="83"/>
+                                                    <rect key="frame" x="23" y="-408" width="177" height="83"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="cFb-qL-v2B">
                                                         <rect key="frame" x="2" y="2" width="173" height="69"/>
@@ -845,7 +845,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="中心点" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-QY-Sv8">
-                                                    <rect key="frame" x="23" y="113" width="177" height="84"/>
+                                                    <rect key="frame" x="23" y="-311" width="177" height="84"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="lz1-yW-J5j">
                                                         <rect key="frame" x="2" y="2" width="173" height="70"/>
@@ -881,7 +881,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="小数点表記" translatesAutoresizingMaskIntoConstraints="NO" id="JlX-PK-ub4">
-                                                    <rect key="frame" x="247" y="166" width="177" height="86"/>
+                                                    <rect key="frame" x="247" y="-258" width="177" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="a0n-V0-VWR">
                                                         <rect key="frame" x="2" y="2" width="173" height="72"/>
@@ -917,7 +917,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="画面表示" translatesAutoresizingMaskIntoConstraints="NO" id="MrT-7N-qGT">
-                                                    <rect key="frame" x="442" y="166" width="177" height="86"/>
+                                                    <rect key="frame" x="442" y="-258" width="177" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="FGB-42-IQa">
                                                         <rect key="frame" x="2" y="2" width="173" height="72"/>
@@ -953,7 +953,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-PA-Vhd">
-                                                    <rect key="frame" x="248" y="129" width="155" height="18"/>
+                                                    <rect key="frame" x="248" y="-295" width="155" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="特定の度数を目立たせる" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hDj-IN-a3n">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -964,7 +964,7 @@
                                                     </buttonCell>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcu-xr-boU">
-                                                    <rect key="frame" x="250" y="101" width="45" height="22"/>
+                                                    <rect key="frame" x="250" y="-323" width="45" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="OdS-Ii-HYT">
                                                         <font key="font" metaFont="system"/>
@@ -973,7 +973,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-J0-g5a">
-                                                    <rect key="frame" x="301" y="103" width="17" height="17"/>
+                                                    <rect key="frame" x="301" y="-321" width="17" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="度" id="4AN-xw-hbI">
                                                         <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -982,7 +982,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJq-PO-VXY">
-                                                    <rect key="frame" x="549" y="13" width="65" height="32"/>
+                                                    <rect key="frame" x="549" y="-411" width="65" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tS5-D3-lzY">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -996,7 +996,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="表示設定" identifier="2" id="N8K-70-U0X">
-                                        <view key="view" id="abH-34-Sri">
+                                        <view key="view" ambiguous="YES" id="abH-34-Sri">
                                             <rect key="frame" x="10" y="33" width="633" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1025,20 +1025,59 @@
                                                     </comboBoxCell>
                                                 </comboBox>
                                                 <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKU-pe-eJt">
-                                                    <rect key="frame" x="190" y="248" width="177" height="124"/>
+                                                    <rect key="frame" x="10" y="-1" width="613" height="373"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                     <tabViewItems>
-                                                        <tabViewItem label="Tab" identifier="1" id="Ynd-rb-lMb">
+                                                        <tabViewItem label="天体表示" identifier="1" id="Ynd-rb-lMb">
                                                             <view key="view" ambiguous="YES" id="FRc-Bg-oTB">
-                                                                <rect key="frame" x="10" y="33" width="157" height="78"/>
+                                                                <rect key="frame" x="10" y="33" width="593" height="327"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcc-t8-frK">
+                                                                        <rect key="frame" x="40" y="275" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☉" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="VsS-ac-fJr">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="HelveticaNeue"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K50-pB-tSD">
+                                                                        <rect key="frame" x="87" y="275" width="32" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☽" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sxR-e0-tsk">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="Avenir-Book"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0c-jM-IJW">
+                                                                        <rect key="frame" x="22" y="299" width="23" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1" id="ttl-Tr-6F0">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="アスペクト表示(1)" identifier="2" id="n0M-Yp-7De">
+                                                            <view key="view" id="lWQ-by-lBT">
+                                                                <rect key="frame" x="10" y="33" width="593" height="327"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
                                                         </tabViewItem>
-                                                        <tabViewItem label="View" identifier="2" id="n0M-Yp-7De">
-                                                            <view key="view" id="lWQ-by-lBT">
-                                                                <rect key="frame" x="10" y="33" width="157" height="78"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
+                                                        <tabViewItem label="アスペクト表示(2)" identifier="" id="dY0-wT-OtV">
+                                                            <view key="view" id="RVI-E8-5wB">
+                                                                <rect key="frame" x="10" y="33" width="593" height="327"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="オーブ設定" identifier="" id="d97-Tv-V8t">
+                                                            <view key="view" id="oaC-di-j2t">
+                                                                <rect key="frame" x="10" y="33" width="593" height="327"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
                                                         </tabViewItem>
                                                     </tabViewItems>
