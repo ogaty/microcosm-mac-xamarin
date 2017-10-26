@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Foundation;
+using microcosm.Config;
 using SwissEphNet;
 
 namespace microcosm.Calc
@@ -8,6 +10,7 @@ namespace microcosm.Calc
     public class AstroCalc
     {
         public SwissEph s;
+        public double[,] houseList = new double[7, 12];
 
         public AstroCalc(ViewController main)
         {
@@ -50,9 +53,12 @@ namespace microcosm.Calc
             foreach (int planet_number in Common.CommonData.target_numbers)
             {
                 s.swe_calc_ut(dret[1], planet_number, flag, x, ref serr);
-                Console.WriteLine(planet_number.ToString() + " " + x[0]);
-                Console.WriteLine(serr);
             }
+        }
+
+        public void ReCalc(ConfigData config, SettingData setting)
+        {
+            
         }
     }
 }

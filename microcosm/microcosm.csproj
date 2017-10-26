@@ -83,6 +83,7 @@
     <Folder Include="Config\" />
     <Folder Include="system\" />
     <Folder Include="Views\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -125,9 +126,22 @@
     <Compile Include="Views\SettingsViewController.designer.cs">
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserDbView.cs" />
+    <Compile Include="Views\UserDbViewController.cs" />
+    <Compile Include="Views\UserDbView.designer.cs">
+      <DependentUpon>UserDbView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserDbViewController.designer.cs">
+      <DependentUpon>UserDbViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlanetData.cs" />
+    <Compile Include="Models\UserDirTree.cs" />
+    <Compile Include="Models\DbItem.cs" />
+    <Compile Include="Models\TreeViewItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Views\UserDbView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

@@ -59,21 +59,21 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="File" id="dMs-cI-mzQ">
+                            <menuItem title="ファイル" id="dMs-cI-mzQ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="File" id="bib-Uj-vzu">
+                                <menu key="submenu" title="ファイル" id="bib-Uj-vzu">
                                     <items>
                                         <menuItem title="データベースを開く" keyEquivalent="o" id="InP-AL-Z9X">
                                             <connections>
-                                                <segue destination="gWO-sG-fnx" kind="show" id="EUZ-R1-z2p"/>
+                                                <segue destination="DQR-Vb-Bre" kind="modal" identifier="UserDbSegoe" id="gDl-mI-UVG"/>
                                             </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="View" id="H8h-7b-M4v">
+                            <menuItem title="表示" id="H8h-7b-M4v">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="View" id="HyV-fh-RgO">
+                                <menu key="submenu" title="表示" id="HyV-fh-RgO">
                                     <items>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
@@ -90,23 +90,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Window" id="aUF-d1-5bR">
+                            <menuItem title="ウィンドウ" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                <menu key="submenu" title="ウィンドウ" systemMenu="window" id="Td7-aD-5lo">
                                     <items>
-                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                        <menuItem title="最小化" keyEquivalent="m" id="OY7-WF-poV">
                                             <connections>
                                                 <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
+                                        <menuItem title="ズーム" id="R4o-n2-Eq4">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                        <menuItem title="すべてを手前に移動" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
@@ -115,9 +115,9 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Help" id="wpr-3q-Mcd">
+                            <menuItem title="ヘルプ" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                <menu key="submenu" title="ヘルプ" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
                                         <menuItem title="microcosm Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
@@ -705,11 +705,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="共通設定" identifier="1" id="DdY-Ve-aHV">
                                         <view key="view" id="FHF-M0-lhB">
-                                            <rect key="frame" x="10" y="33" width="156" height="0.0"/>
+                                            <rect key="frame" x="10" y="33" width="633" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box fixedFrame="YES" title="ハウス分割方式" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-t8-fTE">
-                                                    <rect key="frame" x="23" y="-213" width="199" height="197"/>
+                                                    <rect key="frame" x="23" y="211" width="199" height="197"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="nkv-Np-8h5">
                                                         <rect key="frame" x="2" y="2" width="195" height="183"/>
@@ -769,7 +769,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="ハウス計算" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-t2-ndM">
-                                                    <rect key="frame" x="247" y="-134" width="295" height="118"/>
+                                                    <rect key="frame" x="247" y="290" width="295" height="118"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="pla-mL-hXl">
                                                         <rect key="frame" x="2" y="2" width="291" height="104"/>
@@ -809,7 +809,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="春分点" translatesAutoresizingMaskIntoConstraints="NO" id="SQ9-4t-X7a">
-                                                    <rect key="frame" x="23" y="-408" width="177" height="83"/>
+                                                    <rect key="frame" x="23" y="16" width="177" height="83"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="cFb-qL-v2B">
                                                         <rect key="frame" x="2" y="2" width="173" height="69"/>
@@ -845,7 +845,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="中心点" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-QY-Sv8">
-                                                    <rect key="frame" x="23" y="-311" width="177" height="84"/>
+                                                    <rect key="frame" x="23" y="113" width="177" height="84"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="lz1-yW-J5j">
                                                         <rect key="frame" x="2" y="2" width="173" height="70"/>
@@ -881,7 +881,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="小数点表記" translatesAutoresizingMaskIntoConstraints="NO" id="JlX-PK-ub4">
-                                                    <rect key="frame" x="247" y="-258" width="177" height="86"/>
+                                                    <rect key="frame" x="247" y="166" width="177" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="a0n-V0-VWR">
                                                         <rect key="frame" x="2" y="2" width="173" height="72"/>
@@ -917,7 +917,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <box fixedFrame="YES" title="画面表示" translatesAutoresizingMaskIntoConstraints="NO" id="MrT-7N-qGT">
-                                                    <rect key="frame" x="442" y="-258" width="177" height="86"/>
+                                                    <rect key="frame" x="442" y="166" width="177" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="FGB-42-IQa">
                                                         <rect key="frame" x="2" y="2" width="173" height="72"/>
@@ -953,7 +953,7 @@
                                                     <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                                                 </box>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-PA-Vhd">
-                                                    <rect key="frame" x="248" y="-295" width="155" height="18"/>
+                                                    <rect key="frame" x="248" y="129" width="155" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="特定の度数を目立たせる" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hDj-IN-a3n">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -964,7 +964,7 @@
                                                     </buttonCell>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcu-xr-boU">
-                                                    <rect key="frame" x="250" y="-323" width="45" height="22"/>
+                                                    <rect key="frame" x="250" y="101" width="45" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="OdS-Ii-HYT">
                                                         <font key="font" metaFont="system"/>
@@ -973,7 +973,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-J0-g5a">
-                                                    <rect key="frame" x="301" y="-321" width="17" height="17"/>
+                                                    <rect key="frame" x="301" y="103" width="17" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="度" id="4AN-xw-hbI">
                                                         <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -982,7 +982,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJq-PO-VXY">
-                                                    <rect key="frame" x="549" y="-411" width="65" height="32"/>
+                                                    <rect key="frame" x="549" y="13" width="65" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tS5-D3-lzY">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1030,7 +1030,7 @@
                                                     <font key="font" metaFont="system"/>
                                                     <tabViewItems>
                                                         <tabViewItem label="天体表示" identifier="1" id="Ynd-rb-lMb">
-                                                            <view key="view" ambiguous="YES" id="FRc-Bg-oTB">
+                                                            <view key="view" id="FRc-Bg-oTB">
                                                                 <rect key="frame" x="10" y="33" width="593" height="327"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
@@ -1059,6 +1059,584 @@
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                     </textField>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M8k-yP-Qqk">
+                                                                        <rect key="frame" x="130" y="275" width="42" height="20"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☿" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="RDo-lX-7FY">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xj6-sU-IwT">
+                                                                        <rect key="frame" x="183" y="274" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♀" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Snv-Sz-si8">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-4u-PkB">
+                                                                        <rect key="frame" x="228" y="273" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♂" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dyT-B6-plo">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGP-9M-3HX">
+                                                                        <rect key="frame" x="275" y="274" width="31" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♃" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="x0h-lO-QRN">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uus-9H-fbV">
+                                                                        <rect key="frame" x="318" y="273" width="29" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♄" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="CME-Rx-Dj3">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0S-5h-bUm">
+                                                                        <rect key="frame" x="355" y="273" width="31" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♅" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DXg-UI-jya">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaU-zA-qIl">
+                                                                        <rect key="frame" x="394" y="273" width="33" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♆" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="M8g-Vr-IEY">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WG1-20-EQg">
+                                                                        <rect key="frame" x="436" y="272" width="30" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♇" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iRI-ng-Dbv">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-VK-E1W">
+                                                                        <rect key="frame" x="40" y="244" width="49" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ASC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xex-FQ-6r5">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vi4-Fb-6co">
+                                                                        <rect key="frame" x="111" y="244" width="43" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="MC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FBh-V8-We4">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzq-NA-nvH">
+                                                                        <rect key="frame" x="170" y="244" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="キロン" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uJr-Vd-JDm">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-Sb-Jm8">
+                                                                        <rect key="frame" x="245" y="245" width="55" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="Earth" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mjI-Hi-4oj">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLA-Of-zwb">
+                                                                        <rect key="frame" x="318" y="244" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ヘッド" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fSh-z7-ElM">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5d-Tg-oZJ">
+                                                                        <rect key="frame" x="394" y="245" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="リリス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mQk-39-JxK">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3YE-81-nBk">
+                                                                        <rect key="frame" x="40" y="217" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="セレス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7CM-7r-mJr">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OTc-fB-KKO">
+                                                                        <rect key="frame" x="105" y="217" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="パラス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9tV-dK-ib0">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YkW-nU-Wdg">
+                                                                        <rect key="frame" x="164" y="218" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ジュノー" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nDf-Np-eki">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLN-Jk-PCg">
+                                                                        <rect key="frame" x="239" y="218" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ベスタ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Tlz-QM-Fer">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NpH-Pl-MoW">
+                                                                        <rect key="frame" x="303" y="221" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="エリス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7Oo-VH-xzP">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVJ-8y-3s3">
+                                                                        <rect key="frame" x="375" y="221" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="セドナ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KlA-6w-0aU">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZqC-E7-WGj">
+                                                                        <rect key="frame" x="438" y="217" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ハウメア" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gs9-vd-X4w">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSZ-Te-qnS">
+                                                                        <rect key="frame" x="513" y="218" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="マケマケ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nsL-lu-D65">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1E-kf-CI7">
+                                                                        <rect key="frame" x="24" y="187" width="12" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2" id="gfv-xo-bBk">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-IU-BoX">
+                                                                        <rect key="frame" x="40" y="167" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☉" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Bxy-o0-pBy">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="HelveticaNeue"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5AP-6u-Axy">
+                                                                        <rect key="frame" x="87" y="167" width="32" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☽" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="6ea-6v-CAq">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="Avenir-Book"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-13-Xyt">
+                                                                        <rect key="frame" x="130" y="167" width="42" height="20"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☿" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9aG-hN-YCM">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-0M-06k">
+                                                                        <rect key="frame" x="183" y="166" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♀" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ccL-as-Kvg">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-BE-0Hb">
+                                                                        <rect key="frame" x="228" y="165" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♂" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tUw-MP-l0N">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhQ-0u-Rc5">
+                                                                        <rect key="frame" x="275" y="166" width="31" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♃" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="B28-71-Xb2">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ce0-s7-rAs">
+                                                                        <rect key="frame" x="318" y="165" width="29" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♄" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="SDw-sV-sKG">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJc-Vf-w0u">
+                                                                        <rect key="frame" x="355" y="165" width="31" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♅" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IFe-Uq-lAN">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Vv-lc-K6y">
+                                                                        <rect key="frame" x="394" y="165" width="33" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♆" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="m2I-rs-hxq">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOz-R5-YyF">
+                                                                        <rect key="frame" x="436" y="164" width="30" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♇" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="RQR-16-srX">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1n-EC-XTr">
+                                                                        <rect key="frame" x="40" y="136" width="49" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ASC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="C0S-6r-Hwz">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-ID-cKJ">
+                                                                        <rect key="frame" x="111" y="136" width="43" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="MC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sIA-8q-Cuv">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Roj-IP-TQe">
+                                                                        <rect key="frame" x="170" y="136" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="キロン" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xPz-gG-Y1B">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kj-xH-Ok3">
+                                                                        <rect key="frame" x="245" y="137" width="55" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="Earth" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="L0k-Ax-UUl">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIc-Fz-5w8">
+                                                                        <rect key="frame" x="318" y="136" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ヘッド" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="laa-m3-k0t">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pYH-ug-ErX">
+                                                                        <rect key="frame" x="394" y="137" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="リリス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DL4-Oo-Osr">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saR-Yj-Nb9">
+                                                                        <rect key="frame" x="40" y="109" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="セレス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="TFJ-tU-hh6">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Amd-L3-KTx">
+                                                                        <rect key="frame" x="105" y="109" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="パラス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gq5-d3-C7S">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfR-xv-5xC">
+                                                                        <rect key="frame" x="164" y="110" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ジュノー" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mF2-PZ-aXC">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L77-nz-Wb0">
+                                                                        <rect key="frame" x="239" y="110" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ベスタ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LlV-qx-iJ3">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7b-ZF-5ft">
+                                                                        <rect key="frame" x="303" y="113" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="エリス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="YRT-4I-xaI">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ix-Xm-ddt">
+                                                                        <rect key="frame" x="375" y="113" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="セドナ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="v4W-KN-dJm">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBj-LK-rUo">
+                                                                        <rect key="frame" x="438" y="109" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ハウメア" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="S5Y-dy-91Y">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-EY-j7E">
+                                                                        <rect key="frame" x="513" y="110" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="マケマケ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="792-zC-t5U">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZG-gy-Q0u">
+                                                                        <rect key="frame" x="24" y="86" width="13" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="3" id="C87-YZ-Msg">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5q-BC-fg0">
+                                                                        <rect key="frame" x="40" y="66" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☉" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ehh-8c-IV9">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="HelveticaNeue"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-iG-ht0">
+                                                                        <rect key="frame" x="87" y="66" width="32" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☽" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ziX-Lj-sNX">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="Avenir-Book"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZxL-X5-1hi">
+                                                                        <rect key="frame" x="130" y="66" width="42" height="20"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="☿" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yFD-ez-rAn">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uch-QX-K7f">
+                                                                        <rect key="frame" x="183" y="65" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♀" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mdR-az-hZu">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-gH-ceS">
+                                                                        <rect key="frame" x="228" y="64" width="35" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♂" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="K25-PR-qYg">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvp-AT-zIB">
+                                                                        <rect key="frame" x="275" y="65" width="31" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♃" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oCf-SP-EdE">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VVO-Wi-j1d">
+                                                                        <rect key="frame" x="318" y="64" width="29" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♄" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="l0p-B9-WGE">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngg-Um-MME">
+                                                                        <rect key="frame" x="355" y="64" width="31" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♅" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3Bh-6b-Fqq">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-D7-DBd">
+                                                                        <rect key="frame" x="394" y="64" width="33" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♆" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="vmj-Hk-5sh">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmj-H1-Tbw">
+                                                                        <rect key="frame" x="436" y="63" width="30" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="♇" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nJa-cV-fgf">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name="ArialUnicodeMS"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Noe-h6-HfY">
+                                                                        <rect key="frame" x="40" y="35" width="49" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ASC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oaM-0A-Ode">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-Pm-r8X">
+                                                                        <rect key="frame" x="111" y="35" width="43" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="MC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="U3t-kw-yb7">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-Tb-veP">
+                                                                        <rect key="frame" x="170" y="35" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="キロン" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nmJ-rG-4tX">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkm-1D-qB7">
+                                                                        <rect key="frame" x="245" y="36" width="55" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="Earth" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="NBV-d7-H1g">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZg-m0-n9R">
+                                                                        <rect key="frame" x="318" y="35" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ヘッド" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ihC-lX-SwR">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2e0-ej-cma">
+                                                                        <rect key="frame" x="394" y="36" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="リリス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="n7D-Yf-eki">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nY4-et-xwg">
+                                                                        <rect key="frame" x="40" y="8" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="セレス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="XcL-qq-SmS">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHG-Nf-8ZW">
+                                                                        <rect key="frame" x="105" y="8" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="パラス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1rx-kB-QpS">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdF-Da-k8i">
+                                                                        <rect key="frame" x="164" y="9" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ジュノー" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kVm-Sl-HGS">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIR-lk-chF">
+                                                                        <rect key="frame" x="239" y="9" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ベスタ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="duC-p7-jcT">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-kf-OgN">
+                                                                        <rect key="frame" x="303" y="12" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="エリス" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7GZ-46-c3g">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cha-qL-Aq9">
+                                                                        <rect key="frame" x="375" y="12" width="59" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="セドナ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3RL-uA-VCF">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gp-YY-jJO">
+                                                                        <rect key="frame" x="438" y="8" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="ハウメア" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DfW-Sv-fFl">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-Kf-EVg">
+                                                                        <rect key="frame" x="513" y="9" width="71" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="check" title="マケマケ" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IAd-bX-JQ8">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                                        </buttonCell>
+                                                                    </button>
                                                                 </subviews>
                                                             </view>
                                                         </tabViewItem>
@@ -1069,7 +1647,7 @@
                                                             </view>
                                                         </tabViewItem>
                                                         <tabViewItem label="アスペクト表示(2)" identifier="" id="dY0-wT-OtV">
-                                                            <view key="view" id="RVI-E8-5wB">
+                                                            <view key="view" ambiguous="YES" id="RVI-E8-5wB">
                                                                 <rect key="frame" x="10" y="33" width="593" height="327"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
@@ -1222,20 +1800,225 @@
                 </viewController>
                 <customObject id="Bl7-Va-tme" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="447"/>
+            <point key="canvasLocation" x="1132" y="461"/>
         </scene>
-        <!--View Controller-->
+        <!--データベース-->
         <scene sceneID="iXA-dx-bil">
             <objects>
-                <viewController id="DQR-Vb-Bre" sceneMemberID="viewController">
+                <viewController title="データベース" id="DQR-Vb-Bre" customClass="UserDbViewController" sceneMemberID="viewController">
                     <view key="view" id="hYI-H8-f0I">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="503" height="339"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-Uy-zAB">
+                                <rect key="frame" x="20" y="57" width="184" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" ambiguous="YES" id="y0M-Kz-esZ">
+                                    <rect key="frame" x="1" y="0.0" width="182" height="270"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="YpR-cw-dRp" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Sgw-BR-2HL" id="kBp-Y5-rCT">
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="247"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="116" minWidth="40" maxWidth="1000" id="Sgw-BR-2HL">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="prb-ng-esY">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="6GZ-du-VEp">
+                                                            <rect key="frame" x="1" y="1" width="116" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myX-i7-aFj">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Kb3-fp-gV5">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="myX-i7-aFj" id="txv-M5-NCU"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                                <tableColumn width="60" minWidth="40" maxWidth="1000" id="HNQ-jU-qot">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Dwx-fK-Kh0">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="awV-0y-kzm">
+                                                            <rect key="frame" x="120" y="1" width="60" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOQ-V4-RXP">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="hKB-Ed-Rq2">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="jOQ-V4-RXP" id="j80-bC-k4D"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </outlineView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="9kV-x4-gGK">
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="a5Z-mx-B4s">
+                                    <rect key="frame" x="-15" y="23" width="16" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="YpR-cw-dRp">
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kX6-DQ-qmc">
+                                <rect key="frame" x="224" y="104" width="259" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" ambiguous="YES" id="LAt-g7-lkM">
+                                    <rect key="frame" x="1" y="0.0" width="257" height="223"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="8f5-uH-lUY" viewBased="YES" id="nvD-rK-PzF">
+                                            <rect key="frame" x="0.0" y="0.0" width="257" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="116" minWidth="40" maxWidth="1000" id="ah3-8X-N7d">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="RAv-r5-z3K">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="Zsx-Il-5AM">
+                                                            <rect key="frame" x="1" y="1" width="116" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV0-Db-iH3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="cUT-64-DP7">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="TV0-Db-iH3" id="J00-Yx-dcp"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                                <tableColumn width="135" minWidth="40" maxWidth="1000" id="I8N-Wg-uMi">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="n1N-CU-a6d">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="7CB-PY-wpu">
+                                                            <rect key="frame" x="120" y="1" width="135" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syf-vi-3RP">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="3af-A8-0fB">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="Syf-vi-3RP" id="wQV-VQ-1wU"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="xxF-k1-3JF">
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Xoj-Ey-0AP">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="8f5-uH-lUY">
+                                    <rect key="frame" x="0.0" y="0.0" width="257" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-wb-gdE">
+                                <rect key="frame" x="224" y="74" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5E2-Vo-KZL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="Wax-RI-9ns" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="924"/>
+            <point key="canvasLocation" x="1642.5" y="466.5"/>
         </scene>
     </scenes>
 </document>
