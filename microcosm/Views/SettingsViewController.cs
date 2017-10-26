@@ -81,6 +81,74 @@ namespace microcosm
             {
                 HouseRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
+
+            for (int i = 0; i < 3; i++) {
+                ProgressionRadioGroup.Cells[i].State = NSCellStateValue.Off;
+            }
+            if (config.progression == EProgression.PRIMARY) {
+                ProgressionRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+            else if (config.progression == EProgression.SECONDARY) {
+                ProgressionRadioGroup.Cells[1].State = NSCellStateValue.On;
+            }
+            else if (config.progression == EProgression.CPS) {
+                ProgressionRadioGroup.Cells[2].State = NSCellStateValue.On;
+            }
+            else {
+                ProgressionRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+
+            for (int i = 0; i < 2; i++) {
+                CentricRadioGroup.Cells[i].State = NSCellStateValue.Off;
+            }
+            if (config.centric == ECentric.GEO_CENTRIC) {
+                CentricRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+            else if (config.centric == ECentric.HELIO_CENTRIC) {
+                CentricRadioGroup.Cells[1].State = NSCellStateValue.On;
+            }
+            else {
+                CentricRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+
+            for (int i = 0; i < 2; i++) {
+                SideRealRadioGroup.Cells[i].State = NSCellStateValue.Off;
+            }
+            if (config.centric == ESideReal.TROPICAL) {
+                SideRealRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+            else if (config.centric == ESideReal.SIDEREAL) {
+                SideRealRadioGroup.Cells[1].State = NSCellStateValue.On;
+            }
+            else {
+                SideRealRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+
+            for (int i = 0; i < 2; i++) {
+                DoubleRadioGroup.Cells[i].State = NSCellStateValue.Off;
+            }
+            if (config.centric == EDecimalDisp.DEGREE) {
+                DoubleRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+            else if (config.centric == EDecimalDisp.DECIMAL) {
+                DoubleRadioGroup.Cells[1].State = NSCellStateValue.On;
+            }
+            else {
+                DoubleRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+
+            for (int i = 0; i < 2; i++) {
+                DispTypeRadioGroup.Cells[i].State = NSCellStateValue.Off;
+            }
+            if (config.dispPattern2 == EDispPettern.MINI) {
+                DispTypeRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
+            else if (config.dispPattern2 == EDispPettern.FULL) {
+                DispTypeRadioGroup.Cells[1].State = NSCellStateValue.On;
+            }
+            else {
+                DispTypeRadioGroup.Cells[0].State = NSCellStateValue.On;
+            }
         }
 
         partial void SettingChanged(NSObject sender)
