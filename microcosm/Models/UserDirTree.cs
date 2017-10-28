@@ -9,7 +9,7 @@ namespace microcosm.Models
         {
         }
 
-        public TreeViewItem CreateDirectoryNode(DirectoryInfo directoryInfo)
+        public static TreeViewItem CreateDirectoryNode(DirectoryInfo directoryInfo)
         {
             if (!Directory.Exists(directoryInfo.FullName))
             {
@@ -22,6 +22,7 @@ namespace microcosm.Models
             {
                 // ディレクトリ
                 TreeViewItem item = CreateDirectoryNode(directory);
+                item.isDir = true;
                 item.Tag = new DbItem
                 {
                     fileName = directory.FullName,
@@ -32,9 +33,13 @@ namespace microcosm.Models
 
             foreach (var file in directoryInfo.GetFiles())
             {
-                // ファイル
-                string trimName = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                // ファイル(２階層はサポートしない)
+                if (Directory.Exists(file.FullName)) {
+                    continue;
+                }
+                string trimName = Path.GetFileNameWithoutExtension(file.Name);
                 TreeViewItem item = new TreeViewItem { Header = trimName };
+                item.isDir = false;
                 item.Tag = new DbItem
                 {
                     fileName = file.FullName,

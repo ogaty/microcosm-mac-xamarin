@@ -34,6 +34,9 @@ namespace microcosm
 		AppKit.NSMatrix ProgressionRadioGroup { get; set; }
 
 		[Outlet]
+		AppKit.NSTableView SettingDetailPlanet { get; set; }
+
+		[Outlet]
 		AppKit.NSMatrix SideRealRadioGroup { get; set; }
 
 		[Action ("CentricChanged:")]
@@ -57,6 +60,9 @@ namespace microcosm
 		[Action ("SettingChanged:")]
 		partial void SettingChanged (Foundation.NSObject sender);
 
+		[Action ("SettingDetailPlanetTableClicked:")]
+		partial void SettingDetailPlanetTableClicked (Foundation.NSObject sender);
+
 		[Action ("SideRealChanged:")]
 		partial void SideRealChanged (Foundation.NSObject sender);
 
@@ -65,11 +71,6 @@ namespace microcosm
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (SideRealRadioGroup != null) {
-				SideRealRadioGroup.Dispose ();
-				SideRealRadioGroup = null;
-			}
-
 			if (CentricRadioGroup != null) {
 				CentricRadioGroup.Dispose ();
 				CentricRadioGroup = null;
@@ -103,6 +104,16 @@ namespace microcosm
 			if (ProgressionRadioGroup != null) {
 				ProgressionRadioGroup.Dispose ();
 				ProgressionRadioGroup = null;
+			}
+
+			if (SettingDetailPlanet != null) {
+				SettingDetailPlanet.Dispose ();
+				SettingDetailPlanet = null;
+			}
+
+			if (SideRealRadioGroup != null) {
+				SideRealRadioGroup.Dispose ();
+				SideRealRadioGroup = null;
 			}
 		}
 	}

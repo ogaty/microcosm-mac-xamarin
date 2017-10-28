@@ -1,8 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using AppKit;
+
+using microcosm.Models;
+using microcosm.Common;
 
 namespace microcosm.Views
 {
@@ -43,6 +47,22 @@ namespace microcosm.Views
             {
                 return (UserDbView)base.View;
             }
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            UserDbTreeDataSource dataSource = new UserDbTreeDataSource();
+            List<TreeViewItem> root = new List<TreeViewItem>();
+            TreeViewItem rootNode = new TreeViewItem();
+            rootNode.Items = new List<object>();
+            rootNode.Items.Add(UserDirTree.CreateDirectoryNode(new DirectoryInfo(Util.ContainerDirectory + "/data")));
+            root.Add(rootNode);
+            dataSource.list = root;
+            UserDbDirOutline.DataSource = dataSource;
+            UserDbDirOutline.Delegate = new UserDbTreeDelegate(dataSource);
+
         }
     }
 }

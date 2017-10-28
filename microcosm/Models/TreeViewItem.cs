@@ -7,6 +7,7 @@ namespace microcosm.Models
     {
         public object Tag;
         public string Header;
+        public bool isDir;
         public List<object> Items;
 
         public TreeViewItem()

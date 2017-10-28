@@ -4,6 +4,7 @@ using System.Linq;
 using Foundation;
 using AppKit;
 using microcosm.Config;
+using microcosm.Tables;
 
 namespace microcosm
 {
@@ -42,6 +43,8 @@ namespace microcosm
 
         public override void ViewDidLoad() 
         {
+            base.ViewDidLoad();
+
             config = ((AppDelegate)NSApplication.SharedApplication.Delegate).config;
 
             for (int i = 0; i < 8; i++) {
@@ -114,10 +117,10 @@ namespace microcosm
             for (int i = 0; i < 2; i++) {
                 SideRealRadioGroup.Cells[i].State = NSCellStateValue.Off;
             }
-            if (config.centric == ESideReal.TROPICAL) {
+            if (config.sidereal == Esidereal.TROPICAL) {
                 SideRealRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
-            else if (config.centric == ESideReal.SIDEREAL) {
+            else if (config.sidereal == Esidereal.SIDEREAL) {
                 SideRealRadioGroup.Cells[1].State = NSCellStateValue.On;
             }
             else {
@@ -127,10 +130,10 @@ namespace microcosm
             for (int i = 0; i < 2; i++) {
                 DoubleRadioGroup.Cells[i].State = NSCellStateValue.Off;
             }
-            if (config.centric == EDecimalDisp.DEGREE) {
+            if (config.decimalDisp == EDecimalDisp.DEGREE) {
                 DoubleRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
-            else if (config.centric == EDecimalDisp.DECIMAL) {
+            else if (config.decimalDisp == EDecimalDisp.DECIMAL) {
                 DoubleRadioGroup.Cells[1].State = NSCellStateValue.On;
             }
             else {
@@ -149,6 +152,15 @@ namespace microcosm
             else {
                 DispTypeRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
+
+            SettingDetailPlanet.AllowsColumnSelection = true;
+            SettingDetailPlanetTableDataSource DataSource = new SettingDetailPlanetTableDataSource();
+            DataSource.dataList.Add(new SettingDetailPlanetTableData());
+
+            SettingDetailPlanet.DataSource = DataSource;
+            SettingDetailPlanet.Delegate = new SettingDetailPlanetTableDelegate(DataSource);
+            SettingDetailPlanet.ReloadData();
+
         }
 
         partial void SettingChanged(NSObject sender)
@@ -298,6 +310,13 @@ namespace microcosm
             ConfigSave.SaveXml(config);
             ((AppDelegate)NSApplication.SharedApplication.Delegate).config = config;
             DismissViewController(this);
+        }
+
+        partial void SettingDetailPlanetTableClicked(NSObject sender)
+        {
+            if (SettingDetailPlanet.SelectedColumn > 0) {
+                Console.WriteLine("row");
+            }
         }
 
         //strongly typed view accessor

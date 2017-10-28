@@ -84,6 +84,7 @@
     <Folder Include="system\" />
     <Folder Include="Views\" />
     <Folder Include="Models\" />
+    <Folder Include="Tables\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -138,6 +139,12 @@
     <Compile Include="Models\UserDirTree.cs" />
     <Compile Include="Models\DbItem.cs" />
     <Compile Include="Models\TreeViewItem.cs" />
+    <Compile Include="Tables\SettingDetailPlanetTableDelegate.cs" />
+    <Compile Include="Tables\SettingDetailPlanetTableDataSource.cs" />
+    <Compile Include="Tables\SettingDetailPlanetTableData.cs" />
+    <Compile Include="Common\CommonInstance.cs" />
+    <Compile Include="Models\UserDbTreeDataSource.cs" />
+    <Compile Include="Models\UserDbTreeDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

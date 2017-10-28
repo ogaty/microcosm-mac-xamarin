@@ -88,7 +88,13 @@ namespace microcosm
             }
 
             config = ConfigFromXml.GetConfigFromXml(root + "/system/config.csm");
+            settings = new SettingData[10];
+            for (int i = 0; i < 10; i++) {
+                settings[i] = SettingFromXml.GetSettingFromXml(root + "/system/setting" + i.ToString() + ".csm", i);
+            }
             ((AppDelegate)NSApplication.SharedApplication.Delegate).config = config;
+            CommonInstance.getInstance().config = config;
+            CommonInstance.getInstance().settings = settings;
 
 //            Console.WriteLine(config.defaultPlace);
         }
