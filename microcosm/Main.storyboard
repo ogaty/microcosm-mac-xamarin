@@ -641,7 +641,7 @@
                                                         </subviews>
                                                     </clipView>
                                                     <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="xv9-Uq-253">
-                                                        <rect key="frame" x="1" y="282" width="238" height="16"/>
+                                                        <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="mMj-Oh-Tz5">
@@ -671,10 +671,10 @@
                                 </tabViewItems>
                             </tabView>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="b0c-70-5Ah">
-                                <rect key="frame" x="595" y="61" width="751" height="687"/>
+                                <rect key="frame" x="594" y="61" width="772" height="687"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="af0-fm-ucc">
-                                    <rect key="frame" x="1" y="1" width="749" height="685"/>
+                                    <rect key="frame" x="1" y="1" width="770" height="685"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="fillColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>

@@ -12,6 +12,9 @@ namespace microcosm
 {
     public partial class ViewController : NSViewController
     {
+        NSObject NSWindowDidResizeNotificationObject;
+
+
         public AstroCalc calc;
         public ConfigData config;
         public SettingData[] settings;
@@ -25,36 +28,14 @@ namespace microcosm
         {
             base.ViewDidLoad();
 
-            // Do any additional setup after loading the view.
+            NSWindowDidResizeNotificationObject = NSNotificationCenter.DefaultCenter.AddObserver(new NSString("NSWindowDidResizeNotification"), ResizeObserver, null);
             MainInit();
-            /*
-            Console.WriteLine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
+        }
 
-
-            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-			var directoryname = Path.Combine(documents, "Library/Containers/jp.ogatism.microcosm/Data/Documents/NewDir");
-            Console.WriteLine(directoryname);
-
-            var directoryname2 = Path.Combine(documents, "NewDir");
-            Directory.CreateDirectory(directoryname2);
-
-            string fileName = "semo18.se1";
-            string localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
-
-            Console.WriteLine(localHtmlUrl);
-            this.calc = new AstroCalc(this);
-            calc.PositionCalc(9.0);
-
-            var file = IsolatedStorageFile.GetUserStoreForApplication();
-
-
-            var path = Path.Combine(NSBundle.MainBundle.BundlePath, "Contents", "Resources", "system");
-            System.IO.File.ReadAllText(path + "/config.csm");
-
-            var path2 = Util.ContainerDirectory + "/Documents";
-            Console.WriteLine("dir:" + path2);
-            Directory.CreateDirectory(path2 + "/testDir");
-            */
+        public void ResizeObserver(NSNotification notify)
+        {
+            var r = this.View.Frame;
+            Console.WriteLine("{0}:{1}:{2}", notify.Name, r.Height, r.Width);
         }
 
         /// <summary>
