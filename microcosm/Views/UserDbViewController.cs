@@ -55,11 +55,10 @@ namespace microcosm.Views
 
             UserDbTreeDataSource dataSource = new UserDbTreeDataSource();
             List<TreeViewItem> root = new List<TreeViewItem>();
-            TreeViewItem rootNode = new TreeViewItem();
-            rootNode.Items = new List<object>();
-            rootNode.Items.Add(UserDirTree.CreateDirectoryNode(new DirectoryInfo(Util.ContainerDirectory + "/data")));
+            TreeViewItem rootNode = UserDirTree.CreateDirectoryNode(new DirectoryInfo(Util.root + "/data"));
             root.Add(rootNode);
             dataSource.list = root;
+            UserDbDirOutline.ScrollColumnToVisible(0);
             UserDbDirOutline.DataSource = dataSource;
             UserDbDirOutline.Delegate = new UserDbTreeDelegate(dataSource);
 

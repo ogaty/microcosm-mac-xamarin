@@ -43,7 +43,7 @@ namespace microcosm
         /// </summary>
         private void MainInit() 
         {
-            var root = Util.ContainerDirectory + "/Documents/microcosm";
+            var root = Util.root;
             if (!Directory.Exists(root + "/system"))
             {
                 Directory.CreateDirectory(root + "/system");

@@ -9,5 +9,7 @@ namespace microcosm.Common
         public static extern IntPtr NSHomeDirectory();
 
         public static NSString ContainerDirectory => (NSString)ObjCRuntime.Runtime.GetNSObject(NSHomeDirectory());
+
+        public static string root { get => ContainerDirectory + "/Documents/microcosm"; }
     }
 }

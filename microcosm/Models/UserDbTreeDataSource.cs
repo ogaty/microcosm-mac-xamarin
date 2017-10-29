@@ -8,28 +8,30 @@ namespace microcosm.Models
     {
         public List<TreeViewItem> list = new List<TreeViewItem>();
 
+        public TreeViewItem treeItem;
+
         public UserDbTreeDataSource()
         {
         }
 
         public override nint GetChildrenCount(NSOutlineView outlineView, Foundation.NSObject item)
         {
-            return list.Count;
+            return item == null ? list.Count : ((TreeViewItem)item).Items.Count;
         }
 
         public override bool ItemExpandable(NSOutlineView outlineView, Foundation.NSObject item)
         {
-            /*
-            if (((TreeViewItem)item).isDir) {
-                return false;
-            }
-            */
-            return base.ItemExpandable(outlineView, item);
+            return ((TreeViewItem)item).isDir == true;
         }
 
         public override Foundation.NSObject GetChild(NSOutlineView outlineView, nint childIndex, Foundation.NSObject item)
         {
-            return base.GetChild(outlineView, childIndex, item);
+            if (item == null)
+            {
+                return list[(int)childIndex];
+            } else {
+                return ((TreeViewItem)item).Items[(int)childIndex];
+            }
         }
     }
 }
