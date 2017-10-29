@@ -145,10 +145,46 @@
     <Compile Include="Common\CommonInstance.cs" />
     <Compile Include="Models\UserDbTreeDataSource.cs" />
     <Compile Include="Models\UserDbTreeDelegate.cs" />
+    <Compile Include="Views\SettingDispPlanetView.cs" />
+    <Compile Include="Views\SettingDispPlanetViewController.cs" />
+    <Compile Include="Views\SettingDispPlanetView.designer.cs">
+      <DependentUpon>SettingDispPlanetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDispPlanetViewController.designer.cs">
+      <DependentUpon>SettingDispPlanetViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDispAspectCategoryView.cs" />
+    <Compile Include="Views\SettingDispAspectCategoryViewController.cs" />
+    <Compile Include="Views\SettingDispAspectCategoryView.designer.cs">
+      <DependentUpon>SettingDispAspectCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDispAspectCategoryViewController.designer.cs">
+      <DependentUpon>SettingDispAspectCategoryViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDispAspectPlanetView.cs" />
+    <Compile Include="Views\SettingDispAspectPlanetViewController.cs" />
+    <Compile Include="Views\SettingDispAspectPlanetView.designer.cs">
+      <DependentUpon>SettingDispAspectPlanetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDispAspectPlanetViewController.designer.cs">
+      <DependentUpon>SettingDispAspectPlanetViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingOrbsView.cs" />
+    <Compile Include="Views\SettingOrbsViewController.cs" />
+    <Compile Include="Views\SettingOrbsView.designer.cs">
+      <DependentUpon>SettingOrbsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingOrbsViewController.designer.cs">
+      <DependentUpon>SettingOrbsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\UserDbView.xib" />
+    <InterfaceDefinition Include="Views\SettingDispPlanetView.xib" />
+    <InterfaceDefinition Include="Views\SettingDispAspectCategoryView.xib" />
+    <InterfaceDefinition Include="Views\SettingDispAspectPlanetView.xib" />
+    <InterfaceDefinition Include="Views\SettingOrbsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

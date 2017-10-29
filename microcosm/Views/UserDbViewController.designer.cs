@@ -14,6 +14,9 @@ namespace microcosm.Views
 	{
 		[Outlet]
 		AppKit.NSOutlineView UserDbDirOutline { get; set; }
+
+		[Action ("UserDbDirClick:")]
+		partial void UserDbDirClick (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

@@ -50,7 +50,8 @@ namespace microcosm.Config
         public bool[,] aspectBiQuintile;
 
         // [from, to]
-        //        public bool[,] dispAspect;
+        // アスペクトそのものを表示するか
+        public bool[,] dispAspect;
 
         // オーブ
         // ソフト/ハード、1種2種150、太陽/月/その他の組み合わせ 2*3*3=18通り
