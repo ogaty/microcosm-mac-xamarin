@@ -8,10 +8,15 @@ using microcosm.Tables;
 
 namespace microcosm
 {
+    /// <summary>
+    /// 分離したから実際の名前はConfigViewControllerが正しい、けどまあいいや
+    /// </summary>
     public partial class SettingsViewController : AppKit.NSViewController
     {
-        public ConfigData config;
-        public SettingData[] settings;
+        private ConfigData config;
+        private SettingData[] settings;
+
+        private ViewController rootViewController;
 
         #region Constructors
 
@@ -45,7 +50,9 @@ namespace microcosm
         {
             base.ViewDidLoad();
 
-            config = ((AppDelegate)NSApplication.SharedApplication.Delegate).config;
+            rootViewController = (ViewController)NSApplication.SharedApplication.MainWindow.ContentViewController;
+
+            config = rootViewController.config;
 
             for (int i = 0; i < 8; i++) {
                 HouseRadioGroup.Cells[i].State = NSCellStateValue.Off;
@@ -308,7 +315,7 @@ namespace microcosm
         partial void SubmitClicked(NSObject sender)
         {
             ConfigSave.SaveXml(config);
-            ((AppDelegate)NSApplication.SharedApplication.Delegate).config = config;
+            rootViewController.config = config;
             DismissViewController(this);
         }
 
