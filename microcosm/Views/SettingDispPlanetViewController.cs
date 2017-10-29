@@ -69,8 +69,13 @@ namespace microcosm.Views
                 RingsCombo.SelectItem(planetIndex);
             }
 
-            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] == true) {
-                dispPlanetSun.State = NSCellStateValue.Off;
+        }
+
+        private void ReRender() 
+        {
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] == true)
+            {
+                dispPlanetSun.State = NSCellStateValue.On;
             }
             if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] == true)
             {
@@ -87,6 +92,42 @@ namespace microcosm.Views
             if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] == true)
             {
                 dispPlanetMars.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] == true)
+            {
+                dispPlanetJupiter.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] == true)
+            {
+                dispPlanetSaturn.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] == true)
+            {
+                dispPlanetUranus.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] == true)
+            {
+                dispPlanetNeptune.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] == true)
+            {
+                dispPlanetPluto.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CHIRON] == true)
+            {
+                dispPlanetChiron.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] == true)
+            {
+                dispPlanetDh.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] == true)
+            {
+                dispPlanetEarth.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] == true)
+            {
+                dispPlanetLilith.State = NSCellStateValue.On;
             }
         }
 
