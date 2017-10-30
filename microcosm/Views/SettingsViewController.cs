@@ -4,7 +4,6 @@ using System.Linq;
 using Foundation;
 using AppKit;
 using microcosm.Config;
-using microcosm.Tables;
 
 namespace microcosm
 {
@@ -160,6 +159,7 @@ namespace microcosm
                 DispTypeRadioGroup.Cells[0].State = NSCellStateValue.On;
             }
 
+            /*
             SettingDetailPlanet.AllowsColumnSelection = true;
             SettingDetailPlanetTableDataSource DataSource = new SettingDetailPlanetTableDataSource();
             DataSource.dataList.Add(new SettingDetailPlanetTableData());
@@ -167,6 +167,7 @@ namespace microcosm
             SettingDetailPlanet.DataSource = DataSource;
             SettingDetailPlanet.Delegate = new SettingDetailPlanetTableDelegate(DataSource);
             SettingDetailPlanet.ReloadData();
+            */
 
         }
 

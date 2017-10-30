@@ -15,14 +15,25 @@ namespace microcosm.Views
 		[Outlet]
 		AppKit.NSOutlineView UserDbDirOutline { get; set; }
 
+		[Outlet]
+		AppKit.NSTableView UserTable { get; set; }
+
 		[Action ("UserDbDirClick:")]
 		partial void UserDbDirClick (Foundation.NSObject sender);
+
+		[Action ("UserTableClick:")]
+		partial void UserTableClick (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (UserDbDirOutline != null) {
 				UserDbDirOutline.Dispose ();
 				UserDbDirOutline = null;
+			}
+
+			if (UserTable != null) {
+				UserTable.Dispose ();
+				UserTable = null;
 			}
 		}
 	}

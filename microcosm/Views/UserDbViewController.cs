@@ -10,6 +10,9 @@ using microcosm.Common;
 
 namespace microcosm.Views
 {
+    /// <summary>
+    /// データベースビューコントローラー
+    /// </summary>
     public partial class UserDbViewController : AppKit.NSViewController
     {
         #region Constructors
@@ -61,6 +64,25 @@ namespace microcosm.Views
             UserDbDirOutline.ScrollColumnToVisible(0);
             UserDbDirOutline.DataSource = dataSource;
             UserDbDirOutline.Delegate = new UserDbTreeDelegate(dataSource);
+
+        }
+
+        partial void UserDbDirClick(NSObject sender)
+        {
+            int index = (int)UserDbDirOutline.SelectedRow;
+            TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(index);
+
+            if (item.isDir) {
+                return;
+            }
+
+            UserTable.AllowsColumnSelection = true;
+            UserTableDataSource DataSource = new UserTableDataSource();
+            DataSource.dataList.Add(new UserTableData() {name = "sample", date = new DateTime()});
+
+            UserTable.DataSource = DataSource;
+            UserTable.Delegate = new UserTableDelegate(DataSource);
+            UserTable.ReloadData();
 
         }
     }

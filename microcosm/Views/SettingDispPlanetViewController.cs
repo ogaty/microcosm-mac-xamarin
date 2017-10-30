@@ -164,6 +164,19 @@ namespace microcosm.Views
             }
         }
 
+        partial void ringsComboChanged(NSObject sender)
+        {
+            ReRender();
+        }
+
+        partial void settingsComboChanged(NSObject sender)
+        {
+            ReRender();
+        }
+
+
+
+
         //strongly typed view accessor
         public new SettingDispPlanetView View
         {

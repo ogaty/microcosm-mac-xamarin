@@ -101,12 +101,20 @@ namespace microcosm.Views
 
 		[Action ("ringsComboChanged:")]
 		partial void ringsComboChanged (Foundation.NSObject sender);
+
+		[Action ("settingsComboChanged:")]
+		partial void settingsComboChanged (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (dispPlanetAsc != null) {
 				dispPlanetAsc.Dispose ();
 				dispPlanetAsc = null;
+			}
+
+			if (dispPlanetCeres != null) {
+				dispPlanetCeres.Dispose ();
+				dispPlanetCeres = null;
 			}
 
 			if (dispPlanetChiron != null) {
@@ -124,6 +132,21 @@ namespace microcosm.Views
 				dispPlanetEarth = null;
 			}
 
+			if (dispPlanetEris != null) {
+				dispPlanetEris.Dispose ();
+				dispPlanetEris = null;
+			}
+
+			if (dispPlanetHaumea != null) {
+				dispPlanetHaumea.Dispose ();
+				dispPlanetHaumea = null;
+			}
+
+			if (dispPlanetJuno != null) {
+				dispPlanetJuno.Dispose ();
+				dispPlanetJuno = null;
+			}
+
 			if (dispPlanetJupiter != null) {
 				dispPlanetJupiter.Dispose ();
 				dispPlanetJupiter = null;
@@ -132,6 +155,11 @@ namespace microcosm.Views
 			if (dispPlanetLilith != null) {
 				dispPlanetLilith.Dispose ();
 				dispPlanetLilith = null;
+			}
+
+			if (dispPlanetMakemake != null) {
+				dispPlanetMakemake.Dispose ();
+				dispPlanetMakemake = null;
 			}
 
 			if (dispPlanetMars != null) {
@@ -159,6 +187,11 @@ namespace microcosm.Views
 				dispPlanetNeptune = null;
 			}
 
+			if (dispPlanetParas != null) {
+				dispPlanetParas.Dispose ();
+				dispPlanetParas = null;
+			}
+
 			if (dispPlanetPluto != null) {
 				dispPlanetPluto.Dispose ();
 				dispPlanetPluto = null;
@@ -172,6 +205,11 @@ namespace microcosm.Views
 			if (dispPlanetSaturn != null) {
 				dispPlanetSaturn.Dispose ();
 				dispPlanetSaturn = null;
+			}
+
+			if (dispPlanetSedna != null) {
+				dispPlanetSedna.Dispose ();
+				dispPlanetSedna = null;
 			}
 
 			if (dispPlanetSun != null) {
@@ -189,54 +227,14 @@ namespace microcosm.Views
 				dispPlanetVenus = null;
 			}
 
-			if (dispPlanetVt != null) {
-				dispPlanetVt.Dispose ();
-				dispPlanetVt = null;
-			}
-
-			if (dispPlanetCeres != null) {
-				dispPlanetCeres.Dispose ();
-				dispPlanetCeres = null;
-			}
-
-			if (dispPlanetParas != null) {
-				dispPlanetParas.Dispose ();
-				dispPlanetParas = null;
-			}
-
-			if (dispPlanetJuno != null) {
-				dispPlanetJuno.Dispose ();
-				dispPlanetJuno = null;
-			}
-
 			if (dispPlanetVesta != null) {
 				dispPlanetVesta.Dispose ();
 				dispPlanetVesta = null;
 			}
 
-			if (dispPlanetEris != null) {
-				dispPlanetEris.Dispose ();
-				dispPlanetEris = null;
-			}
-
-			if (dispPlanetSedna != null) {
-				dispPlanetSedna.Dispose ();
-				dispPlanetSedna = null;
-			}
-
-			if (dispPlanetHaumea != null) {
-				dispPlanetHaumea.Dispose ();
-				dispPlanetHaumea = null;
-			}
-
-			if (dispPlanetMakemake != null) {
-				dispPlanetMakemake.Dispose ();
-				dispPlanetMakemake = null;
-			}
-
-			if (SubmitClicked != null) {
-				SubmitClicked.Dispose ();
-				SubmitClicked = null;
+			if (dispPlanetVt != null) {
+				dispPlanetVt.Dispose ();
+				dispPlanetVt = null;
 			}
 
 			if (RingsCombo != null) {
@@ -247,6 +245,11 @@ namespace microcosm.Views
 			if (SettingsCombo != null) {
 				SettingsCombo.Dispose ();
 				SettingsCombo = null;
+			}
+
+			if (SubmitClicked != null) {
+				SubmitClicked.Dispose ();
+				SubmitClicked = null;
 			}
 		}
 	}

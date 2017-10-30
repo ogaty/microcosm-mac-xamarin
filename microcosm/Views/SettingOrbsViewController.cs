@@ -11,6 +11,8 @@ namespace microcosm.Views
     {
         private ConfigData config;
         private SettingData[] settings;
+        private int settingIndex;
+        private int planetIndex;
 
         private ViewController rootViewController;
 
@@ -50,7 +52,31 @@ namespace microcosm.Views
             rootViewController = (ViewController)NSApplication.SharedApplication.MainWindow.ContentViewController;
 
             config = rootViewController.config;
+            settings = rootViewController.settings;
+            settingIndex = rootViewController.settingIndex;
+            planetIndex = (int)OrbsCombo.SelectedIndex;
 
+            for (int i = 0; i < 10; i++)
+            {
+                NSString obj = new NSString(settings[i].dispName);
+                SettingsCombo.Add(obj);
+            }
+
+            SettingsCombo.SelectItem(settingIndex);
+
+            if (planetIndex == -1)
+            {
+                planetIndex = 0;
+                OrbsCombo.SelectItem(planetIndex);
+            }
+
+            ReRender();
+
+        }
+
+        private void ReRender()
+        {
+            
         }
 
         //strongly typed view accessor
