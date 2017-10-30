@@ -13,6 +13,9 @@ namespace microcosm
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSScrollView CuspList { get; set; }
+
+		[Outlet]
 		AppKit.NSButton testButton { get; set; }
 
 		[Outlet]
@@ -26,6 +29,11 @@ namespace microcosm
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (testButton != null) {
+				testButton.Dispose ();
+				testButton = null;
+			}
+
 			if (userDbDateColumn != null) {
 				userDbDateColumn.Dispose ();
 				userDbDateColumn = null;
@@ -41,9 +49,9 @@ namespace microcosm
 				userDbTable = null;
 			}
 
-			if (testButton != null) {
-				testButton.Dispose ();
-				testButton = null;
+			if (CuspList != null) {
+				CuspList.Dispose ();
+				CuspList = null;
 			}
 		}
 	}

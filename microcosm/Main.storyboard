@@ -35,6 +35,9 @@
                                                 <items>
                                                     <menuItem title="表示名" id="X2E-Xk-aQB">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <segue destination="ZHE-Zx-ejl" kind="modal" id="9Bk-oJ-ocM"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="天体表示" id="ttE-WH-gGj">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
@@ -711,6 +714,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="CuspList" destination="AJY-YV-Ehw" id="eGK-Fz-dvF"/>
                         <outlet property="testButton" destination="ja2-K0-oEy" id="Ya1-gB-uhK"/>
                         <outlet property="userDbDateColumn" destination="8dP-rl-BUn" id="V0H-j3-yx3"/>
                         <outlet property="userDbNameColumn" destination="2VJ-OS-et3" id="BjL-13-TA0"/>
@@ -865,42 +869,6 @@
                                 </view>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
-                            <box fixedFrame="YES" title="中心点" translatesAutoresizingMaskIntoConstraints="NO" id="5eL-rK-hda">
-                                <rect key="frame" x="293" y="65" width="177" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="nqL-2e-f6a">
-                                    <rect key="frame" x="2" y="2" width="173" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-Xt-zvH">
-                                            <rect key="frame" x="20" y="17" width="120" height="36"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="cellSize" width="120" height="18"/>
-                                            <buttonCell key="prototype" type="radio" title="Radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="X1i-sZ-Dgh">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <cells>
-                                                <column>
-                                                    <buttonCell type="radio" title="GeoCentric" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="TnW-hF-rYc">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="HelioCentric" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9X1-qY-aWU">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </column>
-                                            </cells>
-                                            <connections>
-                                                <action selector="CentricChanged:" target="hfw-Lx-oTS" id="qez-aB-MQg"/>
-                                            </connections>
-                                        </matrix>
-                                    </subviews>
-                                </view>
-                                <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
-                            </box>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DlM-ZO-Mjc">
                                 <rect key="frame" x="18" y="125" width="155" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -931,7 +899,7 @@
                                 </textFieldCell>
                             </textField>
                             <box fixedFrame="YES" title="画面表示" translatesAutoresizingMaskIntoConstraints="NO" id="Zxv-0u-0p2">
-                                <rect key="frame" x="293" y="270" width="177" height="86"/>
+                                <rect key="frame" x="293" y="63" width="177" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="z0B-eO-2dg">
                                     <rect key="frame" x="2" y="2" width="173" height="72"/>
@@ -1013,8 +981,54 @@
                                 </view>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
+                            <box fixedFrame="YES" title="中心点" translatesAutoresizingMaskIntoConstraints="NO" id="5eL-rK-hda">
+                                <rect key="frame" x="293" y="275" width="177" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="nqL-2e-f6a">
+                                    <rect key="frame" x="2" y="2" width="173" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-Xt-zvH">
+                                            <rect key="frame" x="20" y="17" width="120" height="36"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="120" height="18"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="X1i-sZ-Dgh">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="GeoCentric" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="TnW-hF-rYc">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="HelioCentric" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9X1-qY-aWU">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                            <connections>
+                                                <action selector="CentricChanged:" target="hfw-Lx-oTS" id="qez-aB-MQg"/>
+                                            </connections>
+                                        </matrix>
+                                    </subviews>
+                                </view>
+                                <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
+                            </box>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="CentricRadioGroup" destination="ihx-Xt-zvH" id="hQY-ZN-0i9"/>
+                        <outlet property="DispCheckBox" destination="DlM-ZO-Mjc" id="icY-2z-NQ6"/>
+                        <outlet property="DispCheckText" destination="Ysq-Fb-1on" id="MXV-IR-12x"/>
+                        <outlet property="DispTypeRadioGroup" destination="rTu-1z-T2m" id="aHf-9b-gXE"/>
+                        <outlet property="DoubleRadioGroup" destination="wnJ-Qo-50k" id="xRS-kk-mbp"/>
+                        <outlet property="HouseRadioGroup" destination="SCQ-Ta-OHf" id="iEm-WN-BRH"/>
+                        <outlet property="ProgressionRadioGroup" destination="YQq-CY-Lfg" id="vh1-Ie-fJA"/>
+                        <outlet property="SideRealRadioGroup" destination="DxT-89-9mR" id="pTC-i0-vRE"/>
+                    </connections>
                 </viewController>
                 <customObject id="yoE-xl-mYd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1023,7 +1037,7 @@
         <!--表示名設定-->
         <scene sceneID="Q5j-u1-9sS">
             <objects>
-                <viewController title="表示名設定" id="ZHE-Zx-ejl" sceneMemberID="viewController">
+                <viewController title="表示名設定" id="ZHE-Zx-ejl" customClass="DispNameViewController" sceneMemberID="viewController">
                     <view key="view" id="sWA-hd-hwE">
                         <rect key="frame" x="0.0" y="0.0" width="214" height="395"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1457,6 +1471,9 @@
                                 <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQw-Z7-S5t">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <connections>
+                                        <action selector="SubmitClicked:" target="vgE-0B-NN2" id="FD5-9b-MAh"/>
+                                    </connections>
                                 </buttonCell>
                             </button>
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yE-XY-a2q">

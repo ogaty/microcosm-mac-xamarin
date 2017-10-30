@@ -13,7 +13,6 @@ namespace microcosm
     public partial class SettingsViewController : AppKit.NSViewController
     {
         private ConfigData config;
-        private SettingData[] settings;
 
         private ViewController rootViewController;
 

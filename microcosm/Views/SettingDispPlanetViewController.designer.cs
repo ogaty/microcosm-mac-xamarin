@@ -96,14 +96,14 @@ namespace microcosm.Views
 		[Outlet]
 		AppKit.NSComboBox SettingsCombo { get; set; }
 
-		[Outlet]
-		AppKit.NSButton SubmitClicked { get; set; }
-
 		[Action ("ringsComboChanged:")]
 		partial void ringsComboChanged (Foundation.NSObject sender);
 
 		[Action ("settingsComboChanged:")]
 		partial void settingsComboChanged (Foundation.NSObject sender);
+
+		[Action ("SubmitClicked:")]
+		partial void SubmitClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -245,11 +245,6 @@ namespace microcosm.Views
 			if (SettingsCombo != null) {
 				SettingsCombo.Dispose ();
 				SettingsCombo = null;
-			}
-
-			if (SubmitClicked != null) {
-				SubmitClicked.Dispose ();
-				SubmitClicked = null;
 			}
 		}
 	}

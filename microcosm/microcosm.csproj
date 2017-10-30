@@ -176,6 +176,15 @@
     <Compile Include="Models\UserTableDelegate.cs" />
     <Compile Include="Models\UserTableData.cs" />
     <Compile Include="Models\UserTableDataSource.cs" />
+    <Compile Include="Config\SettingSave.cs" />
+    <Compile Include="Views\DispNameView.cs" />
+    <Compile Include="Views\DispNameViewController.cs" />
+    <Compile Include="Views\DispNameView.designer.cs">
+      <DependentUpon>DispNameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DispNameViewController.designer.cs">
+      <DependentUpon>DispNameViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -184,6 +193,7 @@
     <InterfaceDefinition Include="Views\SettingDispAspectCategoryView.xib" />
     <InterfaceDefinition Include="Views\SettingDispAspectPlanetView.xib" />
     <InterfaceDefinition Include="Views\SettingOrbsView.xib" />
+    <InterfaceDefinition Include="Views\DispNameView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

@@ -174,7 +174,10 @@ namespace microcosm.Views
             ReRender();
         }
 
-
+        partial void SubmitClicked(NSObject sender)
+        {
+            SettingSave.SaveXml(settings);
+        }
 
 
         //strongly typed view accessor
