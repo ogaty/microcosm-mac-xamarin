@@ -65,11 +65,26 @@ namespace microcosm.Views
             UserDbDirOutline.DataSource = dataSource;
             UserDbDirOutline.Delegate = new UserDbTreeDelegate(dataSource);
 
+            NSMenu menu = new NSMenu();
+            menu.AutoEnablesItems = true;
+            EventHandler hander = new EventHandler((object sender, EventArgs e) =>
+            {
+                Console.WriteLine("sample");
+            });
+            NSMenuItem menuItem = new NSMenuItem("sample", hander);
+            menuItem.Enabled = true;
+
+            menu.AddItem(menuItem);
+            UserDbDirOutline.Menu = menu;
         }
 
         partial void UserDbDirClick(NSObject sender)
         {
             int index = (int)UserDbDirOutline.SelectedRow;
+            if (index == -1) {
+                // 右クリック
+                return;
+            }
             TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(index);
 
             if (item.isDir) {
