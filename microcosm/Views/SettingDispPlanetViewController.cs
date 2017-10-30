@@ -69,6 +69,7 @@ namespace microcosm.Views
                 RingsCombo.SelectItem(planetIndex);
             }
 
+            ReRender();
         }
 
         private void ReRender() 
@@ -128,6 +129,38 @@ namespace microcosm.Views
             if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] == true)
             {
                 dispPlanetLilith.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CERES] == true)
+            {
+                dispPlanetCeres.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PARAS] == true)
+            {
+                dispPlanetParas.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUNO] == true)
+            {
+                dispPlanetJuno.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VESTA] == true)
+            {
+                dispPlanetVesta.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ERIS] == true)
+            {
+                dispPlanetEris.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SEDNA] == true)
+            {
+                dispPlanetSedna.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_HAUMEA] == true)
+            {
+                dispPlanetHaumea.State = NSCellStateValue.On;
+            }
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MAKEMAKE] == true)
+            {
+                dispPlanetMakemake.State = NSCellStateValue.On;
             }
         }
 
