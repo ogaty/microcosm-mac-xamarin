@@ -5,6 +5,7 @@ using Foundation;
 using AppKit;
 using microcosm.Config;
 using microcosm.Common;
+using microcosm.Models;
 
 namespace microcosm.Views
 {

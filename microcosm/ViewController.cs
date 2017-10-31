@@ -6,6 +6,7 @@ using Foundation;
 using microcosm.Calc;
 using microcosm.Common;
 using microcosm.Config;
+using microcosm.Models;
 using SwissEphNet;
 
 namespace microcosm
@@ -14,11 +15,17 @@ namespace microcosm
     {
         NSObject NSWindowDidResizeNotificationObject;
 
-
         public AstroCalc calc;
         public ConfigData config;
         public SettingData[] settings;
         public int settingIndex = 0;
+
+        public UserData udata1 = new UserData();
+        public UserData udata2 = new UserData();
+        public UserData edata1 = new UserData();
+        public UserData edata2 = new UserData();
+
+        public Calcuration[] ringsData = new Calcuration[7];
 
 
         public ViewController(IntPtr handle) : base(handle)
@@ -74,9 +81,14 @@ namespace microcosm
             for (int i = 0; i < 10; i++) {
                 settings[i] = SettingFromXml.GetSettingFromXml(root + "/system/setting" + i.ToString() + ".csm", i);
             }
-            ((AppDelegate)NSApplication.SharedApplication.Delegate).config = config;
+            /*
             CommonInstance.getInstance().config = config;
             CommonInstance.getInstance().settings = settings;
+            */
+
+            calc = new AstroCalc();
+            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] = 
+                calc.ReCalc(config, settings[0], new UserData());
 
 //            Console.WriteLine(config.defaultPlace);
         }

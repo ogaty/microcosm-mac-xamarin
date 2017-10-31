@@ -115,7 +115,6 @@
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="Config\SettingXml2.cs" />
-    <Compile Include="Common\AspectInfo.cs" />
     <Compile Include="Common\Explanation.cs" />
     <Compile Include="Config\ConfigSave.cs" />
     <Compile Include="Views\SettingsView.cs" />
@@ -185,6 +184,9 @@
     <Compile Include="Views\DispNameViewController.designer.cs">
       <DependentUpon>DispNameViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspectInfo.cs" />
+    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\Calcuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace microcosm.Common
+namespace microcosm.Models
 {
     // アスペクト情報管理クラス
     // ポジションリストにぶら下がる
