@@ -187,6 +187,14 @@
     <Compile Include="Models\AspectInfo.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Models\Calcuration.cs" />
+    <Compile Include="Views\UserAddView.cs" />
+    <Compile Include="Views\UserAddViewController.cs" />
+    <Compile Include="Views\UserAddView.designer.cs">
+      <DependentUpon>UserAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserAddViewController.designer.cs">
+      <DependentUpon>UserAddViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -196,6 +204,7 @@
     <InterfaceDefinition Include="Views\SettingDispAspectPlanetView.xib" />
     <InterfaceDefinition Include="Views\SettingOrbsView.xib" />
     <InterfaceDefinition Include="Views\DispNameView.xib" />
+    <InterfaceDefinition Include="Views\UserAddView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

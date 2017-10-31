@@ -114,6 +114,46 @@ namespace microcosm.Config
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MARS];
             ret.dispPlanetMars = planets;
 
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_JUPITER];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_JUPITER];
+            ret.dispPlanetJupiter = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_SATURN];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_SATURN];
+            ret.dispPlanetSaturn = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_URANUS];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_URANUS];
+            ret.dispPlanetUranus = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_NEPTUNE];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_NEPTUNE];
+            ret.dispPlanetNeptune = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_PLUTO];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PLUTO];
+            ret.dispPlanetPluto = planets;
+
             return ret;
         }
 

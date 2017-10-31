@@ -1756,7 +1756,7 @@
             <objects>
                 <viewController title="データベース" id="DQR-Vb-Bre" customClass="UserDbViewController" sceneMemberID="viewController">
                     <view key="view" id="hYI-H8-f0I">
-                        <rect key="frame" x="0.0" y="0.0" width="503" height="449"/>
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="478"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-Uy-zAB">
@@ -1972,44 +1972,77 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-kz-mRO">
-                                <rect key="frame" x="41" y="61" width="79" height="28"/>
+                                <rect key="frame" x="40" y="60" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="meK-IS-nN2">
+                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="meK-IS-nN2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-t9-5MO">
-                                <rect key="frame" x="153" y="60" width="79" height="28"/>
+                                <rect key="frame" x="152" y="59" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0hv-JU-8BR">
+                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0hv-JU-8BR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U03-fM-7NB">
-                                <rect key="frame" x="286" y="60" width="79" height="28"/>
+                                <rect key="frame" x="285" y="59" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fQ8-9v-D8e">
+                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fQ8-9v-D8e">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-aE-CKo">
-                                <rect key="frame" x="403" y="60" width="79" height="28"/>
+                                <rect key="frame" x="402" y="59" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3bY-jL-9eN">
+                                <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3bY-jL-9eN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Qe-qz3">
-                                <rect key="frame" x="413" y="14" width="79" height="28"/>
+                                <rect key="frame" x="412" y="13" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="終了" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gpg-Bb-AfN">
+                                <buttonCell key="cell" type="push" title="終了" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gpg-Bb-AfN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-KW-qgT">
+                                <rect key="frame" x="14" y="440" width="113" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ユーザー追加" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="68I-0Z-tac">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="N3o-NH-Kso" kind="modal" id="do9-Cy-UmB"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-cJ-DGO">
+                                <rect key="frame" x="133" y="440" width="113" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ユーザー編集" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M46-dX-LC8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="8LY-qS-gtd" kind="modal" id="yJG-mX-CGU"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jO-wB-FYy">
+                                <rect key="frame" x="256" y="440" width="101" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="インポート" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yjv-vn-FwK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="JYl-ii-ZeI" kind="modal" id="zNd-QF-QzP"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -2020,7 +2053,72 @@
                 </viewController>
                 <customObject id="Wax-RI-9ns" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411.5" y="277.5"/>
+            <point key="canvasLocation" x="1413.5" y="263"/>
+        </scene>
+        <!--ユーザー追加-->
+        <scene sceneID="ptd-fc-rn3">
+            <objects>
+                <viewController title="ユーザー追加" id="N3o-NH-Kso" sceneMemberID="viewController">
+                    <view key="view" id="pJ9-JB-akw">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="bYE-8C-0ny" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="1"/>
+        </scene>
+        <!--インポート-->
+        <scene sceneID="h3S-mj-RxD">
+            <objects>
+                <viewController title="インポート" id="JYl-ii-ZeI" sceneMemberID="viewController">
+                    <view key="view" id="M7I-6x-ge4">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="b0h-HO-m1Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="389"/>
+        </scene>
+        <!--緯度経度検索-->
+        <scene sceneID="gLh-po-P89">
+            <objects>
+                <viewController title="緯度経度検索" id="cw5-Au-FcV" sceneMemberID="viewController">
+                    <view key="view" id="6rC-mX-BqX">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="RKl-k5-Taa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2520" y="-10"/>
+        </scene>
+        <!--緯度経度検索-->
+        <scene sceneID="8So-UV-fn4">
+            <objects>
+                <viewController title="緯度経度検索" id="JZP-cZ-7K0" sceneMemberID="viewController">
+                    <view key="view" id="UO0-64-fUr">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="tCH-GE-OVG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2776" y="349"/>
+        </scene>
+        <!--ユーザー編集-->
+        <scene sceneID="sju-dB-MOt">
+            <objects>
+                <viewController title="ユーザー編集" id="8LY-qS-gtd" sceneMemberID="viewController">
+                    <view key="view" id="fRf-OR-8JF">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="yrI-Fr-3an" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="174"/>
         </scene>
         <!--アスペクト設定(天体)-->
         <scene sceneID="y40-AR-INW">
