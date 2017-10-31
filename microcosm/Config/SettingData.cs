@@ -683,6 +683,7 @@ namespace microcosm.Config
             Dictionary<OrbKind, double> o11 = new Dictionary<OrbKind, double>
             {
                 { OrbKind.SUN_SOFT_1ST, xmlData.orb_sun_soft_1st_0 },
+                { OrbKind.SUN_HARD_1ST, xmlData.orb_sun_hard_1st_0 },
                 { OrbKind.SUN_SOFT_2ND, xmlData.orb_sun_soft_2nd_0},
                 { OrbKind.SUN_HARD_2ND, xmlData.orb_sun_hard_2nd_0},
                 { OrbKind.SUN_SOFT_150, xmlData.orb_sun_soft_150_0},
@@ -702,7 +703,7 @@ namespace microcosm.Config
             };
 
             orbs.Add(o11);
-            // todo
+            // 複数リングでオーブを変えるなんて基本やらないでしょ
         }
 
         #endregion
@@ -1019,7 +1020,7 @@ namespace microcosm.Config
             bool[] ret = new bool[strings.Length];
             for (int i = 0; i < strings.Length; i++)
             {
-                ret[i] = strings[i] == "true" ? true : false;
+                ret[i] = strings[i].ToLower() == "true" ? true : false;
             }
             return ret;
         }
