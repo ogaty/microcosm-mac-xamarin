@@ -177,6 +177,8 @@ namespace microcosm.Views
         partial void SubmitClicked(NSObject sender)
         {
             SettingSave.SaveXml(settings);
+
+            DismissViewController(this);
         }
 
 

@@ -1031,7 +1031,6 @@ namespace microcosm.Config
         /// </summary>
         public void SetDispPlanet()
         {
-            Dictionary<int, bool> dp = new Dictionary<int, bool>();
             bool[] sun = ConvertBool(xmlData.dispPlanetSun.Split(','));
             bool[] moon = ConvertBool(xmlData.dispPlanetMoon.Split(','));
             bool[] mercury = ConvertBool(xmlData.dispPlanetMercury.Split(','));
@@ -1062,7 +1061,7 @@ namespace microcosm.Config
 
             for (int i = 0; i < 7; i++)
             {
-                // todo dp初期化してないからバグる
+                Dictionary<int, bool> dp = new Dictionary<int, bool>();
                 dp.Add(CommonData.ZODIAC_NUMBER_SUN, sun[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_MOON, moon[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_MERCURY, mercury[i]);
@@ -1203,6 +1202,12 @@ namespace microcosm.Config
 
         private Dictionary<AspectKind, bool> GetDispAspectCategoryDictionary(int n, int m)
         {
+            bool[] conjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
+            bool[] opposition = ConvertBool(xmlData.aspectOpposition.Split(','));
+            bool[] trine = ConvertBool(xmlData.aspectTrine.Split(','));
+            bool[] square = ConvertBool(xmlData.aspectSquare.Split(','));
+            bool[] sextile = ConvertBool(xmlData.aspectSextile.Split(','));
+
             Dictionary<AspectKind, bool> dac = new Dictionary<AspectKind, bool>();
             dac.Add(AspectKind.CONJUNCTION, aspectConjunction[n, m]);
             dac.Add(AspectKind.OPPOSITION, aspectOpposition[n, m]);

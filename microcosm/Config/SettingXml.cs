@@ -173,6 +173,41 @@ namespace microcosm.Config
         public string aspectPof;
 
 
+        [XmlElement("dispAspect")]
+        public bool[] dispAspect;
+
+        #region aspect category
+        [XmlElement("aspectConjunction")]
+        public string aspectConjunction;
+        [XmlElement("aspectOpposition")]
+        public string aspectOpposition;
+        [XmlElement("aspectTrine")]
+        public string aspectTrine;
+        [XmlElement("aspectSquare")]
+        public string aspectSquare;
+        [XmlElement("aspectSextile")]
+        public string aspectSextile;
+        [XmlElement("aspectInconjunct")]
+        public string aspectInconjunct;
+        [XmlElement("aspectSesquiquadrate")]
+        public string aspectSesquiquadrate;
+        [XmlElement("aspectSemiSquare")]
+        public string aspectSemiSquare;
+        [XmlElement("aspectSemiSextile")]
+        public string aspectSemiSextile;
+        [XmlElement("aspectSemiQuintile")]
+        public string aspectSemiQuintile;
+        [XmlElement("aspectNovile")]
+        public string aspectNovile;
+        [XmlElement("aspectSeptile")]
+        public string aspectSeptile;
+        [XmlElement("aspectQintile")]
+        public string aspectQintile;
+        [XmlElement("aspectBiQintile")]
+        public string aspectBiQintile;
+        #endregion
+
+
         // 以下旧バージョン
 
         #region orb 1st
@@ -630,9 +665,6 @@ namespace microcosm.Config
         [XmlElement("dispPlanetLilith23")]
         public bool dispPlanetLilith23;
         #endregion
-
-        [XmlElement("dispAspect")]
-        public bool[] dispAspect;
 
         #region aspect Planet
         [XmlElement("aspectSun11")]
