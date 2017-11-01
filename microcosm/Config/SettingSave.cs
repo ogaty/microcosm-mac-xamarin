@@ -154,6 +154,46 @@ namespace microcosm.Config
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PLUTO];
             ret.dispPlanetPluto = planets;
 
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_ASC];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_ASC];
+            ret.dispPlanetAsc = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_MC];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MC];
+            ret.dispPlanetMc = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_CHIRON];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_CHIRON];
+            ret.dispPlanetChiron = planets;
+
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_EARTH];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_EARTH];
+            ret.dispPlanetEarth = planets;
+ 
+            for (int i = 0; i < 6; i++)
+            {
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+                planets += ",";
+            }
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+            ret.dispPlanetDh = planets;
+ 
             return ret;
         }
 
