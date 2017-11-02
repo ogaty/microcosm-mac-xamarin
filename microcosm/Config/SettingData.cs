@@ -1207,6 +1207,11 @@ namespace microcosm.Config
             bool[] trine = ConvertBool(xmlData.aspectTrine.Split(','));
             bool[] square = ConvertBool(xmlData.aspectSquare.Split(','));
             bool[] sextile = ConvertBool(xmlData.aspectSextile.Split(','));
+            bool[] inconjunct = ConvertBool(xmlData.aspectInconjunct.Split(','));
+            bool[] sesquiquadrate = ConvertBool(xmlData.aspectSesquiquadrate.Split(','));
+            bool[] semisquare = ConvertBool(xmlData.aspectSemisquare.Split(','));
+            bool[] semisextile = ConvertBool(xmlData.aspectSemisextile.Split(','));
+            bool[] semiquintile = ConvertBool(xmlData.aspectSemiquintile.Split(','));
 
             Dictionary<AspectKind, bool> dac = new Dictionary<AspectKind, bool>();
             dac.Add(AspectKind.CONJUNCTION, aspectConjunction[n, m]);
