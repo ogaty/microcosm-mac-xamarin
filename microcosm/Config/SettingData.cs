@@ -1202,6 +1202,8 @@ namespace microcosm.Config
 
         private Dictionary<AspectKind, bool> GetDispAspectCategoryDictionary(int n, int m)
         {
+            // 11 22 33 12 13 23 44 55 66 77 14 15 16 17 24 25 26 27 34 35 36 37 45 46 47 56 57 67
+            // Enumで見よう
             bool[] conjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
             bool[] opposition = ConvertBool(xmlData.aspectOpposition.Split(','));
             bool[] trine = ConvertBool(xmlData.aspectTrine.Split(','));
@@ -1212,6 +1214,10 @@ namespace microcosm.Config
             bool[] semisquare = ConvertBool(xmlData.aspectSemisquare.Split(','));
             bool[] semisextile = ConvertBool(xmlData.aspectSemisextile.Split(','));
             bool[] semiquintile = ConvertBool(xmlData.aspectSemiquintile.Split(','));
+            bool[] novile = ConvertBool(xmlData.aspectNovile.Split(','));
+            bool[] septile = ConvertBool(xmlData.aspectSeptile.Split(','));
+            bool[] quintile = ConvertBool(xmlData.aspectQuintile.Split(','));
+            bool[] biquintile = ConvertBool(xmlData.aspectBiQuintile.Split(','));
 
             Dictionary<AspectKind, bool> dac = new Dictionary<AspectKind, bool>();
             dac.Add(AspectKind.CONJUNCTION, aspectConjunction[n, m]);
