@@ -161,6 +161,7 @@ namespace microcosm.Config
         }
 
         /// <summary>
+        /// serializeしたxmlをsettingに落とし込む
         /// wpfソースではなぜかMainWindow.csでやっていたやつ
         /// </summary>
         private void InitSet()
@@ -1200,10 +1201,48 @@ namespace microcosm.Config
             }
         }
 
+        /// <summary>
+        /// 新バージョン用aspectCategory設定
+        /// </summary>
+        /// <returns>The disp aspect category dictionary.</returns>
+        /// <param name="n">From</param>
+        /// <param name="m">To</param>
         private Dictionary<AspectKind, bool> GetDispAspectCategoryDictionary(int n, int m)
         {
             // 11 22 33 12 13 23 44 55 66 77 14 15 16 17 24 25 26 27 34 35 36 37 45 46 47 56 57 67
             // Enumで見よう
+            if (xmlData.aspectConjunction == null) {
+                xmlData.aspectConjunction = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectOpposition == null)
+            {
+                xmlData.aspectOpposition = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectTrine == null)
+            {
+                xmlData.aspectTrine = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectSquare == null)
+            {
+                xmlData.aspectSquare = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectSextile == null)
+            {
+                xmlData.aspectSextile = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectInconjunct == null)
+            {
+                xmlData.aspectInconjunct = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectSesquiquadrate == null)
+            {
+                xmlData.aspectSesquiquadrate = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectSemiSquare == null)
+            {
+                xmlData.aspectSemiSquare = GetDefaultAspectCategory();
+            }
+
             bool[] conjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
             bool[] opposition = ConvertBool(xmlData.aspectOpposition.Split(','));
             bool[] trine = ConvertBool(xmlData.aspectTrine.Split(','));
@@ -1211,13 +1250,13 @@ namespace microcosm.Config
             bool[] sextile = ConvertBool(xmlData.aspectSextile.Split(','));
             bool[] inconjunct = ConvertBool(xmlData.aspectInconjunct.Split(','));
             bool[] sesquiquadrate = ConvertBool(xmlData.aspectSesquiquadrate.Split(','));
-            bool[] semisquare = ConvertBool(xmlData.aspectSemisquare.Split(','));
-            bool[] semisextile = ConvertBool(xmlData.aspectSemisextile.Split(','));
-            bool[] semiquintile = ConvertBool(xmlData.aspectSemiquintile.Split(','));
+            bool[] semisquare = ConvertBool(xmlData.aspectSemiSquare.Split(','));
+            bool[] semisextile = ConvertBool(xmlData.aspectSemiSextile.Split(','));
+            bool[] semiquintile = ConvertBool(xmlData.aspectSemiQuintile.Split(','));
             bool[] novile = ConvertBool(xmlData.aspectNovile.Split(','));
             bool[] septile = ConvertBool(xmlData.aspectSeptile.Split(','));
-            bool[] quintile = ConvertBool(xmlData.aspectQuintile.Split(','));
-            bool[] biquintile = ConvertBool(xmlData.aspectBiQuintile.Split(','));
+            bool[] quintile = ConvertBool(xmlData.aspectQintile.Split(','));
+            bool[] biquintile = ConvertBool(xmlData.aspectBiQintile.Split(','));
 
             Dictionary<AspectKind, bool> dac = new Dictionary<AspectKind, bool>();
             dac.Add(AspectKind.CONJUNCTION, aspectConjunction[n, m]);
@@ -1236,6 +1275,21 @@ namespace microcosm.Config
             dac.Add(AspectKind.BIQUINTILE, aspectBiQuintile[n, m]);
 
             return dac;
+        }
+
+        /// <summary>
+        /// aspectCategoryデフォルト設定
+        /// </summary>
+        /// <returns>The default aspect category.</returns>
+        private string GetDefaultAspectCategory() {
+            return "true,true,true,true,true,true," +
+                "false,false,false,false," + // 44 55 66 77
+                "false,false,false,false," + // 14 15 16 17
+                "false,false,false,false," + // 24 25 26 27
+                "false,false,false,false," + // 34 35 36 37
+                "false,false,false," + // 45 46 47
+                "false,false," + // 56 57
+                "false"; // 67
         }
     }
 }
