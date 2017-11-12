@@ -1258,13 +1258,13 @@ namespace microcosm.Config
             {
                 xmlData.aspectSeptile = GetDefaultAspectCategory();
             }
-            if (xmlData.aspectQintile == null)
+            if (xmlData.aspectQuintile == null)
             {
-                xmlData.aspectQintile = GetDefaultAspectCategory();
+                xmlData.aspectQuintile = GetDefaultAspectCategory();
             }
-            if (xmlData.aspectBiQintile == null)
+            if (xmlData.aspectBiQuintile == null)
             {
-                xmlData.aspectBiQintile = GetDefaultAspectCategory();
+                xmlData.aspectBiQuintile = GetDefaultAspectCategory();
             }
 
             bool[] conjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
@@ -1279,8 +1279,8 @@ namespace microcosm.Config
             bool[] semiquintile = ConvertBool(xmlData.aspectSemiQuintile.Split(','));
             bool[] novile = ConvertBool(xmlData.aspectNovile.Split(','));
             bool[] septile = ConvertBool(xmlData.aspectSeptile.Split(','));
-            bool[] quintile = ConvertBool(xmlData.aspectQintile.Split(','));
-            bool[] biquintile = ConvertBool(xmlData.aspectBiQintile.Split(','));
+            bool[] quintile = ConvertBool(xmlData.aspectQuintile.Split(','));
+            bool[] biquintile = ConvertBool(xmlData.aspectBiQuintile.Split(','));
 
             int count = 0;
             aspectConjunction[0, 0] = conjunction[count];
@@ -1290,6 +1290,13 @@ namespace microcosm.Config
             aspectSextile[0, 0] = sextile[count];
             aspectInconjunct[0, 0] = inconjunct[count];
             aspectSesquiquadrate[0, 0] = sesquiquadrate[count];
+            aspectSemiSquare[0, 0] = semisquare[count];
+            aspectSemiSextile[0, 0] = semisextile[count];
+            aspectSemiQuintile[0, 0] = semiquintile[count];
+            aspectNovile[0, 0] = novile[count];
+            aspectSeptile[0, 0] = septile[count];
+            aspectQuintile[0, 0] = quintile[count];
+            aspectBiQuintile[0, 0] = biquintile[count];
             count++;
             aspectConjunction[1, 1] = conjunction[count];
             aspectOpposition[1, 1] = opposition[count];
@@ -1298,6 +1305,13 @@ namespace microcosm.Config
             aspectSextile[1, 1] = sextile[count];
             aspectInconjunct[1, 1] = inconjunct[count];
             aspectSesquiquadrate[1, 1] = sesquiquadrate[count];
+            aspectSemiSquare[1, 1] = semisquare[count];
+            aspectSemiSextile[1, 1] = semisextile[count];
+            aspectSemiQuintile[1, 1] = semiquintile[count];
+            aspectNovile[1, 1] = novile[count];
+            aspectSeptile[1, 1] = septile[count];
+            aspectQuintile[1, 1] = quintile[count];
+            aspectBiQuintile[1, 1] = biquintile[count];
             count++;
             aspectConjunction[2, 2] = conjunction[count];
             aspectOpposition[2, 2] = opposition[count];

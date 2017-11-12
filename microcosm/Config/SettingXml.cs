@@ -201,10 +201,10 @@ namespace microcosm.Config
         public string aspectNovile;
         [XmlElement("aspectSeptile")]
         public string aspectSeptile;
-        [XmlElement("aspectQintile")]
-        public string aspectQintile;
-        [XmlElement("aspectBiQintile")]
-        public string aspectBiQintile;
+        [XmlElement("aspectQuintile")]
+        public string aspectQuintile;
+        [XmlElement("aspectBiQuintile")]
+        public string aspectBiQuintile;
         #endregion
 
 
