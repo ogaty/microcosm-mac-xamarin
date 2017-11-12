@@ -1242,6 +1242,30 @@ namespace microcosm.Config
             {
                 xmlData.aspectSemiSquare = GetDefaultAspectCategory();
             }
+            if (xmlData.aspectSemiSextile == null)
+            {
+                xmlData.aspectSemiSextile = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectSemiQuintile == null)
+            {
+                xmlData.aspectSemiQuintile = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectNovile == null)
+            {
+                xmlData.aspectNovile = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectSeptile == null)
+            {
+                xmlData.aspectSeptile = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectQintile == null)
+            {
+                xmlData.aspectQintile = GetDefaultAspectCategory();
+            }
+            if (xmlData.aspectBiQintile == null)
+            {
+                xmlData.aspectBiQintile = GetDefaultAspectCategory();
+            }
 
             bool[] conjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
             bool[] opposition = ConvertBool(xmlData.aspectOpposition.Split(','));
@@ -1257,6 +1281,22 @@ namespace microcosm.Config
             bool[] septile = ConvertBool(xmlData.aspectSeptile.Split(','));
             bool[] quintile = ConvertBool(xmlData.aspectQintile.Split(','));
             bool[] biquintile = ConvertBool(xmlData.aspectBiQintile.Split(','));
+
+            aspectConjunction[0, 0] = conjunction[0];
+            aspectOpposition[0, 0] = opposition[0];
+            aspectTrine[0, 0] = trine[0];
+            aspectSquare[0, 0] = square[0];
+            aspectSextile[0, 0] = sextile[0];
+            aspectConjunction[1, 1] = conjunction[1];
+            aspectOpposition[1, 1] = opposition[1];
+            aspectTrine[1, 1] = trine[1];
+            aspectSquare[1, 1] = square[1];
+            aspectSextile[1, 1] = sextile[1];
+            aspectConjunction[2, 2] = conjunction[2];
+            aspectOpposition[2, 2] = opposition[2];
+            aspectTrine[2, 2] = trine[2];
+            aspectSquare[2, 2] = square[2];
+            aspectSextile[2, 2] = sextile[2];
 
             Dictionary<AspectKind, bool> dac = new Dictionary<AspectKind, bool>();
             dac.Add(AspectKind.CONJUNCTION, aspectConjunction[n, m]);
