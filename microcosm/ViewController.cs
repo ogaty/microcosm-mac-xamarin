@@ -90,7 +90,16 @@ namespace microcosm
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] = 
                 calc.ReCalc(config, settings[0], new UserData());
 
-//            Console.WriteLine(config.defaultPlace);
+            //            Console.WriteLine(config.defaultPlace);
+
+            User1Name.StringValue = "現在時刻";
+            User1Date.StringValue = DateTime.Now.ToString();
+            User2Name.StringValue = "現在時刻";
+            User2Date.StringValue = DateTime.Now.ToString();
+            Event1Name.StringValue = "現在時刻";
+            Event1Date.StringValue = DateTime.Now.ToString();
+            Event2Name.StringValue = "現在時刻";
+            Event2Date.StringValue = DateTime.Now.ToString();
         }
 
         public override NSObject RepresentedObject
