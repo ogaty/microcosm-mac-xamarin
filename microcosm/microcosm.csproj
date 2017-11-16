@@ -195,6 +195,9 @@
     <Compile Include="Views\UserAddViewController.designer.cs">
       <DependentUpon>UserAddViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CuspListData.cs" />
+    <Compile Include="Models\CuspListDataSource.cs" />
+    <Compile Include="Models\CuspListDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

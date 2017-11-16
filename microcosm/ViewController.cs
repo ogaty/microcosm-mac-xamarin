@@ -100,6 +100,15 @@ namespace microcosm
             Event1Date.StringValue = DateTime.Now.ToString();
             Event2Name.StringValue = "現在時刻";
             Event2Date.StringValue = DateTime.Now.ToString();
+            CuspListDataSource CDataSource = new CuspListDataSource();
+            for (int i = 1; i <= 12; i++)
+            {
+                CDataSource.list.Add(new CuspListData() { Degree = ringsData[0].cusps[i] });
+            }
+
+            CuspList.DataSource = CDataSource;
+            CuspList.Delegate = new CuspListDelegate(CDataSource);
+
         }
 
         public override NSObject RepresentedObject
@@ -132,6 +141,8 @@ namespace microcosm
 
             userDbTable.DataSource = DataSource;
             userDbTable.Delegate = new DbUserTableDelegate(DataSource);
+
+
         }
 
         //public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)

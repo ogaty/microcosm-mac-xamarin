@@ -13,7 +13,10 @@ namespace microcosm
 	partial class ViewController
 	{
 		[Outlet]
-		AppKit.NSScrollView CuspList { get; set; }
+		AppKit.NSBox ChartBox { get; set; }
+
+		[Outlet]
+		AppKit.NSTableView CuspList { get; set; }
 
 		[Outlet]
 		AppKit.NSTextField Event1Date { get; set; }
@@ -58,9 +61,49 @@ namespace microcosm
 				CuspList = null;
 			}
 
+			if (Event1Date != null) {
+				Event1Date.Dispose ();
+				Event1Date = null;
+			}
+
+			if (Event1Name != null) {
+				Event1Name.Dispose ();
+				Event1Name = null;
+			}
+
+			if (Event2Date != null) {
+				Event2Date.Dispose ();
+				Event2Date = null;
+			}
+
+			if (Event2Name != null) {
+				Event2Name.Dispose ();
+				Event2Name = null;
+			}
+
 			if (testButton != null) {
 				testButton.Dispose ();
 				testButton = null;
+			}
+
+			if (User1Date != null) {
+				User1Date.Dispose ();
+				User1Date = null;
+			}
+
+			if (User1Name != null) {
+				User1Name.Dispose ();
+				User1Name = null;
+			}
+
+			if (User2Date != null) {
+				User2Date.Dispose ();
+				User2Date = null;
+			}
+
+			if (User2Name != null) {
+				User2Name.Dispose ();
+				User2Name = null;
 			}
 
 			if (userDbDateColumn != null) {
@@ -78,44 +121,9 @@ namespace microcosm
 				userDbTable = null;
 			}
 
-			if (User1Date != null) {
-				User1Date.Dispose ();
-				User1Date = null;
-			}
-
-			if (User1Name != null) {
-				User1Name.Dispose ();
-				User1Name = null;
-			}
-
-			if (User2Name != null) {
-				User2Name.Dispose ();
-				User2Name = null;
-			}
-
-			if (User2Date != null) {
-				User2Date.Dispose ();
-				User2Date = null;
-			}
-
-			if (Event1Name != null) {
-				Event1Name.Dispose ();
-				Event1Name = null;
-			}
-
-			if (Event1Date != null) {
-				Event1Date.Dispose ();
-				Event1Date = null;
-			}
-
-			if (Event2Name != null) {
-				Event2Name.Dispose ();
-				Event2Name = null;
-			}
-
-			if (Event2Date != null) {
-				Event2Date.Dispose ();
-				Event2Date = null;
+			if (ChartBox != null) {
+				ChartBox.Dispose ();
+				ChartBox = null;
 			}
 		}
 	}
