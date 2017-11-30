@@ -97,9 +97,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbUserTableDelegate.cs" />
-    <Compile Include="DbUserTableDataSource.cs" />
-    <Compile Include="DbUserTableData.cs" />
     <Compile Include="Calc\AstroCalc.cs" />
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="User\UserXml.cs" />

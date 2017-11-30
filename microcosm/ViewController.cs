@@ -40,10 +40,20 @@ namespace microcosm
             MainInit();
         }
 
+        /// <summary>
+        /// Resize event
+        /// </summary>
+        /// <param name="notify">Notify.</param>
         public void ResizeObserver(NSNotification notify)
         {
             var r = this.View.Frame;
             Console.WriteLine("{0}:{1}:{2}", notify.Name, r.Height, r.Width);
+
+            NSTextView v = new NSTextView();
+
+//            ChartBox.SetFrameSize(new CoreGraphics.CGSize(200, 200));
+//            ChartBoxView.SetFrameSize(new CoreGraphics.CGSize(200, 200));
+
         }
 
         /// <summary>
@@ -127,22 +137,6 @@ namespace microcosm
         public override void AwakeFromNib()
         {
 			base.AwakeFromNib();
-
-            testButton.Activated += (object sender, EventArgs e) =>
-            {
-                DbUserTableDataSource dataSource = userDbTable.DataSource as DbUserTableDataSource;
-                dataSource.dataList.RemoveAt(0);
-                dataSource.dataList.Add(new DbUserTableData("bbb", DateTime.Now));
-                userDbTable.ReloadData();
-			};
-			
-            DbUserTableDataSource DataSource = new DbUserTableDataSource();
-            DataSource.dataList.Add(new DbUserTableData("aaa", DateTime.Now));
-
-            userDbTable.DataSource = DataSource;
-            userDbTable.Delegate = new DbUserTableDelegate(DataSource);
-
-
         }
 
         //public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)

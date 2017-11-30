@@ -16,6 +16,9 @@ namespace microcosm
 		AppKit.NSBox ChartBox { get; set; }
 
 		[Outlet]
+		AppKit.NSView ChartBoxView { get; set; }
+
+		[Outlet]
 		AppKit.NSTableView CuspList { get; set; }
 
 		[Outlet]
@@ -50,9 +53,6 @@ namespace microcosm
 
 		[Outlet]
 		AppKit.NSTableColumn userDbNameColumn { get; set; }
-
-		[Outlet]
-		AppKit.NSTableView userDbTable { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -116,14 +116,14 @@ namespace microcosm
 				userDbNameColumn = null;
 			}
 
-			if (userDbTable != null) {
-				userDbTable.Dispose ();
-				userDbTable = null;
-			}
-
 			if (ChartBox != null) {
 				ChartBox.Dispose ();
 				ChartBox = null;
+			}
+
+			if (ChartBoxView != null) {
+				ChartBoxView.Dispose ();
+				ChartBoxView = null;
 			}
 		}
 	}
