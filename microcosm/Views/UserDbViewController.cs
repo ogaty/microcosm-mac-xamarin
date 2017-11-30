@@ -100,5 +100,35 @@ namespace microcosm.Views
             UserTable.ReloadData();
 
         }
+
+        partial void AddDirectoryClick(NSObject sender)
+        {
+            int row = (int)UserDbDirOutline.SelectedRow;
+
+            if (row > 0) 
+            {
+                TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(row);
+                Console.WriteLine(Util.root + "/" + item.fileName);
+            }
+            else
+            {
+                
+            }
+        }
+
+        partial void EditDirectoryClick(NSObject sender)
+        {
+
+        }
+
+        partial void DeleteDirectoryClick(NSObject sender)
+        {
+
+        }
+
+        partial void UserTableClick(NSObject sender)
+        {
+
+        }
     }
 }

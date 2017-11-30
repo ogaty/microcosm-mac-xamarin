@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <box title="ユーザー1" translatesAutoresizingMaskIntoConstraints="NO" id="NGh-ec-Zlp">
-                                <rect key="frame" x="17" y="659" width="221" height="89"/>
+                                <rect key="frame" x="17" y="669" width="221" height="89"/>
                                 <view key="contentView" id="tc7-ED-omF">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
                             <box title="イベント1" translatesAutoresizingMaskIntoConstraints="NO" id="xx9-bK-pyF">
-                                <rect key="frame" x="17" y="564" width="221" height="89"/>
+                                <rect key="frame" x="17" y="574" width="221" height="89"/>
                                 <view key="contentView" id="mc2-Ge-ibi">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,9 +264,8 @@
                                 </constraints>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
-                            <box fixedFrame="YES" title="ユーザー2" translatesAutoresizingMaskIntoConstraints="NO" id="hYA-Mx-FV5">
-                                <rect key="frame" x="17" y="471" width="221" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <box title="ユーザー2" translatesAutoresizingMaskIntoConstraints="NO" id="hYA-Mx-FV5">
+                                <rect key="frame" x="17" y="479" width="221" height="89"/>
                                 <view key="contentView" id="NzX-6W-0BA">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,22 +290,26 @@
                                         </textField>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="SPY-rw-GAc"/>
+                                    <constraint firstAttribute="height" constant="85" id="jpy-gi-OV6"/>
+                                </constraints>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
                             <tabView translatesAutoresizingMaskIntoConstraints="NO" id="wBt-tT-m2W">
-                                <rect key="frame" x="13" y="10" width="322" height="386"/>
+                                <rect key="frame" x="13" y="10" width="322" height="336"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="370" id="HXc-eR-bYK"/>
+                                    <constraint firstAttribute="height" constant="320" id="HXc-eR-bYK"/>
                                 </constraints>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="List" identifier="1" id="tPg-zX-MnF">
                                         <view key="view" id="pW7-Ca-tOa">
-                                            <rect key="frame" x="10" y="33" width="302" height="340"/>
+                                            <rect key="frame" x="10" y="33" width="302" height="290"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-EG-UU5">
-                                                    <rect key="frame" x="30" y="30" width="240" height="284"/>
+                                                    <rect key="frame" x="30" y="-20" width="240" height="284"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <clipView key="contentView" ambiguous="YES" id="MJl-Te-2XW">
                                                         <rect key="frame" x="1" y="0.0" width="238" height="283"/>
@@ -563,26 +566,26 @@
                                     </tabViewItem>
                                     <tabViewItem label="Time" identifier="2" id="rp1-Fm-cUA">
                                         <view key="view" id="ghM-IG-gge">
-                                            <rect key="frame" x="10" y="33" width="302" height="340"/>
+                                            <rect key="frame" x="10" y="33" width="302" height="290"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Dispositor" identifier="" id="SvM-7Y-1f4">
                                         <view key="view" id="84v-eq-1Sc">
-                                            <rect key="frame" x="10" y="33" width="302" height="340"/>
+                                            <rect key="frame" x="10" y="33" width="302" height="290"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
                             </tabView>
                             <box title="Chart" translatesAutoresizingMaskIntoConstraints="NO" id="w3t-b3-9pq">
-                                <rect key="frame" x="593" y="144" width="756" height="604"/>
+                                <rect key="frame" x="743" y="144" width="606" height="604"/>
                                 <view key="contentView" id="dRg-6x-Fj0">
-                                    <rect key="frame" x="2" y="2" width="752" height="587"/>
+                                    <rect key="frame" x="2" y="2" width="602" height="587"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="w3t-b3-9pq" secondAttribute="height" multiplier="5:4" id="sCp-gw-eAp"/>
+                                    <constraint firstAttribute="width" secondItem="w3t-b3-9pq" secondAttribute="height" id="sCp-gw-eAp"/>
                                     <constraint firstAttribute="height" constant="600" id="yXy-TS-DCa"/>
                                 </constraints>
                             </box>
@@ -597,14 +600,14 @@
                                     <constraint firstAttribute="height" constant="340" id="jqa-dG-X2w"/>
                                 </constraints>
                             </box>
-                            <box misplaced="YES" title="イベント2" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-Bu-wPe">
-                                <rect key="frame" x="17" y="404" width="221" height="85"/>
+                            <box title="イベント2" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-Bu-wPe">
+                                <rect key="frame" x="17" y="384" width="221" height="89"/>
                                 <view key="contentView" id="QmP-gk-9iz">
-                                    <rect key="frame" x="2" y="2" width="217" height="71"/>
+                                    <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MY-tn-b0b">
-                                            <rect key="frame" x="7" y="45" width="198" height="17"/>
+                                            <rect key="frame" x="7" y="49" width="198" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="現在時刻" id="Y4f-cf-r3y">
                                                 <font key="font" metaFont="system"/>
@@ -613,7 +616,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-Cl-Nzn">
-                                            <rect key="frame" x="8" y="20" width="196" height="17"/>
+                                            <rect key="frame" x="8" y="24" width="196" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2017年10月21日 23:00:00 JST" id="oII-AW-B7G">
                                                 <font key="font" metaFont="system"/>
@@ -624,6 +627,7 @@
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="OU7-Tw-8rs"/>
                                     <constraint firstAttribute="width" constant="215" id="heu-f1-ueW"/>
                                 </constraints>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
@@ -633,15 +637,17 @@
                             <constraint firstItem="w3t-b3-9pq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="4Y5-8v-Veh"/>
                             <constraint firstAttribute="trailing" secondItem="w3t-b3-9pq" secondAttribute="trailing" constant="20" id="4pu-ae-ZlG"/>
                             <constraint firstItem="xx9-bK-pyF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="63n-cs-aY5"/>
-                            <constraint firstItem="wBt-tT-m2W" firstAttribute="top" secondItem="xoc-Bu-wPe" secondAttribute="bottom" constant="18" id="6cQ-il-ety"/>
+                            <constraint firstItem="NGh-ec-Zlp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Bx9-i8-B0Q"/>
                             <constraint firstItem="NGh-ec-Zlp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="IIv-hL-KpD"/>
                             <constraint firstItem="xx9-bK-pyF" firstAttribute="top" secondItem="NGh-ec-Zlp" secondAttribute="bottom" constant="10" id="PC8-ck-AK8"/>
                             <constraint firstAttribute="bottom" secondItem="wBt-tT-m2W" secondAttribute="bottom" constant="20" id="Q9L-aA-hjO"/>
                             <constraint firstItem="C3L-Wn-TaU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="UHr-Bl-Ild"/>
+                            <constraint firstItem="xoc-Bu-wPe" firstAttribute="top" secondItem="hYA-Mx-FV5" secondAttribute="bottom" constant="10" id="Vyy-MB-00i"/>
                             <constraint firstItem="xoc-Bu-wPe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="YTO-dx-Hhc"/>
                             <constraint firstItem="wBt-tT-m2W" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="moO-aK-Jzq"/>
+                            <constraint firstItem="hYA-Mx-FV5" firstAttribute="top" secondItem="xx9-bK-pyF" secondAttribute="bottom" constant="10" id="oEP-xq-cEl"/>
                             <constraint firstItem="C3L-Wn-TaU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="348" id="seM-rP-vxq"/>
-                            <constraint firstItem="NGh-ec-Zlp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="v3K-wG-PYx"/>
+                            <constraint firstItem="hYA-Mx-FV5" firstAttribute="leading" secondItem="xx9-bK-pyF" secondAttribute="leading" id="vUB-Ri-Tfh"/>
                             <constraint firstItem="C3L-Wn-TaU" firstAttribute="leading" secondItem="wBt-tT-m2W" secondAttribute="trailing" constant="20" id="yhp-La-8wV"/>
                         </constraints>
                     </view>
@@ -1694,11 +1700,85 @@
             <objects>
                 <viewController title="データベース" id="DQR-Vb-Bre" customClass="UserDbViewController" sceneMemberID="viewController">
                     <view key="view" id="hYI-H8-f0I">
-                        <rect key="frame" x="0.0" y="0.0" width="507" height="478"/>
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="519"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Qe-qz3">
+                                <rect key="frame" x="412" y="13" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="終了" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gpg-Bb-AfN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-KW-qgT">
+                                <rect key="frame" x="168" y="481" width="113" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ユーザー追加" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="68I-0Z-tac">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="N3o-NH-Kso" kind="modal" id="do9-Cy-UmB"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-cJ-DGO">
+                                <rect key="frame" x="168" y="454" width="113" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ユーザー編集" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M46-dX-LC8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="8LY-qS-gtd" kind="modal" id="yJG-mX-CGU"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jO-wB-FYy">
+                                <rect key="frame" x="285" y="481" width="101" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="インポート" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yjv-vn-FwK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="JYl-ii-ZeI" kind="modal" id="zNd-QF-QzP"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-Yi-WxA">
+                                <rect key="frame" x="14" y="481" width="149" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ディレクトリ追加" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hqX-0S-V4J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <connections>
+                                        <action selector="AddDirectoryClick:" target="DQR-Vb-Bre" id="Mys-1N-Qg6"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NOk-y9-5xl">
+                                <rect key="frame" x="14" y="454" width="149" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ディレクトリ名変更" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vF2-7Y-toy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="EditDirectoryClick:" target="DQR-Vb-Bre" id="Gvq-ry-Oni"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8N-BK-3oL">
+                                <rect key="frame" x="14" y="427" width="149" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="ディレクトリ削除" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yza-N6-Pce">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="DeleteDirectoryClick:" target="DQR-Vb-Bre" id="3Pu-yZ-UWl"/>
+                                </connections>
+                            </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-Uy-zAB">
-                                <rect key="frame" x="20" y="167" width="184" height="271"/>
+                                <rect key="frame" x="20" y="152" width="184" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="y0M-Kz-esZ">
                                     <rect key="frame" x="1" y="0.0" width="182" height="270"/>
@@ -1765,7 +1845,7 @@
                                 </tableHeaderView>
                             </scrollView>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kX6-DQ-qmc">
-                                <rect key="frame" x="224" y="214" width="259" height="224"/>
+                                <rect key="frame" x="224" y="199" width="259" height="224"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="LAt-g7-lkM">
                                     <rect key="frame" x="1" y="0.0" width="257" height="223"/>
@@ -1865,7 +1945,7 @@
                                 </tableHeaderView>
                             </scrollView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nj-Lx-6mD">
-                                <rect key="frame" x="222" y="148" width="263" height="58"/>
+                                <rect key="frame" x="222" y="133" width="263" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="7dX-8c-DHb">
                                     <font key="font" metaFont="system"/>
@@ -1874,7 +1954,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSB-iT-Nch">
-                                <rect key="frame" x="28" y="90" width="105" height="44"/>
+                                <rect key="frame" x="28" y="75" width="105" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Multiline Label" id="s0h-1V-yUY">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1883,7 +1963,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TD-yV-c4l">
-                                <rect key="frame" x="137" y="90" width="110" height="45"/>
+                                <rect key="frame" x="137" y="75" width="110" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Multiline Label" id="FK6-7i-HiK">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1892,7 +1972,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYN-zK-XfY">
-                                <rect key="frame" x="273" y="90" width="105" height="45"/>
+                                <rect key="frame" x="273" y="75" width="105" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Multiline Label" id="HgD-XU-Cs5">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1901,7 +1981,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxC-jc-ihE">
-                                <rect key="frame" x="385" y="90" width="104" height="45"/>
+                                <rect key="frame" x="385" y="75" width="104" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Multiline Label" id="XPg-DG-Opa">
                                     <font key="font" metaFont="smallSystem"/>
@@ -1910,7 +1990,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-kz-mRO">
-                                <rect key="frame" x="40" y="60" width="81" height="32"/>
+                                <rect key="frame" x="40" y="45" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="meK-IS-nN2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1918,7 +1998,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-t9-5MO">
-                                <rect key="frame" x="152" y="59" width="81" height="32"/>
+                                <rect key="frame" x="152" y="44" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0hv-JU-8BR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1926,7 +2006,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U03-fM-7NB">
-                                <rect key="frame" x="285" y="59" width="81" height="32"/>
+                                <rect key="frame" x="285" y="44" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fQ8-9v-D8e">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1934,53 +2014,12 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-aE-CKo">
-                                <rect key="frame" x="402" y="59" width="81" height="32"/>
+                                <rect key="frame" x="402" y="44" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="設定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3bY-jL-9eN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-Qe-qz3">
-                                <rect key="frame" x="412" y="13" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="終了" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gpg-Bb-AfN">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-KW-qgT">
-                                <rect key="frame" x="14" y="440" width="113" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="ユーザー追加" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="68I-0Z-tac">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="N3o-NH-Kso" kind="modal" id="do9-Cy-UmB"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-cJ-DGO">
-                                <rect key="frame" x="133" y="440" width="113" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="ユーザー編集" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M46-dX-LC8">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="8LY-qS-gtd" kind="modal" id="yJG-mX-CGU"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jO-wB-FYy">
-                                <rect key="frame" x="256" y="440" width="101" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="インポート" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yjv-vn-FwK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="JYl-ii-ZeI" kind="modal" id="zNd-QF-QzP"/>
-                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -1991,7 +2030,7 @@
                 </viewController>
                 <customObject id="Wax-RI-9ns" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413.5" y="263"/>
+            <point key="canvasLocation" x="1413.5" y="262.5"/>
         </scene>
         <!--ユーザー追加-->
         <scene sceneID="ptd-fc-rn3">

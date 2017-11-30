@@ -18,6 +18,15 @@ namespace microcosm.Views
 		[Outlet]
 		AppKit.NSTableView UserTable { get; set; }
 
+		[Action ("AddDirectoryClick:")]
+		partial void AddDirectoryClick (Foundation.NSObject sender);
+
+		[Action ("DeleteDirectoryClick:")]
+		partial void DeleteDirectoryClick (Foundation.NSObject sender);
+
+		[Action ("EditDirectoryClick:")]
+		partial void EditDirectoryClick (Foundation.NSObject sender);
+
 		[Action ("UserDbDirClick:")]
 		partial void UserDbDirClick (Foundation.NSObject sender);
 
