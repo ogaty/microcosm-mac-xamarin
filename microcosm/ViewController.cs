@@ -7,6 +7,7 @@ using microcosm.Calc;
 using microcosm.Common;
 using microcosm.Config;
 using microcosm.Models;
+using SkiaSharp;
 using SwissEphNet;
 
 namespace microcosm
@@ -113,12 +114,60 @@ namespace microcosm
             CuspListDataSource CDataSource = new CuspListDataSource();
             for (int i = 1; i <= 12; i++)
             {
-                CDataSource.list.Add(new CuspListData() { Degree = ringsData[0].cusps[i] });
+                CDataSource.list.Add(new CuspListData() {
+                    Degree1 = ringsData[0].cusps[i],
+                    Degree2 = ringsData[1].cusps[i],
+                    Degree3 = ringsData[2].cusps[i]
+                });
             }
 
             CuspList.DataSource = CDataSource;
             CuspList.Delegate = new CuspListDelegate(CDataSource);
 
+            SKImageInfo info = new SKImageInfo(200, 200);
+            SKSurface surface = SKSurface.Create(info);
+            SKCanvas canvas = surface.Canvas;
+
+            canvas.Clear();
+
+            // Translate to center
+            canvas.Translate(info.Width / 2, info.Height / 2);
+
+            // Draw the circle
+            float radius = Math.Min(info.Width, info.Height) / 3;
+            canvas.DrawCircle(0, 0, radius, new SKPaint());
+            SKData d = surface.Snapshot().Encode();
+
+            string Html = @"<html>
+            <head>
+<style>
+canvas {
+width: 500px;
+height: 500px;
+}
+</style>
+</head>
+<body>
+  <h1>Xamarin.Forms</h1>
+  <p>Welcome to WebView.</p>
+  <canvas id=""canvas""></canvas>
+<script>
+function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+
+    var circle = new Path2D();
+    circle.moveTo(200, 100);
+    circle.arc(100, 100, 25, 0, 2 * Math.PI);
+
+    ctx.fill(circle);
+  }
+}
+draw();
+</script>
+  </body></html>";
+            web.LoadHtmlString(Html, null);
         }
 
         public override NSObject RepresentedObject

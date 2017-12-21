@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17B48" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17C88" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="12121"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -583,6 +584,16 @@
                                 <view key="contentView" id="dRg-6x-Fj0">
                                     <rect key="frame" x="2" y="2" width="602" height="587"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liI-xl-byu">
+                                            <rect key="frame" x="82" y="44" width="500" height="500"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <wkWebViewConfiguration key="configuration">
+                                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                <wkPreferences key="preferences"/>
+                                            </wkWebViewConfiguration>
+                                        </wkWebView>
+                                    </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w3t-b3-9pq" secondAttribute="height" id="sCp-gw-eAp"/>
@@ -632,6 +643,11 @@
                                 </constraints>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-D1-7YT">
+                                <rect key="frame" x="585" y="520" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="eJP-wD-wx2"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="w3t-b3-9pq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="4Y5-8v-Veh"/>
@@ -663,6 +679,8 @@
                         <outlet property="User1Name" destination="dUe-YY-9bO" id="xxJ-9v-1FJ"/>
                         <outlet property="User2Date" destination="BOF-Jn-kzl" id="Gg9-Yo-aSm"/>
                         <outlet property="User2Name" destination="Fqh-zW-ViE" id="1Z2-rQ-qiw"/>
+                        <outlet property="img" destination="eJP-wD-wx2" id="hnc-I3-Zw6"/>
+                        <outlet property="web" destination="liI-xl-byu" id="3QJ-2K-ZyR"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

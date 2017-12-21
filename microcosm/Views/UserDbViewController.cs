@@ -101,6 +101,10 @@ namespace microcosm.Views
 
         }
 
+        /// <summary>
+        /// directory追加
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void AddDirectoryClick(NSObject sender)
         {
             int row = (int)UserDbDirOutline.SelectedRow;
@@ -108,12 +112,18 @@ namespace microcosm.Views
             if (row > 0) 
             {
                 TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(row);
-                Console.WriteLine(Util.root + "/" + item.fileName);
+                if (item.isDir && !Directory.Exists(item.FullPath + "/NewDir"))
+                {
+                    Directory.CreateDirectory(item.FullPath + "/NewDir");
+                }
             }
             else
             {
-                
+                if (!Directory.Exists(Util.root + "/data/NewDir")) {
+                    Directory.CreateDirectory(Util.root + "/data/NewDir");
+                }
             }
+            UserTable.ReloadData();
         }
 
         partial void EditDirectoryClick(NSObject sender)
@@ -121,9 +131,21 @@ namespace microcosm.Views
 
         }
 
+        /// <summary>
+        /// directory削除
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void DeleteDirectoryClick(NSObject sender)
         {
-
+            int row = (int)UserDbDirOutline.SelectedRow;
+            if (row > 0)
+            {
+                TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(row);
+                if (item.isDir && Directory.Exists(item.FullPath))
+                {
+                    Directory.Delete(item.FullPath, true);
+                }
+            }
         }
 
         partial void UserTableClick(NSObject sender)

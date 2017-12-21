@@ -4,7 +4,9 @@ namespace microcosm.Models
 {
     public class CuspListData : NSObject
     {
-        public double Degree;
+        public double Degree1;
+        public double Degree2;
+        public double Degree3;
         public CuspListData()
         {
         }

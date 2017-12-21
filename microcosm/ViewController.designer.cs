@@ -34,6 +34,9 @@ namespace microcosm
 		AppKit.NSTextField Event2Name { get; set; }
 
 		[Outlet]
+		AppKit.NSImageCell img { get; set; }
+
+		[Outlet]
 		AppKit.NSButton testButton { get; set; }
 
 		[Outlet]
@@ -53,9 +56,27 @@ namespace microcosm
 
 		[Outlet]
 		AppKit.NSTableColumn userDbNameColumn { get; set; }
+
+		[Outlet]
+		WebKit.WKWebView web { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (web != null) {
+				web.Dispose ();
+				web = null;
+			}
+
+			if (ChartBox != null) {
+				ChartBox.Dispose ();
+				ChartBox = null;
+			}
+
+			if (ChartBoxView != null) {
+				ChartBoxView.Dispose ();
+				ChartBoxView = null;
+			}
+
 			if (CuspList != null) {
 				CuspList.Dispose ();
 				CuspList = null;
@@ -79,6 +100,11 @@ namespace microcosm
 			if (Event2Name != null) {
 				Event2Name.Dispose ();
 				Event2Name = null;
+			}
+
+			if (img != null) {
+				img.Dispose ();
+				img = null;
 			}
 
 			if (testButton != null) {
@@ -114,16 +140,6 @@ namespace microcosm
 			if (userDbNameColumn != null) {
 				userDbNameColumn.Dispose ();
 				userDbNameColumn = null;
-			}
-
-			if (ChartBox != null) {
-				ChartBox.Dispose ();
-				ChartBox = null;
-			}
-
-			if (ChartBoxView != null) {
-				ChartBoxView.Dispose ();
-				ChartBoxView = null;
 			}
 		}
 	}

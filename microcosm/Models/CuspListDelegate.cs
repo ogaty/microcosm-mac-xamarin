@@ -31,15 +31,17 @@ namespace microcosm.Models
             {
                 case "cusps":
                     view.StringValue = (row + 1).ToString();
+                    tableColumn.Width = 50;
                     break;
                 case "1":
-                    view.StringValue = DataSource.list[(int)row].Degree.ToString();
+                    view.StringValue = String.Format("{0:0.000}", DataSource.list[(int)row].Degree1);
+                    tableColumn.Width = 70;
                     break;
                 case "2":
-                    view.StringValue = DataSource.list[(int)row].Degree.ToString();
+                    view.StringValue = String.Format("{0:0.000}", DataSource.list[(int)row].Degree2);
                     break;
                 case "3":
-                    view.StringValue = DataSource.list[(int)row].Degree.ToString();
+                    view.StringValue = String.Format("{0:0.000}", DataSource.list[(int)row].Degree3);
                     break;
             }
 
