@@ -204,6 +204,7 @@
     <Compile Include="Models\CuspListData.cs" />
     <Compile Include="Models\CuspListDataSource.cs" />
     <Compile Include="Models\CuspListDelegate.cs" />
+    <Compile Include="Views\CanvasView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -236,6 +237,7 @@
     <BundleResource Include="ephe\s136472s.se1" />
     <BundleResource Include="ephe\se90377s.se1" />
     <BundleResource Include="ephe\seleapsec.txt" />
+    <BundleResource Include="system\canvas.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

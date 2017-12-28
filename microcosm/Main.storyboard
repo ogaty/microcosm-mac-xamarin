@@ -580,24 +580,31 @@
                                 </tabViewItems>
                             </tabView>
                             <box title="Chart" translatesAutoresizingMaskIntoConstraints="NO" id="w3t-b3-9pq">
-                                <rect key="frame" x="743" y="144" width="606" height="604"/>
+                                <rect key="frame" x="623" y="24" width="726" height="724"/>
                                 <view key="contentView" id="dRg-6x-Fj0">
-                                    <rect key="frame" x="2" y="2" width="602" height="587"/>
+                                    <rect key="frame" x="2" y="2" width="722" height="707"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liI-xl-byu">
-                                            <rect key="frame" x="82" y="44" width="500" height="500"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liI-xl-byu">
+                                            <rect key="frame" x="51" y="44" width="653" height="580"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="580" id="5Qk-o2-VYK"/>
+                                            </constraints>
                                             <wkWebViewConfiguration key="configuration">
                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                 <wkPreferences key="preferences"/>
                                             </wkWebViewConfiguration>
                                         </wkWebView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="liI-xl-byu" firstAttribute="top" secondItem="dRg-6x-Fj0" secondAttribute="top" constant="83" id="Ju3-oQ-xIU"/>
+                                        <constraint firstItem="liI-xl-byu" firstAttribute="leading" secondItem="dRg-6x-Fj0" secondAttribute="leading" constant="51" id="Nqg-2o-2Mr"/>
+                                        <constraint firstAttribute="trailing" secondItem="liI-xl-byu" secondAttribute="trailing" constant="18" id="UvS-eM-MR0"/>
+                                    </constraints>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="720" id="O2D-Fx-gA4"/>
                                     <constraint firstAttribute="width" secondItem="w3t-b3-9pq" secondAttribute="height" id="sCp-gw-eAp"/>
-                                    <constraint firstAttribute="height" constant="600" id="yXy-TS-DCa"/>
                                 </constraints>
                             </box>
                             <box title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-Wn-TaU">
@@ -643,8 +650,19 @@
                                 </constraints>
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUi-93-wHI">
+                                <rect key="frame" x="502" y="127" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MKG-S0-pOx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="scriptButtonClicked:" target="XfG-lQ-9wD" id="KM7-NP-IM1"/>
+                                </connections>
+                            </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-D1-7YT">
-                                <rect key="frame" x="585" y="520" width="48" height="48"/>
+                                <rect key="frame" x="447" y="282" width="124" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="eJP-wD-wx2"/>
                             </imageView>
@@ -679,6 +697,7 @@
                         <outlet property="User1Name" destination="dUe-YY-9bO" id="xxJ-9v-1FJ"/>
                         <outlet property="User2Date" destination="BOF-Jn-kzl" id="Gg9-Yo-aSm"/>
                         <outlet property="User2Name" destination="Fqh-zW-ViE" id="1Z2-rQ-qiw"/>
+                        <outlet property="canvas" destination="fIp-D1-7YT" id="MdX-gO-2cc"/>
                         <outlet property="img" destination="eJP-wD-wx2" id="hnc-I3-Zw6"/>
                         <outlet property="web" destination="liI-xl-byu" id="3QJ-2K-ZyR"/>
                     </connections>

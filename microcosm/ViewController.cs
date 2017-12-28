@@ -7,6 +7,7 @@ using microcosm.Calc;
 using microcosm.Common;
 using microcosm.Config;
 using microcosm.Models;
+using microcosm.Views;
 using SkiaSharp;
 using SwissEphNet;
 
@@ -124,50 +125,28 @@ namespace microcosm
             CuspList.DataSource = CDataSource;
             CuspList.Delegate = new CuspListDelegate(CDataSource);
 
+            canvas.AddSubview(new CanvasView());
+
+
             SKImageInfo info = new SKImageInfo(200, 200);
             SKSurface surface = SKSurface.Create(info);
-            SKCanvas canvas = surface.Canvas;
+            SKCanvas canvas1 = surface.Canvas;
 
-            canvas.Clear();
+            canvas1.Clear();
 
             // Translate to center
-            canvas.Translate(info.Width / 2, info.Height / 2);
+            canvas1.Translate(info.Width / 2, info.Height / 2);
 
             // Draw the circle
             float radius = Math.Min(info.Width, info.Height) / 3;
-            canvas.DrawCircle(0, 0, radius, new SKPaint());
+            canvas1.DrawCircle(0, 0, radius, new SKPaint());
             SKData d = surface.Snapshot().Encode();
 
-            string Html = @"<html>
-            <head>
-<style>
-canvas {
-width: 500px;
-height: 500px;
-}
-</style>
-</head>
-<body>
-  <h1>Xamarin.Forms</h1>
-  <p>Welcome to WebView.</p>
-  <canvas id=""canvas""></canvas>
-<script>
-function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
-
-    var circle = new Path2D();
-    circle.moveTo(200, 100);
-    circle.arc(100, 100, 25, 0, 2 * Math.PI);
-
-    ctx.fill(circle);
-  }
-}
-draw();
-</script>
-  </body></html>";
-            web.LoadHtmlString(Html, null);
+            string html = "";
+            using (StreamReader reader = new StreamReader(bundle + "/canvas.html")) {
+                html = reader.ReadToEnd();
+            }
+            web.LoadHtmlString(html, null);
         }
 
         public override NSObject RepresentedObject
@@ -202,6 +181,14 @@ draw();
         //    }
         //}
 
+        partial void scriptButtonClicked(NSObject sender)
+        {
+            web.EvaluateJavaScript((NSString)@"msg();", (result, error) =>
+            {
+
+            });
+
+        }
 
     }
 }

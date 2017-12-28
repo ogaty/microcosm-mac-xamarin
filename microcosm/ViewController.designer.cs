@@ -13,6 +13,9 @@ namespace microcosm
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSImageView canvas { get; set; }
+
+		[Outlet]
 		AppKit.NSBox ChartBox { get; set; }
 
 		[Outlet]
@@ -59,12 +62,15 @@ namespace microcosm
 
 		[Outlet]
 		WebKit.WKWebView web { get; set; }
+
+		[Action ("scriptButtonClicked:")]
+		partial void scriptButtonClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (web != null) {
-				web.Dispose ();
-				web = null;
+			if (canvas != null) {
+				canvas.Dispose ();
+				canvas = null;
 			}
 
 			if (ChartBox != null) {
@@ -140,6 +146,11 @@ namespace microcosm
 			if (userDbNameColumn != null) {
 				userDbNameColumn.Dispose ();
 				userDbNameColumn = null;
+			}
+
+			if (web != null) {
+				web.Dispose ();
+				web = null;
 			}
 		}
 	}

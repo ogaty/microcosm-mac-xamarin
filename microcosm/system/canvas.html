@@ -1,0 +1,120 @@
+<html>
+<head>
+	<style>
+	</style>
+</head>
+<body>
+  <canvas id="canvas" width="450" height="450" style="margin-left: 20px;"></canvas>
+
+<script>
+function draw() {
+  var canvas = document.getElementById('canvas');
+  var center = {
+  	x: 220,
+  	y: 220
+  }
+  var outerRadius = 210;
+  var innerRadius = (210 - 30);
+  
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+    ctx.lineWidth  = 2.0;
+
+    ctx.beginPath();
+    ctx.arc(center.x, center.y, outerRadius, 0, 2 * Math.PI);
+    ctx.moveTo(center.x + innerRadius, center.y);
+    ctx.arc(center.x, center.y, innerRadius, 0, 2 * Math.PI);
+
+    ctx.moveTo(center.x - outerRadius, center.y );
+    ctx.lineTo(center.x + outerRadius, center.y);
+
+    var newPt= rotate(outerRadius, 0, 30);
+    var newPt2x = newPt.x + 10 + outerRadius ;
+    var newPt2y = (-1 * newPt.y + center.y);
+    var newPtEnd= rotate(outerRadius, 0, 210);
+    console.log(newPtEnd);
+    var  newPtEnd2x = (newPtEnd.x) + outerRadius +10;
+    var newPtEnd2y = (-1 * newPtEnd.y + outerRadius + 10);
+    ctx.moveTo(newPt2x , newPt2y);
+    ctx.lineTo(newPtEnd2x, newPtEnd2y);
+
+    newPt= rotate(outerRadius, 0, 60);
+    newPt2x = newPt.x + 10 + outerRadius ;
+    newPt2y = (-1 * newPt.y + center.y);
+    newPtEnd= rotate(outerRadius, 0, 240);
+    newPtEnd2x = newPtEnd.x + outerRadius + 10;
+    newPtEnd2y = (-1 * newPtEnd.y + outerRadius + 10);
+    ctx.moveTo(newPt2x , newPt2y);
+    ctx.lineTo(newPtEnd2x, newPtEnd2y);
+
+    newPt= rotate(outerRadius, 0, 90);
+    newPt2x = newPt.x + 10 + outerRadius ;
+    newPt2y = (-1 * newPt.y + center.y);
+    console.log(newPt2x);
+    console.log(newPt2y);
+    newPtEnd= rotate(outerRadius, 0, 270);
+    newPtEnd2x = newPtEnd.x + outerRadius + 10;
+    newPtEnd2y = (-1 * newPtEnd.y + outerRadius + 10);
+    console.log(newPtEnd2x);
+    console.log(newPtEnd2y);
+    ctx.moveTo(newPt2x , newPt2y);
+    ctx.lineTo(newPtEnd2x, newPtEnd2y);
+
+    newPt= rotate(outerRadius, 0, 120);
+    newPt2x = newPt.x + 10 + outerRadius ;
+    newPt2y = (-1 * newPt.y + center.y);
+    newPtEnd= rotate(outerRadius, 0, 300);
+    newPtEnd2x = newPtEnd.x + outerRadius + 10;
+    newPtEnd2y = (-1 * newPtEnd.y + outerRadius + 10);
+    ctx.moveTo(newPt2x , newPt2y);
+    ctx.lineTo(newPtEnd2x, newPtEnd2y);
+
+    newPt= rotate(outerRadius, 0, 150);
+    console.log(newPt);
+    newPt2x = newPt.x + 10 + outerRadius ;
+    newPt2y = (-1 * newPt.y + center.y);
+    newPtEnd= rotate(outerRadius, 0, 330);
+    newPtEnd2x = newPtEnd.x + outerRadius + 10;
+    newPtEnd2y = (-1 * newPtEnd.y + outerRadius + 10);
+    ctx.moveTo(newPt2x , newPt2y);
+    ctx.lineTo(newPtEnd2x, newPtEnd2y);
+
+    ctx.stroke();
+  }
+}
+/*
+cosX = r/x
+x = r/cosX
+y = r/sinX
+
+cos210 = -1 * cos30 = -1/route(3)
+sin210 = -1 * sin30 = 1/2
+
+cos30 = 1/route(3)
+sin30 = 1/2
+*/
+
+function msg() {
+}
+
+        function rotate(x, y, degree)
+        {
+            // ホロスコープは180°から始まる
+            degree += 180.0;
+
+            var rad = (degree / 180.0) * Math.PI;
+            var newX = x * Math.cos(rad) - y * Math.sin(rad);
+            var newY = x * Math.sin(rad) + y * Math.cos(rad);
+
+            return {
+            	x: newX,
+            	y: newY
+            }
+        }
+
+
+draw();
+</script>
+
+  </body>
+</html>
