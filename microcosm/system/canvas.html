@@ -4,17 +4,19 @@
 	</style>
 </head>
 <body>
-  <canvas id="canvas" width="450" height="450" style="margin-left: 20px;"></canvas>
+  <canvas id="canvas" width="640" height="640" style="margin-left: 30px;"></canvas>
+  <div style="margin-left: 30px; margin-right: 30px; padding: 5px; height: 20px; border: 1px solid #aaa;" id="info"></div>
 
 <script>
 function draw() {
   var canvas = document.getElementById('canvas');
   var center = {
-  	x: 220,
-  	y: 220
+  	x: 310,
+  	y: 310
   }
-  var outerRadius = 210;
-  var innerRadius = (210 - 30);
+  var outerRadius = 300;
+  var innerRadius = (outerRadius - 30);
+  var centerRadius = 200;
   
   if (canvas.getContext){
     var ctx = canvas.getContext('2d');
@@ -80,19 +82,30 @@ function draw() {
     ctx.lineTo(newPtEnd2x, newPtEnd2y);
 
     ctx.stroke();
+
+    var ctx2 = canvas.getContext('2d');
+    ctx2.lineWidth  = 2.0;
+    ctx2.beginPath();
+    ctx2.strokeStyle = '#000000';
+    ctx2.fillStyle = '#ffffff';
+    ctx2.arc(center.x, center.y, centerRadius, 0, 2 * Math.PI);
+    ctx2.stroke();
+    ctx2.fill();
   }
+  canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+        document.getElementById("info").innerText = message;
+      }, false);
 }
-/*
-cosX = r/x
-x = r/cosX
-y = r/sinX
 
-cos210 = -1 * cos30 = -1/route(3)
-sin210 = -1 * sin30 = 1/2
-
-cos30 = 1/route(3)
-sin30 = 1/2
-*/
+function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
 
 function msg() {
 }

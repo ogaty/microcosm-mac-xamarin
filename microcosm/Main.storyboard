@@ -198,11 +198,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="760"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <box title="ユーザー1" translatesAutoresizingMaskIntoConstraints="NO" id="NGh-ec-Zlp">
-                                <rect key="frame" x="17" y="669" width="221" height="89"/>
+                                <rect key="frame" x="17" y="661" width="221" height="89"/>
                                 <view key="contentView" id="tc7-ED-omF">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +234,7 @@
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
                             <box title="イベント1" translatesAutoresizingMaskIntoConstraints="NO" id="xx9-bK-pyF">
-                                <rect key="frame" x="17" y="574" width="221" height="89"/>
+                                <rect key="frame" x="17" y="566" width="221" height="89"/>
                                 <view key="contentView" id="mc2-Ge-ibi">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,7 +266,7 @@
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
                             <box title="ユーザー2" translatesAutoresizingMaskIntoConstraints="NO" id="hYA-Mx-FV5">
-                                <rect key="frame" x="17" y="479" width="221" height="89"/>
+                                <rect key="frame" x="17" y="471" width="221" height="89"/>
                                 <view key="contentView" id="NzX-6W-0BA">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -580,15 +580,15 @@
                                 </tabViewItems>
                             </tabView>
                             <box title="Chart" translatesAutoresizingMaskIntoConstraints="NO" id="w3t-b3-9pq">
-                                <rect key="frame" x="623" y="24" width="726" height="724"/>
+                                <rect key="frame" x="623" y="16" width="726" height="724"/>
                                 <view key="contentView" id="dRg-6x-Fj0">
                                     <rect key="frame" x="2" y="2" width="722" height="707"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liI-xl-byu">
-                                            <rect key="frame" x="51" y="44" width="653" height="580"/>
+                                            <rect key="frame" x="20" y="27" width="684" height="660"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="580" id="5Qk-o2-VYK"/>
+                                                <constraint firstAttribute="height" constant="660" id="5Qk-o2-VYK"/>
                                             </constraints>
                                             <wkWebViewConfiguration key="configuration">
                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -597,8 +597,8 @@
                                         </wkWebView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="liI-xl-byu" firstAttribute="top" secondItem="dRg-6x-Fj0" secondAttribute="top" constant="83" id="Ju3-oQ-xIU"/>
-                                        <constraint firstItem="liI-xl-byu" firstAttribute="leading" secondItem="dRg-6x-Fj0" secondAttribute="leading" constant="51" id="Nqg-2o-2Mr"/>
+                                        <constraint firstItem="liI-xl-byu" firstAttribute="top" secondItem="dRg-6x-Fj0" secondAttribute="top" constant="20" id="Ju3-oQ-xIU"/>
+                                        <constraint firstItem="liI-xl-byu" firstAttribute="leading" secondItem="dRg-6x-Fj0" secondAttribute="leading" constant="20" id="Nqg-2o-2Mr"/>
                                         <constraint firstAttribute="trailing" secondItem="liI-xl-byu" secondAttribute="trailing" constant="18" id="UvS-eM-MR0"/>
                                     </constraints>
                                 </view>
@@ -608,7 +608,7 @@
                                 </constraints>
                             </box>
                             <box title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-Wn-TaU">
-                                <rect key="frame" x="345" y="404" width="186" height="344"/>
+                                <rect key="frame" x="345" y="396" width="186" height="344"/>
                                 <view key="contentView" id="FDD-Oh-1Z3">
                                     <rect key="frame" x="2" y="2" width="182" height="327"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -619,7 +619,7 @@
                                 </constraints>
                             </box>
                             <box title="イベント2" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-Bu-wPe">
-                                <rect key="frame" x="17" y="384" width="221" height="89"/>
+                                <rect key="frame" x="17" y="376" width="221" height="89"/>
                                 <view key="contentView" id="QmP-gk-9iz">
                                     <rect key="frame" x="2" y="2" width="217" height="75"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -651,7 +651,7 @@
                                 <font key="titleFont" size="11" name=".HiraKakuInterface-W3"/>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUi-93-wHI">
-                                <rect key="frame" x="502" y="127" width="81" height="32"/>
+                                <rect key="frame" x="502" y="119" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MKG-S0-pOx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -662,7 +662,7 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-D1-7YT">
-                                <rect key="frame" x="447" y="282" width="124" height="191"/>
+                                <rect key="frame" x="447" y="274" width="124" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="eJP-wD-wx2"/>
                             </imageView>
@@ -673,6 +673,7 @@
                             <constraint firstItem="xx9-bK-pyF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="63n-cs-aY5"/>
                             <constraint firstItem="NGh-ec-Zlp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Bx9-i8-B0Q"/>
                             <constraint firstItem="NGh-ec-Zlp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="IIv-hL-KpD"/>
+                            <constraint firstAttribute="bottom" secondItem="w3t-b3-9pq" secondAttribute="bottom" constant="20" id="Ig2-W5-8Hd"/>
                             <constraint firstItem="xx9-bK-pyF" firstAttribute="top" secondItem="NGh-ec-Zlp" secondAttribute="bottom" constant="10" id="PC8-ck-AK8"/>
                             <constraint firstAttribute="bottom" secondItem="wBt-tT-m2W" secondAttribute="bottom" constant="20" id="Q9L-aA-hjO"/>
                             <constraint firstItem="C3L-Wn-TaU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="UHr-Bl-Ild"/>
