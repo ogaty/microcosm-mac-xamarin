@@ -71,6 +71,11 @@
     <Reference Include="SkiaSharp.Views.Mac">
       <HintPath>..\packages\SkiaSharp.Views.1.59.3\lib\XamarinMac\SkiaSharp.Views.Mac.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -205,6 +210,15 @@
     <Compile Include="Models\CuspListDataSource.cs" />
     <Compile Include="Models\CuspListDelegate.cs" />
     <Compile Include="Views\CanvasView.cs" />
+    <Compile Include="Views\EditDirectoryView.cs" />
+    <Compile Include="Views\EditDirectoryViewController.cs" />
+    <Compile Include="Views\EditDirectoryView.designer.cs">
+      <DependentUpon>EditDirectoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditDirectoryViewController.designer.cs">
+      <DependentUpon>EditDirectoryViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calc\AspectCalc.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -215,6 +229,7 @@
     <InterfaceDefinition Include="Views\SettingOrbsView.xib" />
     <InterfaceDefinition Include="Views\DispNameView.xib" />
     <InterfaceDefinition Include="Views\UserAddView.xib" />
+    <InterfaceDefinition Include="Views\EditDirectoryView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />
@@ -238,6 +253,7 @@
     <BundleResource Include="ephe\se90377s.se1" />
     <BundleResource Include="ephe\seleapsec.txt" />
     <BundleResource Include="system\canvas.html" />
+    <BundleResource Include="system\test.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

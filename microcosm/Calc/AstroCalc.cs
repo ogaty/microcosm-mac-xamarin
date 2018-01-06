@@ -162,14 +162,20 @@ namespace microcosm.Calc
             return cusps;
         }
 
-
-        public Calcuration ReCalc(ConfigData config, SettingData setting, UserData udata)
+        /// <summary>
+        /// 再計算
+        /// </summary>
+        /// <returns>The calculate.</returns>
+        /// <param name="config">Config.</param>
+        /// <param name="setting">Setting.</param>
+        /// <param name="udata">UserData.</param>
+        public Calculation ReCalc(ConfigData config, SettingData setting, UserData udata)
         {
             List<PlanetData> p = PositionCalc(udata.time, udata.timezone);
             double[] cusps = CuspCalc(udata.time, udata.lat, udata.lng, config.houseCalc);
-            Calcuration calcurate = new Calcuration(p, cusps);
+            Calculation calculate = new Calculation(p, cusps);
 
-            return calcurate;
+            return calculate;
         }
     }
 }

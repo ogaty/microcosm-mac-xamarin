@@ -88,6 +88,8 @@ namespace microcosm.Views
             TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(index);
 
             if (item.isDir) {
+                CommonInstance.getInstance().SelectedDirectoryName = item.fileName;
+                CommonInstance.getInstance().SelectedDirectoryFullPath = item.FullPath;
                 return;
             }
 
@@ -98,6 +100,7 @@ namespace microcosm.Views
             UserTable.DataSource = DataSource;
             UserTable.Delegate = new UserTableDelegate(DataSource);
             UserTable.ReloadData();
+                        ReSetDbTree();
 
         }
 
@@ -123,12 +126,8 @@ namespace microcosm.Views
                     Directory.CreateDirectory(Util.root + "/data/NewDir");
                 }
             }
-            UserTable.ReloadData();
-        }
 
-        partial void EditDirectoryClick(NSObject sender)
-        {
-
+            ReSetDbTree();
         }
 
         /// <summary>
@@ -146,7 +145,19 @@ namespace microcosm.Views
                     Directory.Delete(item.FullPath, true);
                 }
             }
+            ReSetDbTree();
         }
+
+        public void ReSetDbTree()
+        {
+            UserDbTreeDataSource dataSource = new UserDbTreeDataSource();
+            List<TreeViewItem> root = new List<TreeViewItem>();
+            TreeViewItem rootNode = UserDirTree.CreateDirectoryNode(new DirectoryInfo(Util.root + "/data"));
+            root.Add(rootNode);
+            dataSource.list = root;
+            UserDbDirOutline.DataSource = dataSource;
+        }
+
 
         partial void UserTableClick(NSObject sender)
         {

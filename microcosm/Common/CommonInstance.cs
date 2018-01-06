@@ -9,6 +9,9 @@ namespace microcosm.Common
         public ConfigData config;
         public SettingData[] settings;
 
+        public string SelectedDirectoryName;
+        public string SelectedDirectoryFullPath;
+
         private CommonInstance()
         {
         }

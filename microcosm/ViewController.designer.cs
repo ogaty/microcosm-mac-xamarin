@@ -25,6 +25,30 @@ namespace microcosm
 		AppKit.NSTableView CuspList { get; set; }
 
 		[Outlet]
+		AppKit.NSPopUpButton DateSetterCombo { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField DateSetterCurrentLat { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField DateSetterCurrentLng { get; set; }
+
+		[Outlet]
+		AppKit.NSDatePicker DateSetterDatePicker { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField DateSetterDay { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField DateSetterHour { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField DateSetterMinute { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField DateSetterSecond { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField Event1Date { get; set; }
 
 		[Outlet]
@@ -63,6 +87,45 @@ namespace microcosm
 		[Outlet]
 		WebKit.WKWebView web { get; set; }
 
+		[Action ("DateSetterDayLeft:")]
+		partial void DateSetterDayLeft (Foundation.NSObject sender);
+
+		[Action ("DateSetterDayRight:")]
+		partial void DateSetterDayRight (Foundation.NSObject sender);
+
+		[Action ("DateSetterHourLeft:")]
+		partial void DateSetterHourLeft (Foundation.NSObject sender);
+
+		[Action ("DateSetterHourRight:")]
+		partial void DateSetterHourRight (Foundation.NSObject sender);
+
+		[Action ("DateSetterHourRIght:")]
+		partial void DateSetterHourRIght (Foundation.NSObject sender);
+
+		[Action ("DateSetterLeft:")]
+		partial void DateSetterLeft (Foundation.NSObject sender);
+
+		[Action ("DateSetterMinuteLeft:")]
+		partial void DateSetterMinuteLeft (Foundation.NSObject sender);
+
+		[Action ("DateSetterMinuteRight:")]
+		partial void DateSetterMinuteRight (Foundation.NSObject sender);
+
+		[Action ("DateSetterNow:")]
+		partial void DateSetterNow (Foundation.NSObject sender);
+
+		[Action ("DateSetterRight:")]
+		partial void DateSetterRight (Foundation.NSObject sender);
+
+		[Action ("DateSetterSecondLeft:")]
+		partial void DateSetterSecondLeft (Foundation.NSObject sender);
+
+		[Action ("DateSetterSecondRight:")]
+		partial void DateSetterSecondRight (Foundation.NSObject sender);
+
+		[Action ("DateSetterSet:")]
+		partial void DateSetterSet (Foundation.NSObject sender);
+
 		[Action ("scriptButtonClicked:")]
 		partial void scriptButtonClicked (Foundation.NSObject sender);
 		
@@ -86,6 +149,46 @@ namespace microcosm
 			if (CuspList != null) {
 				CuspList.Dispose ();
 				CuspList = null;
+			}
+
+			if (DateSetterCombo != null) {
+				DateSetterCombo.Dispose ();
+				DateSetterCombo = null;
+			}
+
+			if (DateSetterCurrentLat != null) {
+				DateSetterCurrentLat.Dispose ();
+				DateSetterCurrentLat = null;
+			}
+
+			if (DateSetterCurrentLng != null) {
+				DateSetterCurrentLng.Dispose ();
+				DateSetterCurrentLng = null;
+			}
+
+			if (DateSetterDatePicker != null) {
+				DateSetterDatePicker.Dispose ();
+				DateSetterDatePicker = null;
+			}
+
+			if (DateSetterDay != null) {
+				DateSetterDay.Dispose ();
+				DateSetterDay = null;
+			}
+
+			if (DateSetterHour != null) {
+				DateSetterHour.Dispose ();
+				DateSetterHour = null;
+			}
+
+			if (DateSetterMinute != null) {
+				DateSetterMinute.Dispose ();
+				DateSetterMinute = null;
+			}
+
+			if (DateSetterSecond != null) {
+				DateSetterSecond.Dispose ();
+				DateSetterSecond = null;
 			}
 
 			if (Event1Date != null) {

@@ -8,6 +8,7 @@ using microcosm.Common;
 using microcosm.Config;
 using microcosm.Models;
 using microcosm.Views;
+using Newtonsoft.Json;
 using SkiaSharp;
 using SwissEphNet;
 
@@ -27,7 +28,7 @@ namespace microcosm
         public UserData edata1 = new UserData();
         public UserData edata2 = new UserData();
 
-        public Calcuration[] ringsData = new Calcuration[7];
+        public Calculation[] ringsData = new Calculation[7];
 
 
         public ViewController(IntPtr handle) : base(handle)
@@ -104,14 +105,7 @@ namespace microcosm
 
             //            Console.WriteLine(config.defaultPlace);
 
-            User1Name.StringValue = "現在時刻";
-            User1Date.StringValue = DateTime.Now.ToString();
-            User2Name.StringValue = "現在時刻";
-            User2Date.StringValue = DateTime.Now.ToString();
-            Event1Name.StringValue = "現在時刻";
-            Event1Date.StringValue = DateTime.Now.ToString();
-            Event2Name.StringValue = "現在時刻";
-            Event2Date.StringValue = DateTime.Now.ToString();
+            ReSetUserBox();
             CuspListDataSource CDataSource = new CuspListDataSource();
             for (int i = 1; i <= 12; i++)
             {
@@ -125,6 +119,7 @@ namespace microcosm
             CuspList.DataSource = CDataSource;
             CuspList.Delegate = new CuspListDelegate(CDataSource);
 
+            /*
             canvas.AddSubview(new CanvasView());
 
 
@@ -141,12 +136,46 @@ namespace microcosm
             float radius = Math.Min(info.Width, info.Height) / 3;
             canvas1.DrawCircle(0, 0, radius, new SKPaint());
             SKData d = surface.Snapshot().Encode();
+            */
 
+            // ホロスコープ描画
             string html = "";
             using (StreamReader reader = new StreamReader(bundle + "/canvas.html")) {
                 html = reader.ReadToEnd();
             }
-            web.LoadHtmlString(html, null);
+            var sunJson = JsonConvert.SerializeObject(ringsData[0].planetData[0]);
+            var moonJson = JsonConvert.SerializeObject(ringsData[0].planetData[1]);
+            var mercuryJson = JsonConvert.SerializeObject(ringsData[0].planetData[2]);
+            var venusJson = JsonConvert.SerializeObject(ringsData[0].planetData[3]);
+            var marsJson = JsonConvert.SerializeObject(ringsData[0].planetData[4]);
+            var jupiterJson = JsonConvert.SerializeObject(ringsData[0].planetData[5]);
+            var saturnJson = JsonConvert.SerializeObject(ringsData[0].planetData[6]);
+            var uranusJson = JsonConvert.SerializeObject(ringsData[0].planetData[7]);
+            var neptuneJson = JsonConvert.SerializeObject(ringsData[0].planetData[8]);
+            var plutoJson = JsonConvert.SerializeObject(ringsData[0].planetData[9]);
+            string planetDegrees = "{" +
+                "sun: " + sunJson + "," +
+                "moon: " + moonJson + "," +
+                "marcury: " + mercuryJson + "," +
+                "venus: " + venusJson + "," +
+                "mars: " + marsJson + "," +
+                "jupiter: " + jupiterJson + "," +
+                "saturn: " + saturnJson + "," +
+                "uranus: " + uranusJson + "," +
+                "neptune: " + neptuneJson + "," +
+                "pluto: " + plutoJson + "" +
+                "}";
+
+            html = html.Replace("##planetDegrees##", planetDegrees);
+
+
+            web.LoadHtmlString(html, new NSUrl(new NSString(bundle), true));
+            Console.WriteLine(@"file://" + bundle);
+
+            DateSetterDatePicker.DateValue = new NSDate();
+            DateSetterCombo.SelectItem(0);
+
+            ReRender();
         }
 
         public override NSObject RepresentedObject
@@ -181,14 +210,457 @@ namespace microcosm
         //    }
         //}
 
-        partial void scriptButtonClicked(NSObject sender)
+        public void ReRender() 
         {
-            web.EvaluateJavaScript((NSString)@"msg();", (result, error) =>
+            web.EvaluateJavaScript((NSString)@"setPlanet(0, 300);", (result, error) =>
             {
 
             });
 
+            web.EvaluateJavaScript((NSString)@"reRender();", (result, error) =>
+            {
+
+            });
         }
 
+        partial void scriptButtonClicked(NSObject sender)
+        {
+            ReRender();
+        }
+
+        public void ReSetUserBox() 
+        {
+            User1Name.StringValue = udata1.name;
+            User1Date.StringValue = udata1.time.ToString("yyyy/MM/dd HH:mm:ss JST");
+            User2Name.StringValue = udata2.name;
+            User2Date.StringValue = udata2.time.ToString("yyyy/MM/dd HH:mm:ss JST");
+            Event1Name.StringValue = edata1.name;
+            Event1Date.StringValue = edata1.time.ToString("yyyy/MM/dd HH:mm:ss JST");
+            Event2Name.StringValue = edata2.name;
+            Event2Date.StringValue = edata2.time.ToString("yyyy/MM/dd HH:mm:ss JST");
+        }
+
+        private void DateSetterTime(DateTime date) 
+        {
+            if (DateSetterCombo.SelectedItem.Title == "ユーザー1")
+            {
+                udata1.time = date;
+            }
+            else if (DateSetterCombo.SelectedItem.Title == "ユーザー2")
+            {
+                udata2.time = date;
+            }
+            else if (DateSetterCombo.SelectedItem.Title == "イベント1")
+            {
+                edata1.time = date;
+            }
+            else if (DateSetterCombo.SelectedItem.Title == "イベント2")
+            {
+                edata2.time = date;
+            }
+        }
+
+        partial void DateSetterLeft(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null) {
+                return;
+            }
+            try 
+            {
+                int day = -1 * int.Parse(DateSetterDay.StringValue);
+                int hour = -1 * int.Parse(DateSetterHour.StringValue);
+                int minute = -1 * int.Parse(DateSetterMinute.StringValue);
+                double second = -1 * double.Parse(DateSetterSecond.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddSeconds(second);
+                date = date.AddMinutes(minute);
+                date = date.AddHours(hour);
+                date = date.AddDays(day);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+            if (DateSetterDay.StringValue == "")
+            {
+                return;
+            }
+        }
+
+        partial void DateSetterRight(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int day = int.Parse(DateSetterDay.StringValue);
+                int hour = int.Parse(DateSetterHour.StringValue);
+                int minute = int.Parse(DateSetterMinute.StringValue);
+                double second = double.Parse(DateSetterSecond.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddSeconds(second);
+                date = date.AddMinutes(minute);
+                date = date.AddHours(hour);
+                date = date.AddDays(day);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+        }
+
+        partial void DateSetterDayLeft(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int day = -1 * int.Parse(DateSetterDay.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddDays(day);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+        }
+
+        partial void DateSetterDayRight(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int day = int.Parse(DateSetterDay.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddDays(day);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+        }
+
+        /// <summary>
+        /// 時刻左ボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void DateSetterHourLeft(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int hour = -1 * int.Parse(DateSetterHour.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddHours(hour);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+        }
+
+        /// <summary>
+        /// 時刻右ボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void DateSetterHourRight(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int hour = int.Parse(DateSetterHour.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddHours(hour);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+        }
+
+        partial void DateSetterMinuteLeft(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int minute = -1 * int.Parse(DateSetterMinute.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddMinutes(minute);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+            if (DateSetterDay.StringValue == "")
+            {
+                return;
+            }
+        }
+
+        partial void DateSetterMinuteRight(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                int minute = int.Parse(DateSetterMinute.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddMinutes(minute);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+            if (DateSetterDay.StringValue == "")
+            {
+                return;
+            }
+        }
+
+        partial void DateSetterSecondLeft(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                double second = -1 * double.Parse(DateSetterSecond.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddSeconds(second);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+            if (DateSetterDay.StringValue == "")
+            {
+                return;
+            }
+
+        }
+
+        partial void DateSetterSecondRight(NSObject sender)
+        {
+            if (DateSetterDatePicker.DateValue == null)
+            {
+                return;
+            }
+            try
+            {
+                double second = double.Parse(DateSetterSecond.StringValue);
+
+                NSDate nsd = DateSetterDatePicker.DateValue;
+                DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+                date = date.AddSeconds(second);
+
+                DateSetterTime(date);
+
+                DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+                DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+                ReSetUserBox();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR: format error.");
+                return;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("ERROR: invalid cast.");
+                return;
+            }
+            if (DateSetterDay.StringValue == "")
+            {
+                return;
+            }
+
+        }
+
+        partial void DateSetterNow(NSObject sender)
+        {
+            DateTime date = DateTime.Now;
+            DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+            DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+            ReSetUserBox();
+        }
+
+        partial void DateSetterSet(NSObject sender)
+        {
+            NSDate nsd = DateSetterDatePicker.DateValue;
+            DateTime date = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+            date = date.AddSeconds(nsd.SecondsSinceReferenceDate);
+
+            DateSetterTime(date);
+
+            DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+            DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
+            ReSetUserBox();
+
+        }
     }
 }
