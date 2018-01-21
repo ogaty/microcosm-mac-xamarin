@@ -55,9 +55,26 @@ namespace microcosm.Calc
             {
                 s.swe_calc_ut(dret[1], planet_number, flag, x, ref serr);
 
+                int save_number = planet_number;
+                if (planet_number == 100377) 
+                {
+                    save_number = 90377;
+                }
+                if (planet_number == 146108)
+                {
+                    save_number = 136108;
+                }
+                if (planet_number == 146199)
+                {
+                    save_number = 136199;
+                }
+                if (planet_number == 146472)
+                {
+                    save_number = 136472;
+                }
                 PlanetData p = new PlanetData()
                 {
-                    no = planet_number,
+                    no = save_number,
                     absolute_position = x[0],
                     speed = x[3], // AMATERUでもここ使ってたからたぶん良い
                     aspects0 = new List<AspectInfo>(),

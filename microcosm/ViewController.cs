@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
 using AppKit;
@@ -10,7 +11,8 @@ using microcosm.Models;
 using microcosm.Views;
 using Newtonsoft.Json;
 using SkiaSharp;
-using SwissEphNet;
+using SkiaSharp.Views.Mac;
+using CoreGraphics;
 
 namespace microcosm
 {
@@ -19,6 +21,7 @@ namespace microcosm
         NSObject NSWindowDidResizeNotificationObject;
 
         public AstroCalc calc;
+        public AspectCalc aspect;
         public ConfigData config;
         public SettingData[] settings;
         public int settingIndex = 0;
@@ -29,6 +32,7 @@ namespace microcosm
         public UserData edata2 = new UserData();
 
         public Calculation[] ringsData = new Calculation[7];
+        public List<AspectInfo>[,] aspectsData = new List<AspectInfo>[7,7];
 
 
         public ViewController(IntPtr handle) : base(handle)
@@ -94,16 +98,26 @@ namespace microcosm
             for (int i = 0; i < 10; i++) {
                 settings[i] = SettingFromXml.GetSettingFromXml(root + "/system/setting" + i.ToString() + ".csm", i);
             }
-            /*
             CommonInstance.getInstance().config = config;
             CommonInstance.getInstance().settings = settings;
-            */
+            CommonInstance.getInstance().currentSetting = settings[0];
 
             calc = new AstroCalc();
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] = 
                 calc.ReCalc(config, settings[0], new UserData());
 
             //            Console.WriteLine(config.defaultPlace);
+
+            // aspect calc
+            for (int i = 0; i < 7; i++) {
+                for (int j = 0; j < 7; j++) {
+                    aspectsData[i,j] = new List<AspectInfo>();
+                }
+            }
+            aspect = new AspectCalc();
+            int ringIndexFrom = 0;
+            int ringIndexTo = 0;
+            aspectsData[ringIndexFrom, ringIndexTo] = aspect.AspectCalcSame(ringsData[0].planetData, ringIndexFrom);
 
             ReSetUserBox();
             CuspListDataSource CDataSource = new CuspListDataSource();
@@ -119,24 +133,19 @@ namespace microcosm
             CuspList.DataSource = CDataSource;
             CuspList.Delegate = new CuspListDelegate(CDataSource);
 
-            /*
-            canvas.AddSubview(new CanvasView());
 
 
-            SKImageInfo info = new SKImageInfo(200, 200);
-            SKSurface surface = SKSurface.Create(info);
-            SKCanvas canvas1 = surface.Canvas;
+//            canvas.AddSubview(new CanvasView());
 
-            canvas1.Clear();
 
-            // Translate to center
-            canvas1.Translate(info.Width / 2, info.Height / 2);
-
-            // Draw the circle
-            float radius = Math.Min(info.Width, info.Height) / 3;
-            canvas1.DrawCircle(0, 0, radius, new SKPaint());
-            SKData d = surface.Snapshot().Encode();
-            */
+            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 660, 720));
+            sk.PaintSurface += CanvasPaint;
+            //            sk.DrawRect(new CGRect());
+            //CanvasView c = new CanvasView();
+            //            sk.DrawRect(new CGRect(0, 0, 100, 100));
+            //            sk.DrawInSurface(new SKSurface(), new SKImageInfo());
+            //            horoscopeCanvas.AddSubview(sk);
+            horoscopeCanvas.AddSubview(sk);
 
             // ホロスコープ描画
             string html = "";
@@ -168,10 +177,11 @@ namespace microcosm
 
             html = html.Replace("##planetDegrees##", planetDegrees);
 
+            // webview
+//            web.LoadHtmlString(html, new NSUrl(new NSString(bundle), true));
+//            Console.WriteLine(@"file://" + bundle);
 
-            web.LoadHtmlString(html, new NSUrl(new NSString(bundle), true));
-            Console.WriteLine(@"file://" + bundle);
-
+            // time setter
             DateSetterDatePicker.DateValue = new NSDate();
             DateSetterCombo.SelectItem(0);
 
@@ -210,8 +220,83 @@ namespace microcosm
         //    }
         //}
 
+        public void CanvasPaint(object sender, SKPaintSurfaceEventArgs e) 
+        {
+            int CenterX = 700;
+            int CenterY = 620;
+            float radius = 620;
+            float zodiacWidth = 50;
+            float centerRadius = 360;
+            string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
+            string[] planets = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "O", "L" };
+            var surface = e.Surface;
+            var surfaceWidth = e.Info.Width;
+            var surfaceHeight = e.Info.Height;
+            SKCanvas cvs = e.Surface.Canvas;
+            cvs.Clear();
+//            cvs.Translate(50, 50);
+            SKPaint lineStyle = new SKPaint();
+            lineStyle.Style = SKPaintStyle.Stroke;
+
+            SKPaint p = new SKPaint();
+            p.Style = SKPaintStyle.Fill;
+            // outer
+            cvs.DrawCircle(CenterX, CenterY, radius, lineStyle);
+            // inner
+            cvs.DrawCircle(CenterX, CenterY, radius - zodiacWidth, lineStyle);
+            // center
+            cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+
+            System.Reflection.Assembly asm =
+                System.Reflection.Assembly.GetExecutingAssembly();
+            SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
+            p.Typeface = SKTypeface.FromStream(stream);
+            p.TextSize = 48;
+
+            for (int i = 0; i < signs.Length; i++)
+            {
+                cvs.DrawText(signs[i], 0, 30 + i * 40, p);
+            }
+            for (int i = 0; i < planets.Length; i++)
+            {
+                cvs.DrawText(planets[i], 120, 30 + i * 40, p);
+            }
+            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
+            cvs.Flush();
+
+        }
+
+        public void CanvasPaint2(object sender, SKPaintSurfaceEventArgs e)
+        {
+            var surface = e.Surface;
+            var surfaceWidth = e.Info.Width;
+            var surfaceHeight = e.Info.Height;
+            SKCanvas cvs = e.Surface.Canvas;
+            cvs.Clear();
+            cvs.Translate(50, 50);
+            float radius = 20;
+            SKPaint lineStyle = new SKPaint();
+            lineStyle.Style = SKPaintStyle.Stroke;
+            SKPaint p = new SKPaint();
+            p.Style = SKPaintStyle.Stroke;
+            cvs.DrawCircle(0, 0, radius, lineStyle);
+            //                var assembly = NSFont.Assembly;
+            System.Reflection.Assembly asm =
+                System.Reflection.Assembly.GetExecutingAssembly();
+            SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
+            p.Typeface = SKTypeface.FromStream(stream);
+            p.TextSize = 32;
+
+            cvs.DrawText("b", 0, 0, p);
+            //                cvs.Flush();
+            cvs.DrawText(ringsData[0].cusps[1].ToString(), 30, 0, new SKPaint());
+            cvs.Flush();
+
+        }
+
         public void ReRender() 
         {
+            /*
             web.EvaluateJavaScript((NSString)@"setPlanet(0, 300);", (result, error) =>
             {
 
@@ -221,13 +306,22 @@ namespace microcosm
             {
 
             });
+            */
         }
 
         partial void scriptButtonClicked(NSObject sender)
         {
-            ReRender();
+            horoscopeCanvas.Subviews[0].RemoveFromSuperview();
+            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 300, 300));
+            sk.PaintSurface += CanvasPaint2;
+            horoscopeCanvas.AddSubview(sk);
+
+//            ReRender();
         }
 
+        /// <summary>
+        /// ユーザーボックスに再度バインディング
+        /// </summary>
         public void ReSetUserBox() 
         {
             User1Name.StringValue = udata1.name;
@@ -240,6 +334,10 @@ namespace microcosm
             Event2Date.StringValue = edata2.time.ToString("yyyy/MM/dd HH:mm:ss JST");
         }
 
+        /// <summary>
+        /// ユーザーデータにデータを設定
+        /// </summary>
+        /// <param name="date">Date.</param>
         private void DateSetterTime(DateTime date) 
         {
             if (DateSetterCombo.SelectedItem.Title == "ユーザー1")

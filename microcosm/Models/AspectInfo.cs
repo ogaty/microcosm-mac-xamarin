@@ -20,6 +20,24 @@ namespace microcosm.Models
         QUINTILE = 13, // 72 5
         BIQUINTILE = 14 // 144 2.5
     };
+
+    public enum AspectDegrees
+    {
+        OPPOSITION = 180,
+        INCONJUNCT = 150,
+        SESQUIQUADRATE = 135,
+        TRINE = 120,
+        SQUARE = 90,
+        SEXTILE = 60,
+        SEMISEXTILE = 30,
+        SEMIQUINTILE = 36,
+        NOVILE = 40,
+        SEMISQUARE = 45,
+        SEPTILE = 51,
+        QUINTILE = 72,
+        BIQUINTILE = 144,
+    }
+
     public enum SoftHard
     {
         SOFT = 1,
@@ -34,5 +52,6 @@ namespace microcosm.Models
         public int targetPlanetNo; // ターゲット番号
         public bool isDisp; // 表示するかどうか
         public double absoluteDegree; // degree
+        public double targetDegree;
     }
 }

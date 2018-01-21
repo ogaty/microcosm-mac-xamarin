@@ -1,7 +1,11 @@
 <html>
 <head>
 	<style>
-	</style>
+    @font-face {
+        font-family: 'astrodotbasic';
+        src: url('AstroDotBasic.ttf') format('truetype');
+    }
+    </style>
 </head>
 <body>
   <!--
@@ -12,10 +16,10 @@
 
 <script>
 var planets = [
-  "\u2609", 
-  "\u263d", 
-  "\u263f", 
-  "\u2640", 
+  "\u2609",
+  "\u263d",
+  "\u263f",
+  "\u2640",
   "\u2642",
   "\u2643",
   "\u2644",
@@ -23,12 +27,12 @@ var planets = [
   "\u2646",
   "\u2647"
 ];
-var planet_degrees = ##planetDegrees##; 
+var planet_degrees = ##planetDegrees##;
 /*
-var planet_degrees = {sun: {"sensitive":false,"no":0,"absolute_position":286.10481192711654,"speed":1.0189568442285635},moon: {"sensitive":false,"no":1,"absolute_position":166.19920792216888,"speed":13.80209688369079},marcury: {"sensitive":false,"no":2,"absolute_position":263.97972607067442,"speed":1.2091753409318764},venus: {"sensitive":false,"no":3,"absolute_position":285.43555218348956,"speed":1.2580756429113309},mars: {"sensitive":false,"no":4,"absolute_position":227.5899866445904,"speed":0.62245253013142232},jupiter: {"sensitive":false,"no":5,"absolute_position":227.83734566884354,"speed":0.15953892325710037},saturn: {"sensitive":false,"no":6,"absolute_position":272.03020362127546,"speed":0.1157559831504207},uranus: {"sensitive":false,"no":7,"absolute_position":24.576773185829182,"speed":0.0033275029291452785},neptune: {"sensitive":false,"no":8,"absolute_position":342.03066729897841,"speed":0.024243710104564005},pluto: {"sensitive":false,"no":9,"absolute_position":288.96562403798436,"speed":0.034052880813753343}}; 
+var planet_degrees = {sun: {"sensitive":false,"no":0,"absolute_position":286.10481192711654,"speed":1.0189568442285635},moon: {"sensitive":false,"no":1,"absolute_position":166.19920792216888,"speed":13.80209688369079},marcury: {"sensitive":false,"no":2,"absolute_position":263.97972607067442,"speed":1.2091753409318764},venus: {"sensitive":false,"no":3,"absolute_position":285.43555218348956,"speed":1.2580756429113309},mars: {"sensitive":false,"no":4,"absolute_position":227.5899866445904,"speed":0.62245253013142232},jupiter: {"sensitive":false,"no":5,"absolute_position":227.83734566884354,"speed":0.15953892325710037},saturn: {"sensitive":false,"no":6,"absolute_position":272.03020362127546,"speed":0.1157559831504207},uranus: {"sensitive":false,"no":7,"absolute_position":24.576773185829182,"speed":0.0033275029291452785},neptune: {"sensitive":false,"no":8,"absolute_position":342.03066729897841,"speed":0.024243710104564005},pluto: {"sensitive":false,"no":9,"absolute_position":288.96562403798436,"speed":0.034052880813753343}};
                 */
 var cusps = [0, 0, 30, 60, 90, 120, 150, 180, 210, 240, 300, 330];
-var signs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+var signs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"];
 var center = {
   x: 310,
   y: 310
@@ -100,8 +104,8 @@ function drawSigns() {
     newSignx -= 5;
     newSigny = (-1 * signPt.y + center.y);
     newSigny += 15;
-    ctx.font = "36px serif";
-    ctx.strokeText(signs[i], newSignx, newSigny);
+    ctx.font = "36px astrodotbasic";
+    ctx.fillText(signs[i], newSignx, newSigny);
   }
 }
 

@@ -219,6 +219,11 @@
       <DependentUpon>EditDirectoryViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Calc\AspectCalc.cs" />
+    <Compile Include="Calc\AbstractAspect.cs" />
+    <Compile Include="Calc\OppositionAspect.cs" />
+    <Compile Include="Calc\TrineAspect.cs" />
+    <Compile Include="Calc\SquareAspect.cs" />
+    <Compile Include="Calc\SextileAspect.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -253,7 +258,9 @@
     <BundleResource Include="ephe\se90377s.se1" />
     <BundleResource Include="ephe\seleapsec.txt" />
     <BundleResource Include="system\canvas.html" />
-    <BundleResource Include="system\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="system\AstroDotBasic.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

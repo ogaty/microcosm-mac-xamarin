@@ -77,10 +77,12 @@ namespace microcosm.Config
         private double[] orb_other_hard_150;
 
         // 天体を表示
+        // [ringInex][planetIndex]
         // 円ごとなので、配列個数は7
         public List<Dictionary<int, bool>> dispPlanet = new List<Dictionary<int, bool>>();
 
         // 天体のアスペクトを表示
+        // [ringIndex][aspectAbsolute]
         // 11-77まで28個
         public List<Dictionary<int, bool>> dispAspectPlanet = new List<Dictionary<int, bool>>();
         private bool[] aspectSun = new bool[28];
@@ -135,6 +137,7 @@ namespace microcosm.Config
             }
 
             // N-N、N-P、N-Tのアスペクト
+            // dispAspectCategory/dispAspectPlanetに変更
             // dispAspect[0][2] => N-T
             // dispAspect[1][3] => P-4
             // [0][2] と [2][0]は同じ
@@ -1180,6 +1183,12 @@ namespace microcosm.Config
             da.Add(CommonData.ZODIAC_NUMBER_PARAS, false);
             da.Add(CommonData.ZODIAC_NUMBER_JUNO, false);
             da.Add(CommonData.ZODIAC_NUMBER_VESTA, false);
+            da.Add(CommonData.ZODIAC_NUMBER_ERIS, false);
+            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, false);
+            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, false);
+            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, false);
+            da.Add(CommonData.ZODIAC_NUMBER_VT, false);
+            da.Add(CommonData.ZODIAC_NUMBER_POF, false);
 
             return da;
         }

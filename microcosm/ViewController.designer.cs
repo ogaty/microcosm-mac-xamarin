@@ -61,6 +61,9 @@ namespace microcosm
 		AppKit.NSTextField Event2Name { get; set; }
 
 		[Outlet]
+		AppKit.NSView horoscopeCanvas { get; set; }
+
+		[Outlet]
 		AppKit.NSImageCell img { get; set; }
 
 		[Outlet]
@@ -254,6 +257,11 @@ namespace microcosm
 			if (web != null) {
 				web.Dispose ();
 				web = null;
+			}
+
+			if (horoscopeCanvas != null) {
+				horoscopeCanvas.Dispose ();
+				horoscopeCanvas = null;
 			}
 		}
 	}

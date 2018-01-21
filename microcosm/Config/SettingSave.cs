@@ -30,6 +30,11 @@ namespace microcosm.Config
 
         }
 
+        /// <summary>
+        /// settingDataをsettingXmlに変換
+        /// </summary>
+        /// <returns>The setting.</returns>
+        /// <param name="setting">Setting.</param>
         public static SettingXml ConvertSetting(SettingData setting)
         {
             SettingXml ret = new SettingXml();
