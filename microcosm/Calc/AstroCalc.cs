@@ -83,7 +83,7 @@ namespace microcosm.Calc
                     aspects3 = new List<AspectInfo>(),
                     aspects4 = new List<AspectInfo>(),
                     aspects5 = new List<AspectInfo>(),
-                    aspects6 = new List<AspectInfo>()
+                    aspects6 = new List<AspectInfo>(),
                 };
                 if (planet_number == CommonData.ZODIAC_NUMBER_ASC ||
                     planet_number == CommonData.ZODIAC_NUMBER_MC ||
@@ -115,7 +115,7 @@ namespace microcosm.Calc
         /// 
         /// </param>
         /// 
-        public double[] CuspCalc(DateTime d, double lat, double lng, EHouseCalc houseKind)
+        public double[] CuspCalc(DateTime d, double timezone, double lat, double lng, EHouseCalc houseKind)
         {
             int utc_year = 0;
             int utc_month = 0;
@@ -128,7 +128,7 @@ namespace microcosm.Calc
             double[] dret = { 0.0, 0.0 };
 
             // utcに変換
-            s.swe_utc_time_zone(d.Year, d.Month, d.Day, d.Hour, d.Minute, d.Second, 0.0, ref utc_year, ref utc_month, ref utc_day, ref utc_hour, ref utc_minute, ref utc_second);
+            s.swe_utc_time_zone(d.Year, d.Month, d.Day, d.Hour, d.Minute, d.Second, timezone, ref utc_year, ref utc_month, ref utc_day, ref utc_hour, ref utc_minute, ref utc_second);
             s.swe_utc_to_jd(utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, 1, dret, ref serr);
 
             double[] cusps = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -189,7 +189,7 @@ namespace microcosm.Calc
         public Calculation ReCalc(ConfigData config, SettingData setting, UserData udata)
         {
             List<PlanetData> p = PositionCalc(udata.time, udata.timezone);
-            double[] cusps = CuspCalc(udata.time, udata.lat, udata.lng, config.houseCalc);
+            double[] cusps = CuspCalc(udata.time, udata.timezone, udata.lat, udata.lng, config.houseCalc);
             Calculation calculate = new Calculation(p, cusps);
 
             return calculate;

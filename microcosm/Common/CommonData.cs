@@ -68,7 +68,109 @@ namespace microcosm.Common
         public const int ZODIAC_NUMBER_VT = 10003;
         public const int ZODIAC_NUMBER_POF = -1;
 
+        public const int SIGN_ARIES = 0;
+        public const int SIGN_TAURUS = 1;
+        public const int SIGN_GEMINI = 2;
+        public const int SIGN_CANCER = 3;
+        public const int SIGN_LEO = 4;
+        public const int SIGN_VIRGO = 5;
+        public const int SIGN_LIBRA = 6;
+        public const int SIGN_SCORPIO = 7;
+        public const int SIGN_SAGITTARIUS = 8;
+        public const int SIGN_CAPRICORN = 9;
+        public const int SIGN_AQUARIUS = 10;
+        public const int SIGN_PISCES = 11;
+
+
         public static double defaultLat = 35.670587;
         public static double defaultLng = 139.772003;
+
+        /// <summary>
+        /// 番号を引数に天体のシンボルを返す
+        /// </summary>
+        /// <param name="number">天体番号</param>
+        /// <returns></returns>
+        public static string getPlanetSymbol(int number)
+        {
+            switch (number)
+            {
+                case ZODIAC_NUMBER_SUN:
+                    return "A";
+                case ZODIAC_NUMBER_MOON:
+                    return "B";
+                case ZODIAC_NUMBER_MERCURY:
+                    return "C";
+                case ZODIAC_NUMBER_VENUS:
+                    return "D";
+                case ZODIAC_NUMBER_MARS:
+                    return "E";
+                case ZODIAC_NUMBER_JUPITER:
+                    return "F";
+                case ZODIAC_NUMBER_SATURN:
+                    return "G";
+                case ZODIAC_NUMBER_URANUS:
+                    return "H";
+                case ZODIAC_NUMBER_NEPTUNE:
+                    return "I";
+                case ZODIAC_NUMBER_PLUTO:
+                    return "J";
+                // 外部フォントだと天文学用のPLUTOになっているのが困りどころ
+                case ZODIAC_NUMBER_DH_TRUENODE:
+                    return "L";
+                case ZODIAC_NUMBER_EARTH:
+                    return "O";
+                case ZODIAC_NUMBER_CHIRON:
+                    return "U";
+                case ZODIAC_NUMBER_LILITH:
+                    return "T";
+                case ZODIAC_NUMBER_ERIS:
+                    return "E";
+                case ZODIAC_NUMBER_SEDNA:
+                    return "S";
+                case ZODIAC_NUMBER_HAUMEA:
+                    return "H";
+                case ZODIAC_NUMBER_MAKEMAKE:
+                    return "M";
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// 番号を引数にサインのシンボルを返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getSignSymbol(int number)
+        {
+            switch (number)
+            {
+                case SIGN_ARIES:
+                    return "\u2648";
+                case SIGN_TAURUS:
+                    return "\u2649";
+                case SIGN_GEMINI:
+                    return "\u264a";
+                case SIGN_CANCER:
+                    return "\u264b";
+                case SIGN_LEO:
+                    return "\u264c";
+                case SIGN_VIRGO:
+                    return "\u264d";
+                case SIGN_LIBRA:
+                    return "\u264e";
+                case SIGN_SCORPIO:
+                    return "\u264f";
+                case SIGN_SAGITTARIUS:
+                    return "\u2650";
+                case SIGN_CAPRICORN:
+                    return "\u2651";
+                case SIGN_AQUARIUS:
+                    return "\u2652";
+                case SIGN_PISCES:
+                    return "\u2653";
+            }
+            return "";
+        }
+
     }
 }

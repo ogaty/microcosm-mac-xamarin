@@ -224,6 +224,7 @@
     <Compile Include="Calc\TrineAspect.cs" />
     <Compile Include="Calc\SquareAspect.cs" />
     <Compile Include="Calc\SextileAspect.cs" />
+    <Compile Include="Common\Position.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

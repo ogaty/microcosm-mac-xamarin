@@ -112,6 +112,8 @@ namespace microcosm.Config
         private bool[] aspectVt = new bool[28];
         private bool[] aspectPof = new bool[28];
 
+        string defaultAspect = "true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
+
         /// <summary>
         /// 初期化
         /// </summary>
@@ -1154,35 +1156,100 @@ namespace microcosm.Config
 
         public void SetDispAspectPlanet()
         {
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; i < 7; i++)
             {
                 dispAspectPlanet.Add(GetDispAspectDictionary(i));
             }
         }
 
+        /// <summary>
+        /// 太陽、月がアスペクトを表示させるか
+        /// </summary>
+        /// <returns>The disp aspect dictionary.</returns>
+        /// <param name="n">N.</param>
         private Dictionary<int, bool> GetDispAspectDictionary(int n)
         {
             Dictionary<int, bool> da = new Dictionary<int, bool>();
-            da.Add(CommonData.ZODIAC_NUMBER_SUN, aspectSun[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_MOON, aspectMoon[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_MERCURY, aspectMercury[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_VENUS, aspectVenus[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_MARS, aspectMars[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_JUPITER, aspectJupiter[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_SATURN, aspectSaturn[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_URANUS, aspectUranus[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, aspectNeptune[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_PLUTO, aspectPluto[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, aspectDh[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_ASC, aspectAsc[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_MC, aspectMc[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_CHIRON, aspectChiron[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_EARTH, aspectEarth[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_LILITH, aspectLilith[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_CERES, aspectCeres[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_PARAS, false);
-            da.Add(CommonData.ZODIAC_NUMBER_JUNO, false);
-            da.Add(CommonData.ZODIAC_NUMBER_VESTA, false);
+            xmlData.aspectSun = xmlData.aspectSun ?? defaultAspect;
+            bool[] bools = ConvertBool(xmlData.aspectSun.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_SUN, bools[n]);
+
+            xmlData.aspectMoon = xmlData.aspectMoon ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectMoon.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_MOON, bools[n]);
+
+            xmlData.aspectMercury = xmlData.aspectMercury ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectMercury.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_MERCURY, bools[n]);
+
+            xmlData.aspectVenus = xmlData.aspectVenus ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectVenus.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_VENUS, bools[n]);
+
+            xmlData.aspectMars = xmlData.aspectMars ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectMars.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_MARS, bools[n]);
+
+            xmlData.aspectJupiter = xmlData.aspectJupiter ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectJupiter.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_JUPITER, bools[n]);
+
+            xmlData.aspectSaturn = xmlData.aspectSaturn ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectSaturn.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_SATURN, bools[n]);
+
+            xmlData.aspectUranus = xmlData.aspectUranus ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectUranus.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_URANUS, bools[n]);
+
+            xmlData.aspectNeptune = xmlData.aspectNeptune ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectNeptune.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, bools[n]);
+
+            xmlData.aspectPluto = xmlData.aspectPluto ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectPluto.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_PLUTO, bools[n]);
+
+            xmlData.aspectDh = xmlData.aspectDh ?? defaultAspect;
+            bools = ConvertBool(xmlData.aspectDh.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, bools[n]);
+
+            xmlData.aspectAsc = xmlData.aspectAsc ?? "true,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectAsc.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_ASC, bools[n]);
+
+            xmlData.aspectMc = xmlData.aspectMc ?? "true,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectMc.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_MC, bools[n]);
+
+            xmlData.aspectChiron = xmlData.aspectChiron ?? "true,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectChiron.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_CHIRON, bools[n]);
+
+            xmlData.aspectEarth = xmlData.aspectEarth ?? "false,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectEarth.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_EARTH, bools[n]);
+
+            xmlData.aspectLilith = xmlData.aspectLilith ?? "false,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectLilith.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_LILITH, bools[n]);
+
+            xmlData.aspectCeres = xmlData.aspectCeres ?? "false,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectCeres.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_CERES, bools[n]);
+
+            xmlData.aspectParas = xmlData.aspectParas ?? "false,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectParas.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_PARAS, bools[n]);
+
+            xmlData.aspectJuno = xmlData.aspectJuno ?? "false,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectJuno.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_JUNO, bools[n]);
+
+            xmlData.aspectVesta = xmlData.aspectVesta ?? "false,false,false,false,false,false,false";
+            bools = ConvertBool(xmlData.aspectVesta.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_VESTA, bools[n]);
+            // todo
             da.Add(CommonData.ZODIAC_NUMBER_ERIS, false);
             da.Add(CommonData.ZODIAC_NUMBER_SEDNA, false);
             da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, false);
@@ -1195,6 +1262,7 @@ namespace microcosm.Config
 
         private void SetDispAspectCategory()
         {
+            SetDefaultAspectCategory();
             for (int i = 0; i < 7; i++)
             {
                 for (int j = 0; j < 7; j++)
@@ -1207,17 +1275,12 @@ namespace microcosm.Config
             }
         }
 
-        /// <summary>
-        /// 新バージョン用aspectCategory設定
-        /// </summary>
-        /// <returns>The disp aspect category dictionary.</returns>
-        /// <param name="n">From</param>
-        /// <param name="m">To</param>
-        private Dictionary<AspectKind, bool> GetDispAspectCategoryDictionary(int n, int m)
+        private void SetDefaultAspectCategory()
         {
             // 11 22 33 12 13 23 44 55 66 77 14 15 16 17 24 25 26 27 34 35 36 37 45 46 47 56 57 67
             // Enumで見よう
-            if (xmlData.aspectConjunction == null) {
+            if (xmlData.aspectConjunction == null)
+            {
                 xmlData.aspectConjunction = GetDefaultAspectCategory();
             }
             if (xmlData.aspectOpposition == null)
@@ -1272,7 +1335,16 @@ namespace microcosm.Config
             {
                 xmlData.aspectBiQuintile = GetDefaultAspectCategory();
             }
+        }
 
+        /// <summary>
+        /// 新バージョン用aspectCategory設定
+        /// </summary>
+        /// <returns>The disp aspect category dictionary.</returns>
+        /// <param name="n">From</param>
+        /// <param name="m">To</param>
+        private Dictionary<AspectKind, bool> GetDispAspectCategoryDictionary(int n, int m)
+        {
             bool[] conjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
             bool[] opposition = ConvertBool(xmlData.aspectOpposition.Split(','));
             bool[] trine = ConvertBool(xmlData.aspectTrine.Split(','));

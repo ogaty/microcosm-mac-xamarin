@@ -1,5 +1,7 @@
 ﻿using System;
 using AppKit;
+using microcosm.Common;
+
 namespace microcosm.Models
 {
     public class CuspListDelegate : NSTableViewDelegate
@@ -26,6 +28,11 @@ namespace microcosm.Models
                 view.Editable = false;
             }
 
+            string sign;
+            double tmp1;
+            double tmp2;
+            double tmp3;
+
             // Setup view based on the column selected
             switch (tableColumn.Title)
             {
@@ -34,14 +41,26 @@ namespace microcosm.Models
                     tableColumn.Width = 50;
                     break;
                 case "1":
-                    view.StringValue = String.Format("{0:0.000}", DataSource.list[(int)row].Degree1);
+                    sign = CommonData.getSignSymbol((int)(DataSource.list[(int)row].Degree1 / 30));
+                    tmp1 = DataSource.list[(int)row].Degree1 / 30;
+                    tmp2 = tmp1 - Math.Floor(tmp1);
+                    tmp3 = Math.Floor(DataSource.list[(int)row].Degree1 % 30) + (tmp2 / 100) * 60;
+                    view.StringValue = sign + String.Format("{0:0.00}", tmp3);
                     tableColumn.Width = 70;
                     break;
                 case "2":
-                    view.StringValue = String.Format("{0:0.000}", DataSource.list[(int)row].Degree2);
+                    sign = CommonData.getSignSymbol((int)(DataSource.list[(int)row].Degree2 / 30));
+                    tmp1 = DataSource.list[(int)row].Degree2 / 30;
+                    tmp2 = tmp1 - Math.Floor(tmp1);
+                    tmp3 = Math.Floor(DataSource.list[(int)row].Degree1 % 30) + (tmp2 / 100) * 60;
+                    view.StringValue = sign + String.Format("{0:0.00}", tmp3);
                     break;
                 case "3":
-                    view.StringValue = String.Format("{0:0.000}", DataSource.list[(int)row].Degree3);
+                    sign = CommonData.getSignSymbol((int)(DataSource.list[(int)row].Degree3 / 30));
+                    tmp1 = DataSource.list[(int)row].Degree3 / 30;
+                    tmp2 = tmp1 - Math.Floor(tmp1);
+                    tmp3 = Math.Floor(DataSource.list[(int)row].Degree1 % 30) + (tmp2 / 100) * 60;
+                    view.StringValue = sign + String.Format("{0:0.00}", tmp3);
                     break;
             }
 

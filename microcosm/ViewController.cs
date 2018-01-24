@@ -120,6 +120,8 @@ namespace microcosm
             aspectsData[ringIndexFrom, ringIndexTo] = aspect.AspectCalcSame(ringsData[0].planetData, ringIndexFrom);
 
             ReSetUserBox();
+
+            // cuspList
             CuspListDataSource CDataSource = new CuspListDataSource();
             for (int i = 1; i <= 12; i++)
             {
@@ -135,19 +137,14 @@ namespace microcosm
 
 
 
-//            canvas.AddSubview(new CanvasView());
+            //            canvas.AddSubview(new CanvasView());
 
-
-            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 660, 720));
+            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 690, 720));
             sk.PaintSurface += CanvasPaint;
-            //            sk.DrawRect(new CGRect());
-            //CanvasView c = new CanvasView();
-            //            sk.DrawRect(new CGRect(0, 0, 100, 100));
-            //            sk.DrawInSurface(new SKSurface(), new SKImageInfo());
-            //            horoscopeCanvas.AddSubview(sk);
             horoscopeCanvas.AddSubview(sk);
 
             // ホロスコープ描画
+            /*
             string html = "";
             using (StreamReader reader = new StreamReader(bundle + "/canvas.html")) {
                 html = reader.ReadToEnd();
@@ -176,6 +173,7 @@ namespace microcosm
                 "}";
 
             html = html.Replace("##planetDegrees##", planetDegrees);
+            */
 
             // webview
 //            web.LoadHtmlString(html, new NSUrl(new NSString(bundle), true));
@@ -222,10 +220,10 @@ namespace microcosm
 
         public void CanvasPaint(object sender, SKPaintSurfaceEventArgs e) 
         {
-            int CenterX = 700;
-            int CenterY = 620;
+            int CenterX = 720;
+            int CenterY = 640;
             float radius = 620;
-            float zodiacWidth = 50;
+            float zodiacWidth = 60;
             float centerRadius = 360;
             string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
             string[] planets = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "O", "L" };
@@ -234,9 +232,15 @@ namespace microcosm
             var surfaceHeight = e.Info.Height;
             SKCanvas cvs = e.Surface.Canvas;
             cvs.Clear();
+            SKRect bg = new SKRect(0, 0, CenterX * 2, CenterY * 2);
+            SKPaint bgStyle = new SKPaint();
+            bgStyle.Color = new SKColor(255, 255, 255, 255);
+            cvs.DrawRect(bg, bgStyle);
 //            cvs.Translate(50, 50);
             SKPaint lineStyle = new SKPaint();
             lineStyle.Style = SKPaintStyle.Stroke;
+
+//            int rings = 1;
 
             SKPaint p = new SKPaint();
             p.Style = SKPaintStyle.Fill;
@@ -247,21 +251,139 @@ namespace microcosm
             // center
             cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
 
+
+
+            // house cusps
+            Position housePt;
+            Position housePtEnd;
+            SKPaint lineStyle1 = new SKPaint();
+            lineStyle1.StrokeWidth = 2.5F;
+            SKPaint lineStyle2 = new SKPaint();
+            lineStyle2.PathEffect = SKPathEffect.CreateDash(new[] { 5F, 2F }, 1.0F);
+            lineStyle2.StrokeWidth = 1.5F;
+            for (int i = 1; i <= 12; i++) 
+            {
+                housePt = Util.Rotate(radius - zodiacWidth, 0, ringsData[0].cusps[i] - ringsData[0].cusps[1]);
+                housePt.x = housePt.x + CenterX;
+                housePt.y = -1 * housePt.y + CenterY;
+                housePtEnd = Util.Rotate(centerRadius, 0, ringsData[0].cusps[i] - ringsData[0].cusps[1]);
+                housePtEnd.x = housePtEnd.x + CenterX;
+                housePtEnd.y = -1 * housePtEnd.y + CenterY;
+                if (i == 1 || i == 4 || i == 7 || i == 10)
+                {
+                    cvs.DrawLine((float)housePt.x, (float)housePt.y, (float)housePtEnd.x, (float)housePtEnd.y, lineStyle1);
+                }
+                else 
+                {
+                    cvs.DrawLine((float)housePt.x, (float)housePt.y, (float)housePtEnd.x, (float)housePtEnd.y, lineStyle2);
+                }
+            }
+
+            // sign cusps
+            Position signPt;
+            Position signPtEnd;
+            for (int i = 1; i <= 12; i++)
+            {
+                signPt = Util.Rotate(radius, 0, 30 * i - ringsData[0].cusps[1]);
+                signPt.x = signPt.x + CenterX;
+                signPt.y = -1 * signPt.y + CenterY;
+                signPtEnd = Util.Rotate(radius - zodiacWidth, 0, 30 * i - ringsData[0].cusps[1]);
+                signPtEnd.x = signPtEnd.x + CenterX;
+                signPtEnd.y = -1 * signPtEnd.y + CenterY;
+                cvs.DrawLine((float)signPt.x, (float)signPt.y, (float)signPtEnd.x, (float)signPtEnd.y, lineStyle);
+            }
+
+
+
+            // text
             System.Reflection.Assembly asm =
                 System.Reflection.Assembly.GetExecutingAssembly();
             SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
             p.Typeface = SKTypeface.FromStream(stream);
             p.TextSize = 48;
 
+            Position signValuePt;
             for (int i = 0; i < signs.Length; i++)
             {
-                cvs.DrawText(signs[i], 0, 30 + i * 40, p);
+                signValuePt = Util.Rotate(radius - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
+                signValuePt.x = signValuePt.x + CenterX - 15;
+                signValuePt.y = -1 * signValuePt.y + CenterY + 20;
+                cvs.DrawText(signs[i], (float)signValuePt.x, (float)signValuePt.y, p);
             }
-            for (int i = 0; i < planets.Length; i++)
+
+            SKPaint degreeText = new SKPaint()
             {
-                cvs.DrawText(planets[i], 120, 30 + i * 40, p);
+                TextSize = 24,
+                Style = SKPaintStyle.Fill
+            };
+            Position planetPt;
+            Position planetDegreePt;
+            foreach (PlanetData planet in ringsData[0].planetData)
+            {
+                if (!CommonInstance.getInstance().currentSetting.dispPlanet[0][planet.no]) 
+                {
+                    continue;
+                }
+                planetPt = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1]);
+                planetPt.x = planetPt.x + CenterX;
+                planetPt.y = -1 * planetPt.y + CenterY + 20;
+                cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
+                planetDegreePt = Util.Rotate(radius - 160, 0, planet.absolute_position - ringsData[0].cusps[1]);
+                planetDegreePt.x = planetDegreePt.x + CenterX;
+                planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
+                cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
             }
-            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
+//            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
+
+            // aspects
+            Position aspectPt;
+            Position aspectPtEnd;
+            SKColor crimson = SKColor.Parse("#dc143c");
+            SKColor orange = SKColor.Parse("#ffa500");
+            SKColor purple = SKColor.Parse("#800080");
+            SKColor green = SKColor.Parse("#008000");
+            SKPaint aspectLine = new SKPaint();
+            aspectLine.Style = SKPaintStyle.Stroke;
+            aspectLine.StrokeWidth = 2.0F;
+            for (int i = 0; i < aspectsData[0, 0].Count; i++) 
+            {
+                if (!aspectsData[0, 0][i].isDisp)
+                {
+                    continue;
+                }
+                aspectPt = Util.Rotate(centerRadius, 0, aspectsData[0, 0][i].absoluteDegree - ringsData[0].cusps[1]);
+                aspectPt.x = aspectPt.x + CenterX;
+                aspectPt.y = -1 * aspectPt.y + CenterY;
+
+                aspectPtEnd = Util.Rotate(centerRadius, 0, aspectsData[0, 0][i].targetDegree - ringsData[0].cusps[1]);
+                aspectPtEnd.x = aspectPtEnd.x + CenterX;
+                aspectPtEnd.y = -1 * aspectPtEnd.y + CenterY;
+
+                if (aspectsData[0, 0][i].aspectKind == AspectKind.OPPOSITION)
+                {
+                    aspectLine.Color = crimson;
+                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                }
+                else if (aspectsData[0, 0][i].aspectKind == AspectKind.TRINE)
+                {
+                    aspectLine.Color = orange;
+                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                }
+                else if (aspectsData[0, 0][i].aspectKind == AspectKind.SQUARE) 
+                {
+                    aspectLine.Color = purple;
+                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                }
+                else if (aspectsData[0, 0][i].aspectKind == AspectKind.SEXTILE)
+                {
+                    aspectLine.Color = green;
+                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                }
+                else 
+                {
+                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, lineStyle);
+                }
+            }
             cvs.Flush();
 
         }

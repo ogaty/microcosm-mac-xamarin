@@ -28,6 +28,7 @@ namespace microcosm.Calc
                         !setting.dispAspectPlanet[ringIndex][planetList[j].no])
                     {
                         isDisp = false;
+                        continue;
                     }
 
                     Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
