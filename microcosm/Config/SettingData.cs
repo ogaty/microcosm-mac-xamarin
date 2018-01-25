@@ -1156,7 +1156,7 @@ namespace microcosm.Config
 
         public void SetDispAspectPlanet()
         {
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 28; i++)
             {
                 dispAspectPlanet.Add(GetDispAspectDictionary(i));
             }
@@ -1214,39 +1214,39 @@ namespace microcosm.Config
             bools = ConvertBool(xmlData.aspectDh.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, bools[n]);
 
-            xmlData.aspectAsc = xmlData.aspectAsc ?? "true,false,false,false,false,false,false";
+            xmlData.aspectAsc = xmlData.aspectAsc ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectAsc.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_ASC, bools[n]);
 
-            xmlData.aspectMc = xmlData.aspectMc ?? "true,false,false,false,false,false,false";
+            xmlData.aspectMc = xmlData.aspectMc ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectMc.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_MC, bools[n]);
 
-            xmlData.aspectChiron = xmlData.aspectChiron ?? "true,false,false,false,false,false,false";
+            xmlData.aspectChiron = xmlData.aspectChiron ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectChiron.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_CHIRON, bools[n]);
 
-            xmlData.aspectEarth = xmlData.aspectEarth ?? "false,false,false,false,false,false,false";
+            xmlData.aspectEarth = xmlData.aspectEarth ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectEarth.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_EARTH, bools[n]);
 
-            xmlData.aspectLilith = xmlData.aspectLilith ?? "false,false,false,false,false,false,false";
+            xmlData.aspectLilith = xmlData.aspectLilith ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectLilith.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_LILITH, bools[n]);
 
-            xmlData.aspectCeres = xmlData.aspectCeres ?? "false,false,false,false,false,false,false";
+            xmlData.aspectCeres = xmlData.aspectCeres ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectCeres.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_CERES, bools[n]);
 
-            xmlData.aspectParas = xmlData.aspectParas ?? "false,false,false,false,false,false,false";
+            xmlData.aspectParas = xmlData.aspectParas ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectParas.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_PARAS, bools[n]);
 
-            xmlData.aspectJuno = xmlData.aspectJuno ?? "false,false,false,false,false,false,false";
+            xmlData.aspectJuno = xmlData.aspectJuno ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectJuno.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_JUNO, bools[n]);
 
-            xmlData.aspectVesta = xmlData.aspectVesta ?? "false,false,false,false,false,false,false";
+            xmlData.aspectVesta = xmlData.aspectVesta ?? defaultAspect;
             bools = ConvertBool(xmlData.aspectVesta.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_VESTA, bools[n]);
             // todo

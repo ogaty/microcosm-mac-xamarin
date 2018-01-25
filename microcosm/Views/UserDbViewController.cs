@@ -100,7 +100,7 @@ namespace microcosm.Views
             UserTable.DataSource = DataSource;
             UserTable.Delegate = new UserTableDelegate(DataSource);
             UserTable.ReloadData();
-                        ReSetDbTree();
+//                        ReSetDbTree();
 
         }
 

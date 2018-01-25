@@ -1,4 +1,6 @@
 ﻿using System;
+using microcosm.Models;
+
 namespace microcosm.Common
 {
     public enum OrbKind
@@ -114,7 +116,6 @@ namespace microcosm.Common
                     return "I";
                 case ZODIAC_NUMBER_PLUTO:
                     return "J";
-                // 外部フォントだと天文学用のPLUTOになっているのが困りどころ
                 case ZODIAC_NUMBER_DH_TRUENODE:
                     return "L";
                 case ZODIAC_NUMBER_EARTH:
@@ -172,5 +173,39 @@ namespace microcosm.Common
             return "";
         }
 
+        public static string getAspectSymbol(AspectKind kind)
+        {
+            switch (kind)
+            {
+                case AspectKind.OPPOSITION:
+                    return "n";
+                case AspectKind.TRINE:
+                    return "p";
+                case AspectKind.SQUARE:
+                    return "o";
+                case AspectKind.SEXTILE:
+                    return "q";
+                case AspectKind.INCONJUNCT:
+                    return "s";
+                case AspectKind.SESQUIQUADRATE:
+                    return "u";
+                case AspectKind.SEMISQUARE:
+                    return "t";
+                case AspectKind.SEMISEXTILE:
+                    return "r";
+                case AspectKind.QUINTILE:
+                    return "v";
+                case AspectKind.BIQUINTILE:
+                    return "w";
+                case AspectKind.SEMIQINTILE:
+                    return "SQ";
+                case AspectKind.NOVILE:
+                    return "N";
+                case AspectKind.SEPTILE:
+                    return "S";
+            }
+            return "";
+           
+        }
     }
 }

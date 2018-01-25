@@ -338,14 +338,22 @@ namespace microcosm
             // aspects
             Position aspectPt;
             Position aspectPtEnd;
-            SKColor crimson = SKColor.Parse("#dc143c");
-            SKColor orange = SKColor.Parse("#ffa500");
-            SKColor purple = SKColor.Parse("#800080");
-            SKColor green = SKColor.Parse("#008000");
+            Position aspectSymbolPt;
+            SKColor black = SKColors.Black;
+            SKColor crimson = SKColors.Crimson;
+            SKColor orange = SKColors.Orange;
+            SKColor purple = SKColors.Purple;
+            SKColor green = SKColors.Green;
             SKPaint aspectLine = new SKPaint();
             aspectLine.Style = SKPaintStyle.Stroke;
             aspectLine.StrokeWidth = 2.0F;
-            for (int i = 0; i < aspectsData[0, 0].Count; i++) 
+            SKPaint aspectSymboolText = new SKPaint()
+            {
+                TextSize = 24,
+                Style = SKPaintStyle.Fill,
+                Typeface = SKTypeface.FromStream(stream)
+            };
+            for (int i = 0; i < aspectsData[0, 0].Count; i++)
             {
                 if (!aspectsData[0, 0][i].isDisp)
                 {
@@ -359,29 +367,49 @@ namespace microcosm
                 aspectPtEnd.x = aspectPtEnd.x + CenterX;
                 aspectPtEnd.y = -1 * aspectPtEnd.y + CenterY;
 
+                aspectSymbolPt = Util.Rotate(radius - 160, 0, aspectsData[0, 0][i].targetDegree - ringsData[0].cusps[1]);
+                aspectSymbolPt.x = aspectSymbolPt.x + CenterX;
+                aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
+
+
                 if (aspectsData[0, 0][i].aspectKind == AspectKind.OPPOSITION)
                 {
                     aspectLine.Color = crimson;
+                    aspectSymboolText.Color = crimson;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else if (aspectsData[0, 0][i].aspectKind == AspectKind.TRINE)
                 {
                     aspectLine.Color = orange;
+                    aspectSymboolText.Color = orange;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else if (aspectsData[0, 0][i].aspectKind == AspectKind.SQUARE) 
                 {
                     aspectLine.Color = purple;
+                    aspectSymboolText.Color = purple;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else if (aspectsData[0, 0][i].aspectKind == AspectKind.SEXTILE)
                 {
                     aspectLine.Color = green;
+                    aspectSymboolText.Color = green;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
+                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else 
                 {
+                    aspectSymboolText.Color = green;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, lineStyle);
+                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
             }
             cvs.Flush();
