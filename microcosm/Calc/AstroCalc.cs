@@ -32,7 +32,7 @@ namespace microcosm.Calc
                 var f = e.FileName.Split('\\');
                 if (File.Exists(path + "/" + f[1]))
                 {
-                    e.File = new FileStream(path + "/" + f[1], FileMode.Open);
+                    e.File = new FileStream(path + "/" + f[1], FileMode.Open, FileAccess.Read, FileShare.Read);
                 }
             };
             int utc_year = 0;
@@ -98,6 +98,7 @@ namespace microcosm.Calc
                 }
                 planetList.Add(p);
             }
+            s.swe_close();
             return planetList;
         }
 

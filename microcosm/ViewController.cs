@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using SkiaSharp;
 using SkiaSharp.Views.Mac;
 using CoreGraphics;
+using System.Linq;
 
 namespace microcosm
 {
@@ -137,47 +138,10 @@ namespace microcosm
 
 
 
-            //            canvas.AddSubview(new CanvasView());
-
             SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 690, 720));
             sk.PaintSurface += CanvasPaint;
             horoscopeCanvas.AddSubview(sk);
 
-            // ホロスコープ描画
-            /*
-            string html = "";
-            using (StreamReader reader = new StreamReader(bundle + "/canvas.html")) {
-                html = reader.ReadToEnd();
-            }
-            var sunJson = JsonConvert.SerializeObject(ringsData[0].planetData[0]);
-            var moonJson = JsonConvert.SerializeObject(ringsData[0].planetData[1]);
-            var mercuryJson = JsonConvert.SerializeObject(ringsData[0].planetData[2]);
-            var venusJson = JsonConvert.SerializeObject(ringsData[0].planetData[3]);
-            var marsJson = JsonConvert.SerializeObject(ringsData[0].planetData[4]);
-            var jupiterJson = JsonConvert.SerializeObject(ringsData[0].planetData[5]);
-            var saturnJson = JsonConvert.SerializeObject(ringsData[0].planetData[6]);
-            var uranusJson = JsonConvert.SerializeObject(ringsData[0].planetData[7]);
-            var neptuneJson = JsonConvert.SerializeObject(ringsData[0].planetData[8]);
-            var plutoJson = JsonConvert.SerializeObject(ringsData[0].planetData[9]);
-            string planetDegrees = "{" +
-                "sun: " + sunJson + "," +
-                "moon: " + moonJson + "," +
-                "marcury: " + mercuryJson + "," +
-                "venus: " + venusJson + "," +
-                "mars: " + marsJson + "," +
-                "jupiter: " + jupiterJson + "," +
-                "saturn: " + saturnJson + "," +
-                "uranus: " + uranusJson + "," +
-                "neptune: " + neptuneJson + "," +
-                "pluto: " + plutoJson + "" +
-                "}";
-
-            html = html.Replace("##planetDegrees##", planetDegrees);
-            */
-
-            // webview
-//            web.LoadHtmlString(html, new NSUrl(new NSString(bundle), true));
-//            Console.WriteLine(@"file://" + bundle);
 
             // time setter
             DateSetterDatePicker.DateValue = new NSDate();
@@ -295,13 +259,13 @@ namespace microcosm
 
 
 
-            // text
+
+            // ♈〜♓までのシンボル
             System.Reflection.Assembly asm =
                 System.Reflection.Assembly.GetExecutingAssembly();
             SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
             p.Typeface = SKTypeface.FromStream(stream);
             p.TextSize = 48;
-
             Position signValuePt;
             for (int i = 0; i < signs.Length; i++)
             {
@@ -311,24 +275,50 @@ namespace microcosm
                 cvs.DrawText(signs[i], (float)signValuePt.x, (float)signValuePt.y, p);
             }
 
+            // 天体テキスト
             SKPaint degreeText = new SKPaint()
             {
                 TextSize = 24,
                 Style = SKPaintStyle.Fill
             };
             Position planetPt;
+            Position planetRing;
             Position planetDegreePt;
-            foreach (PlanetData planet in ringsData[0].planetData)
+            int[] box = new int[72];
+            IOrderedEnumerable<PlanetData> sortPlanetData = ringsData[0].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
+            foreach (PlanetData planet in sortPlanetData)
             {
                 if (!CommonInstance.getInstance().currentSetting.dispPlanet[0][planet.no]) 
                 {
                     continue;
                 }
-                planetPt = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1]);
+
+                // 重ならないようにずらしを入れる
+                // 1サインに6度単位5個までデータが入る
+                int index = (int)(planet.absolute_position / 5);
+                if (box[index] == 1)
+                {
+                    while (box[index] == 1)
+                    {
+                        index++;
+                        if (index == 72)
+                        {
+                            index = 0;
+                        }
+                    }
+                    box[index] = 1;
+                }
+                else
+                {
+                    box[index] = 1;
+                }
+
+                planetPt = Util.Rotate(radius - 120, 0, 5 * index - ringsData[0].cusps[1] + 3);
+                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
                 planetPt.x = planetPt.x + CenterX;
                 planetPt.y = -1 * planetPt.y + CenterY + 20;
                 cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
-                planetDegreePt = Util.Rotate(radius - 160, 0, planet.absolute_position - ringsData[0].cusps[1]);
+                planetDegreePt = Util.Rotate(radius - 160, 0, 5 * index - ringsData[0].cusps[1] + 3);
                 planetDegreePt.x = planetDegreePt.x + CenterX;
                 planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
                 cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
@@ -416,55 +406,16 @@ namespace microcosm
 
         }
 
-        public void CanvasPaint2(object sender, SKPaintSurfaceEventArgs e)
-        {
-            var surface = e.Surface;
-            var surfaceWidth = e.Info.Width;
-            var surfaceHeight = e.Info.Height;
-            SKCanvas cvs = e.Surface.Canvas;
-            cvs.Clear();
-            cvs.Translate(50, 50);
-            float radius = 20;
-            SKPaint lineStyle = new SKPaint();
-            lineStyle.Style = SKPaintStyle.Stroke;
-            SKPaint p = new SKPaint();
-            p.Style = SKPaintStyle.Stroke;
-            cvs.DrawCircle(0, 0, radius, lineStyle);
-            //                var assembly = NSFont.Assembly;
-            System.Reflection.Assembly asm =
-                System.Reflection.Assembly.GetExecutingAssembly();
-            SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
-            p.Typeface = SKTypeface.FromStream(stream);
-            p.TextSize = 32;
-
-            cvs.DrawText("b", 0, 0, p);
-            //                cvs.Flush();
-            cvs.DrawText(ringsData[0].cusps[1].ToString(), 30, 0, new SKPaint());
-            cvs.Flush();
-
-        }
-
         public void ReRender() 
         {
-            /*
-            web.EvaluateJavaScript((NSString)@"setPlanet(0, 300);", (result, error) =>
-            {
-
-            });
-
-            web.EvaluateJavaScript((NSString)@"reRender();", (result, error) =>
-            {
-
-            });
-            */
+            horoscopeCanvas.Subviews[0].RemoveFromSuperview();
+            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 690, 720));
+            sk.PaintSurface += CanvasPaint;
+            horoscopeCanvas.AddSubview(sk);
         }
 
         partial void scriptButtonClicked(NSObject sender)
         {
-            horoscopeCanvas.Subviews[0].RemoveFromSuperview();
-            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 300, 300));
-            sk.PaintSurface += CanvasPaint2;
-            horoscopeCanvas.AddSubview(sk);
 
 //            ReRender();
         }
@@ -508,6 +459,10 @@ namespace microcosm
             }
         }
 
+        /// <summary>
+        /// 左ボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void DateSetterLeft(NSObject sender)
         {
             if (DateSetterDatePicker.DateValue == null) {
@@ -534,6 +489,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -551,6 +509,10 @@ namespace microcosm
             }
         }
 
+        /// <summary>
+        /// 右ボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void DateSetterRight(NSObject sender)
         {
             if (DateSetterDatePicker.DateValue == null)
@@ -578,6 +540,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -591,6 +556,10 @@ namespace microcosm
             }
         }
 
+        /// <summary>
+        /// Day 左ボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void DateSetterDayLeft(NSObject sender)
         {
             if (DateSetterDatePicker.DateValue == null)
@@ -612,6 +581,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -625,6 +597,10 @@ namespace microcosm
             }
         }
 
+        /// <summary>
+        /// Day 右ボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void DateSetterDayRight(NSObject sender)
         {
             if (DateSetterDatePicker.DateValue == null)
@@ -646,6 +622,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -684,6 +663,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -722,6 +704,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -756,6 +741,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -794,6 +782,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -832,6 +823,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -871,6 +865,9 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
+                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                    calc.ReCalc(config, settings[0], udata1);
+                ReRender();
             }
             catch (FormatException)
             {
@@ -908,6 +905,9 @@ namespace microcosm
             DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
             DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
             ReSetUserBox();
+            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+                calc.ReCalc(config, settings[0], udata1);
+            ReRender();
 
         }
     }
