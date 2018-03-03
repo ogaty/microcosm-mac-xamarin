@@ -67,7 +67,10 @@ namespace microcosm.Views
             }
             catch (FormatException)
             {
-                Console.WriteLine("ERROR: format error.");
+                var alert = new NSAlert();
+                alert.MessageText = "エラー";
+                alert.InformativeText = "正しい日付を入れてください";
+                alert.RunModal();
                 return;
             }
             catch (InvalidCastException)
@@ -76,14 +79,49 @@ namespace microcosm.Views
                 return;
             }
 
+            double lat = 35.685175, lng = 139.7528;
+            try {
+                lat = double.Parse(UserLat.StringValue);
+                lng = double.Parse(UserLng.StringValue);
+            } catch (InvalidCastException)
+            {
+                var alert = new NSAlert();
+                alert.MessageText = "エラー";
+                alert.InformativeText = "正しい緯度経度を入力してください";
+                alert.RunModal();
+                return;
+            }
+
+            if (FileName.StringValue == "")
+            {
+                var alert = new NSAlert();
+                alert.MessageText = "エラー";
+                alert.InformativeText = "ファイル名を入れてください";
+                alert.RunModal();
+                return;
+            }
+
+            if (UserName.StringValue == "") 
+            {
+                var alert = new NSAlert();
+                alert.MessageText = "エラー";
+                alert.InformativeText = "名前を入れてください";
+                alert.RunModal();
+                return;
+            }
+
             string selectedPath = CommonInstance.getInstance().SelectedDirectoryFullPath;
+            if (File.Exists(selectedPath)) 
+            {
+                selectedPath = Path.GetDirectoryName(selectedPath);
+            }
             string FilePath = CommonInstance.getInstance().SelectedDirectoryFullPath + "/" + FileName.StringValue + ".csm";
             UserXml.SaveUserData(FilePath, new UserData(
                 UserName.StringValue,
                 UserFurigana.StringValue,
                 date,
-                double.Parse(UserLat.StringValue),
-                double.Parse(UserLng.StringValue),
+                lat,
+                lng,
                 UserPlace.StringValue,
                 UserMemo.ToString(),
                 "JST"
