@@ -18,19 +18,29 @@ namespace microcosm.User
                 "東京都千代田区",
                 "",
                 "JST");
- 
+
             try
             {
                 udata = (UserData)serializer.Deserialize(fs);
             }
             catch (Exception e)
             {
-//                MessageBox.Show("ファイルの読み込みで異常が発生しました。");
+                //                MessageBox.Show("ファイルの読み込みで異常が発生しました。");
                 Console.WriteLine(e.Message);
             }
             fs.Close();
 
             return udata;
+        }
+
+        public static void SaveUserData(string Filename, UserData udata) 
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(UserData));
+            FileStream fs = new FileStream(Filename, FileMode.Create);
+            StreamWriter sw = new StreamWriter(fs);
+            serializer.Serialize(sw, udata);
+            sw.Close();
+            fs.Close();
         }
     }
 }

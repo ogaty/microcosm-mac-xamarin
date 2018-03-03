@@ -76,6 +76,10 @@ namespace microcosm.Views
 
             menu.AddItem(menuItem);
             UserDbDirOutline.Menu = menu;
+
+            CommonInstance.getInstance().SelectedDirectoryName = "data";
+            CommonInstance.getInstance().SelectedDirectoryFullPath = Util.root + "/data";
+
         }
 
         partial void UserDbDirClick(NSObject sender)

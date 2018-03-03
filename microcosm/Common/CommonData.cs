@@ -1,5 +1,6 @@
 ﻿using System;
 using microcosm.Models;
+using SkiaSharp;
 
 namespace microcosm.Common
 {
@@ -207,5 +208,119 @@ namespace microcosm.Common
             return "";
            
         }
+
+        /// <summary>
+        /// サインの色をSKColorで返却
+        /// </summary>
+        /// <returns>The sign color.</returns>
+        /// <param name="absolute_position">角度</param>
+        public static SKColor getSignColor(double absolute_position)
+        {
+            switch ((int)absolute_position / 30)
+            {
+                case 0:
+                    // 牡羊座
+                    return SKColors.OrangeRed;
+                case 1:
+                    // 牡牛座
+                    return SKColors.Goldenrod;
+                case 2:
+                    // 双子座
+                    return SKColors.MediumSeaGreen;
+                case 3:
+                    // 蟹座
+                    return SKColors.SteelBlue;
+                case 4:
+                    // 獅子座
+                    return SKColors.Crimson;
+                case 5:
+                    // 乙女座
+                    return SKColors.Maroon;
+                case 6:
+                    // 天秤座
+                    return SKColors.Teal;
+                case 7:
+                    // 蠍座
+                    return SKColors.CornflowerBlue;
+                case 8:
+                    // 射手座
+                    return SKColors.DeepPink;
+                case 9:
+                    // 山羊座
+                    return SKColors.SaddleBrown;
+                case 10:
+                    // 水瓶座
+                    return SKColors.CadetBlue;
+                case 11:
+                    // 魚座
+                    return SKColors.DodgerBlue;
+                default:
+                    break;
+            }
+            return SKColors.Black;
+        }
+
+        /// <summary>
+        /// 天体の色をSKColorで返却
+        /// </summary>
+        /// <returns>The planet color.</returns>
+        /// <param name="number">天体番号</param>
+        public static SKColor getPlanetColor(int number)
+        {
+            if (number == (int)CommonData.ZODIAC_NUMBER_SUN)
+            {
+                return SKColors.Olive;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_MOON)
+            {
+                return SKColors.DarkGoldenrod;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_MERCURY)
+            {
+                return SKColors.Purple;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_VENUS)
+            {
+                return SKColors.Green;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_MARS)
+            {
+                return SKColors.Red;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_JUPITER)
+            {
+                return SKColors.Maroon;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_SATURN)
+            {
+                return SKColors.DimGray;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_URANUS)
+            {
+                return SKColors.DarkTurquoise;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_NEPTUNE)
+            {
+                return SKColors.DodgerBlue;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_PLUTO)
+            {
+                return SKColors.DeepPink;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_EARTH)
+            {
+                return SKColors.SkyBlue;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_DH_TRUENODE)
+            {
+                return SKColors.DarkCyan;
+            }
+            else if (number == (int)CommonData.ZODIAC_NUMBER_LILITH)
+            {
+                return SKColors.MediumSeaGreen;
+            }
+            return SKColors.Black;
+        }
+
     }
 }

@@ -137,11 +137,11 @@ namespace microcosm
             CuspList.Delegate = new CuspListDelegate(CDataSource);
 
 
-
+/*
             SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 690, 720));
             sk.PaintSurface += CanvasPaint;
             horoscopeCanvas.AddSubview(sk);
-
+*/
 
             // time setter
             DateSetterDatePicker.DateValue = new NSDate();
@@ -184,9 +184,9 @@ namespace microcosm
 
         public void CanvasPaint(object sender, SKPaintSurfaceEventArgs e) 
         {
-            int CenterX = 720;
-            int CenterY = 640;
-            float radius = 620;
+            int CenterX = 580;
+            int CenterY = 580;
+            float radius = 580;
             float zodiacWidth = 60;
             float centerRadius = 360;
             string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
@@ -267,15 +267,21 @@ namespace microcosm
             p.Typeface = SKTypeface.FromStream(stream);
             p.TextSize = 48;
             Position signValuePt;
+            SKColor pink = SKColors.Pink;
+            p.Color = pink;
+
             for (int i = 0; i < signs.Length; i++)
             {
                 signValuePt = Util.Rotate(radius - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
                 signValuePt.x = signValuePt.x + CenterX - 15;
                 signValuePt.y = -1 * signValuePt.y + CenterY + 20;
+                p.Color = CommonData.getSignColor(30 * i);
                 cvs.DrawText(signs[i], (float)signValuePt.x, (float)signValuePt.y, p);
             }
+            p.Color = SKColors.Black;
 
-            // 天体テキスト
+            // 天体そのもの
+            // 天体度数
             SKPaint degreeText = new SKPaint()
             {
                 TextSize = 24,
@@ -313,14 +319,19 @@ namespace microcosm
                     box[index] = 1;
                 }
 
+                // 天体そのもの
                 planetPt = Util.Rotate(radius - 120, 0, 5 * index - ringsData[0].cusps[1] + 3);
                 planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
                 planetPt.x = planetPt.x + CenterX;
                 planetPt.y = -1 * planetPt.y + CenterY + 20;
+                p.Color = CommonData.getPlanetColor(planet.no);
                 cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
+
+                // 天体度数
                 planetDegreePt = Util.Rotate(radius - 160, 0, 5 * index - ringsData[0].cusps[1] + 3);
                 planetDegreePt.x = planetDegreePt.x + CenterX;
                 planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
+                p.Color = SKColors.Black;
                 cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
             }
 //            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
@@ -408,8 +419,11 @@ namespace microcosm
 
         public void ReRender() 
         {
-            horoscopeCanvas.Subviews[0].RemoveFromSuperview();
-            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 690, 720));
+            if (horoscopeCanvas.Subviews.Count() > 0) 
+            {
+                horoscopeCanvas.Subviews[0].RemoveFromSuperview();
+            }
+            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 580, 580));
             sk.PaintSurface += CanvasPaint;
             horoscopeCanvas.AddSubview(sk);
         }
