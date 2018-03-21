@@ -31,7 +31,7 @@ namespace microcosm.Calc
                         continue;
                     }
 
-                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
+//                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 
                     OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
                     if (!setting.dispAspectCategory[ringIndex][AspectKind.OPPOSITION])

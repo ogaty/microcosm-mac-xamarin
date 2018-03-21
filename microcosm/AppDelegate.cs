@@ -1,5 +1,7 @@
+using System;
 using AppKit;
 using Foundation;
+using microcosm.Common;
 using microcosm.Config;
 
 namespace microcosm
@@ -49,6 +51,14 @@ namespace microcosm
             
         }
 
+        partial void SingleRingClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.SingleRingClicked();
+        }
 
+        partial void TripleRingClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.TripleRingClicked();
+        }
     }
 }

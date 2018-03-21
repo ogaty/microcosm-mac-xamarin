@@ -13,6 +13,15 @@ namespace microcosm
 	{
 		[Action ("SettingMenuClick:")]
 		partial void SettingMenuClick (Foundation.NSObject sender);
+
+		[Action ("SingleChartClicked:")]
+		partial void SingleChartClicked (Foundation.NSObject sender);
+
+		[Action ("SingleRingClicked:")]
+		partial void SingleRingClicked (Foundation.NSObject sender);
+
+		[Action ("TripleRingClicked:")]
+		partial void TripleRingClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

@@ -6,6 +6,7 @@ using AppKit;
 using microcosm.User;
 using System.IO;
 using microcosm.Common;
+using microcosm.Config;
 
 namespace microcosm.Views
 {
@@ -129,8 +130,18 @@ namespace microcosm.Views
             UserDbViewController dbvc = this.PresentingViewController as UserDbViewController;
             dbvc.ReSetDbTree();
 
-
             DismissViewController(this);
+        }
+
+        partial void GoogleSearchButtonClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().searchPlace = UserPlace.StringValue;
+        }
+
+        public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
+        {
+            ((SearchLatLngViewController)segue.DestinationController).inputPlace = UserPlace.StringValue;
+            base.PrepareForSegue(segue, sender);
         }
     }
 }

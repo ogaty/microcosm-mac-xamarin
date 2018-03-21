@@ -20,6 +20,8 @@ namespace microcosm.Config
         public SettingXml2 xmlData2;
         public string dispName { get; set; }
 
+        public int bands;
+
         public bool[] dispCircle = new bool[] {
             true, false, false, false, false, false
         };

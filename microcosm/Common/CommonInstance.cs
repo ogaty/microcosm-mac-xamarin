@@ -6,6 +6,7 @@ namespace microcosm.Common
     public class CommonInstance
     {
         private static CommonInstance instance = new CommonInstance();
+        public ViewController controller;
         public ConfigData config;
         public SettingData[] settings;
 
@@ -13,6 +14,8 @@ namespace microcosm.Common
 
         public string SelectedDirectoryName;
         public string SelectedDirectoryFullPath;
+
+        public string searchPlace = "";
 
         private CommonInstance()
         {

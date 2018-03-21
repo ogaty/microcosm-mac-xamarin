@@ -36,6 +36,12 @@ namespace microcosm.Views
 		[Outlet]
 		AppKit.NSTextField UserPlace { get; set; }
 
+		[Action ("GoogleSearchButtonClicked:")]
+		partial void GoogleSearchButtonClicked (Foundation.NSObject sender);
+
+		[Action ("OfflineSearchButtonClicked:")]
+		partial void OfflineSearchButtonClicked (Foundation.NSObject sender);
+
 		[Action ("SubmitClick:")]
 		partial void SubmitClick (Foundation.NSObject sender);
 		
@@ -46,24 +52,14 @@ namespace microcosm.Views
 				FileName = null;
 			}
 
-			if (UserName != null) {
-				UserName.Dispose ();
-				UserName = null;
-			}
-
-			if (UserFurigana != null) {
-				UserFurigana.Dispose ();
-				UserFurigana = null;
-			}
-
 			if (UserBirth != null) {
 				UserBirth.Dispose ();
 				UserBirth = null;
 			}
 
-			if (UserPlace != null) {
-				UserPlace.Dispose ();
-				UserPlace = null;
+			if (UserFurigana != null) {
+				UserFurigana.Dispose ();
+				UserFurigana = null;
 			}
 
 			if (UserLat != null) {
@@ -79,6 +75,16 @@ namespace microcosm.Views
 			if (UserMemo != null) {
 				UserMemo.Dispose ();
 				UserMemo = null;
+			}
+
+			if (UserName != null) {
+				UserName.Dispose ();
+				UserName = null;
+			}
+
+			if (UserPlace != null) {
+				UserPlace.Dispose ();
+				UserPlace = null;
 			}
 		}
 	}

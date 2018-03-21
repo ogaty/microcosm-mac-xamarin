@@ -46,6 +46,7 @@ namespace microcosm
 
             NSWindowDidResizeNotificationObject = NSNotificationCenter.DefaultCenter.AddObserver(new NSString("NSWindowDidResizeNotification"), ResizeObserver, null);
             MainInit();
+            CommonInstance.getInstance().controller = this;
         }
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace microcosm
             settings = new SettingData[10];
             for (int i = 0; i < 10; i++) {
                 settings[i] = SettingFromXml.GetSettingFromXml(root + "/system/setting" + i.ToString() + ".csm", i);
+                settings[i].bands = 1;
             }
             CommonInstance.getInstance().config = config;
             CommonInstance.getInstance().settings = settings;
@@ -204,17 +206,61 @@ namespace microcosm
             SKPaint lineStyle = new SKPaint();
             lineStyle.Style = SKPaintStyle.Stroke;
 
-//            int rings = 1;
-
             SKPaint p = new SKPaint();
             p.Style = SKPaintStyle.Fill;
             // outer
             cvs.DrawCircle(CenterX, CenterY, radius, lineStyle);
             // inner
             cvs.DrawCircle(CenterX, CenterY, radius - zodiacWidth, lineStyle);
-            // center
-            cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
 
+            double offset = 0;
+            if (CommonInstance.getInstance().currentSetting.bands == 1) 
+            {
+                // center
+                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+            }
+            else if (CommonInstance.getInstance().currentSetting.bands == 2) 
+            {
+                // center
+                centerRadius = centerRadius - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+
+                offset = (radius - zodiacWidth - centerRadius) / 2;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
+            }
+            else if (CommonInstance.getInstance().currentSetting.bands == 3)
+            {
+                // center
+                centerRadius = centerRadius - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+
+                offset = (radius - zodiacWidth - centerRadius) / 3;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 2), lineStyle);
+            }
+            else if (CommonInstance.getInstance().currentSetting.bands == 4)
+            {
+                // center
+                centerRadius = centerRadius - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+
+                offset = (radius - zodiacWidth - centerRadius) / 4;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 2), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 3), lineStyle);
+            }
+            else if (CommonInstance.getInstance().currentSetting.bands == 5)
+            {
+                // center
+                centerRadius = centerRadius - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+
+                offset = (radius - zodiacWidth - centerRadius) / 5;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 2), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 3), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 4), lineStyle);
+            }
 
 
             // house cusps
@@ -288,9 +334,10 @@ namespace microcosm
                 Style = SKPaintStyle.Fill
             };
             Position planetPt;
-            Position planetRing;
+//            Position planetRing;
             Position planetDegreePt;
             int[] box = new int[72];
+            int planetOffset = 0;
             IOrderedEnumerable<PlanetData> sortPlanetData = ringsData[0].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
             foreach (PlanetData planet in sortPlanetData)
             {
@@ -320,21 +367,167 @@ namespace microcosm
                 }
 
                 // 天体そのもの
-                planetPt = Util.Rotate(radius - 120, 0, 5 * index - ringsData[0].cusps[1] + 3);
-                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
-                planetPt.x = planetPt.x + CenterX;
+                if (CommonInstance.getInstance().currentSetting.bands == 1)
+                {
+                    planetOffset = 120;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 2)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 3)
+                {
+                    planetOffset = 240;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 4)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                {
+                    planetOffset = 90;
+                }
+
+                planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[0].cusps[1]);
+//                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
+                planetPt.x = planetPt.x + CenterX - 5;
                 planetPt.y = -1 * planetPt.y + CenterY + 20;
                 p.Color = CommonData.getPlanetColor(planet.no);
                 cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
 
                 // 天体度数
-                planetDegreePt = Util.Rotate(radius - 160, 0, 5 * index - ringsData[0].cusps[1] + 3);
-                planetDegreePt.x = planetDegreePt.x + CenterX;
+                planetDegreePt = Util.Rotate(radius - (planetOffset + 40), 0, 5 * index - ringsData[0].cusps[1]);
+                planetDegreePt.x = planetDegreePt.x + CenterX - 10;
                 planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
                 p.Color = SKColors.Black;
                 cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
             }
 //            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
+            if (CommonInstance.getInstance().currentSetting.bands > 1)
+            {
+                int[] box2 = new int[72];
+                IOrderedEnumerable<PlanetData> sortPlanetData2 = ringsData[1].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
+                foreach (PlanetData planet in sortPlanetData2)
+                {
+                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[0][planet.no])
+                    {
+                        continue;
+                    }
+
+                    // 重ならないようにずらしを入れる
+                    // 1サインに6度単位5個までデータが入る
+                    int index = (int)(planet.absolute_position / 5);
+                    if (box2[index] == 1)
+                    {
+                        while (box2[index] == 1)
+                        {
+                            index++;
+                            if (index == 72)
+                            {
+                                index = 0;
+                            }
+                        }
+                        box2[index] = 1;
+                    }
+                    else
+                    {
+                        box2[index] = 1;
+                    }
+
+                    if (CommonInstance.getInstance().currentSetting.bands == 2)
+                    {
+                        planetOffset = 90;
+                    }
+                    else if (CommonInstance.getInstance().currentSetting.bands == 3)
+                    {
+                        planetOffset = 170;
+                    }
+                    else if (CommonInstance.getInstance().currentSetting.bands == 4)
+                    {
+                        planetOffset = 90;
+                    }
+                    else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                    {
+                        planetOffset = 90;
+                    }
+
+
+                    planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[0].cusps[1]);
+                    //                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
+                    planetPt.x = planetPt.x + CenterX - 10;
+                    planetPt.y = -1 * planetPt.y + CenterY + 20;
+                    p.Color = CommonData.getPlanetColor(planet.no);
+                    cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
+
+                    // 天体度数
+                    planetDegreePt = Util.Rotate(radius - (planetOffset + 35), 0, 5 * index - ringsData[0].cusps[1]);
+                    planetDegreePt.x = planetDegreePt.x + CenterX - 15;
+                    planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
+                    p.Color = SKColors.Black;
+                    cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
+                }
+            }
+
+            if (CommonInstance.getInstance().currentSetting.bands > 2)
+            {
+                int[] box3 = new int[72];
+                IOrderedEnumerable<PlanetData> sortPlanetData3 = ringsData[2].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
+                foreach (PlanetData planet in sortPlanetData3)
+                {
+                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[0][planet.no])
+                    {
+                        continue;
+                    }
+
+                    // 重ならないようにずらしを入れる
+                    // 1サインに6度単位5個までデータが入る
+                    int index = (int)(planet.absolute_position / 5);
+                    if (box3[index] == 1)
+                    {
+                        while (box3[index] == 1)
+                        {
+                            index++;
+                            if (index == 72)
+                            {
+                                index = 0;
+                            }
+                        }
+                        box3[index] = 1;
+                    }
+                    else
+                    {
+                        box3[index] = 1;
+                    }
+
+                    if (CommonInstance.getInstance().currentSetting.bands == 3)
+                    {
+                        planetOffset = 90;
+                    }
+                    else if (CommonInstance.getInstance().currentSetting.bands == 4)
+                    {
+                        planetOffset = 90;
+                    }
+                    else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                    {
+                        planetOffset = 90;
+                    }
+
+
+                    planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[0].cusps[1]);
+                    //                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
+                    planetPt.x = planetPt.x + CenterX - 10;
+                    planetPt.y = -1 * planetPt.y + CenterY + 20;
+                    p.Color = CommonData.getPlanetColor(planet.no);
+                    cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
+
+                    // 天体度数
+                    planetDegreePt = Util.Rotate(radius - (planetOffset + 35), 0, 5 * index - ringsData[0].cusps[1]);
+                    planetDegreePt.x = planetDegreePt.x + CenterX - 15;
+                    planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
+                    p.Color = SKColors.Black;
+                    cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
+                }
+            }
 
             // aspects
             Position aspectPt;
@@ -923,6 +1116,18 @@ namespace microcosm
                 calc.ReCalc(config, settings[0], udata1);
             ReRender();
 
+        }
+
+        public void SingleRingClicked()
+        {
+            CommonInstance.getInstance().currentSetting.bands = 1;
+            ReRender();
+        }
+
+        public void TripleRingClicked()
+        {
+            CommonInstance.getInstance().currentSetting.bands = 3;
+            ReRender();
         }
     }
 }

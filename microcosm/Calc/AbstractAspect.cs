@@ -33,6 +33,13 @@ namespace microcosm.Calc
 
         public abstract AspectInfo CreateAspectInfo(int i, int j, bool isDisp);
 
+        /// <summary>
+        /// 度数内か確認
+        /// </summary>
+        /// <returns>The between.</returns>
+        /// <param name="targetDegree">Target degree.</param>
+        /// <param name="from">From.</param>
+        /// <param name="to">To.</param>
         public bool Between(double targetDegree, double from, double to)
         {
             double absTargetDegree = Math.Abs(targetDegree);
@@ -40,7 +47,7 @@ namespace microcosm.Calc
             {
                 absTargetDegree = 360 - absTargetDegree;
             }
-            Console.WriteLine("{0},{1},{2}", absTargetDegree, from, to);
+//            Console.WriteLine("{0},{1},{2}", absTargetDegree, from, to);
             if (from <= absTargetDegree && absTargetDegree < to)
             {
                 return true;
@@ -48,6 +55,11 @@ namespace microcosm.Calc
             return false;
         }
 
+        /// <summary>
+        /// オーブ内か確認
+        /// </summary>
+        /// <returns>The between.</returns>
+        /// <param name="targetDegree">Target degree.</param>
         public bool Between(double targetDegree)
         {
             if (fromPlanetNumber == CommonData.ZODIAC_NUMBER_SUN || toPlanetNumber == CommonData.ZODIAC_NUMBER_SUN)
