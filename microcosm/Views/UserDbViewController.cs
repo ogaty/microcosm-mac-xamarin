@@ -64,17 +64,35 @@ namespace microcosm.Views
             UserDbDirOutline.ScrollColumnToVisible(0);
             UserDbDirOutline.DataSource = dataSource;
             UserDbDirOutline.Delegate = new UserDbTreeDelegate(dataSource);
+            UserDbDirOutline.ExpandItem(rootNode);
 
             NSMenu menu = new NSMenu();
             menu.AutoEnablesItems = true;
-            EventHandler hander = new EventHandler((object sender, EventArgs e) =>
+            EventHandler addDirHandler = new EventHandler((object sender, EventArgs e) =>
             {
-                Console.WriteLine("sample");
+                AddDirectoryClick((NSObject)sender);
             });
-            NSMenuItem menuItem = new NSMenuItem("sample", hander);
-            menuItem.Enabled = true;
+            NSMenuItem addDirmenuItem = new NSMenuItem("ディレクトリ追加", addDirHandler);
+            addDirmenuItem.Enabled = true;
 
-            menu.AddItem(menuItem);
+            menu.AddItem(addDirmenuItem);
+
+            EventHandler modifyDirHandler = new EventHandler((object sender, EventArgs e) =>
+            {
+            });
+            NSMenuItem modifyDirmenuItem = new NSMenuItem("ディレクトリ名変更", modifyDirHandler);
+            modifyDirmenuItem.Enabled = true;
+            menu.AddItem(modifyDirmenuItem);
+
+            EventHandler deleteDirHandler = new EventHandler((object sender, EventArgs e) =>
+            {
+                DeleteDirectoryClick((NSObject)sender);
+            });
+            NSMenuItem deleteDirmenuItem = new NSMenuItem("ディレクトリ削除", deleteDirHandler);
+            deleteDirmenuItem.Enabled = true;
+
+            menu.AddItem(deleteDirmenuItem);
+
             UserDbDirOutline.Menu = menu;
 
             CommonInstance.getInstance().SelectedDirectoryName = "data";
@@ -119,9 +137,20 @@ namespace microcosm.Views
             if (row > 0) 
             {
                 TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(row);
-                if (item.isDir && !Directory.Exists(item.FullPath + "/NewDir"))
+                if (item.isDir) 
                 {
-                    Directory.CreateDirectory(item.FullPath + "/NewDir");
+                    if (!Directory.Exists(item.FullPath + "/NewDir"))
+                    {
+                        Directory.CreateDirectory(item.FullPath + "/NewDir");
+                    }
+                }
+                else
+                {
+                    string path = (new FileInfo(item.FullPath)).DirectoryName;
+                    if (!Directory.Exists(path + "/NewDir"))
+                    {
+                        Directory.CreateDirectory(path + "/NewDir");
+                    }
                 }
             }
             else
@@ -160,6 +189,7 @@ namespace microcosm.Views
             root.Add(rootNode);
             dataSource.list = root;
             UserDbDirOutline.DataSource = dataSource;
+            UserDbDirOutline.ExpandItem(rootNode);
         }
 
 
