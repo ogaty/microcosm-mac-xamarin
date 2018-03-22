@@ -2019,7 +2019,7 @@
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="DdC-Gs-Da1" kind="modal" id="Un9-S2-ol6"/>
+                                    <segue destination="DdC-Gs-Da1" kind="modal" identifier="modifyDir" id="Un9-S2-ol6"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8N-BK-3oL">
@@ -2215,6 +2215,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="User1Clicked:" target="DQR-Vb-Bre" id="1k6-tT-G5D"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0J-t9-5MO">
                                 <rect key="frame" x="152" y="49" width="81" height="32"/>
@@ -2259,18 +2262,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeB-Ol-9hc">
-                                <rect key="frame" x="144" y="87" width="96" height="49"/>
+                                <rect key="frame" x="158" y="87" width="96" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="KHH-1k-tl2">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNT-rF-4ss">
-                                <rect key="frame" x="32" y="87" width="96" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ZOG-3r-bCE">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2303,11 +2297,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNT-rF-4ss">
+                                <rect key="frame" x="20" y="87" width="119" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ZOG-3r-bCE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="User1Area" destination="hNT-rF-4ss" id="lFW-cy-Okv"/>
                         <outlet property="UserDbDirOutline" destination="kBp-Y5-rCT" id="RLX-Vp-z9f"/>
-                        <outlet property="UserTable" destination="nvD-rK-PzF" id="WBn-Q8-KtZ"/>
+                        <outlet property="UserTable" destination="nvD-rK-PzF" id="tvb-IY-8zU"/>
+                        <outlet property="memoArea" destination="dXG-Rd-ITi" id="FgS-BA-8QX"/>
                     </connections>
                 </viewController>
                 <customObject id="Wax-RI-9ns" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2444,8 +2449,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="Tdb-1H-gtI">
                                     <font key="font" metaFont="system"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
-                                        <!--1982-02-12 16:00:00 +0000-->
+                                    <date key="date" timeIntervalSinceReferenceDate="-31611600">
+                                        <!--2000-01-01 03:00:00 +0000-->
                                     </date>
                                     <date key="minDate" timeIntervalSinceReferenceDate="-6342970739">
                                         <!--1799-12-31 23:41:01 +0000-->
@@ -2592,9 +2597,9 @@
                         <outlet property="FileName" destination="Tkq-hG-Vit" id="xG2-vu-1sU"/>
                         <outlet property="UserBirth" destination="BxY-Vn-uwv" id="M0Q-qM-UUd"/>
                         <outlet property="UserFurigana" destination="33L-FI-6zU" id="5Ss-Ss-vMt"/>
-                        <outlet property="UserLat" destination="0g9-uf-gnH" id="dKS-Qg-2xf"/>
+                        <outlet property="UserLat" destination="1Aj-dM-hDx" id="sK4-58-vZA"/>
                         <outlet property="UserLng" destination="0g9-uf-gnH" id="3QE-iL-WWO"/>
-                        <outlet property="UserMemo" destination="49K-pf-mKm" id="1wi-hY-tcr"/>
+                        <outlet property="UserMemo" destination="5OP-Rq-klX" id="SoU-Ra-ZhP"/>
                         <outlet property="UserName" destination="Z5X-ox-XYJ" id="BUN-Xx-uYg"/>
                         <outlet property="UserPlace" destination="Cmv-xo-waU" id="UlD-yg-yHP"/>
                     </connections>

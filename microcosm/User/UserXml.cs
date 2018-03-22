@@ -8,6 +8,7 @@ namespace microcosm.User
     {
         public static UserData GetUserDataFromXml(string xmlFile)
         {
+            if (!File.Exists(xmlFile)) return null;
             XmlSerializer serializer = new XmlSerializer(typeof(UserData));
             FileStream fs = new FileStream(xmlFile, FileMode.Open);
             UserData udata = new UserData("名称未設定",

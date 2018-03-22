@@ -13,6 +13,12 @@ namespace microcosm.Views
 	partial class UserDbViewController
 	{
 		[Outlet]
+		AppKit.NSTextView memoArea { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField User1Area { get; set; }
+
+		[Outlet]
 		AppKit.NSOutlineView UserDbDirOutline { get; set; }
 
 		[Outlet]
@@ -26,6 +32,9 @@ namespace microcosm.Views
 
 		[Action ("EditDirectoryClick:")]
 		partial void EditDirectoryClick (Foundation.NSObject sender);
+
+		[Action ("User1Clicked:")]
+		partial void User1Clicked (Foundation.NSObject sender);
 
 		[Action ("UserDbDirClick:")]
 		partial void UserDbDirClick (Foundation.NSObject sender);
@@ -43,6 +52,16 @@ namespace microcosm.Views
 			if (UserTable != null) {
 				UserTable.Dispose ();
 				UserTable = null;
+			}
+
+			if (memoArea != null) {
+				memoArea.Dispose ();
+				memoArea = null;
+			}
+
+			if (User1Area != null) {
+				User1Area.Dispose ();
+				User1Area = null;
 			}
 		}
 	}

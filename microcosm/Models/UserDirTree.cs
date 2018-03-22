@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using microcosm.User;
 
 namespace microcosm.Models
 {
@@ -27,7 +28,10 @@ namespace microcosm.Models
                 Directory.CreateDirectory(directoryInfo.FullName);
             }
 
-            var directoryNode = new TreeViewItem(directoryInfo.Name, directoryInfo.FullName);
+            var directoryNode = new TreeViewItem(directoryInfo.Name, 
+                                                 directoryInfo.FullName,
+                                                 UserXml.GetUserDataFromXml(directoryInfo.FullName)
+                                                );
 
             if (directoryInfo.GetDirectories().Length > 0 || directoryInfo.GetFiles().Length > 0) {
                 directoryNode.isDir = true;
@@ -55,7 +59,9 @@ namespace microcosm.Models
                     continue;
                 }
 
-                TreeViewItem item = new TreeViewItem(file.Name, file.FullName);
+                TreeViewItem item = new TreeViewItem(file.Name, 
+                                                     file.FullName, 
+                                                     UserXml.GetUserDataFromXml(file.FullName));
                 directoryNode.Items.Add(item);
             }
 

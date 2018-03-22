@@ -28,7 +28,7 @@ namespace microcosm.Views
 		AppKit.NSTextField UserLng { get; set; }
 
 		[Outlet]
-		AppKit.NSScrollView UserMemo { get; set; }
+		AppKit.NSTextView UserMemo { get; set; }
 
 		[Outlet]
 		AppKit.NSTextField UserName { get; set; }
@@ -72,11 +72,6 @@ namespace microcosm.Views
 				UserLng = null;
 			}
 
-			if (UserMemo != null) {
-				UserMemo.Dispose ();
-				UserMemo = null;
-			}
-
 			if (UserName != null) {
 				UserName.Dispose ();
 				UserName = null;
@@ -85,6 +80,11 @@ namespace microcosm.Views
 			if (UserPlace != null) {
 				UserPlace.Dispose ();
 				UserPlace = null;
+			}
+
+			if (UserMemo != null) {
+				UserMemo.Dispose ();
+				UserMemo = null;
 			}
 		}
 	}

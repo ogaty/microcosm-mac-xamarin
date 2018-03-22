@@ -79,6 +79,12 @@ namespace microcosm.Views
 
             EventHandler modifyDirHandler = new EventHandler((object sender, EventArgs e) =>
             {
+                int row = (int)UserDbDirOutline.SelectedRow;
+                TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(row);
+                if (item.isDir)
+                {
+                    PerformSegue("modifyDir", this);
+                }
             });
             NSMenuItem modifyDirmenuItem = new NSMenuItem("ディレクトリ名変更", modifyDirHandler);
             modifyDirmenuItem.Enabled = true;
@@ -98,8 +104,22 @@ namespace microcosm.Views
             CommonInstance.getInstance().SelectedDirectoryName = "data";
             CommonInstance.getInstance().SelectedDirectoryFullPath = Util.root + "/data";
 
+            User1Area.StringValue = "現在時刻" + "\n" +
+                                     String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                                       DateTime.Now.Year,
+                                       DateTime.Now.Month,
+                                       DateTime.Now.Day,
+                                       DateTime.Now.Hour,
+                                       DateTime.Now.Minute,
+                                       DateTime.Now.Second
+                                     );
+
         }
 
+        /// <summary>
+        /// 左側クリック
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void UserDbDirClick(NSObject sender)
         {
             int index = (int)UserDbDirOutline.SelectedRow;
@@ -117,7 +137,14 @@ namespace microcosm.Views
 
             UserTable.AllowsColumnSelection = true;
             UserTableDataSource DataSource = new UserTableDataSource();
-            DataSource.dataList.Add(new UserTableData() {name = "sample", date = new DateTime()});
+            DataSource.dataList.Add(new UserTableData() {name = item.udata.name, 
+                date = new DateTime(item.udata.birth_year,
+                                    item.udata.birth_month,
+                                    item.udata.birth_day,
+                                    item.udata.birth_hour,
+                                    item.udata.birth_minute,
+                                    item.udata.birth_second), 
+                memo = item.udata.memo});
 
             UserTable.DataSource = DataSource;
             UserTable.Delegate = new UserTableDelegate(DataSource);
@@ -181,6 +208,9 @@ namespace microcosm.Views
             ReSetDbTree();
         }
 
+        /// <summary>
+        /// ツリー再構築
+        /// </summary>
         public void ReSetDbTree()
         {
             UserDbTreeDataSource dataSource = new UserDbTreeDataSource();
@@ -195,7 +225,33 @@ namespace microcosm.Views
 
         partial void UserTableClick(NSObject sender)
         {
+            int row = (int)((NSTableView)sender).SelectedRow;
+            if (row >= 0) 
+            {
+                UserTableDataSource data = (UserTableDataSource)UserTable.DataSource;
+                memoArea.TextStorage.MutableString.SetString((NSString)data.dataList[row].memo);
+            }
+        }
 
+        partial void User1Clicked(NSObject sender)
+        {
+            int row = (int)UserTable.SelectedRow;
+            if (row >= 0)
+            {
+                UserTableDataSource data = (UserTableDataSource)UserTable.DataSource;
+                memoArea.TextStorage.MutableString.SetString((NSString)data.dataList[row].memo);
+
+
+                User1Area.StringValue = data.dataList[row].name + "\n" +
+                                                     String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                                                      data.dataList[row].date.Year,
+                                                      data.dataList[row].date.Month,
+                                                      data.dataList[row].date.Day,
+                                                      data.dataList[row].date.Hour,
+                                                      data.dataList[row].date.Minute,
+                                                      data.dataList[row].date.Second
+                                                     );
+            }
         }
     }
 }

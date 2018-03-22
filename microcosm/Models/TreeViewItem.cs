@@ -28,13 +28,16 @@ namespace microcosm.Models
             }
         }
 
+        public User.UserData udata;
+
         public List<NSObject> Items;
 
-        public TreeViewItem(string fileName, string FullPath)
+        public TreeViewItem(string fileName, string FullPath, User.UserData udata)
         {
             this.fileName = this.Header = fileName;
             this.FullPath = FullPath;
             this.isDir = false;
+            this.udata = udata;
             Items = new List<Foundation.NSObject>();
         }
     }

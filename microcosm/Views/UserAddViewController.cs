@@ -124,7 +124,7 @@ namespace microcosm.Views
                 lat,
                 lng,
                 UserPlace.StringValue,
-                UserMemo.ToString(),
+                UserMemo.TextStorage.MutableString.ToString(),
                 "JST"
             ));
             UserDbViewController dbvc = this.PresentingViewController as UserDbViewController;

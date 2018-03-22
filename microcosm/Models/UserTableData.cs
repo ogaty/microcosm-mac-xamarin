@@ -5,10 +5,12 @@ namespace microcosm.Models
     {
         public string name;
         public DateTime date;
+        public string memo;
         public string displayDate {
             get {
-                return date.Year.ToString() + "/" + date.Month.ToString() + "/" + date.Day.ToString() + " " +
-                           date.Hour.ToString() + ":" + date.Minute.ToString() + ":" + date.Second.ToString();
+                return String.Format("{0:0000}/{1:00}/{2:00} {3:00}:{4:00}:{5:00}",
+                                     date.Year, date.Month, date.Day,
+                                     date.Hour, date.Minute, date.Second);
             }
         }
 
