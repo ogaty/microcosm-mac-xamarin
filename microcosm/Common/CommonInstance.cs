@@ -9,6 +9,7 @@ namespace microcosm.Common
         public ViewController controller;
         public ConfigData config;
         public SettingData[] settings;
+        public int[] customRings = { 1, 3, 3, 1, 1, 1, 1 };
 
         public SettingData currentSetting;
 

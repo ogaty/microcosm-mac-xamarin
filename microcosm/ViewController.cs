@@ -1101,6 +1101,10 @@ namespace microcosm
             ReSetUserBox();
         }
 
+        /// <summary>
+        /// SETボタン
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void DateSetterSet(NSObject sender)
         {
             NSDate nsd = DateSetterDatePicker.DateValue;
@@ -1113,9 +1117,60 @@ namespace microcosm
             DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
             ReSetUserBox();
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                calc.ReCalc(config, settings[0], udata1);
+                calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ReRender();
 
+        }
+
+        /// <summary>
+        /// DBからReCalcを受ける
+        /// </summary>
+        /// <param name="index">ring index</param>
+        /// <param name="type">1:u1 2:u2 3:e1 4:e2</param>
+        public void ReCalcUserDb(int index, int type) 
+        {
+            switch (type) {
+                case 1:
+                    ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
+                    break;
+                case 2:
+                    ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata2);
+                    break;
+                case 3:
+                    ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
+                    break;
+                case 4:
+                    ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata2);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// DBからReCalcを受ける(プログレス)
+        /// </summary>
+        /// <param name="index">ring index</param>
+        /// <param name="type">1:u1 2:u2 3:e1 4:e2</param>
+        public void ReCalcUserDbProgress(int index, int type)
+        {
+            switch (type)
+            {
+                case 1:
+                    ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, udata1);
+                    break;
+                case 2:
+                    ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, udata2);
+                    break;
+                case 3:
+                    ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata1);
+                    break;
+                case 4:
+                    ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata2);
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void SingleRingClicked()
@@ -1127,7 +1182,35 @@ namespace microcosm
         public void TripleRingClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 3;
+            ringsData[2] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
+            ringsData[3] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
             ReRender();
+        }
+
+        public void SetUserData(UserTableData tableData, int type)
+        {
+            switch (type)
+            {
+                case 1:
+                    udata1.name = tableData.name;
+                    udata1.time = tableData.date;
+                    break;
+                case 2:
+                    udata2.name = tableData.name;
+                    udata2.time = tableData.date;
+                    break;
+                case 3:
+                    edata1.name = tableData.name;
+                    edata1.time = tableData.date;
+                    break;
+                case 4:
+                    edata2.name = tableData.name;
+                    edata2.time = tableData.date;
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

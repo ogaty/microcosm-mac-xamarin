@@ -195,5 +195,21 @@ namespace microcosm.Calc
 
             return calculate;
         }
+
+        /// <summary>
+        /// プログレス用再計算
+        /// </summary>
+        /// <returns>The calculate progress.</returns>
+        /// <param name="config">Config.</param>
+        /// <param name="setting">Setting.</param>
+        /// <param name="udata">Udata.</param>
+        public Calculation ReCalcProgress(ConfigData config, SettingData setting, UserData udata)
+        {
+            List<PlanetData> p = PositionCalc(udata.time, udata.timezone);
+            double[] cusps = CuspCalc(udata.time, udata.timezone, udata.lat, udata.lng, config.houseCalc);
+            Calculation calculate = new Calculation(p, cusps);
+
+            return calculate;
+        }
     }
 }

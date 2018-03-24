@@ -104,15 +104,43 @@ namespace microcosm.Views
             CommonInstance.getInstance().SelectedDirectoryName = "data";
             CommonInstance.getInstance().SelectedDirectoryFullPath = Util.root + "/data";
 
-            User1Area.StringValue = "現在時刻" + "\n" +
-                                     String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
-                                       DateTime.Now.Year,
-                                       DateTime.Now.Month,
-                                       DateTime.Now.Day,
-                                       DateTime.Now.Hour,
-                                       DateTime.Now.Minute,
-                                       DateTime.Now.Second
-                                     );
+            ViewController vc = CommonInstance.getInstance().controller;
+            User1Area.StringValue = vc.udata1.name + "\n" +
+                String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                              vc.udata1.time.Year,
+                              vc.udata1.time.Month,
+                              vc.udata1.time.Day,
+                              vc.udata1.time.Hour,
+                              vc.udata1.time.Minute,
+                              vc.udata1.time.Second
+                             );
+            User2Area.StringValue = vc.udata2.name + "\n" +
+                String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                              vc.udata2.time.Year,
+                              vc.udata2.time.Month,
+                              vc.udata2.time.Day,
+                              vc.udata2.time.Hour,
+                              vc.udata2.time.Minute,
+                              vc.udata2.time.Second
+                             );
+            Event1Area.StringValue = vc.edata1.name + "\n" +
+                String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                              vc.edata1.time.Year,
+                              vc.edata1.time.Month,
+                              vc.edata1.time.Day,
+                              vc.edata1.time.Hour,
+                              vc.edata1.time.Minute,
+                              vc.edata1.time.Second
+                             );
+            Event2Area.StringValue = vc.edata2.name + "\n" +
+                String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                              vc.edata2.time.Year,
+                              vc.edata2.time.Month,
+                              vc.edata2.time.Day,
+                              vc.edata2.time.Hour,
+                              vc.edata2.time.Minute,
+                              vc.edata2.time.Second
+                             );
 
         }
 
@@ -251,7 +279,126 @@ namespace microcosm.Views
                                                       data.dataList[row].date.Minute,
                                                       data.dataList[row].date.Second
                                                      );
+                ViewController vc = CommonInstance.getInstance().controller;
+
+                vc.SetUserData(data.dataList[row], 1);
+                vc.ReSetUserBox();
+                if (CommonInstance.getInstance().customRings[0] == 1)
+                {
+                    vc.ReCalcUserDb(0, 1);
+                }
+                vc.ReRender();
             }
+        }
+
+        partial void User2Clicked(NSObject sender)
+        {
+            int row = (int)UserTable.SelectedRow;
+            if (row >= 0)
+            {
+                UserTableDataSource data = (UserTableDataSource)UserTable.DataSource;
+                memoArea.TextStorage.MutableString.SetString((NSString)data.dataList[row].memo);
+
+
+                User2Area.StringValue = data.dataList[row].name + "\n" +
+                                                     String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                                                      data.dataList[row].date.Year,
+                                                      data.dataList[row].date.Month,
+                                                      data.dataList[row].date.Day,
+                                                      data.dataList[row].date.Hour,
+                                                      data.dataList[row].date.Minute,
+                                                      data.dataList[row].date.Second
+                                                     );
+                ViewController vc = CommonInstance.getInstance().controller;
+
+                vc.SetUserData(data.dataList[row], 2);
+                vc.ReSetUserBox();
+                if (CommonInstance.getInstance().customRings[0] == 2)
+                {
+                    vc.ReCalcUserDb(0, 2);
+                }
+                vc.ReRender();
+            }
+        }
+
+        partial void Event1Clicked(NSObject sender)
+        {
+            int row = (int)UserTable.SelectedRow;
+            if (row >= 0)
+            {
+                UserTableDataSource data = (UserTableDataSource)UserTable.DataSource;
+                memoArea.TextStorage.MutableString.SetString((NSString)data.dataList[row].memo);
+
+
+                Event1Area.StringValue = data.dataList[row].name + "\n" +
+                                                     String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                                                      data.dataList[row].date.Year,
+                                                      data.dataList[row].date.Month,
+                                                      data.dataList[row].date.Day,
+                                                      data.dataList[row].date.Hour,
+                                                      data.dataList[row].date.Minute,
+                                                      data.dataList[row].date.Second
+                                                     );
+                ViewController vc = CommonInstance.getInstance().controller;
+
+                vc.SetUserData(data.dataList[row], 3);
+                vc.ReSetUserBox();
+                if (CommonInstance.getInstance().customRings[0] == 3)
+                {
+                    vc.ReCalcUserDb(0, 3);
+                }
+                if (CommonInstance.getInstance().customRings[1] == 3)
+                {
+                    vc.ReCalcUserDbProgress(1, 3);
+                }
+                if (CommonInstance.getInstance().customRings[2] == 3)
+                {
+                    vc.ReCalcUserDb(2, 3);
+                }
+                vc.ReRender();
+            }
+        }
+
+        partial void Event2Clicked(NSObject sender)
+        {
+            int row = (int)UserTable.SelectedRow;
+            if (row >= 0)
+            {
+                UserTableDataSource data = (UserTableDataSource)UserTable.DataSource;
+                memoArea.TextStorage.MutableString.SetString((NSString)data.dataList[row].memo);
+
+
+                Event2Area.StringValue = data.dataList[row].name + "\n" +
+                                                     String.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}:{5:00}",
+                                                      data.dataList[row].date.Year,
+                                                      data.dataList[row].date.Month,
+                                                      data.dataList[row].date.Day,
+                                                      data.dataList[row].date.Hour,
+                                                      data.dataList[row].date.Minute,
+                                                      data.dataList[row].date.Second
+                                                     );
+                ViewController vc = CommonInstance.getInstance().controller;
+                vc.SetUserData(data.dataList[row], 4);
+                vc.ReSetUserBox();
+                if (CommonInstance.getInstance().customRings[0] == 4)
+                {
+                    vc.ReCalcUserDb(0, 4);
+                }
+                if (CommonInstance.getInstance().customRings[1] == 4)
+                {
+                    vc.ReCalcUserDbProgress(1, 4);
+                }
+                if (CommonInstance.getInstance().customRings[2] == 4)
+                {
+                    vc.ReCalcUserDb(2, 4);
+                }
+                vc.ReRender();
+            }
+        }
+
+        partial void SubmitClicked(NSObject sender)
+        {
+            DismissViewController(this);
         }
     }
 }
