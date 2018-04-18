@@ -115,6 +115,7 @@ namespace microcosm.Config
         private bool[] aspectPof = new bool[28];
 
         string defaultAspect = "true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
+        string defaultAspectAllfalse = "false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
 
         /// <summary>
         /// 初期化
@@ -1228,36 +1229,53 @@ namespace microcosm.Config
             bools = ConvertBool(xmlData.aspectChiron.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_CHIRON, bools[n]);
 
-            xmlData.aspectEarth = xmlData.aspectEarth ?? defaultAspect;
+            xmlData.aspectEarth = xmlData.aspectEarth ?? defaultAspectAllfalse;
             bools = ConvertBool(xmlData.aspectEarth.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_EARTH, bools[n]);
 
-            xmlData.aspectLilith = xmlData.aspectLilith ?? defaultAspect;
+            xmlData.aspectLilith = xmlData.aspectLilith ?? defaultAspectAllfalse;
             bools = ConvertBool(xmlData.aspectLilith.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_LILITH, bools[n]);
 
-            xmlData.aspectCeres = xmlData.aspectCeres ?? defaultAspect;
+            xmlData.aspectCeres = xmlData.aspectCeres ?? defaultAspectAllfalse;
             bools = ConvertBool(xmlData.aspectCeres.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_CERES, bools[n]);
 
-            xmlData.aspectParas = xmlData.aspectParas ?? defaultAspect;
+            xmlData.aspectParas = xmlData.aspectParas ?? defaultAspectAllfalse;
             bools = ConvertBool(xmlData.aspectParas.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_PARAS, bools[n]);
 
-            xmlData.aspectJuno = xmlData.aspectJuno ?? defaultAspect;
+            xmlData.aspectJuno = xmlData.aspectJuno ?? defaultAspectAllfalse;
             bools = ConvertBool(xmlData.aspectJuno.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_JUNO, bools[n]);
 
-            xmlData.aspectVesta = xmlData.aspectVesta ?? defaultAspect;
+            xmlData.aspectVesta = xmlData.aspectVesta ?? defaultAspectAllfalse;
             bools = ConvertBool(xmlData.aspectVesta.Split(','));
             da.Add(CommonData.ZODIAC_NUMBER_VESTA, bools[n]);
-            // todo
-            da.Add(CommonData.ZODIAC_NUMBER_ERIS, false);
-            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, false);
-            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, false);
-            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, false);
-            da.Add(CommonData.ZODIAC_NUMBER_VT, false);
-            da.Add(CommonData.ZODIAC_NUMBER_POF, false);
+
+            xmlData.aspectEris = xmlData.aspectEris ?? defaultAspectAllfalse;
+            bools = ConvertBool(xmlData.aspectEris.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_ERIS, bools[n]);
+
+            xmlData.aspectSedna = xmlData.aspectSedna ?? defaultAspectAllfalse;
+            bools = ConvertBool(xmlData.aspectSedna.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, bools[n]);
+
+            xmlData.aspectHaumea = xmlData.aspectHaumea ?? defaultAspectAllfalse;
+            bools = ConvertBool(xmlData.aspectHaumea.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, bools[n]);
+
+            xmlData.aspectMakemake = xmlData.aspectMakemake ?? defaultAspectAllfalse;
+            bools = ConvertBool(xmlData.aspectMakemake.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, bools[n]);
+
+            xmlData.aspectVt = xmlData.aspectVt ?? defaultAspectAllfalse;
+            bools = ConvertBool(xmlData.aspectVt.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_VT, bools[n]);
+
+            xmlData.aspectPof = xmlData.aspectPof ?? defaultAspectAllfalse;
+            bools = ConvertBool(xmlData.aspectPof.Split(','));
+            da.Add(CommonData.ZODIAC_NUMBER_POF, bools[n]);
 
             return da;
         }

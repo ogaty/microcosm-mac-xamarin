@@ -666,6 +666,15 @@ namespace microcosm
             }
         }
 
+        void ReCalc()
+        {
+            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
+    calc.ReCalc(config, settings[0], udata1);
+            int ringIndexFrom = 0;
+            int ringIndexTo = 0;
+            aspectsData[ringIndexFrom, ringIndexTo] = aspect.AspectCalcSame(ringsData[0].planetData, ringIndexFrom);
+        }
+
         /// <summary>
         /// 左ボタン
         /// </summary>
@@ -696,8 +705,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -747,8 +755,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -788,8 +795,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -829,8 +835,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -870,8 +875,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -911,8 +915,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -948,8 +951,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -989,8 +991,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -1030,8 +1031,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -1072,8 +1072,7 @@ namespace microcosm
                 DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
                 DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
                 ReSetUserBox();
-                ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                    calc.ReCalc(config, settings[0], udata1);
+                ReCalc();
                 ReRender();
             }
             catch (FormatException)
@@ -1116,8 +1115,7 @@ namespace microcosm
             DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
             DateSetterDatePicker.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((date - reference).TotalSeconds);
             ReSetUserBox();
-            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-                calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
+            ReCalc();
             ReRender();
 
         }
