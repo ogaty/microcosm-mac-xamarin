@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17D102" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17E199" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="box content view" minToolsVersion="7.0"/>
@@ -1247,101 +1247,101 @@
             <objects>
                 <viewController title="表示名設定" id="ZHE-Zx-ejl" customClass="DispNameViewController" sceneMemberID="viewController">
                     <view key="view" id="sWA-hd-hwE">
-                        <rect key="frame" x="0.0" y="0.0" width="214" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="214" height="320"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqr-xu-kNQ">
-                                <rect key="frame" x="98" y="353" width="96" height="22"/>
+                                <rect key="frame" x="98" y="278" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Cgt-Bb-upO">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定0" placeholderString="" drawsBackground="YES" id="Cgt-Bb-upO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-Hv-iMF">
-                                <rect key="frame" x="98" y="321" width="96" height="22"/>
+                                <rect key="frame" x="98" y="252" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="n3G-ha-Efi">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定1" drawsBackground="YES" id="n3G-ha-Efi">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq0-rQ-JGT">
-                                <rect key="frame" x="98" y="289" width="96" height="22"/>
+                                <rect key="frame" x="98" y="226" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JiH-Kx-X4q">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定2" drawsBackground="YES" id="JiH-Kx-X4q">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0W-9u-Ffg">
-                                <rect key="frame" x="98" y="257" width="96" height="22"/>
+                                <rect key="frame" x="98" y="200" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="875-PH-30G">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定3" drawsBackground="YES" id="875-PH-30G">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLm-CX-cwv">
-                                <rect key="frame" x="98" y="225" width="96" height="22"/>
+                                <rect key="frame" x="98" y="174" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="KXP-qe-fje">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定4" drawsBackground="YES" id="KXP-qe-fje">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0O-g6-Mdt">
-                                <rect key="frame" x="98" y="193" width="96" height="22"/>
+                                <rect key="frame" x="98" y="148" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="WCB-e8-wEj">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定5" drawsBackground="YES" id="WCB-e8-wEj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-6t-qwP">
-                                <rect key="frame" x="98" y="161" width="96" height="22"/>
+                                <rect key="frame" x="98" y="122" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="beE-e6-21b">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定6" drawsBackground="YES" id="beE-e6-21b">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-oA-XJs">
-                                <rect key="frame" x="98" y="129" width="96" height="22"/>
+                                <rect key="frame" x="98" y="96" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="06V-zh-sYp">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定7" drawsBackground="YES" id="06V-zh-sYp">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn0-7f-2u0">
-                                <rect key="frame" x="98" y="97" width="96" height="22"/>
+                                <rect key="frame" x="98" y="70" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Nih-yB-dua">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定8" drawsBackground="YES" id="Nih-yB-dua">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1r-vk-5mX">
-                                <rect key="frame" x="98" y="60" width="96" height="22"/>
+                                <rect key="frame" x="98" y="44" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="H2u-TK-UWO">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="設定9" drawsBackground="YES" id="H2u-TK-UWO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-pA-NDq">
-                                <rect key="frame" x="30" y="323" width="34" height="17"/>
+                                <rect key="frame" x="30" y="255" width="34" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定1" id="F6i-0q-2rY">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1350,7 +1350,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTs-7G-R66">
-                                <rect key="frame" x="30" y="291" width="36" height="17"/>
+                                <rect key="frame" x="30" y="228" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定2" id="cm8-fI-MOF">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1359,7 +1359,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDZ-OU-RR0">
-                                <rect key="frame" x="29" y="260" width="36" height="17"/>
+                                <rect key="frame" x="30" y="200" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定3" id="jdT-Nc-b51">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1368,7 +1368,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CR-pZ-OeM">
-                                <rect key="frame" x="29" y="227" width="36" height="17"/>
+                                <rect key="frame" x="31" y="175" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定4" id="DwS-UZ-RZu">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1377,7 +1377,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsO-hc-Sqh">
-                                <rect key="frame" x="30" y="195" width="36" height="17"/>
+                                <rect key="frame" x="30" y="150" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定5" id="xiv-2V-Hq7">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1386,7 +1386,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-AC-6ZF">
-                                <rect key="frame" x="29" y="165" width="36" height="17"/>
+                                <rect key="frame" x="30" y="122" width="36" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定6" id="lP9-Kt-LeI">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1395,7 +1395,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbw-mA-zja">
-                                <rect key="frame" x="29" y="131" width="36" height="17"/>
+                                <rect key="frame" x="31" y="98" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定7" id="FJ7-By-EQ9">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1404,7 +1404,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7n6-fn-UPQ">
-                                <rect key="frame" x="31" y="99" width="36" height="17"/>
+                                <rect key="frame" x="31" y="74" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定8" id="Fdi-1C-TJM">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1413,7 +1413,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqx-xa-4Jg">
-                                <rect key="frame" x="31" y="64" width="36" height="17"/>
+                                <rect key="frame" x="31" y="46" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定9" id="iT2-V9-Otr">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1422,7 +1422,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEO-KC-KpO">
-                                <rect key="frame" x="29" y="356" width="36" height="17"/>
+                                <rect key="frame" x="29" y="281" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="設定0" id="qcU-Uu-Tg7">
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
@@ -1431,7 +1431,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dR9-kt-zvf">
-                                <rect key="frame" x="135" y="7" width="65" height="32"/>
+                                <rect key="frame" x="135" y="8" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cwh-Ed-PYG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1443,7 +1443,7 @@
                 </viewController>
                 <customObject id="ftA-P7-ONi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="523"/>
+            <point key="canvasLocation" x="584" y="485"/>
         </scene>
         <!--天体表示-->
         <scene sceneID="zYr-LL-I8G">
@@ -1661,18 +1661,6 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-Wl-Gxe">
-                                <rect key="frame" x="20" y="220" width="99" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="10" id="9gD-uX-K0z">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <connections>
-                                        <action selector="settingsComboChanged:" target="vgE-0B-NN2" id="AgF-p0-GOW"/>
-                                    </connections>
-                                </comboBoxCell>
-                            </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-wv-ka7">
                                 <rect key="frame" x="242" y="0.0" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1705,11 +1693,27 @@
                                     <action selector="ringsComboChanged:" target="vgE-0B-NN2" id="x55-Hn-7IU"/>
                                 </connections>
                             </comboBox>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-n0-07s">
+                                <rect key="frame" x="17" y="221" width="76" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="設定0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VLN-b7-Tyu" id="4aN-2y-V5R">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="5WM-8y-Ofr">
+                                        <items>
+                                            <menuItem title="設定0" state="on" id="VLN-b7-Tyu"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="SettingsComboChanged:" target="vgE-0B-NN2" id="oTz-q9-BI0"/>
+                                </connections>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="RingsCombo" destination="0yE-XY-a2q" id="Wd5-oL-ApA"/>
-                        <outlet property="SettingsCombo" destination="TXm-Wl-Gxe" id="6v2-Ss-zgR"/>
+                        <outlet property="SettingsCombo" destination="5ji-n0-07s" id="PFS-f4-dic"/>
                         <outlet property="SubmitClicked" destination="Nl7-wv-ka7" id="YUO-et-jai"/>
                         <outlet property="dispPlanetAsc" destination="v7R-4l-ZpA" id="3WC-8o-hf2"/>
                         <outlet property="dispPlanetCeres" destination="VnU-Xi-qE0" id="qzH-fe-P8P"/>
@@ -1751,27 +1755,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="445" height="272"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVz-S7-3ov">
-                                <rect key="frame" x="20" y="228" width="99" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="7" id="CTJ-To-cFx">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>1</string>
-                                        <string>2</string>
-                                        <string>3</string>
-                                        <string>4</string>
-                                        <string>5</string>
-                                        <string>6</string>
-                                        <string>7</string>
-                                    </objectValues>
-                                    <connections>
-                                        <action selector="SettingsComboChanged:" target="hdW-fk-wOl" id="oXr-ct-NMw"/>
-                                    </connections>
-                                </comboBoxCell>
-                            </comboBox>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-Tv-48W">
                                 <rect key="frame" x="18" y="178" width="95" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1906,7 +1889,7 @@
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-L2-hVX">
                                 <rect key="frame" x="149" y="228" width="99" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="TcH-v6-yrb">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="16" id="TcH-v6-yrb">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1933,11 +1916,27 @@
                                     <action selector="RingsComboChanged:" target="hdW-fk-wOl" id="XN3-WK-SXw"/>
                                 </connections>
                             </comboBox>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7y-RP-cxQ">
+                                <rect key="frame" x="18" y="229" width="76" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="設定0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4ja-Id-NMh" id="TCo-c7-85P">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="p2s-iG-fSf">
+                                        <items>
+                                            <menuItem title="設定0" state="on" id="4ja-Id-NMh"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="SettingsComboChanged:" target="hdW-fk-wOl" id="hsl-99-mCb"/>
+                                </connections>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="RingsCombo" destination="GdX-L2-hVX" id="O5o-ki-q3f"/>
-                        <outlet property="SettingsCombo" destination="GVz-S7-3ov" id="s5J-5H-MZ1"/>
+                        <outlet property="SettingsCombo" destination="c7y-RP-cxQ" id="ZEq-ak-Swm"/>
                         <outlet property="dispAspect" destination="7hF-3q-dx2" id="T6r-eA-bkF"/>
                         <outlet property="dispAspectBiQuintile" destination="07K-Kk-U5L" id="anW-eh-xfs"/>
                         <outlet property="dispAspectConjunction" destination="ZgO-Tv-48W" id="B5r-tY-2CD"/>
@@ -3356,11 +3355,12 @@
                                             <menuItem title="設定0" state="on" keyEquivalent="" id="qLd-P2-L8T">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="Item 2" id="ltU-5M-bE3"/>
-                                            <menuItem title="Item 3" id="z9X-Eg-RBY"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="SettingsComboChanged:" target="fJl-8Z-zFv" id="Yct-eY-TpQ"/>
+                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGC-fe-yTm">
                                 <rect key="frame" x="130" y="246" width="115" height="26"/>
@@ -3376,10 +3376,15 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="RingsComboChanged:" target="fJl-8Z-zFv" id="UcE-UG-lQL"/>
+                                </connections>
                             </popUpButton>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="RingsCombo" destination="FGC-fe-yTm" id="VxL-1P-Wg6"/>
+                        <outlet property="SettingsCombo" destination="d62-Qt-aGy" id="fmH-WM-fQ8"/>
                         <outlet property="dispAspectPlanetAsc" destination="Jyi-mn-Mwa" id="u7h-ZD-9ex"/>
                         <outlet property="dispAspectPlanetCeres" destination="uEO-Oc-Xk1" id="2OC-JZ-4DW"/>
                         <outlet property="dispAspectPlanetChiron" destination="hb3-jJ-y1Y" id="Q48-wS-Oyx"/>

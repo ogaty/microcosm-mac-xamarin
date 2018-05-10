@@ -57,9 +57,10 @@ namespace microcosm.Views
             settingIndex = rootViewController.settingIndex;
             planetIndex = (int)RingsCombo.SelectedIndex;
 
+            SettingsCombo.RemoveAllItems();
             for (int i = 0; i < 10; i++) {
                 NSString obj = new NSString(settings[i].dispName);
-                SettingsCombo.Add(obj);
+                SettingsCombo.AddItem(obj);
             }
 
             SettingsCombo.SelectItem(settingIndex);

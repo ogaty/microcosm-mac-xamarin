@@ -22,7 +22,8 @@ namespace microcosm.Calc
             int j = 0;
             for (int i = 0; i < planetList.Count - 1; i++)
             {
-                for (j = i + 1; j < planetList.Count; j++) {
+                for (j = i + 1; j < planetList.Count; j++)
+                {
                     bool isDisp = true;
                     if (!setting.dispAspectPlanet[ringIndex][planetList[i].no] ||
                         !setting.dispAspectPlanet[ringIndex][planetList[j].no])
@@ -78,6 +79,72 @@ namespace microcosm.Calc
 
             return aspects;
         }
+
+        public List<AspectInfo> AspectCalcOther(List<PlanetData> planetListA, List<PlanetData> planetListB, int ringIndex)
+        {
+            List<AspectInfo> aspects = new List<AspectInfo>();
+            int settingIndex = 0;
+            SettingData setting = Common.CommonInstance.getInstance().settings[settingIndex];
+            int j = 0;
+            for (int i = 0; i < planetListA.Count; i++)
+            {
+                for (j = 0; j < planetListB.Count; j++)
+                {
+                    bool isDisp = true;
+                    if (!setting.dispAspectPlanet[ringIndex][planetListA[i].no] ||
+                        !setting.dispAspectPlanet[ringIndex][planetListB[j].no])
+                    {
+                        isDisp = false;
+                        continue;
+                    }
+
+                    //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
+
+                    OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
+                    if (!setting.dispAspectCategory[ringIndex][AspectKind.OPPOSITION])
+                    {
+                        isDisp = false;
+                    }
+                    if (opposition.Between(planetListB[j].absolute_position - planetListA[i].absolute_position))
+                    {
+                        aspects.Add(opposition.CreateAspectInfo(i, j, isDisp));
+                    }
+
+                    TrineAspect trine = new TrineAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
+                    if (!setting.dispAspectCategory[ringIndex][AspectKind.TRINE])
+                    {
+                        isDisp = false;
+                    }
+                    if (trine.Between(planetListB[j].absolute_position - planetListA[i].absolute_position))
+                    {
+                        aspects.Add(trine.CreateAspectInfo(i, j, isDisp));
+                    }
+
+                    SquareAspect square = new SquareAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
+                    if (!setting.dispAspectCategory[ringIndex][AspectKind.SQUARE])
+                    {
+                        isDisp = false;
+                    }
+                    if (square.Between(planetListB[j].absolute_position - planetListA[i].absolute_position))
+                    {
+                        aspects.Add(square.CreateAspectInfo(i, j, isDisp));
+                    }
+
+                    SextileAspect sextile = new SextileAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
+                    if (!setting.dispAspectCategory[ringIndex][AspectKind.SEXTILE])
+                    {
+                        isDisp = false;
+                    }
+                    if (sextile.Between(planetListB[j].absolute_position - planetListA[i].absolute_position))
+                    {
+                        aspects.Add(sextile.CreateAspectInfo(i, j, isDisp));
+                    }
+                }
+            }
+
+            return aspects;
+        }
+
 
         public bool Between(double target, double from, double to) {
             if (from <= target && target < to) {

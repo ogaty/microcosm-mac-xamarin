@@ -61,10 +61,13 @@ namespace microcosm.Views
 		AppKit.NSComboBox RingsCombo { get; set; }
 
 		[Outlet]
-		AppKit.NSComboBox SettingsCombo { get; set; }
+		AppKit.NSPopUpButton SettingsCombo { get; set; }
 
 		[Action ("RingsComboChanged:")]
 		partial void RingsComboChanged (Foundation.NSObject sender);
+
+		[Action ("SettingsChanged:")]
+		partial void SettingsChanged (Foundation.NSObject sender);
 
 		[Action ("SettingsComboChanged:")]
 		partial void SettingsComboChanged (Foundation.NSObject sender);

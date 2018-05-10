@@ -118,9 +118,23 @@ namespace microcosm
                 }
             }
             aspect = new AspectCalc();
+            foreach (int i in Enumerable.Range(0, 6))
+            {
+                aspectsData[i, i] = aspect.AspectCalcSame(ringsData[i].planetData, i);
+            }
+
             int ringIndexFrom = 0;
             int ringIndexTo = 0;
-            aspectsData[ringIndexFrom, ringIndexTo] = aspect.AspectCalcSame(ringsData[0].planetData, ringIndexFrom);
+            for (ringIndexFrom = 0; ringIndexFrom < 7; ringIndexFrom++)
+            {
+                for (ringIndexTo = 0; ringIndexTo < 7; ringIndexTo++)
+                {
+                    if (ringIndexFrom == ringIndexTo) continue;
+                    aspectsData[ringIndexFrom, ringIndexTo] =
+                        aspect.AspectCalcOther(ringsData[ringIndexFrom].planetData,
+                                               ringsData[ringIndexTo].planetData, ringIndexFrom);
+                }
+            }
 
             ReSetUserBox();
 
@@ -668,11 +682,26 @@ namespace microcosm
 
         void ReCalc()
         {
-            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] =
-    calc.ReCalc(config, settings[0], udata1);
+            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = 
+                ringsData[4] = ringsData[5] = ringsData[6] = calc.ReCalc(config, settings[0], udata1);
+
+            foreach (int i in Enumerable.Range(0, 6))
+            {
+                aspectsData[i, i] = aspect.AspectCalcSame(ringsData[i].planetData, i);
+            }
+
             int ringIndexFrom = 0;
             int ringIndexTo = 0;
-            aspectsData[ringIndexFrom, ringIndexTo] = aspect.AspectCalcSame(ringsData[0].planetData, ringIndexFrom);
+            for (ringIndexFrom = 0; ringIndexFrom < 7; ringIndexFrom++)
+            {
+                for (ringIndexTo = 0; ringIndexTo < 7; ringIndexTo++)
+                {
+                    if (ringIndexFrom == ringIndexTo) continue;
+                    aspectsData[ringIndexFrom, ringIndexTo] = 
+                        aspect.AspectCalcOther(ringsData[ringIndexFrom].planetData, 
+                                               ringsData[ringIndexTo].planetData, ringIndexFrom);
+                }
+            }
         }
 
         /// <summary>

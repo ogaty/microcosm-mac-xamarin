@@ -91,10 +91,10 @@ namespace microcosm.Views
 		AppKit.NSButton dispAspectPlanetVt { get; set; }
 
 		[Outlet]
-		AppKit.NSComboBox RingsCombo { get; set; }
+		AppKit.NSPopUpButton RingsCombo { get; set; }
 
 		[Outlet]
-		AppKit.NSComboBox SettingsCombo { get; set; }
+		AppKit.NSPopUpButton SettingsCombo { get; set; }
 
 		[Action ("RingsComboChanged:")]
 		partial void RingsComboChanged (Foundation.NSObject sender);
