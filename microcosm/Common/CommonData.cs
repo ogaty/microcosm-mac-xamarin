@@ -56,7 +56,7 @@ namespace microcosm.Common
         public const int ZODIAC_NUMBER_EARTH = 14;
         public const int ZODIAC_NUMBER_CHIRON = 15;
         public const int ZODIAC_NUMBER_CERES = 17;
-        public const int ZODIAC_NUMBER_PARAS = 18;
+        public const int ZODIAC_NUMBER_PALLAS = 18;
         public const int ZODIAC_NUMBER_JUNO = 19;
         public const int ZODIAC_NUMBER_VESTA = 20;
 

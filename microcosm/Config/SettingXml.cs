@@ -56,61 +56,6 @@ namespace microcosm.Config
         [XmlElement("orb_other_hard_150")]
         public string orb_other_hard_150;
 
-        // 天体表示 7個
-        // 11, 22, 33, 44, 55, 66, 77
-        [XmlElement("dispPlanetSun")]
-        public string dispPlanetSun;
-        [XmlElement("dispPlanetMoon")]
-        public string dispPlanetMoon;
-        [XmlElement("dispPlanetMercury")]
-        public string dispPlanetMercury;
-        [XmlElement("dispPlanetVenus")]
-        public string dispPlanetVenus;
-        [XmlElement("dispPlanetMars")]
-        public string dispPlanetMars;
-        [XmlElement("dispPlanetJupiter")]
-        public string dispPlanetJupiter;
-        [XmlElement("dispPlanetSaturn")]
-        public string dispPlanetSaturn;
-        [XmlElement("dispPlanetUranus")]
-        public string dispPlanetUranus;
-        [XmlElement("dispPlanetNeptune")]
-        public string dispPlanetNeptune;
-        [XmlElement("dispPlanetPluto")]
-        public string dispPlanetPluto;
-        [XmlElement("dispPlanetDh")]
-        public string dispPlanetDh;
-        [XmlElement("dispPlanetChiron")]
-        public string dispPlanetChiron;
-        [XmlElement("dispPlanetAsc")]
-        public string dispPlanetAsc;
-        [XmlElement("dispPlanetMc")]
-        public string dispPlanetMc;
-        [XmlElement("dispPlanetEarth")]
-        public string dispPlanetEarth;
-        [XmlElement("dispPlanetLilith")]
-        public string dispPlanetLilith;
-        [XmlElement("dispPlanetCeres")]
-        public string dispPlanetCeres;
-        [XmlElement("dispPlanetParas")]
-        public string dispPlanetParas;
-        [XmlElement("dispPlanetJuno")]
-        public string dispPlanetJuno;
-        [XmlElement("dispPlanetVesta")]
-        public string dispPlanetVesta;
-        [XmlElement("dispPlanetEris")]
-        public string dispPlanetEris;
-        [XmlElement("dispPlanetSedna")]
-        public string dispPlanetSedna;
-        [XmlElement("dispPlanetHaumea")]
-        public string dispPlanetHaumea;
-        [XmlElement("dispPlanetMakemake")]
-        public string dispPlanetMakemake;
-        [XmlElement("dispPlanetVt")]
-        public string dispPlanetVt;
-        [XmlElement("dispPlanetPof")]
-        public string dispPlanetPof;
-
         // アスペクト表示 28個
         // 11, 22, 33, 44, 55, 66, 77
         // 12, 13, 14, 15, 16, 17
@@ -538,8 +483,13 @@ namespace microcosm.Config
         public bool dispPlanetLilith22;
         [XmlElement("dispPlanetSun33")]
         public bool dispPlanetSun33;
+        [XmlElement("dispPlanetSun44")]
+        public bool dispPlanetSun44;
+        [XmlElement("dispPlanetSun55")]
+        public bool dispPlanetSun55;
         [XmlElement("dispPlanetMoon33")]
         public bool dispPlanetMoon33;
+        //todo
         [XmlElement("dispPlanetMercury33")]
         public bool dispPlanetMercury33;
         [XmlElement("dispPlanetVenus33")]

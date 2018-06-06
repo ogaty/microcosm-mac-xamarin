@@ -8,8 +8,17 @@ using System.Xml.Serialization;
 
 namespace microcosm.Config
 {
+    /// <summary>
+    /// XMLファイルからSettingを生成
+    /// </summary>
     public static class SettingFromXml
     {
+        /// <summary>
+        /// XMLファイルからSettingを生成
+        /// </summary>
+        /// <returns>The setting from xml.</returns>
+        /// <param name="xmlFile">Xml file.</param>
+        /// <param name="no">設定No.</param>
         public static SettingData GetSettingFromXml(string xmlFile, int no)
         {
             SettingXml settingXml;

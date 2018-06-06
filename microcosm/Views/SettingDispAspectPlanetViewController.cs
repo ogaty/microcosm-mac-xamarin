@@ -162,7 +162,7 @@ namespace microcosm.Views
             {
                 dispAspectPlanetCeres.State = NSCellStateValue.On;
             }
-            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PARAS] == true)
+            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PALLAS] == true)
             {
                 dispAspectPlanetParas.State = NSCellStateValue.On;
             }

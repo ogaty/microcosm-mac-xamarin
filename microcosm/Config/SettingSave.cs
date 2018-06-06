@@ -84,12 +84,11 @@ namespace microcosm.Config
             ret.orb_other_hard_150 = orbs;
 
             string planets = "";
-            for (int i = 0; i < 6; i++) {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_SUN];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_SUN];
-            ret.dispPlanetSun = planets;
+            ret.dispPlanetSun11 = setting.dispPlanet[0][CommonData.ZODIAC_NUMBER_SUN];
+            ret.dispPlanetSun22 = setting.dispPlanet[1][CommonData.ZODIAC_NUMBER_SUN];
+            ret.dispPlanetSun33 = setting.dispPlanet[2][CommonData.ZODIAC_NUMBER_SUN];
+            ret.dispPlanetSun44 = setting.dispPlanet[3][CommonData.ZODIAC_NUMBER_SUN];
+            ret.dispPlanetSun55 = setting.dispPlanet[4][CommonData.ZODIAC_NUMBER_SUN];
 
             for (int i = 0; i < 6; i++)
             {
@@ -97,7 +96,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MOON];
-            ret.dispPlanetMoon = planets;
+//            ret.dispPlanetMoon = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -105,7 +104,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MERCURY];
-            ret.dispPlanetMercury = planets;
+//            ret.dispPlanetMercury = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -113,7 +112,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_VENUS];
-            ret.dispPlanetVenus = planets;
+//            ret.dispPlanetVenus = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -121,7 +120,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MARS];
-            ret.dispPlanetMars = planets;
+//            ret.dispPlanetMars = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -129,7 +128,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_JUPITER];
-            ret.dispPlanetJupiter = planets;
+//            ret.dispPlanetJupiter = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -137,7 +136,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_SATURN];
-            ret.dispPlanetSaturn = planets;
+//            ret.dispPlanetSaturn = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -145,7 +144,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_URANUS];
-            ret.dispPlanetUranus = planets;
+//            ret.dispPlanetUranus = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -153,7 +152,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_NEPTUNE];
-            ret.dispPlanetNeptune = planets;
+//            ret.dispPlanetNeptune = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -161,7 +160,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PLUTO];
-            ret.dispPlanetPluto = planets;
+//            ret.dispPlanetPluto = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -169,7 +168,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_ASC];
-            ret.dispPlanetAsc = planets;
+//            ret.dispPlanetAsc = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -177,7 +176,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MC];
-            ret.dispPlanetMc = planets;
+//            ret.dispPlanetMc = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -185,7 +184,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_CHIRON];
-            ret.dispPlanetChiron = planets;
+//            ret.dispPlanetChiron = planets;
 
             for (int i = 0; i < 6; i++)
             {
@@ -193,7 +192,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_EARTH];
-            ret.dispPlanetEarth = planets;
+//            ret.dispPlanetEarth = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -201,7 +200,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
-            ret.dispPlanetDh = planets;
+//            ret.dispPlanetDh = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -209,7 +208,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_LILITH];
-            ret.dispPlanetLilith = planets;
+//            ret.dispPlanetLilith = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -217,7 +216,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_VT];
-            ret.dispPlanetVt = planets;
+//            ret.dispPlanetVt = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -225,7 +224,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_POF];
-            ret.dispPlanetPof = planets;
+//            ret.dispPlanetPof = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -233,15 +232,15 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_CERES];
-            ret.dispPlanetCeres = planets;
+//            ret.dispPlanetCeres = planets;
  
             for (int i = 0; i < 6; i++)
             {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_PARAS];
+                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_PALLAS];
                 planets += ",";
             }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PARAS];
-            ret.dispPlanetParas = planets;
+            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PALLAS];
+//            ret.dispPlanetParas = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -249,7 +248,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_JUNO];
-            ret.dispPlanetJuno = planets;
+//            ret.dispPlanetJuno = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -257,7 +256,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_VESTA];
-            ret.dispPlanetVesta = planets;
+//            ret.dispPlanetVesta = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -265,7 +264,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_ERIS];
-            ret.dispPlanetEris = planets;
+//            ret.dispPlanetEris = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -273,7 +272,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_SEDNA];
-            ret.dispPlanetSedna = planets;
+//            ret.dispPlanetSedna = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -281,7 +280,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_HAUMEA];
-            ret.dispPlanetHaumea = planets;
+//            ret.dispPlanetHaumea = planets;
  
             for (int i = 0; i < 6; i++)
             {
@@ -289,7 +288,7 @@ namespace microcosm.Config
                 planets += ",";
             }
             planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MAKEMAKE];
-            ret.dispPlanetMakemake = planets;
+//            ret.dispPlanetMakemake = planets;
  
             return ret;
         }

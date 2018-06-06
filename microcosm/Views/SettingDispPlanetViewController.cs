@@ -138,7 +138,7 @@ namespace microcosm.Views
             {
                 dispPlanetCeres.State = NSCellStateValue.On;
             }
-            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PARAS] == true)
+            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PALLAS] == true)
             {
                 dispPlanetParas.State = NSCellStateValue.On;
             }
@@ -180,6 +180,21 @@ namespace microcosm.Views
 
         partial void SubmitClicked(NSObject sender)
         {
+            settingIndex = rootViewController.settingIndex;
+            planetIndex = (int)RingsCombo.SelectedIndex;
+            settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
+                dispPlanetSun.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
+                dispPlanetMoon.State == NSCellStateValue.On ? true : false;
+
+            if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
+            {
+                CommonInstance.getInstance().currentSetting.dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
+                    dispPlanetSun.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
+                    dispPlanetMoon.State == NSCellStateValue.On ? true : false;
+            }
+
             SettingSave.SaveXml(settings);
 
             DismissViewController(this);
