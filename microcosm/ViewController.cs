@@ -109,6 +109,7 @@ namespace microcosm
             CommonInstance.getInstance().config = config;
             CommonInstance.getInstance().settings = settings;
             CommonInstance.getInstance().currentSetting = settings[0];
+            CommonInstance.getInstance().currentSettingIndex = 0;
 
             calc = new AstroCalc();
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] = 
@@ -428,7 +429,7 @@ namespace microcosm
                 IOrderedEnumerable<PlanetData> sortPlanetData2 = ringsData[1].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
                 foreach (PlanetData planet in sortPlanetData2)
                 {
-                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[0][planet.no])
+                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[1][planet.no])
                     {
                         continue;
                     }
@@ -471,7 +472,7 @@ namespace microcosm
                     }
 
 
-                    planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[0].cusps[1]);
+                    planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[1].cusps[1]);
                     //                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
                     planetPt.x = planetPt.x + CenterX - 10;
                     planetPt.y = -1 * planetPt.y + CenterY + 20;
@@ -479,7 +480,7 @@ namespace microcosm
                     cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
 
                     // 天体度数
-                    planetDegreePt = Util.Rotate(radius - (planetOffset + 35), 0, 5 * index - ringsData[0].cusps[1]);
+                    planetDegreePt = Util.Rotate(radius - (planetOffset + 35), 0, 5 * index - ringsData[1].cusps[1]);
                     planetDegreePt.x = planetDegreePt.x + CenterX - 15;
                     planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
                     p.Color = SKColors.Black;

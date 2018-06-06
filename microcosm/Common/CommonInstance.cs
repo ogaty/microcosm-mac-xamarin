@@ -12,6 +12,7 @@ namespace microcosm.Common
         public int[] customRings = { 1, 3, 3, 1, 1, 1, 1 };
 
         public SettingData currentSetting;
+        public int currentSettingIndex;
 
         public string SelectedDirectoryName;
         public string SelectedDirectoryFullPath;

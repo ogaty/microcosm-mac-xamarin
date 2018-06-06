@@ -79,14 +79,16 @@ namespace microcosm.Views
 
         private void ReRender()
         {
-            if (settings[settingIndex].dispAspectCategory[planetIndex][AspectKind.CONJUNCTION] == true)
-            {
-                dispAspectConjunction.State = NSCellStateValue.On;
-            }
-            if (settings[settingIndex].dispAspectCategory[planetIndex][AspectKind.OPPOSITION] == true)
-            {
-                dispAspectOpposition.State = NSCellStateValue.On;
-            }
+            settingIndex = rootViewController.settingIndex;
+            planetIndex = (int)RingsCombo.SelectedIndex;
+            dispAspectConjunction.State =
+                settings[settingIndex].dispAspectCategory[planetIndex][AspectKind.CONJUNCTION] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectOpposition.State =
+                settings[settingIndex].dispAspectCategory[planetIndex][AspectKind.OPPOSITION] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
             if (settings[settingIndex].dispAspectCategory[planetIndex][AspectKind.TRINE] == true)
             {
                 dispAspectTrine.State = NSCellStateValue.On;
@@ -150,7 +152,8 @@ namespace microcosm.Views
 
         partial void SubmitButtonClicked(NSObject sender)
         {
-
+            SettingSave.SaveXml(settings);
+            DismissViewController(this);
         }
 
         //strongly typed view accessor

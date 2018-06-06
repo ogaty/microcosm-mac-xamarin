@@ -77,14 +77,15 @@ namespace microcosm.Views
         {
             settingIndex = rootViewController.settingIndex;
             planetIndex = (int)RingsCombo.SelectedIndex;
-            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] == true)
-            {
-                dispPlanetSun.State = NSCellStateValue.On;
-            }
-            if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] == true)
-            {
-                dispPlanetMoon.State = NSCellStateValue.On;
-            }
+
+            dispPlanetSun.State =
+                settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispPlanetMoon.State =
+                settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
             if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] == true)
             {
                 dispPlanetMercury.State = NSCellStateValue.On;

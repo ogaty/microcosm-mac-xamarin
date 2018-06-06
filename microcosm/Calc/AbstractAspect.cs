@@ -65,15 +65,15 @@ namespace microcosm.Calc
             if (fromPlanetNumber == CommonData.ZODIAC_NUMBER_SUN || toPlanetNumber == CommonData.ZODIAC_NUMBER_SUN)
             {
                 if (Between(targetDegree,
-                                 aspectDegree - setting.orbs[ringIndex][OrbKind.SUN_SOFT_1ST],
-                                 aspectDegree + setting.orbs[ringIndex][OrbKind.SUN_SOFT_1ST]))
+                                 aspectDegree - setting.orbs[0][OrbKind.SUN_SOFT_1ST],
+                                 aspectDegree + setting.orbs[0][OrbKind.SUN_SOFT_1ST]))
                 {
                     softHard = SoftHard.SOFT;
                     return true;
                 }
                 else if (Between(targetDegree,
-                                      aspectDegree - setting.orbs[ringIndex][OrbKind.SUN_HARD_1ST],
-                                      aspectDegree + setting.orbs[ringIndex][OrbKind.SUN_HARD_1ST]))
+                                      aspectDegree - setting.orbs[0][OrbKind.SUN_HARD_1ST],
+                                      aspectDegree + setting.orbs[0][OrbKind.SUN_HARD_1ST]))
                 {
                     softHard = SoftHard.HARD;
                     return true;
@@ -82,15 +82,15 @@ namespace microcosm.Calc
             else if (fromPlanetNumber == CommonData.ZODIAC_NUMBER_MOON || toPlanetNumber == CommonData.ZODIAC_NUMBER_MOON)
             {
                 if (Between(targetDegree,
-                                 aspectDegree - setting.orbs[ringIndex][OrbKind.MOON_SOFT_1ST],
-                                 aspectDegree + setting.orbs[ringIndex][OrbKind.MOON_SOFT_1ST]))
+                                 aspectDegree - setting.orbs[0][OrbKind.MOON_SOFT_1ST],
+                                 aspectDegree + setting.orbs[0][OrbKind.MOON_SOFT_1ST]))
                 {
                     softHard = SoftHard.SOFT;
                     return true;
                 }
                 else if (Between(targetDegree,
-                                      aspectDegree - setting.orbs[ringIndex][OrbKind.MOON_HARD_1ST],
-                                      aspectDegree + setting.orbs[ringIndex][OrbKind.MOON_HARD_1ST]))
+                                      aspectDegree - setting.orbs[0][OrbKind.MOON_HARD_1ST],
+                                      aspectDegree + setting.orbs[0][OrbKind.MOON_HARD_1ST]))
                 {
                     softHard = SoftHard.HARD;
                     return true;
@@ -99,15 +99,15 @@ namespace microcosm.Calc
             else
             {
                 if (Between(targetDegree,
-                                 aspectDegree - setting.orbs[ringIndex][OrbKind.OTHER_SOFT_1ST],
-                                 aspectDegree + setting.orbs[ringIndex][OrbKind.OTHER_SOFT_1ST]))
+                                 aspectDegree - setting.orbs[0][OrbKind.OTHER_SOFT_1ST],
+                                 aspectDegree + setting.orbs[0][OrbKind.OTHER_SOFT_1ST]))
                 {
                     softHard = SoftHard.SOFT;
                     return true;
                 }
                 else if (Between(targetDegree,
-                                      aspectDegree - setting.orbs[ringIndex][OrbKind.OTHER_HARD_1ST],
-                                      aspectDegree + setting.orbs[ringIndex][OrbKind.OTHER_HARD_1ST]))
+                                      aspectDegree - setting.orbs[0][OrbKind.OTHER_HARD_1ST],
+                                      aspectDegree + setting.orbs[0][OrbKind.OTHER_HARD_1ST]))
                 {
                     softHard = SoftHard.HARD;
                     return true;

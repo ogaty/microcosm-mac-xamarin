@@ -212,6 +212,14 @@ namespace microcosm.Views
             settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
                 dispAspectPlanetMoon.State == NSCellStateValue.On ? true : false;
 
+            if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
+            {
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
+                    dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
+                    dispAspectPlanetMoon.State == NSCellStateValue.On ? true : false;
+            }
+
             SettingSave.SaveXml(settings);
             DismissViewController(this);
         }
