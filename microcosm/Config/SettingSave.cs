@@ -11,6 +11,10 @@ namespace microcosm.Config
         {
         }
 
+        /// <summary>
+        /// setting配列をXmlに記録
+        /// </summary>
+        /// <param name="settings">setting一覧</param>
         public static void SaveXml(SettingData[] settings)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(SettingXml));
