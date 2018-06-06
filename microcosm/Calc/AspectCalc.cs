@@ -14,19 +14,26 @@ namespace microcosm.Calc
             
         }
 
+        /// <summary>
+        /// アスペクト計算
+        /// </summary>
+        /// <returns>The calculate same.</returns>
+        /// <param name="planetList">Planet list.</param>
+        /// <param name="ringIndex">ringIndex(0〜6)</param>
         public List<AspectInfo> AspectCalcSame(List<PlanetData> planetList, int ringIndex) 
         {
             List<AspectInfo> aspects = new List<AspectInfo>();
             int settingIndex = 0;
             SettingData setting = Common.CommonInstance.getInstance().settings[settingIndex];
             int j = 0;
+            int aspectIndex = ringIndex;
             for (int i = 0; i < planetList.Count - 1; i++)
             {
                 for (j = i + 1; j < planetList.Count; j++)
                 {
                     bool isDisp = true;
-                    if (!setting.dispAspectPlanet[ringIndex][planetList[i].no] ||
-                        !setting.dispAspectPlanet[ringIndex][planetList[j].no])
+                    if (!setting.dispAspectPlanet[aspectIndex][planetList[i].no] ||
+                        !setting.dispAspectPlanet[aspectIndex][planetList[j].no])
                     {
                         isDisp = false;
                         continue;

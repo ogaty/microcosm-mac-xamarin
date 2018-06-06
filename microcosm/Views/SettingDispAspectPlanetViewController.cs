@@ -84,26 +84,28 @@ namespace microcosm.Views
 
         public void ReRender()
         {
-            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] == true)
-            {
-                dispAspectPlanetSun.State = NSCellStateValue.On;
-            }
-            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] == true)
-            {
-                dispAspectPlanetMoon.State = NSCellStateValue.On;
-            }
-            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] == true)
-            {
-                dispAspectPlanetMercury.State = NSCellStateValue.On;
-            }
-            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] == true)
-            {
-                dispAspectPlanetVenus.State = NSCellStateValue.On;
-            }
-            if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] == true)
-            {
-                dispAspectPlanetMars.State = NSCellStateValue.On;
-            }
+            settingIndex = rootViewController.settingIndex;
+            planetIndex = (int)RingsCombo.IndexOfSelectedItem;
+            dispAspectPlanetSun.State = 
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetMoon.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetMercury.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetVenus.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetMars.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
             if (settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] == true)
             {
                 dispAspectPlanetJupiter.State = NSCellStateValue.On;

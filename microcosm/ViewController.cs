@@ -19,6 +19,11 @@ namespace microcosm
 {
     public partial class ViewController : NSViewController
     {
+        const int USER1 = 1;
+        const int USER2 = 2;
+        const int EVENT1 = 3;
+        const int EVENT2 = 4;
+
         NSObject NSWindowDidResizeNotificationObject;
 
         public AstroCalc calc;
@@ -682,8 +687,11 @@ namespace microcosm
 
         void ReCalc()
         {
-            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = 
+            ringsData[0] = ringsData[3] = 
                 ringsData[4] = ringsData[5] = ringsData[6] = calc.ReCalc(config, settings[0], udata1);
+
+            ReCalcUserDbProgress(1, EVENT1);
+            ReCalcUserDb(2, EVENT1);
 
             foreach (int i in Enumerable.Range(0, 6))
             {
@@ -1157,16 +1165,16 @@ namespace microcosm
         public void ReCalcUserDb(int index, int type) 
         {
             switch (type) {
-                case 1:
+                case USER1:
                     ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
                     break;
-                case 2:
+                case USER2:
                     ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata2);
                     break;
-                case 3:
+                case EVENT1:
                     ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
                     break;
-                case 4:
+                case EVENT2:
                     ringsData[index] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata2);
                     break;
                 default:
@@ -1183,16 +1191,16 @@ namespace microcosm
         {
             switch (type)
             {
-                case 1:
+                case USER1:
                     ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, udata1);
                     break;
-                case 2:
+                case USER2:
                     ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, udata2);
                     break;
-                case 3:
+                case EVENT1:
                     ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata1);
                     break;
-                case 4:
+                case EVENT2:
                     ringsData[index] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata2);
                     break;
                 default:

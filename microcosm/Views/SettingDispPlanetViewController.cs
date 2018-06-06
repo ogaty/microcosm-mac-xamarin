@@ -75,6 +75,8 @@ namespace microcosm.Views
 
         private void ReRender() 
         {
+            settingIndex = rootViewController.settingIndex;
+            planetIndex = (int)RingsCombo.SelectedIndex;
             if (settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] == true)
             {
                 dispPlanetSun.State = NSCellStateValue.On;

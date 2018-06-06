@@ -9,8 +9,11 @@ using microcosm.Models;
 
 namespace microcosm.Config
 {
-    // 複数クラスが存在（0～9）
-
+    
+    /// <summary>
+    /// 実際のsettingが最終的に格納されるところ
+    /// 複数クラスが存在（0～9）
+    /// </summary>
     public class SettingData
     {
         public const int xmlVersion = 2;
