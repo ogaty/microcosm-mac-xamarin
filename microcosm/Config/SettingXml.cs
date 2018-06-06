@@ -483,13 +483,8 @@ namespace microcosm.Config
         public bool dispPlanetLilith22;
         [XmlElement("dispPlanetSun33")]
         public bool dispPlanetSun33;
-        [XmlElement("dispPlanetSun44")]
-        public bool dispPlanetSun44;
-        [XmlElement("dispPlanetSun55")]
-        public bool dispPlanetSun55;
         [XmlElement("dispPlanetMoon33")]
         public bool dispPlanetMoon33;
-        //todo
         [XmlElement("dispPlanetMercury33")]
         public bool dispPlanetMercury33;
         [XmlElement("dispPlanetVenus33")]
@@ -518,103 +513,171 @@ namespace microcosm.Config
         public bool dispPlanetEarth33;
         [XmlElement("dispPlanetLilith33")]
         public bool dispPlanetLilith33;
-        [XmlElement("dispPlanetSun12")]
-        public bool dispPlanetSun12;
-        [XmlElement("dispPlanetMoon12")]
-        public bool dispPlanetMoon12;
-        [XmlElement("dispPlanetMercury12")]
-        public bool dispPlanetMercury12;
-        [XmlElement("dispPlanetVenus12")]
-        public bool dispPlanetVenus12;
-        [XmlElement("dispPlanetMars12")]
-        public bool dispPlanetMars12;
-        [XmlElement("dispPlanetJupiter12")]
-        public bool dispPlanetJupiter12;
-        [XmlElement("dispPlanetSaturn12")]
-        public bool dispPlanetSaturn12;
-        [XmlElement("dispPlanetUranus12")]
-        public bool dispPlanetUranus12;
-        [XmlElement("dispPlanetNeptune12")]
-        public bool dispPlanetNeptune12;
-        [XmlElement("dispPlanetPluto12")]
-        public bool dispPlanetPluto12;
-        [XmlElement("dispPlanetDh12")]
-        public bool dispPlanetDh12;
-        [XmlElement("dispPlanetChiron12")]
-        public bool dispPlanetChiron12;
-        [XmlElement("dispPlanetAsc12")]
-        public bool dispPlanetAsc12;
-        [XmlElement("dispPlanetMc12")]
-        public bool dispPlanetMc12;
-        [XmlElement("dispPlanetEarth12")]
-        public bool dispPlanetEarth12;
-        [XmlElement("dispPlanetLilith12")]
-        public bool dispPlanetLilith12;
-        [XmlElement("dispPlanetSun13")]
-        public bool dispPlanetSun13;
-        [XmlElement("dispPlanetMoon13")]
-        public bool dispPlanetMoon13;
-        [XmlElement("dispPlanetMercury13")]
-        public bool dispPlanetMercury13;
-        [XmlElement("dispPlanetVenus13")]
-        public bool dispPlanetVenus13;
-        [XmlElement("dispPlanetMars13")]
-        public bool dispPlanetMars13;
-        [XmlElement("dispPlanetJupiter13")]
-        public bool dispPlanetJupiter13;
-        [XmlElement("dispPlanetSaturn13")]
-        public bool dispPlanetSaturn13;
-        [XmlElement("dispPlanetUranus13")]
-        public bool dispPlanetUranus13;
-        [XmlElement("dispPlanetNeptune13")]
-        public bool dispPlanetNeptune13;
-        [XmlElement("dispPlanetPluto13")]
-        public bool dispPlanetPluto13;
-        [XmlElement("dispPlanetDh13")]
-        public bool dispPlanetDh13;
-        [XmlElement("dispPlanetChiron13")]
-        public bool dispPlanetChiron13;
-        [XmlElement("dispPlanetAsc13")]
-        public bool dispPlanetAsc13;
-        [XmlElement("dispPlanetMc13")]
-        public bool dispPlanetMc13;
-        [XmlElement("dispPlanetEarth13")]
-        public bool dispPlanetEarth13;
-        [XmlElement("dispPlanetLilith13")]
-        public bool dispPlanetLilith13;
-        [XmlElement("dispPlanetSun23")]
-        public bool dispPlanetSun23;
-        [XmlElement("dispPlanetMoon23")]
-        public bool dispPlanetMoon23;
-        [XmlElement("dispPlanetMercury23")]
-        public bool dispPlanetMercury23;
-        [XmlElement("dispPlanetVenus23")]
-        public bool dispPlanetVenus23;
-        [XmlElement("dispPlanetMars23")]
-        public bool dispPlanetMars23;
-        [XmlElement("dispPlanetJupiter23")]
-        public bool dispPlanetJupiter23;
-        [XmlElement("dispPlanetSaturn23")]
-        public bool dispPlanetSaturn23;
-        [XmlElement("dispPlanetUranus23")]
-        public bool dispPlanetUranus23;
-        [XmlElement("dispPlanetNeptune23")]
-        public bool dispPlanetNeptune23;
-        [XmlElement("dispPlanetPluto23")]
-        public bool dispPlanetPluto23;
-        [XmlElement("dispPlanetDh23")]
-        public bool dispPlanetDh23;
-        [XmlElement("dispPlanetChiron23")]
-        public bool dispPlanetChiron23;
-        [XmlElement("dispPlanetAsc23")]
-        public bool dispPlanetAsc23;
-        [XmlElement("dispPlanetMc23")]
-        public bool dispPlanetMc23;
-        [XmlElement("dispPlanetEarth23")]
-        public bool dispPlanetEarth23;
-        [XmlElement("dispPlanetLilith23")]
-        public bool dispPlanetLilith23;
-        #endregion
+        [XmlElement("dispPlanetSun44")]
+        public bool dispPlanetSun44;
+        [XmlElement("dispPlanetMoon44")]
+        public bool dispPlanetMoon44;
+        [XmlElement("dispPlanetMercury44")]
+        public bool dispPlanetMercury44;
+        [XmlElement("dispPlanetVenus44")]
+        public bool dispPlanetVenus44;
+        [XmlElement("dispPlanetMars44")]
+        public bool dispPlanetMars44;
+        [XmlElement("dispPlanetJupiter44")]
+        public bool dispPlanetJupiter44;
+        [XmlElement("dispPlanetSaturn44")]
+        public bool dispPlanetSaturn44;
+        [XmlElement("dispPlanetUranus44")]
+        public bool dispPlanetUranus44;
+        [XmlElement("dispPlanetNeptune44")]
+        public bool dispPlanetNeptune44;
+        [XmlElement("dispPlanetPluto44")]
+        public bool dispPlanetPluto44;
+        [XmlElement("dispPlanetDh44")]
+        public bool dispPlanetDh44;
+        [XmlElement("dispPlanetChiron44")]
+        public bool dispPlanetChiron44;
+        [XmlElement("dispPlanetAsc44")]
+        public bool dispPlanetAsc44;
+        [XmlElement("dispPlanetMc44")]
+        public bool dispPlanetMc44;
+        [XmlElement("dispPlanetEarth44")]
+        public bool dispPlanetEarth44;
+        [XmlElement("dispPlanetLilith44")]
+        public bool dispPlanetLilith44;
+        [XmlElement("dispPlanetSun55")]
+        public bool dispPlanetSun55;
+        [XmlElement("dispPlanetMoon55")]
+        public bool dispPlanetMoon55;
+        [XmlElement("dispPlanetMercury55")]
+        public bool dispPlanetMercury55;
+        [XmlElement("dispPlanetVenus55")]
+        public bool dispPlanetVenus55;
+        [XmlElement("dispPlanetMars55")]
+        public bool dispPlanetMars55;
+        [XmlElement("dispPlanetJupiter55")]
+        public bool dispPlanetJupiter55;
+        [XmlElement("dispPlanetSaturn55")]
+        public bool dispPlanetSaturn55;
+        [XmlElement("dispPlanetUranus55")]
+        public bool dispPlanetUranus55;
+        [XmlElement("dispPlanetNeptune55")]
+        public bool dispPlanetNeptune55;
+        [XmlElement("dispPlanetPluto55")]
+        public bool dispPlanetPluto55;
+        [XmlElement("dispPlanetDh55")]
+        public bool dispPlanetDh55;
+        [XmlElement("dispPlanetChiron55")]
+        public bool dispPlanetChiron55;
+        [XmlElement("dispPlanetAsc55")]
+        public bool dispPlanetAsc55;
+        [XmlElement("dispPlanetMc55")]
+        public bool dispPlanetMc55;
+        [XmlElement("dispPlanetEarth55")]
+        public bool dispPlanetEarth55;
+        [XmlElement("dispPlanetLilith55")]
+        public bool dispPlanetLilith55;
+        [XmlElement("dispPlanetCeres11")]
+        public bool dispPlanetCeres11;
+        [XmlElement("dispPlanetPallas11")]
+        public bool dispPlanetPallas11;
+        [XmlElement("dispPlanetJuno11")]
+        public bool dispPlanetJuno11;
+        [XmlElement("dispPlanetVesta11")]
+        public bool dispPlanetVesta11;
+        [XmlElement("dispPlanetEris11")]
+        public bool dispPlanetEris11;
+        [XmlElement("dispPlanetSedna11")]
+        public bool dispPlanetSedna11;
+        [XmlElement("dispPlanetHaumea11")]
+        public bool dispPlanetHaumea11;
+        [XmlElement("dispPlanetMakemake11")]
+        public bool dispPlanetMakemake11;
+        [XmlElement("dispPlanetVt11")]
+        public bool dispPlanetVt11;
+        [XmlElement("dispPlanetPof11")]
+        public bool dispPlanetPof11;
+        [XmlElement("dispPlanetCeres22")]
+        public bool dispPlanetCeres22;
+        [XmlElement("dispPlanetPallas22")]
+        public bool dispPlanetPallas22;
+        [XmlElement("dispPlanetJuno22")]
+        public bool dispPlanetJuno22;
+        [XmlElement("dispPlanetVesta22")]
+        public bool dispPlanetVesta22;
+        [XmlElement("dispPlanetEris22")]
+        public bool dispPlanetEris22;
+        [XmlElement("dispPlanetSedna22")]
+        public bool dispPlanetSedna22;
+        [XmlElement("dispPlanetHaumea22")]
+        public bool dispPlanetHaumea22;
+        [XmlElement("dispPlanetMakemake22")]
+        public bool dispPlanetMakemake22;
+        [XmlElement("dispPlanetVt22")]
+        public bool dispPlanetVt22;
+        [XmlElement("dispPlanetPof22")]
+        public bool dispPlanetPof22;
+        [XmlElement("dispPlanetCeres33")]
+        public bool dispPlanetCeres33;
+        [XmlElement("dispPlanetPallas33")]
+        public bool dispPlanetPallas33;
+        [XmlElement("dispPlanetJuno33")]
+        public bool dispPlanetJuno33;
+        [XmlElement("dispPlanetVesta33")]
+        public bool dispPlanetVesta33;
+        [XmlElement("dispPlanetEris33")]
+        public bool dispPlanetEris33;
+        [XmlElement("dispPlanetSedna33")]
+        public bool dispPlanetSedna33;
+        [XmlElement("dispPlanetHaumea33")]
+        public bool dispPlanetHaumea33;
+        [XmlElement("dispPlanetMakemake33")]
+        public bool dispPlanetMakemake33;
+        [XmlElement("dispPlanetVt33")]
+        public bool dispPlanetVt33;
+        [XmlElement("dispPlanetPof33")]
+        public bool dispPlanetPof33;
+        [XmlElement("dispPlanetCeres44")]
+        public bool dispPlanetCeres44;
+        [XmlElement("dispPlanetPallas44")]
+        public bool dispPlanetPallas44;
+        [XmlElement("dispPlanetJuno44")]
+        public bool dispPlanetJuno44;
+        [XmlElement("dispPlanetVesta44")]
+        public bool dispPlanetVesta44;
+        [XmlElement("dispPlanetEris44")]
+        public bool dispPlanetEris44;
+        [XmlElement("dispPlanetSedna44")]
+        public bool dispPlanetSedna44;
+        [XmlElement("dispPlanetHaumea44")]
+        public bool dispPlanetHaumea44;
+        [XmlElement("dispPlanetMakemake44")]
+        public bool dispPlanetMakemake44;
+        [XmlElement("dispPlanetVt44")]
+        public bool dispPlanetVt44;
+        [XmlElement("dispPlanetPof44")]
+        public bool dispPlanetPof44;
+        [XmlElement("dispPlanetCeres55")]
+        public bool dispPlanetCeres55;
+        [XmlElement("dispPlanetPallas55")]
+        public bool dispPlanetPallas55;
+        [XmlElement("dispPlanetJuno55")]
+        public bool dispPlanetJuno55;
+        [XmlElement("dispPlanetVesta55")]
+        public bool dispPlanetVesta55;
+        [XmlElement("dispPlanetEris55")]
+        public bool dispPlanetEris55;
+        [XmlElement("dispPlanetSedna55")]
+        public bool dispPlanetSedna55;
+        [XmlElement("dispPlanetHaumea55")]
+        public bool dispPlanetHaumea55;
+        [XmlElement("dispPlanetMakemake55")]
+        public bool dispPlanetMakemake55;
+        [XmlElement("dispPlanetVt55")]
+        public bool dispPlanetVt55;
+        [XmlElement("dispPlanetPof55")]
+        public bool dispPlanetPof55;
+       #endregion
 
         #region aspect Planet
         [XmlElement("aspectSun11")]
@@ -1058,54 +1121,6 @@ namespace microcosm.Config
             dispPlanetMc33 = true;
             dispPlanetEarth33 = true;
             dispPlanetLilith33 = false;
-            dispPlanetSun12 = true;
-            dispPlanetMoon12 = true;
-            dispPlanetMercury12 = true;
-            dispPlanetVenus12 = true;
-            dispPlanetMars12 = true;
-            dispPlanetJupiter12 = true;
-            dispPlanetSaturn12 = true;
-            dispPlanetUranus12 = true;
-            dispPlanetNeptune12 = true;
-            dispPlanetPluto12 = true;
-            dispPlanetDh12 = true;
-            dispPlanetChiron12 = true;
-            dispPlanetAsc12 = true;
-            dispPlanetMc12 = true;
-            dispPlanetEarth12 = true;
-            dispPlanetLilith12 = false;
-            dispPlanetSun13 = true;
-            dispPlanetMoon13 = true;
-            dispPlanetMercury13 = true;
-            dispPlanetVenus13 = true;
-            dispPlanetMars13 = true;
-            dispPlanetJupiter13 = true;
-            dispPlanetSaturn13 = true;
-            dispPlanetUranus13 = true;
-            dispPlanetNeptune13 = true;
-            dispPlanetPluto13 = true;
-            dispPlanetDh13 = true;
-            dispPlanetChiron13 = true;
-            dispPlanetAsc13 = true;
-            dispPlanetMc13 = true;
-            dispPlanetEarth13 = true;
-            dispPlanetLilith13 = false;
-            dispPlanetSun23 = true;
-            dispPlanetMoon23 = true;
-            dispPlanetMercury23 = true;
-            dispPlanetVenus23 = true;
-            dispPlanetMars23 = true;
-            dispPlanetJupiter23 = true;
-            dispPlanetSaturn23 = true;
-            dispPlanetUranus23 = true;
-            dispPlanetNeptune23 = true;
-            dispPlanetPluto23 = true;
-            dispPlanetDh23 = true;
-            dispPlanetChiron23 = true;
-            dispPlanetAsc23 = true;
-            dispPlanetMc23 = true;
-            dispPlanetEarth23 = true;
-            dispPlanetLilith23 = false;
             aspectSun11 = true;
             aspectMoon11 = true;
             aspectMercury11 = true;

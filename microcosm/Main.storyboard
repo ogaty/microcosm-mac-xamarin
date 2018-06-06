@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17E199" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17E202" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="box content view" minToolsVersion="7.0"/>
@@ -1685,8 +1685,6 @@
                                         <string>ring 3</string>
                                         <string>ring 4</string>
                                         <string>ring 5</string>
-                                        <string>ring 6</string>
-                                        <string>ring 7</string>
                                     </objectValues>
                                 </comboBoxCell>
                                 <connections>
@@ -1728,7 +1726,7 @@
                         <outlet property="dispPlanetMakemake" destination="Y5k-hU-Vko" id="Umh-5u-bVJ"/>
                         <outlet property="dispPlanetMars" destination="NcT-Ae-sxa" id="b2j-PA-CYv"/>
                         <outlet property="dispPlanetMc" destination="MCI-uN-6te" id="2PN-Pl-fdG"/>
-                        <outlet property="dispPlanetMercury" destination="b84-uP-pWm" id="jp4-2m-Cfu"/>
+                        <outlet property="dispPlanetMercury" destination="D4s-O8-JYg" id="9mY-7L-f4R"/>
                         <outlet property="dispPlanetMoon" destination="dab-e2-fCE" id="QkF-Oa-nvO"/>
                         <outlet property="dispPlanetNeptune" destination="AYC-ff-1mV" id="Md8-64-EYa"/>
                         <outlet property="dispPlanetParas" destination="BUh-2g-gPK" id="XWn-Oy-qt5"/>
@@ -1902,14 +1900,11 @@
                                         <string>ring 2-3</string>
                                         <string>ring 4</string>
                                         <string>ring 5</string>
-                                        <string>ring 6</string>
-                                        <string>ring 7</string>
+                                        <string>ring 2-4</string>
+                                        <string>ring 2-5</string>
+                                        <string>ring 3-4</string>
+                                        <string>ring 3-5</string>
                                         <string>ring 4-5</string>
-                                        <string>ring 4-6</string>
-                                        <string>ring 4-7</string>
-                                        <string>ring 5-6</string>
-                                        <string>ring 5-7</string>
-                                        <string>ring 6-7</string>
                                     </objectValues>
                                 </comboBoxCell>
                                 <connections>

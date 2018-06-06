@@ -83,213 +83,30 @@ namespace microcosm.Config
             orbs = setting.orbs[0][OrbKind.OTHER_HARD_150].ToString();
             ret.orb_other_hard_150 = orbs;
 
-            string planets = "";
             ret.dispPlanetSun11 = setting.dispPlanet[0][CommonData.ZODIAC_NUMBER_SUN];
             ret.dispPlanetSun22 = setting.dispPlanet[1][CommonData.ZODIAC_NUMBER_SUN];
             ret.dispPlanetSun33 = setting.dispPlanet[2][CommonData.ZODIAC_NUMBER_SUN];
             ret.dispPlanetSun44 = setting.dispPlanet[3][CommonData.ZODIAC_NUMBER_SUN];
             ret.dispPlanetSun55 = setting.dispPlanet[4][CommonData.ZODIAC_NUMBER_SUN];
 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_MOON];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MOON];
-//            ret.dispPlanetMoon = planets;
+            ret.dispPlanetMoon11 = setting.dispPlanet[0][CommonData.ZODIAC_NUMBER_MOON];
+            ret.dispPlanetMoon22 = setting.dispPlanet[1][CommonData.ZODIAC_NUMBER_MOON];
+            ret.dispPlanetMoon33 = setting.dispPlanet[2][CommonData.ZODIAC_NUMBER_MOON];
+            ret.dispPlanetMoon44 = setting.dispPlanet[3][CommonData.ZODIAC_NUMBER_MOON];
+            ret.dispPlanetMoon55 = setting.dispPlanet[4][CommonData.ZODIAC_NUMBER_MOON];
 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_MERCURY];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MERCURY];
-//            ret.dispPlanetMercury = planets;
+            ret.dispPlanetMercury11 = setting.dispPlanet[0][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.dispPlanetMercury22 = setting.dispPlanet[1][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.dispPlanetMercury33 = setting.dispPlanet[2][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.dispPlanetMercury44 = setting.dispPlanet[3][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.dispPlanetMercury55 = setting.dispPlanet[4][CommonData.ZODIAC_NUMBER_MERCURY];
 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_VENUS];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_VENUS];
-//            ret.dispPlanetVenus = planets;
+            ret.dispPlanetVenus11 = setting.dispPlanet[0][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.dispPlanetVenus22 = setting.dispPlanet[1][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.dispPlanetVenus33 = setting.dispPlanet[2][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.dispPlanetVenus44 = setting.dispPlanet[3][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.dispPlanetVenus55 = setting.dispPlanet[4][CommonData.ZODIAC_NUMBER_VENUS];
 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_MARS];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MARS];
-//            ret.dispPlanetMars = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_JUPITER];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_JUPITER];
-//            ret.dispPlanetJupiter = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_SATURN];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_SATURN];
-//            ret.dispPlanetSaturn = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_URANUS];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_URANUS];
-//            ret.dispPlanetUranus = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_NEPTUNE];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_NEPTUNE];
-//            ret.dispPlanetNeptune = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_PLUTO];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PLUTO];
-//            ret.dispPlanetPluto = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_ASC];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_ASC];
-//            ret.dispPlanetAsc = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_MC];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MC];
-//            ret.dispPlanetMc = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_CHIRON];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_CHIRON];
-//            ret.dispPlanetChiron = planets;
-
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_EARTH];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_EARTH];
-//            ret.dispPlanetEarth = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
-//            ret.dispPlanetDh = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_LILITH];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_LILITH];
-//            ret.dispPlanetLilith = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_VT];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_VT];
-//            ret.dispPlanetVt = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_POF];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_POF];
-//            ret.dispPlanetPof = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_CERES];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_CERES];
-//            ret.dispPlanetCeres = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_PALLAS];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_PALLAS];
-//            ret.dispPlanetParas = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_JUNO];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_JUNO];
-//            ret.dispPlanetJuno = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_VESTA];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_VESTA];
-//            ret.dispPlanetVesta = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_ERIS];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_ERIS];
-//            ret.dispPlanetEris = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_SEDNA];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_SEDNA];
-//            ret.dispPlanetSedna = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_HAUMEA];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_HAUMEA];
-//            ret.dispPlanetHaumea = planets;
- 
-            for (int i = 0; i < 6; i++)
-            {
-                planets += setting.dispPlanet[i][CommonData.ZODIAC_NUMBER_MAKEMAKE];
-                planets += ",";
-            }
-            planets += setting.dispPlanet[6][CommonData.ZODIAC_NUMBER_MAKEMAKE];
-//            ret.dispPlanetMakemake = planets;
- 
             return ret;
         }
 

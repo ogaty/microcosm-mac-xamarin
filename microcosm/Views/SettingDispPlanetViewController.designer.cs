@@ -145,6 +145,11 @@ namespace microcosm.Views
 				dispPlanetHaumea = null;
 			}
 
+			if (dispPlanetMercury != null) {
+				dispPlanetMercury.Dispose ();
+				dispPlanetMercury = null;
+			}
+
 			if (dispPlanetJuno != null) {
 				dispPlanetJuno.Dispose ();
 				dispPlanetJuno = null;
@@ -173,11 +178,6 @@ namespace microcosm.Views
 			if (dispPlanetMc != null) {
 				dispPlanetMc.Dispose ();
 				dispPlanetMc = null;
-			}
-
-			if (dispPlanetMercury != null) {
-				dispPlanetMercury.Dispose ();
-				dispPlanetMercury = null;
 			}
 
 			if (dispPlanetMoon != null) {
