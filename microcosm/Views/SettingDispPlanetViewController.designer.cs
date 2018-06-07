@@ -13,6 +13,9 @@ namespace microcosm.Views
 	partial class SettingDispPlanetViewController
 	{
 		[Outlet]
+		AppKit.NSButton dispAspectPlanetSun { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispPlanetAsc { get; set; }
 
 		[Outlet]
@@ -145,11 +148,6 @@ namespace microcosm.Views
 				dispPlanetHaumea = null;
 			}
 
-			if (dispPlanetMercury != null) {
-				dispPlanetMercury.Dispose ();
-				dispPlanetMercury = null;
-			}
-
 			if (dispPlanetJuno != null) {
 				dispPlanetJuno.Dispose ();
 				dispPlanetJuno = null;
@@ -178,6 +176,11 @@ namespace microcosm.Views
 			if (dispPlanetMc != null) {
 				dispPlanetMc.Dispose ();
 				dispPlanetMc = null;
+			}
+
+			if (dispPlanetMercury != null) {
+				dispPlanetMercury.Dispose ();
+				dispPlanetMercury = null;
 			}
 
 			if (dispPlanetMoon != null) {
@@ -248,6 +251,11 @@ namespace microcosm.Views
 			if (SettingsCombo != null) {
 				SettingsCombo.Dispose ();
 				SettingsCombo = null;
+			}
+
+			if (dispAspectPlanetSun != null) {
+				dispAspectPlanetSun.Dispose ();
+				dispAspectPlanetSun = null;
 			}
 		}
 	}

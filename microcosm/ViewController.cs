@@ -24,6 +24,13 @@ namespace microcosm
         const int EVENT1 = 3;
         const int EVENT2 = 4;
 
+        public int CenterX = 580;
+        public int CenterY = 580;
+        public float radius = 580;
+        public float zodiacWidth = 60;
+        public float centerRadiusBase = 360;
+
+
         NSObject NSWindowDidResizeNotificationObject;
 
         public AstroCalc calc;
@@ -206,11 +213,6 @@ namespace microcosm
 
         public void CanvasPaint(object sender, SKPaintSurfaceEventArgs e) 
         {
-            int CenterX = 580;
-            int CenterY = 580;
-            float radius = 580;
-            float zodiacWidth = 60;
-            float centerRadius = 360;
             string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
             string[] planets = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "O", "L" };
             var surface = e.Surface;
@@ -234,6 +236,7 @@ namespace microcosm
             cvs.DrawCircle(CenterX, CenterY, radius - zodiacWidth, lineStyle);
 
             double offset = 0;
+            float centerRadius = centerRadiusBase;
             if (CommonInstance.getInstance().currentSetting.bands == 1) 
             {
                 // center
@@ -242,7 +245,7 @@ namespace microcosm
             else if (CommonInstance.getInstance().currentSetting.bands == 2) 
             {
                 // center
-                centerRadius = centerRadius - 80;
+                centerRadius = centerRadiusBase - 80;
                 cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
 
                 offset = (radius - zodiacWidth - centerRadius) / 2;
@@ -251,7 +254,7 @@ namespace microcosm
             else if (CommonInstance.getInstance().currentSetting.bands == 3)
             {
                 // center
-                centerRadius = centerRadius - 80;
+                centerRadius = centerRadiusBase - 80;
                 cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
 
                 offset = (radius - zodiacWidth - centerRadius) / 3;
@@ -261,7 +264,7 @@ namespace microcosm
             else if (CommonInstance.getInstance().currentSetting.bands == 4)
             {
                 // center
-                centerRadius = centerRadius - 80;
+                centerRadius = centerRadiusBase - 80;
                 cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
 
                 offset = (radius - zodiacWidth - centerRadius) / 4;
@@ -272,7 +275,7 @@ namespace microcosm
             else if (CommonInstance.getInstance().currentSetting.bands == 5)
             {
                 // center
-                centerRadius = centerRadius - 80;
+                centerRadius = centerRadiusBase - 80;
                 cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
 
                 offset = (radius - zodiacWidth - centerRadius) / 5;
@@ -324,28 +327,28 @@ namespace microcosm
             }
 
 
-
-
-            // ♈〜♓までのシンボル
             System.Reflection.Assembly asm =
                 System.Reflection.Assembly.GetExecutingAssembly();
             SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
-            p.Typeface = SKTypeface.FromStream(stream);
-            p.TextSize = 48;
-            Position signValuePt;
-            SKColor pink = SKColors.Pink;
-            p.Color = pink;
-
-            for (int i = 0; i < signs.Length; i++)
             {
-                signValuePt = Util.Rotate(radius - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
-                signValuePt.x = signValuePt.x + CenterX - 15;
-                signValuePt.y = -1 * signValuePt.y + CenterY + 20;
-                p.Color = CommonData.getSignColor(30 * i);
-                cvs.DrawText(signs[i], (float)signValuePt.x, (float)signValuePt.y, p);
+                // ♈〜♓までのシンボル
+                p.Typeface = SKTypeface.FromStream(stream);
+                p.TextSize = 48;
+                Position signValuePt;
+                SKColor pink = SKColors.Pink;
+                p.Color = pink;
+                for (int i = 0; i < signs.Length; i++)
+                {
+                    signValuePt = Util.Rotate(radius - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
+                    signValuePt.x = signValuePt.x + CenterX - 15;
+                    signValuePt.y = -1 * signValuePt.y + CenterY + 20;
+                    p.Color = CommonData.getSignColor(30 * i);
+                    cvs.DrawText(signs[i], (float)signValuePt.x, (float)signValuePt.y, p);
+                }
+                p.Color = SKColors.Black;
             }
-            p.Color = SKColors.Black;
 
+ 
             // 天体そのもの
             // 天体度数
             SKPaint degreeText = new SKPaint()
@@ -353,9 +356,6 @@ namespace microcosm
                 TextSize = 24,
                 Style = SKPaintStyle.Fill
             };
-            Position planetPt;
-//            Position planetRing;
-            Position planetDegreePt;
             int[] box = new int[72];
             int planetOffset = 0;
             IOrderedEnumerable<PlanetData> sortPlanetData = ringsData[0].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
@@ -387,40 +387,8 @@ namespace microcosm
                 }
 
                 // 天体そのもの
-                if (CommonInstance.getInstance().currentSetting.bands == 1)
-                {
-                    planetOffset = 120;
-                }
-                else if (CommonInstance.getInstance().currentSetting.bands == 2)
-                {
-                    planetOffset = 90;
-                }
-                else if (CommonInstance.getInstance().currentSetting.bands == 3)
-                {
-                    planetOffset = 240;
-                }
-                else if (CommonInstance.getInstance().currentSetting.bands == 4)
-                {
-                    planetOffset = 90;
-                }
-                else if (CommonInstance.getInstance().currentSetting.bands == 5)
-                {
-                    planetOffset = 90;
-                }
-
-                planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[0].cusps[1]);
-//                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
-                planetPt.x = planetPt.x + CenterX - 5;
-                planetPt.y = -1 * planetPt.y + CenterY + 20;
-                p.Color = CommonData.getPlanetColor(planet.no);
-                cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
-
-                // 天体度数
-                planetDegreePt = Util.Rotate(radius - (planetOffset + 40), 0, 5 * index - ringsData[0].cusps[1]);
-                planetDegreePt.x = planetDegreePt.x + CenterX - 10;
-                planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
-                p.Color = SKColors.Black;
-                cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
+                planetOffset = GetPlanetOffset(1);
+                DrawPlanetText(index, ringsData[0].cusps[1], planet, p, cvs, degreeText, planetOffset, 40, 5, 20, 10, 10);
             }
 //            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
             if (CommonInstance.getInstance().currentSetting.bands > 1)
@@ -454,37 +422,8 @@ namespace microcosm
                         box2[index] = 1;
                     }
 
-                    if (CommonInstance.getInstance().currentSetting.bands == 2)
-                    {
-                        planetOffset = 90;
-                    }
-                    else if (CommonInstance.getInstance().currentSetting.bands == 3)
-                    {
-                        planetOffset = 170;
-                    }
-                    else if (CommonInstance.getInstance().currentSetting.bands == 4)
-                    {
-                        planetOffset = 90;
-                    }
-                    else if (CommonInstance.getInstance().currentSetting.bands == 5)
-                    {
-                        planetOffset = 90;
-                    }
-
-
-                    planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[1].cusps[1]);
-                    //                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
-                    planetPt.x = planetPt.x + CenterX - 10;
-                    planetPt.y = -1 * planetPt.y + CenterY + 20;
-                    p.Color = CommonData.getPlanetColor(planet.no);
-                    cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
-
-                    // 天体度数
-                    planetDegreePt = Util.Rotate(radius - (planetOffset + 35), 0, 5 * index - ringsData[1].cusps[1]);
-                    planetDegreePt.x = planetDegreePt.x + CenterX - 15;
-                    planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
-                    p.Color = SKColors.Black;
-                    cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
+                    planetOffset = GetPlanetOffset(2);
+                    DrawPlanetText(index, ringsData[1].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
                 }
             }
 
@@ -519,33 +458,8 @@ namespace microcosm
                         box3[index] = 1;
                     }
 
-                    if (CommonInstance.getInstance().currentSetting.bands == 3)
-                    {
-                        planetOffset = 90;
-                    }
-                    else if (CommonInstance.getInstance().currentSetting.bands == 4)
-                    {
-                        planetOffset = 90;
-                    }
-                    else if (CommonInstance.getInstance().currentSetting.bands == 5)
-                    {
-                        planetOffset = 90;
-                    }
-
-
-                    planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - ringsData[0].cusps[1]);
-                    //                planetRing = Util.Rotate(radius - 120, 0, planet.absolute_position - ringsData[0].cusps[1] + 3);
-                    planetPt.x = planetPt.x + CenterX - 10;
-                    planetPt.y = -1 * planetPt.y + CenterY + 20;
-                    p.Color = CommonData.getPlanetColor(planet.no);
-                    cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
-
-                    // 天体度数
-                    planetDegreePt = Util.Rotate(radius - (planetOffset + 35), 0, 5 * index - ringsData[0].cusps[1]);
-                    planetDegreePt.x = planetDegreePt.x + CenterX - 15;
-                    planetDegreePt.y = -1 * planetDegreePt.y + CenterY + 10;
-                    p.Color = SKColors.Black;
-                    cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
+                    planetOffset = GetPlanetOffset(3);
+                    DrawPlanetText(index, ringsData[2].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
                 }
             }
 
@@ -567,6 +481,7 @@ namespace microcosm
                 Style = SKPaintStyle.Fill,
                 Typeface = SKTypeface.FromStream(stream)
             };
+            // aspectsData[0, 0] => natal-natal
             for (int i = 0; i < aspectsData[0, 0].Count; i++)
             {
                 if (!aspectsData[0, 0][i].isDisp)
@@ -1247,6 +1162,107 @@ namespace microcosm
                     break;
             }
 
+        }
+
+        /// <summary>
+        /// 天体表示
+        /// </summary>
+        /// <param name="index">boxIndex</param>
+        /// <param name="cusp0">cusps[0]</param>
+        /// <param name="planet">Planet.</param>
+        /// <param name="p">SKPaintインスタンス</param>
+        /// <param name="cvs">SKCanvasインスタンス</param>
+        /// <param name="degreeText">Degree text.</param>
+        /// <param name="planetOffset">Planet offset.</param>
+        /// <param name="planetROffset">Planet RO ffset.</param>
+        /// <param name="textXoffset">Text xoffset.</param>
+        /// <param name="textYoffset">Text yoffset.</param>
+        /// <param name="degreeXoffset">Degree xoffset.</param>
+        /// <param name="degreeYoffset">Degree yoffset.</param>
+        public void DrawPlanetText(int index, double cusp0, PlanetData planet, SKPaint p, SKCanvas cvs, SKPaint degreeText,
+                                   int planetOffset, int planetROffset, 
+                                   int textXoffset, int textYoffset, int degreeXoffset, int degreeYoffset)
+        {
+            Position planetPt;
+            Position planetDegreePt;
+
+            planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - cusp0);
+            planetPt.x = planetPt.x + CenterX - textXoffset;
+            planetPt.y = -1 * planetPt.y + CenterY + textYoffset;
+            p.Color = CommonData.getPlanetColor(planet.no);
+            cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
+
+            // 天体度数
+            planetDegreePt = Util.Rotate(radius - (planetOffset + planetROffset), 0, 5 * index - cusp0);
+            planetDegreePt.x = planetDegreePt.x + CenterX - degreeXoffset;
+            planetDegreePt.y = -1 * planetDegreePt.y + CenterY + degreeYoffset;
+            p.Color = SKColors.Black;
+            cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
+
+        }
+
+        public int GetPlanetOffset(int bandIndex)
+        {
+            int planetOffset = 0;
+            if (bandIndex == 1)
+            {
+                if (CommonInstance.getInstance().currentSetting.bands == 1)
+                {
+                    planetOffset = 120;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 2)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 3)
+                {
+                    planetOffset = 240;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 4)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                {
+                    planetOffset = 90;
+                }
+            }
+            else if (bandIndex == 2)
+            {
+                if (CommonInstance.getInstance().currentSetting.bands == 2)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 3)
+                {
+                    planetOffset = 170;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 4)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                {
+                    planetOffset = 90;
+                }
+            }
+            else if (bandIndex == 3)
+            {
+                if (CommonInstance.getInstance().currentSetting.bands == 3)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 4)
+                {
+                    planetOffset = 90;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                {
+                    planetOffset = 90;
+                }
+            }
+
+            return planetOffset;
         }
     }
 }

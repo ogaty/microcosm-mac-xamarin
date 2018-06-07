@@ -235,6 +235,11 @@ namespace microcosm.Config
             ret.dispPlanetPof44 = setting.dispPlanet[3][CommonData.ZODIAC_NUMBER_POF];
             ret.dispPlanetPof55 = setting.dispPlanet[4][CommonData.ZODIAC_NUMBER_POF];
 
+            ret.aspectSun11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_SUN];
+            ret.aspectSun22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_SUN];
+            ret.aspectSun33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_SUN];
+            ret.aspectSun44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_SUN];
+            ret.aspectSun55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_SUN];
             return ret;
         }
 

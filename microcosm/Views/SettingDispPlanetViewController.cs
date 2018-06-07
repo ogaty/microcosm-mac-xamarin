@@ -182,6 +182,10 @@ namespace microcosm.Views
                 settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] ?
                 NSCellStateValue.On : NSCellStateValue.Off;
 
+            dispAspectPlanetSun.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
         }
 
         partial void ringsComboChanged(NSObject sender)
@@ -250,6 +254,8 @@ namespace microcosm.Views
                 dispPlanetVt.State == NSCellStateValue.On ? true : false;
             settings[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] =
                 dispPlanetPof.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
+                dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
 
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
@@ -305,6 +311,8 @@ namespace microcosm.Views
                     dispPlanetVt.State == NSCellStateValue.On ? true : false;
                 CommonInstance.getInstance().currentSetting.dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] =
                     dispPlanetPof.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
+                    dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
             }
 
             SettingSave.SaveXml(settings);

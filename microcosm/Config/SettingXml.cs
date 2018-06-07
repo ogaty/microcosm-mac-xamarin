@@ -712,6 +712,26 @@ namespace microcosm.Config
         public bool aspectEarth11;
         [XmlElement("aspectLilith11")]
         public bool aspectLilith11;
+        [XmlElement("aspectCeres11")]
+        public bool aspectCeres11;
+        [XmlElement("aspectPallas11")]
+        public bool aspectPallas11;
+        [XmlElement("aspectJuno11")]
+        public bool aspectJuno11;
+        [XmlElement("aspectVesta11")]
+        public bool aspectVesta11;
+        [XmlElement("aspectEris11")]
+        public bool aspectEris11;
+        [XmlElement("aspectSedna11")]
+        public bool aspectSedna11;
+        [XmlElement("aspectHaumea11")]
+        public bool aspectHaumea11;
+        [XmlElement("aspectMakemake11")]
+        public bool aspectMakemake11;
+        [XmlElement("aspectVt11")]
+        public bool aspectVt11;
+        [XmlElement("aspectPof11")]
+        public bool aspectPof11;
         [XmlElement("aspectSun22")]
         public bool aspectSun22;
         [XmlElement("aspectMoon22")]
@@ -744,6 +764,26 @@ namespace microcosm.Config
         public bool aspectEarth22;
         [XmlElement("aspectLilith22")]
         public bool aspectLilith22;
+        [XmlElement("aspectCeres22")]
+        public bool aspectCeres22;
+        [XmlElement("aspectPallas22")]
+        public bool aspectPallas22;
+        [XmlElement("aspectJuno22")]
+        public bool aspectJuno22;
+        [XmlElement("aspectVesta22")]
+        public bool aspectVesta22;
+        [XmlElement("aspectEris22")]
+        public bool aspectEris22;
+        [XmlElement("aspectSedna22")]
+        public bool aspectSedna22;
+        [XmlElement("aspectHaumea22")]
+        public bool aspectHaumea22;
+        [XmlElement("aspectMakemake22")]
+        public bool aspectMakemake22;
+        [XmlElement("aspectVt22")]
+        public bool aspectVt22;
+        [XmlElement("aspectPof22")]
+        public bool aspectPof22;
         [XmlElement("aspectSun33")]
         public bool aspectSun33;
         [XmlElement("aspectMoon33")]
@@ -776,6 +816,26 @@ namespace microcosm.Config
         public bool aspectEarth33;
         [XmlElement("aspectLilith33")]
         public bool aspectLilith33;
+        [XmlElement("aspectCeres33")]
+        public bool aspectCeres33;
+        [XmlElement("aspectPallas33")]
+        public bool aspectPallas33;
+        [XmlElement("aspectJuno33")]
+        public bool aspectJuno33;
+        [XmlElement("aspectVesta33")]
+        public bool aspectVesta33;
+        [XmlElement("aspectEris33")]
+        public bool aspectEris33;
+        [XmlElement("aspectSedna33")]
+        public bool aspectSedna33;
+        [XmlElement("aspectHaumea33")]
+        public bool aspectHaumea33;
+        [XmlElement("aspectMakemake33")]
+        public bool aspectMakemake33;
+        [XmlElement("aspectVt33")]
+        public bool aspectVt33;
+        [XmlElement("aspectPof33")]
+        public bool aspectPof33;
         [XmlElement("aspectSun12")]
         public bool aspectSun12;
         [XmlElement("aspectMoon12")]
@@ -872,6 +932,110 @@ namespace microcosm.Config
         public bool aspectEarth23;
         [XmlElement("aspectLilith23")]
         public bool aspectLilith23;
+        [XmlElement("aspectSun44")]
+        public bool aspectSun44;
+        [XmlElement("aspectMoon44")]
+        public bool aspectMoon44;
+        [XmlElement("aspectMercury44")]
+        public bool aspectMercury44;
+        [XmlElement("aspectVenus44")]
+        public bool aspectVenus44;
+        [XmlElement("aspectMars44")]
+        public bool aspectMars44;
+        [XmlElement("aspectJupiter44")]
+        public bool aspectJupiter44;
+        [XmlElement("aspectSaturn44")]
+        public bool aspectSaturn44;
+        [XmlElement("aspectUranus44")]
+        public bool aspectUranus44;
+        [XmlElement("aspectNeptune44")]
+        public bool aspectNeptune44;
+        [XmlElement("aspectPluto44")]
+        public bool aspectPluto44;
+        [XmlElement("aspectDh44")]
+        public bool aspectDh44;
+        [XmlElement("aspectChiron44")]
+        public bool aspectChiron44;
+        [XmlElement("aspectAsc44")]
+        public bool aspectAsc44;
+        [XmlElement("aspectMc44")]
+        public bool aspectMc44;
+        [XmlElement("aspectEarth44")]
+        public bool aspectEarth44;
+        [XmlElement("aspectLilith44")]
+        public bool aspectLilith44;
+        [XmlElement("aspectCeres44")]
+        public bool aspectCeres44;
+        [XmlElement("aspectPallas44")]
+        public bool aspectPallas44;
+        [XmlElement("aspectJuno44")]
+        public bool aspectJuno44;
+        [XmlElement("aspectVesta44")]
+        public bool aspectVesta44;
+        [XmlElement("aspectEris44")]
+        public bool aspectEris44;
+        [XmlElement("aspectSedna44")]
+        public bool aspectSedna44;
+        [XmlElement("aspectHaumea44")]
+        public bool aspectHaumea44;
+        [XmlElement("aspectMakemake44")]
+        public bool aspectMakemake44;
+        [XmlElement("aspectVt44")]
+        public bool aspectVt44;
+        [XmlElement("aspectPof44")]
+        public bool aspectPof44;
+        [XmlElement("aspectSun55")]
+        public bool aspectSun55;
+        [XmlElement("aspectMoon55")]
+        public bool aspectMoon55;
+        [XmlElement("aspectMercury55")]
+        public bool aspectMercury55;
+        [XmlElement("aspectVenus55")]
+        public bool aspectVenus55;
+        [XmlElement("aspectMars55")]
+        public bool aspectMars55;
+        [XmlElement("aspectJupiter55")]
+        public bool aspectJupiter55;
+        [XmlElement("aspectSaturn55")]
+        public bool aspectSaturn55;
+        [XmlElement("aspectUranus55")]
+        public bool aspectUranus55;
+        [XmlElement("aspectNeptune55")]
+        public bool aspectNeptune55;
+        [XmlElement("aspectPluto55")]
+        public bool aspectPluto55;
+        [XmlElement("aspectDh55")]
+        public bool aspectDh55;
+        [XmlElement("aspectChiron55")]
+        public bool aspectChiron55;
+        [XmlElement("aspectAsc55")]
+        public bool aspectAsc55;
+        [XmlElement("aspectMc55")]
+        public bool aspectMc55;
+        [XmlElement("aspectEarth55")]
+        public bool aspectEarth55;
+        [XmlElement("aspectLilith55")]
+        public bool aspectLilith55;
+        [XmlElement("aspectCeres55")]
+        public bool aspectCeres55;
+        [XmlElement("aspectPallas55")]
+        public bool aspectPallas55;
+        [XmlElement("aspectJuno55")]
+        public bool aspectJuno55;
+        [XmlElement("aspectVesta55")]
+        public bool aspectVesta55;
+        [XmlElement("aspectEris55")]
+        public bool aspectEris55;
+        [XmlElement("aspectSedna55")]
+        public bool aspectSedna55;
+        [XmlElement("aspectHaumea55")]
+        public bool aspectHaumea55;
+        [XmlElement("aspectMakemake55")]
+        public bool aspectMakemake55;
+        [XmlElement("aspectVt55")]
+        public bool aspectVt55;
+        [XmlElement("aspectPof55")]
+        public bool aspectPof55;
         #endregion
 
         #region aspect Aspect
