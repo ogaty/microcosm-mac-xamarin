@@ -240,6 +240,24 @@ namespace microcosm.Config
             ret.aspectSun33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_SUN];
             ret.aspectSun44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_SUN];
             ret.aspectSun55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_SUN];
+
+            ret.aspectMoon11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_MOON];
+            ret.aspectMoon22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_MOON];
+            ret.aspectMoon33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_MOON];
+            ret.aspectMoon44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_MOON];
+            ret.aspectMoon55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_MOON];
+
+            ret.aspectMercury11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.aspectMercury22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.aspectMercury33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.aspectMercury44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_MERCURY];
+            ret.aspectMercury55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_MERCURY];
+
+            ret.aspectVenus11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.aspectVenus22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.aspectVenus33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.aspectVenus44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_VENUS];
+            ret.aspectVenus55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_VENUS];
             return ret;
         }
 

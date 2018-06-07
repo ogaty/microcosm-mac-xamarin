@@ -186,6 +186,42 @@ namespace microcosm.Views
                 settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] ?
                 NSCellStateValue.On : NSCellStateValue.Off;
 
+            dispAspectPlanetMoon.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetMercury.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetVenus.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetMars.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetJupiter.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetSaturn.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetUranus.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetNeptune.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetPluto.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
         }
 
         partial void ringsComboChanged(NSObject sender)
@@ -256,6 +292,24 @@ namespace microcosm.Views
                 dispPlanetPof.State == NSCellStateValue.On ? true : false;
             settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
                 dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
+                dispAspectPlanetMoon.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] =
+                dispAspectPlanetMercury.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] =
+                dispAspectPlanetVenus.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] =
+                dispAspectPlanetMars.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] =
+                dispAspectPlanetJupiter.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] =
+                dispAspectPlanetSaturn.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] =
+                dispAspectPlanetUranus.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] =
+                dispAspectPlanetNeptune.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
+                dispAspectPlanetPluto.State == NSCellStateValue.On ? true : false;
 
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
@@ -313,6 +367,24 @@ namespace microcosm.Views
                     dispPlanetPof.State == NSCellStateValue.On ? true : false;
                 CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
                     dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
+                    dispAspectPlanetMoon.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] =
+                    dispAspectPlanetMercury.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] =
+                    dispAspectPlanetVenus.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] =
+                    dispAspectPlanetMars.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] =
+                    dispAspectPlanetJupiter.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] =
+                    dispAspectPlanetSaturn.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] =
+                    dispAspectPlanetUranus.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] =
+                    dispAspectPlanetNeptune.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
+                    dispAspectPlanetPluto.State == NSCellStateValue.On ? true : false;
             }
 
             SettingSave.SaveXml(settings);

@@ -13,7 +13,34 @@ namespace microcosm.Views
 	partial class SettingDispPlanetViewController
 	{
 		[Outlet]
+		AppKit.NSButton dispAspectPlanetJupiter { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetMars { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetMercury { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetMoon { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetNeptune { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetPluto { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetSaturn { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispAspectPlanetSun { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetUranus { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetVenus { get; set; }
 
 		[Outlet]
 		AppKit.NSButton dispPlanetAsc { get; set; }
@@ -113,6 +140,56 @@ namespace microcosm.Views
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (dispAspectPlanetSun != null) {
+				dispAspectPlanetSun.Dispose ();
+				dispAspectPlanetSun = null;
+			}
+
+			if (dispAspectPlanetMoon != null) {
+				dispAspectPlanetMoon.Dispose ();
+				dispAspectPlanetMoon = null;
+			}
+
+			if (dispAspectPlanetMercury != null) {
+				dispAspectPlanetMercury.Dispose ();
+				dispAspectPlanetMercury = null;
+			}
+
+			if (dispAspectPlanetVenus != null) {
+				dispAspectPlanetVenus.Dispose ();
+				dispAspectPlanetVenus = null;
+			}
+
+			if (dispAspectPlanetMars != null) {
+				dispAspectPlanetMars.Dispose ();
+				dispAspectPlanetMars = null;
+			}
+
+			if (dispAspectPlanetJupiter != null) {
+				dispAspectPlanetJupiter.Dispose ();
+				dispAspectPlanetJupiter = null;
+			}
+
+			if (dispAspectPlanetSaturn != null) {
+				dispAspectPlanetSaturn.Dispose ();
+				dispAspectPlanetSaturn = null;
+			}
+
+			if (dispAspectPlanetUranus != null) {
+				dispAspectPlanetUranus.Dispose ();
+				dispAspectPlanetUranus = null;
+			}
+
+			if (dispAspectPlanetNeptune != null) {
+				dispAspectPlanetNeptune.Dispose ();
+				dispAspectPlanetNeptune = null;
+			}
+
+			if (dispAspectPlanetPluto != null) {
+				dispAspectPlanetPluto.Dispose ();
+				dispAspectPlanetPluto = null;
+			}
+
 			if (dispPlanetAsc != null) {
 				dispPlanetAsc.Dispose ();
 				dispPlanetAsc = null;
@@ -251,11 +328,6 @@ namespace microcosm.Views
 			if (SettingsCombo != null) {
 				SettingsCombo.Dispose ();
 				SettingsCombo = null;
-			}
-
-			if (dispAspectPlanetSun != null) {
-				dispAspectPlanetSun.Dispose ();
-				dispAspectPlanetSun = null;
 			}
 		}
 	}
