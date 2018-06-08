@@ -258,6 +258,55 @@ namespace microcosm.Config
             ret.aspectVenus33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_VENUS];
             ret.aspectVenus44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_VENUS];
             ret.aspectVenus55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_VENUS];
+
+            ret.aspectMars11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_MARS];
+            ret.aspectMars22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_MARS];
+            ret.aspectMars33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_MARS];
+            ret.aspectMars44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_MARS];
+            ret.aspectMars55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_MARS];
+
+            ret.aspectJupiter11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_JUPITER];
+            ret.aspectJupiter22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_JUPITER];
+            ret.aspectJupiter33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_JUPITER];
+            ret.aspectJupiter44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_JUPITER];
+            ret.aspectJupiter55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_JUPITER];
+
+            ret.aspectSaturn11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_SATURN];
+            ret.aspectSaturn22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_SATURN];
+            ret.aspectSaturn33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_SATURN];
+            ret.aspectSaturn44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_SATURN];
+            ret.aspectSaturn55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_SATURN];
+
+            ret.aspectUranus11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_URANUS];
+            ret.aspectUranus22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_URANUS];
+            ret.aspectUranus33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_URANUS];
+            ret.aspectUranus44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_URANUS];
+            ret.aspectUranus55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_URANUS];
+
+            ret.aspectNeptune11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_NEPTUNE];
+            ret.aspectNeptune22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_NEPTUNE];
+            ret.aspectNeptune33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_NEPTUNE];
+            ret.aspectNeptune44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_NEPTUNE];
+            ret.aspectNeptune55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_NEPTUNE];
+
+            ret.aspectPluto11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_PLUTO];
+            ret.aspectPluto22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_PLUTO];
+            ret.aspectPluto33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_PLUTO];
+            ret.aspectPluto44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_PLUTO];
+            ret.aspectPluto55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_PLUTO];
+
+            ret.aspectAsc11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_ASC];
+            ret.aspectAsc22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_ASC];
+            ret.aspectAsc33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_ASC];
+            ret.aspectAsc44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_ASC];
+            ret.aspectAsc55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_ASC];
+
+            ret.aspectMc11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_MC];
+            ret.aspectMc22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_MC];
+            ret.aspectMc33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_MC];
+            ret.aspectMc44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_MC];
+            ret.aspectMc55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_MC];
+
             return ret;
         }
 

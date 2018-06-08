@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17E202" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17F77" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="box content view" minToolsVersion="7.0"/>
@@ -1450,7 +1450,7 @@
             <objects>
                 <viewController title="天体表示" id="vgE-0B-NN2" customClass="SettingDispPlanetViewController" sceneMemberID="viewController">
                     <view key="view" id="8mc-Zz-J9c">
-                        <rect key="frame" x="0.0" y="0.0" width="639" height="388"/>
+                        <rect key="frame" x="0.0" y="0.0" width="760" height="388"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yE-XY-a2q">
@@ -1488,8 +1488,19 @@
                                     <action selector="SettingsComboChanged:" target="vgE-0B-NN2" id="oTz-q9-BI0"/>
                                 </connections>
                             </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-wv-ka7">
+                                <rect key="frame" x="552" y="13" width="65" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQw-Z7-S5t">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                    <connections>
+                                        <action selector="SubmitClicked:" target="vgE-0B-NN2" id="FD5-9b-MAh"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
                             <box fixedFrame="YES" title="アスペクト検出天体" translatesAutoresizingMaskIntoConstraints="NO" id="UAj-Gu-InV">
-                                <rect key="frame" x="316" y="49" width="298" height="285"/>
+                                <rect key="frame" x="445" y="49" width="298" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="jOK-dX-0vJ">
                                     <rect key="frame" x="2" y="2" width="294" height="268"/>
@@ -1575,11 +1586,75 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6v-O4-NEw">
+                                            <rect key="frame" x="98" y="232" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="asc" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="kID-WC-KlM">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hx-Hs-fZV">
+                                            <rect key="frame" x="98" y="207" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="mc" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="8fU-DF-QJQ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XgR-kd-QuM">
+                                            <rect key="frame" x="98" y="182" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="chiron" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="6Kg-xs-1Wh">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXQ-oI-m6m">
+                                            <rect key="frame" x="98" y="157" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="earth" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="28M-8a-NAe">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VtQ-ZX-RTF">
+                                            <rect key="frame" x="98" y="132" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="lilith" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="ntO-ka-eMg">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GO8-m7-V7p">
+                                            <rect key="frame" x="98" y="107" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="D.H." bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="MbT-pQ-169">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDH-jC-pby">
+                                            <rect key="frame" x="98" y="82" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Vt" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="1iw-qq-aIz">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyB-qx-0Vn">
+                                            <rect key="frame" x="98" y="56" width="79" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="PoF" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="SVR-lr-4oe">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
                             <box fixedFrame="YES" title="表示天体" translatesAutoresizingMaskIntoConstraints="NO" id="rNQ-wi-ntv">
-                                <rect key="frame" x="16" y="49" width="298" height="285"/>
+                                <rect key="frame" x="145" y="49" width="298" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="Mmr-Vq-uid">
                                     <rect key="frame" x="2" y="2" width="294" height="268"/>
@@ -1796,33 +1871,90 @@
                                     </subviews>
                                 </view>
                             </box>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-wv-ka7">
-                                <rect key="frame" x="552" y="13" width="65" height="32"/>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79P-qt-9oc">
+                                <rect key="frame" x="20" y="91" width="110" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQw-Z7-S5t">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                    <connections>
-                                        <action selector="SubmitClicked:" target="vgE-0B-NN2" id="FD5-9b-MAh"/>
-                                    </connections>
-                                </buttonCell>
-                            </button>
+                                <clipView key="contentView" ambiguous="YES" id="lup-kx-byf">
+                                    <rect key="frame" x="1" y="1" width="108" height="241"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="RNG-tl-AMg" customClass="SettingListsTableView">
+                                            <rect key="frame" x="0.0" y="0.0" width="108" height="241"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="" width="105" minWidth="40" maxWidth="1000" id="Rkp-i0-eFI">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="cmA-lp-IO1">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="22E-zU-b8n">
+                                                            <rect key="frame" x="1" y="1" width="105" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDl-vJ-Lm7">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="JSr-Y0-7pJ">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="eDl-vJ-Lm7" id="i2e-24-kdR"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="iIh-DW-7NA">
+                                    <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="dX6-Wb-fCJ">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="RingsCombo" destination="0yE-XY-a2q" id="Wd5-oL-ApA"/>
                         <outlet property="SettingsCombo" destination="5ji-n0-07s" id="PFS-f4-dic"/>
                         <outlet property="SubmitClicked" destination="Nl7-wv-ka7" id="YUO-et-jai"/>
+                        <outlet property="dispAspectPlanetAsc" destination="C6v-O4-NEw" id="FLc-gE-34Y"/>
+                        <outlet property="dispAspectPlanetChiron" destination="XgR-kd-QuM" id="7s2-HN-Mm6"/>
+                        <outlet property="dispAspectPlanetDh" destination="GO8-m7-V7p" id="7C8-vi-1r0"/>
+                        <outlet property="dispAspectPlanetEarth" destination="wXQ-oI-m6m" id="x3T-wN-2dg"/>
                         <outlet property="dispAspectPlanetJupiter" destination="ZyS-uj-oyL" id="jQv-K0-wrq"/>
+                        <outlet property="dispAspectPlanetLilith" destination="VtQ-ZX-RTF" id="nnw-M2-FGE"/>
                         <outlet property="dispAspectPlanetMars" destination="Ops-zC-LFo" id="lFB-X0-n9q"/>
+                        <outlet property="dispAspectPlanetMc" destination="8hx-Hs-fZV" id="X2l-kX-whs"/>
                         <outlet property="dispAspectPlanetMercury" destination="xaa-4E-fWc" id="qSD-p4-LX5"/>
                         <outlet property="dispAspectPlanetMoon" destination="uim-dj-dBt" id="Zym-LW-zg5"/>
                         <outlet property="dispAspectPlanetNeptune" destination="jUq-5c-ouj" id="DmK-1n-tQf"/>
                         <outlet property="dispAspectPlanetPluto" destination="9uG-lI-o02" id="pXO-S4-er7"/>
+                        <outlet property="dispAspectPlanetPof" destination="vyB-qx-0Vn" id="mVw-dw-GRb"/>
                         <outlet property="dispAspectPlanetSaturn" destination="F4z-oT-s6D" id="Fsp-g6-iFb"/>
                         <outlet property="dispAspectPlanetSun" destination="xoB-Wb-nwk" id="yDx-2f-1p2"/>
                         <outlet property="dispAspectPlanetUranus" destination="A24-jf-XNJ" id="ngP-XP-KEA"/>
                         <outlet property="dispAspectPlanetVenus" destination="dZh-c0-gHr" id="gLt-PF-bHd"/>
+                        <outlet property="dispAspectPlanetVt" destination="KDH-jC-pby" id="ue6-s9-QcW"/>
                         <outlet property="dispPlanetAsc" destination="v7R-4l-ZpA" id="3WC-8o-hf2"/>
                         <outlet property="dispPlanetCeres" destination="VnU-Xi-qE0" id="qzH-fe-P8P"/>
                         <outlet property="dispPlanetChiron" destination="SUW-5E-QgY" id="gFn-Fx-mPd"/>
@@ -1849,11 +1981,12 @@
                         <outlet property="dispPlanetVenus" destination="b84-uP-pWm" id="XT6-bc-9WN"/>
                         <outlet property="dispPlanetVesta" destination="FMY-21-nxa" id="oC7-k4-YpW"/>
                         <outlet property="dispPlanetVt" destination="nb1-hN-zgm" id="t8L-zf-zql"/>
+                        <outlet property="settingListTbl" destination="RNG-tl-AMg" id="1BJ-0T-4NB"/>
                     </connections>
                 </viewController>
                 <customObject id="8Gc-hX-8NY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.5" y="648"/>
+            <point key="canvasLocation" x="1108" y="648"/>
         </scene>
         <!--アスペクト設定(カテゴリ)-->
         <scene sceneID="8z8-hh-Lfv">
@@ -2061,7 +2194,7 @@
                 </viewController>
                 <customObject id="7z3-Mn-jfN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="746"/>
+            <point key="canvasLocation" x="1525" y="1025"/>
         </scene>
         <!--データベース-->
         <scene sceneID="iXA-dx-bil">

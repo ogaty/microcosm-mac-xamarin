@@ -5,6 +5,7 @@ using Foundation;
 using AppKit;
 using microcosm.Config;
 using microcosm.Common;
+using microcosm.Models;
 
 namespace microcosm.Views
 {
@@ -70,12 +71,24 @@ namespace microcosm.Views
                 RingsCombo.SelectItem(planetIndex);
             }
 
-            ReRender();
+            List<SettingNameList> lists = new List<SettingNameList>();
+            foreach (SettingData s in settings)
+            {
+                lists.Add(new SettingNameList(s.dispName));
+            }
+            SettingNameDataSource dataSource = new SettingNameDataSource(lists);
+            SettingNameDelegate settingNamesDelegate = new SettingNameDelegate(dataSource);
+            settingListTbl.vc = this;
+            settingListTbl.Delegate = settingNamesDelegate;
+            settingListTbl.DataSource = dataSource;
+            settingListTbl.ReloadData();
+            settingListTbl.SelectRow(settingIndex, false);
+
+            ReRender(settingIndex);
         }
 
-        private void ReRender() 
+        public void ReRender(int settingIndex) 
         {
-            settingIndex = rootViewController.settingIndex;
             planetIndex = (int)RingsCombo.SelectedIndex;
 
             dispPlanetSun.State =
@@ -222,16 +235,49 @@ namespace microcosm.Views
                 settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] ?
                 NSCellStateValue.On : NSCellStateValue.Off;
 
+            dispAspectPlanetAsc.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ASC] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetMc.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetChiron.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetEarth.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetLilith.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetDh.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+            
+            dispAspectPlanetVt.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VT] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+            dispAspectPlanetPof.State =
+                settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] ?
+                NSCellStateValue.On : NSCellStateValue.Off;
+
+
         }
 
         partial void ringsComboChanged(NSObject sender)
         {
-            ReRender();
+            ReRender(rootViewController.settingIndex);
         }
 
         partial void settingsComboChanged(NSObject sender)
         {
-            ReRender();
+            ReRender(rootViewController.settingIndex);
         }
 
         partial void SubmitClicked(NSObject sender)
