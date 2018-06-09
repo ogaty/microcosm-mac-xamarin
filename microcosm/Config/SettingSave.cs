@@ -307,6 +307,30 @@ namespace microcosm.Config
             ret.aspectMc44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_MC];
             ret.aspectMc55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_MC];
 
+            ret.aspectChiron11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_CHIRON];
+            ret.aspectChiron22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_CHIRON];
+            ret.aspectChiron33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_CHIRON];
+            ret.aspectChiron44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_CHIRON];
+            ret.aspectChiron55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_CHIRON];
+
+            ret.aspectEarth11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_EARTH];
+            ret.aspectEarth22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_EARTH];
+            ret.aspectEarth33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_EARTH];
+            ret.aspectEarth44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_EARTH];
+            ret.aspectEarth55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_EARTH];
+
+            ret.aspectLilith11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_LILITH];
+            ret.aspectLilith22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_LILITH];
+            ret.aspectLilith33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_LILITH];
+            ret.aspectLilith44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_LILITH];
+            ret.aspectLilith55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_LILITH];
+
+            ret.aspectDh11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+            ret.aspectDh22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+            ret.aspectDh33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+            ret.aspectDh44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+            ret.aspectDh55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
+
             return ret;
         }
 

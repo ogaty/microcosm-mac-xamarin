@@ -51,6 +51,41 @@ namespace microcosm.Views
         {
             base.ViewDidLoad();
             Place.StringValue = inputPlace;
+
+            
+        }
+
+        public void GoogleSearch()
+        {
+            /*
+            HttpClient http = new HttpClient();
+            string url = "http://maps.google.com/maps/api/geocode/json?address=" + searchPlace.Text + "&language=ja";
+            var response = await http.GetAsync(url);
+
+            var contents = await response.Content.ReadAsStringAsync();
+
+            try
+            {
+                var jsonresult = JsonConvert.DeserializeObject<GoogleLatLng>(contents);
+                if (jsonresult.status == "OK")
+                {
+                    List<AddrSearchResult> resultList = new List<AddrSearchResult>();
+                    foreach (Result res in jsonresult.results)
+                    {
+                        resultList.Add(new AddrSearchResult(res.formatted_address,
+                            res.geometry.location.lat, res.geometry.location.lng));
+                    }
+                    searchResultList.resultList = resultList;
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Resources.ERROR_ERROR_RESPONSE);
+                }
+            } catch 
+            {
+                MessageBox.Show(Properties.Resources.ERROR_ERROR_RESPONSE);
+            }
+            */
         }
     }
 }
