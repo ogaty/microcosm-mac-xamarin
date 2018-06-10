@@ -264,6 +264,26 @@
     <Compile Include="SettingListsTableView.designer.cs">
       <DependentUpon>SettingListsTableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserImportView.cs" />
+    <Compile Include="Views\UserImportViewController.cs" />
+    <Compile Include="Views\UserImportView.designer.cs">
+      <DependentUpon>UserImportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserImportViewController.designer.cs">
+      <DependentUpon>UserImportViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlaceSearchView.cs" />
+    <Compile Include="Views\PlaceSearchViewController.cs" />
+    <Compile Include="Views\PlaceSearchView.designer.cs">
+      <DependentUpon>PlaceSearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlaceSearchViewController.designer.cs">
+      <DependentUpon>PlaceSearchViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingListView.cs" />
+    <Compile Include="Views\SettingListView.designer.cs">
+      <DependentUpon>SettingListView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -277,6 +297,9 @@
     <InterfaceDefinition Include="Views\EditDirectoryView.xib" />
     <InterfaceDefinition Include="Views\SearchLatLngView.xib" />
     <InterfaceDefinition Include="Views\OfflineSearchLatLngView.xib" />
+    <InterfaceDefinition Include="Views\UserImportView.xib" />
+    <InterfaceDefinition Include="Views\PlaceSearchView.xib" />
+    <InterfaceDefinition Include="Views\SettingListView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

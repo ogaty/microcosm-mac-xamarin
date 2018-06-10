@@ -16,6 +16,9 @@ namespace microcosm.Views
 		AppKit.NSButton dispAspectPlanetAsc { get; set; }
 
 		[Outlet]
+		AppKit.NSButton dispAspectPlanetCeres { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispAspectPlanetChiron { get; set; }
 
 		[Outlet]
@@ -25,10 +28,22 @@ namespace microcosm.Views
 		AppKit.NSButton dispAspectPlanetEarth { get; set; }
 
 		[Outlet]
+		AppKit.NSButton dispAspectPlanetEris { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetHaumea { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetJuno { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispAspectPlanetJupiter { get; set; }
 
 		[Outlet]
 		AppKit.NSButton dispAspectPlanetLilith { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetMakemake { get; set; }
 
 		[Outlet]
 		AppKit.NSButton dispAspectPlanetMars { get; set; }
@@ -46,6 +61,9 @@ namespace microcosm.Views
 		AppKit.NSButton dispAspectPlanetNeptune { get; set; }
 
 		[Outlet]
+		AppKit.NSButton dispAspectPlanetPallas { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispAspectPlanetPluto { get; set; }
 
 		[Outlet]
@@ -55,6 +73,9 @@ namespace microcosm.Views
 		AppKit.NSButton dispAspectPlanetSaturn { get; set; }
 
 		[Outlet]
+		AppKit.NSButton dispAspectPlanetSedna { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispAspectPlanetSun { get; set; }
 
 		[Outlet]
@@ -62,6 +83,9 @@ namespace microcosm.Views
 
 		[Outlet]
 		AppKit.NSButton dispAspectPlanetVenus { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspectPlanetVesta { get; set; }
 
 		[Outlet]
 		AppKit.NSButton dispAspectPlanetVt { get; set; }
@@ -148,7 +172,7 @@ namespace microcosm.Views
 		AppKit.NSComboBox RingsCombo { get; set; }
 
 		[Outlet]
-		microcosm.SettingListsTableView settingListTbl { get; set; }
+		microcosm.Views.SettingListView settingListTbl { get; set; }
 
 		[Outlet]
 		AppKit.NSPopUpButton SettingsCombo { get; set; }
@@ -167,6 +191,46 @@ namespace microcosm.Views
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (dispAspectPlanetCeres != null) {
+				dispAspectPlanetCeres.Dispose ();
+				dispAspectPlanetCeres = null;
+			}
+
+			if (dispAspectPlanetPallas != null) {
+				dispAspectPlanetPallas.Dispose ();
+				dispAspectPlanetPallas = null;
+			}
+
+			if (dispAspectPlanetJuno != null) {
+				dispAspectPlanetJuno.Dispose ();
+				dispAspectPlanetJuno = null;
+			}
+
+			if (dispAspectPlanetVesta != null) {
+				dispAspectPlanetVesta.Dispose ();
+				dispAspectPlanetVesta = null;
+			}
+
+			if (dispAspectPlanetEris != null) {
+				dispAspectPlanetEris.Dispose ();
+				dispAspectPlanetEris = null;
+			}
+
+			if (dispAspectPlanetSedna != null) {
+				dispAspectPlanetSedna.Dispose ();
+				dispAspectPlanetSedna = null;
+			}
+
+			if (dispAspectPlanetHaumea != null) {
+				dispAspectPlanetHaumea.Dispose ();
+				dispAspectPlanetHaumea = null;
+			}
+
+			if (dispAspectPlanetMakemake != null) {
+				dispAspectPlanetMakemake.Dispose ();
+				dispAspectPlanetMakemake = null;
+			}
+
 			if (dispAspectPlanetAsc != null) {
 				dispAspectPlanetAsc.Dispose ();
 				dispAspectPlanetAsc = null;
