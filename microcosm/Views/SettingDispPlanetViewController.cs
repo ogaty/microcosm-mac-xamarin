@@ -328,6 +328,10 @@ namespace microcosm.Views
                     from = 1;
                     to = 2;
                     break;
+                case 6:
+                    from = 3;
+                    to = 3;
+                    break;
             }
 
             aspectConjunction.State =
@@ -455,6 +459,47 @@ namespace microcosm.Views
             settings[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MAKEMAKE] =
                 dispAspectPlanetMakemake.State == NSCellStateValue.On ? true : false;
 
+            int aspectIndex = (int)aspectRingCombo.IndexOfSelectedItem;
+            int from = 0;
+            int to = 0;
+
+            switch (aspectIndex)
+            {
+                case 0:
+                    from = 0;
+                    to = 0;
+                    break;
+                case 1:
+                    from = 1;
+                    to = 1;
+                    break;
+                case 2:
+                    from = 2;
+                    to = 2;
+                    break;
+                case 3:
+                    from = 0;
+                    to = 1;
+                    break;
+                case 4:
+                    from = 0;
+                    to = 2;
+                    break;
+                case 5:
+                    from = 1;
+                    to = 2;
+                    break;
+                case 6:
+                    from = 3;
+                    to = 3;
+                    break;
+            }
+
+            settings[settingIndex].aspectConjunction[from, to] =
+                                      aspectConjunction.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectOpposition[from, to] =
+                                      aspectOpposition.State == NSCellStateValue.On ? true : false;
+
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
                 CommonInstance.getInstance().currentSetting.dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
@@ -561,6 +606,22 @@ namespace microcosm.Views
                     dispAspectPlanetHaumea.State == NSCellStateValue.On ? true : false;
                 CommonInstance.getInstance().currentSetting.dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MAKEMAKE] =
                     dispAspectPlanetMakemake.State == NSCellStateValue.On ? true : false;
+
+                CommonInstance.getInstance().currentSetting.aspectConjunction[from, to] =
+                          aspectConjunction.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectOpposition[from, to] =
+                          aspectOpposition.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectTrine[from, to] =
+                          aspectTrine.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSquare[from, to] =
+                          aspectSquare.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSextile[from, to] =
+                          aspectSextile.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectInconjunct[from, to] =
+                          aspectInconjunct.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSesquiquadrate[from, to] =
+                          aspectSesquiquadrate.State == NSCellStateValue.On ? true : false;
+
             }
 
             SettingSave.SaveXml(settings);

@@ -47,15 +47,6 @@
                                                     </menuItem>
                                                     <menuItem title="アスペクト設定(カテゴリ)" id="Cyb-sL-1wh">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <segue destination="hdW-fk-wOl" kind="modal" id="TxO-t8-F9F"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="表示線種" id="yqm-hu-68L">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <segue destination="fJl-8Z-zFv" kind="modal" id="PUq-vd-j4S"/>
-                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="オーブ設定" id="FXH-KD-Kc9">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
@@ -1240,7 +1231,7 @@
                 </viewController>
                 <customObject id="yoE-xl-mYd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="1539"/>
+            <point key="canvasLocation" x="676" y="1027"/>
         </scene>
         <!--表示名設定-->
         <scene sceneID="Q5j-u1-9sS">
@@ -1443,7 +1434,7 @@
                 </viewController>
                 <customObject id="ftA-P7-ONi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="485"/>
+            <point key="canvasLocation" x="791" y="445"/>
         </scene>
         <!--天体表示-->
         <scene sceneID="zYr-LL-I8G">
@@ -1535,7 +1526,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="天体" identifier="1" id="QaL-Xc-NYe">
-                                        <view key="view" id="7nN-1W-sk4">
+                                        <view key="view" ambiguous="YES" id="7nN-1W-sk4">
                                             <rect key="frame" x="10" y="33" width="610" height="332"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -2022,7 +2013,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="アスペクト" identifier="2" id="yil-Rd-bO9">
-                                        <view key="view" ambiguous="YES" id="8DS-k4-BMt">
+                                        <view key="view" id="8DS-k4-BMt">
                                             <rect key="frame" x="10" y="33" width="610" height="332"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -2196,6 +2187,12 @@
                                             </subviews>
                                         </view>
                                     </tabViewItem>
+                                    <tabViewItem label="表示線種" identifier="3" id="li2-sL-LZe">
+                                        <view key="view" id="Khl-eC-Sa5">
+                                            <rect key="frame" x="10" y="33" width="610" height="332"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </tabViewItem>
                                 </tabViewItems>
                             </tabView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nl7-wv-ka7">
@@ -2287,215 +2284,7 @@
                 </viewController>
                 <customObject id="8Gc-hX-8NY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122.5" y="664.5"/>
-        </scene>
-        <!--アスペクト設定(カテゴリ)-->
-        <scene sceneID="8z8-hh-Lfv">
-            <objects>
-                <viewController title="アスペクト設定(カテゴリ)" id="hdW-fk-wOl" customClass="SettingDispAspectCategoryViewController" sceneMemberID="viewController">
-                    <view key="view" id="pC9-Qn-gZi">
-                        <rect key="frame" x="0.0" y="0.0" width="445" height="272"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-Tv-48W">
-                                <rect key="frame" x="18" y="178" width="95" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Conjunction" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zUE-d3-6Xi">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHP-1b-nzC">
-                                <rect key="frame" x="18" y="158" width="88" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Opposition" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="paU-zQ-Wgo">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CdN-jf-Fen">
-                                <rect key="frame" x="18" y="138" width="53" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Trine" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="f3o-kb-BNb">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-KH-61L">
-                                <rect key="frame" x="18" y="118" width="65" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Square" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5iF-Ek-ffG">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="761-PA-EQP">
-                                <rect key="frame" x="18" y="98" width="63" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Sextile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="OMd-VI-uNN">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTd-wF-gYy">
-                                <rect key="frame" x="18" y="61" width="151" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Inconjunct(Quincunx)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dHF-nt-hpQ">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ed0-wm-KAP">
-                                <rect key="frame" x="18" y="41" width="118" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Sesquiquadrate" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dQI-Ve-OvW">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLL-Sv-KBO">
-                                <rect key="frame" x="184" y="178" width="95" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="SemiSquare" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="6Fb-zO-AB7">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Okb-Vb-IhY">
-                                <rect key="frame" x="184" y="158" width="93" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="SemiSextile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UC4-Ac-dQa">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-OG-JnN">
-                                <rect key="frame" x="184" y="138" width="137" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="SemiQintile(Decile)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5Z0-cO-Z6I">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-X0-jHr">
-                                <rect key="frame" x="347" y="178" width="60" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Novile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Vep-lm-Mcx">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZW-vs-7S0">
-                                <rect key="frame" x="346" y="158" width="64" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Septile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wyj-Rn-Wu9">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYQ-Xz-rED">
-                                <rect key="frame" x="347" y="138" width="69" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Quintile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="V9x-zr-Kvn">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aNq-oX-53b">
-                                <rect key="frame" x="346" y="118" width="81" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="BiQuintile" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8Ke-fx-PG9">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07K-Kk-U5L">
-                                <rect key="frame" x="358" y="13" width="65" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2fO-5F-rjN">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="SubmitButtonClicked:" target="hdW-fk-wOl" id="ygq-0i-gyi"/>
-                                </connections>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-3q-dx2">
-                                <rect key="frame" x="18" y="204" width="215" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="すべてのアスペクトを表示させない" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4vb-O9-xMj">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                </buttonCell>
-                            </button>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-L2-hVX">
-                                <rect key="frame" x="149" y="228" width="99" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="16" id="TcH-v6-yrb">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>ring 1</string>
-                                        <string>ring 2</string>
-                                        <string>ring 3</string>
-                                        <string>ring 1-2</string>
-                                        <string>ring 1-3</string>
-                                        <string>ring 2-3</string>
-                                        <string>ring 4</string>
-                                        <string>ring 5</string>
-                                        <string>ring 2-4</string>
-                                        <string>ring 2-5</string>
-                                        <string>ring 3-4</string>
-                                        <string>ring 3-5</string>
-                                        <string>ring 4-5</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                                <connections>
-                                    <action selector="RingsComboChanged:" target="hdW-fk-wOl" id="XN3-WK-SXw"/>
-                                </connections>
-                            </comboBox>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7y-RP-cxQ">
-                                <rect key="frame" x="18" y="229" width="76" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="設定0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4ja-Id-NMh" id="TCo-c7-85P">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="p2s-iG-fSf">
-                                        <items>
-                                            <menuItem title="設定0" state="on" id="4ja-Id-NMh"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="SettingsComboChanged:" target="hdW-fk-wOl" id="hsl-99-mCb"/>
-                                </connections>
-                            </popUpButton>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="RingsCombo" destination="GdX-L2-hVX" id="O5o-ki-q3f"/>
-                        <outlet property="SettingsCombo" destination="c7y-RP-cxQ" id="ZEq-ak-Swm"/>
-                        <outlet property="dispAspect" destination="7hF-3q-dx2" id="T6r-eA-bkF"/>
-                        <outlet property="dispAspectBiQuintile" destination="07K-Kk-U5L" id="anW-eh-xfs"/>
-                        <outlet property="dispAspectConjunction" destination="ZgO-Tv-48W" id="B5r-tY-2CD"/>
-                        <outlet property="dispAspectInconjunct" destination="eTd-wF-gYy" id="9Fp-4j-i8z"/>
-                        <outlet property="dispAspectNovile" destination="VEN-X0-jHr" id="NTU-Ba-S5x"/>
-                        <outlet property="dispAspectOpposition" destination="ZHP-1b-nzC" id="4v2-ue-GRP"/>
-                        <outlet property="dispAspectQuintile" destination="XYQ-Xz-rED" id="dXs-t1-wnA"/>
-                        <outlet property="dispAspectSemiQuintile" destination="cnj-OG-JnN" id="4o6-AE-5sr"/>
-                        <outlet property="dispAspectSemiSextile" destination="Okb-Vb-IhY" id="uZb-iS-uDs"/>
-                        <outlet property="dispAspectSemiSquare" destination="dLL-Sv-KBO" id="OMY-jo-4iQ"/>
-                        <outlet property="dispAspectSeptile" destination="MZW-vs-7S0" id="L9d-Av-OPy"/>
-                        <outlet property="dispAspectSesquiquadrate" destination="Ed0-wm-KAP" id="5ff-2F-DEh"/>
-                        <outlet property="dispAspectSextile" destination="761-PA-EQP" id="k8k-Wj-bC2"/>
-                        <outlet property="dispAspectSquare" destination="Xwf-KH-61L" id="Vp2-qu-VA1"/>
-                        <outlet property="dispAspectTrine" destination="CdN-jf-Fen" id="GP5-8Q-5Ae"/>
-                    </connections>
-                </viewController>
-                <customObject id="7z3-Mn-jfN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1540" y="1123"/>
+            <point key="canvasLocation" x="1361" y="736"/>
         </scene>
         <!--データベース-->
         <scene sceneID="iXA-dx-bil">
@@ -3654,307 +3443,7 @@
                 </viewController>
                 <customObject id="yrI-Fr-3an" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224" y="190"/>
-        </scene>
-        <!--アスペクト設定(天体)-->
-        <scene sceneID="y40-AR-INW">
-            <objects>
-                <viewController title="アスペクト設定(天体)" id="fJl-8Z-zFv" customClass="SettingDispAspectPlanetViewController" sceneMemberID="viewController">
-                    <view key="view" id="uW3-2W-Yzh">
-                        <rect key="frame" x="0.0" y="0.0" width="321" height="290"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hik-8d-aiy">
-                                <rect key="frame" x="18" y="211" width="44" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="sun" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="H83-bV-cCu">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFy-hm-lxO">
-                                <rect key="frame" x="18" y="191" width="56" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="moon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="eCS-ya-JTF">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-P2-phu">
-                                <rect key="frame" x="18" y="171" width="72" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="mercury" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wl4-Rb-gcy">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HlR-ja-qbC">
-                                <rect key="frame" x="18" y="151" width="58" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="venus" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="feZ-02-nw6">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thW-Py-gUR">
-                                <rect key="frame" x="18" y="131" width="52" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="mars" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="SLY-sV-gim">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AmI-4G-rzf">
-                                <rect key="frame" x="18" y="111" width="61" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="jupiter" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="YgA-4X-5d6">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGi-Qe-tzi">
-                                <rect key="frame" x="18" y="91" width="61" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="saturn" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="W7t-lx-DlM">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6a-Uh-Occ">
-                                <rect key="frame" x="18" y="71" width="64" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="uranus" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2NH-Km-j2n">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjq-hb-g9v">
-                                <rect key="frame" x="18" y="51" width="72" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="neptune" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ShZ-dF-Vlc">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G63-RH-uY3">
-                                <rect key="frame" x="18" y="31" width="53" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="pluto" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="vkc-Mv-BZc">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jyi-mn-Mwa">
-                                <rect key="frame" x="130" y="211" width="44" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="asc" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MZa-5k-kid">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hV-Te-nCg">
-                                <rect key="frame" x="130" y="191" width="41" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="mc" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BVa-Gr-DkN">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-jJ-y1Y">
-                                <rect key="frame" x="130" y="171" width="60" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="chiron" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="eoI-xf-rhm">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-rI-eRR">
-                                <rect key="frame" x="130" y="151" width="54" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="earth" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kZG-Q7-6cl">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEp-O9-RVR">
-                                <rect key="frame" x="130" y="131" width="47" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="lilith" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uhm-5t-pce">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f7E-gZ-2Bu">
-                                <rect key="frame" x="130" y="111" width="48" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="D.H." bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JOm-An-9Aj">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZz-yG-DMg">
-                                <rect key="frame" x="130" y="91" width="34" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="vt" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="lXD-44-stg">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uGC-QO-dwb">
-                                <rect key="frame" x="129" y="71" width="45" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="PoF" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nKa-qs-V3N">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEO-Oc-Xk1">
-                                <rect key="frame" x="213" y="211" width="58" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Ceres" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IL9-vo-mYU">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qbw-jo-dj4">
-                                <rect key="frame" x="212" y="191" width="56" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Paras" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8Yu-95-oIw">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSB-SX-Amp">
-                                <rect key="frame" x="212" y="171" width="52" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Juno" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="USU-L1-vCD">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FdO-k7-tmK">
-                                <rect key="frame" x="213" y="151" width="56" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Vesta" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1S6-Sf-L3z">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9f4-vu-VLN">
-                                <rect key="frame" x="213" y="131" width="45" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Eris" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Uwp-P6-RsF">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBb-wF-gCJ">
-                                <rect key="frame" x="213" y="111" width="61" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Sedna" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UoD-nm-zEW">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJ8-5V-vYK">
-                                <rect key="frame" x="213" y="91" width="72" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Haumea" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Wnx-jS-QrX">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxf-Zo-OS6">
-                                <rect key="frame" x="213" y="71" width="87" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Makemake" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WRV-Xe-LT5">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-IW-g7p">
-                                <rect key="frame" x="242" y="13" width="65" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="決定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4vD-6X-HET">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="SubmitButtonClicked:" target="fJl-8Z-zFv" id="9ke-NJ-Q6x"/>
-                                </connections>
-                            </button>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d62-Qt-aGy">
-                                <rect key="frame" x="18" y="246" width="76" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="設定0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qLd-P2-L8T" id="uJ0-1j-W5i">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="Wbj-Gz-w9K">
-                                        <items>
-                                            <menuItem title="設定0" state="on" keyEquivalent="" id="qLd-P2-L8T">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="SettingsComboChanged:" target="fJl-8Z-zFv" id="Yct-eY-TpQ"/>
-                                </connections>
-                            </popUpButton>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGC-fe-yTm">
-                                <rect key="frame" x="130" y="246" width="115" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="1-1(Natal)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UGY-Tj-NR0" id="YUv-jC-w6Z">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="w1v-j0-Urw">
-                                        <items>
-                                            <menuItem title="1-1(Natal)" state="on" id="UGY-Tj-NR0"/>
-                                            <menuItem title="2-2(Progres)" id="6Zu-P3-GlQ"/>
-                                            <menuItem title="3-3(Transit)" id="19T-43-EG4"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="RingsComboChanged:" target="fJl-8Z-zFv" id="UcE-UG-lQL"/>
-                                </connections>
-                            </popUpButton>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="RingsCombo" destination="FGC-fe-yTm" id="VxL-1P-Wg6"/>
-                        <outlet property="SettingsCombo" destination="d62-Qt-aGy" id="fmH-WM-fQ8"/>
-                        <outlet property="dispAspectPlanetAsc" destination="Jyi-mn-Mwa" id="u7h-ZD-9ex"/>
-                        <outlet property="dispAspectPlanetCeres" destination="uEO-Oc-Xk1" id="2OC-JZ-4DW"/>
-                        <outlet property="dispAspectPlanetChiron" destination="hb3-jJ-y1Y" id="Q48-wS-Oyx"/>
-                        <outlet property="dispAspectPlanetDh" destination="f7E-gZ-2Bu" id="AmN-Ta-mg9"/>
-                        <outlet property="dispAspectPlanetEarth" destination="6GD-rI-eRR" id="As6-sP-HDs"/>
-                        <outlet property="dispAspectPlanetEris" destination="9f4-vu-VLN" id="0qA-H4-7eH"/>
-                        <outlet property="dispAspectPlanetHaumea" destination="RJ8-5V-vYK" id="aib-OU-jSb"/>
-                        <outlet property="dispAspectPlanetJuno" destination="vSB-SX-Amp" id="NvQ-UG-xdR"/>
-                        <outlet property="dispAspectPlanetJupiter" destination="AmI-4G-rzf" id="KNF-oS-ffn"/>
-                        <outlet property="dispAspectPlanetLilith" destination="bEp-O9-RVR" id="zDq-57-Egc"/>
-                        <outlet property="dispAspectPlanetMakemake" destination="uxf-Zo-OS6" id="KSQ-zk-ebK"/>
-                        <outlet property="dispAspectPlanetMars" destination="thW-Py-gUR" id="Ub4-1j-2Nn"/>
-                        <outlet property="dispAspectPlanetMc" destination="9hV-Te-nCg" id="df1-dH-Q9X"/>
-                        <outlet property="dispAspectPlanetMercury" destination="Qxg-P2-phu" id="gYA-QX-gZQ"/>
-                        <outlet property="dispAspectPlanetMoon" destination="NFy-hm-lxO" id="vkV-RN-DGc"/>
-                        <outlet property="dispAspectPlanetNeptune" destination="yjq-hb-g9v" id="0SN-zk-hpX"/>
-                        <outlet property="dispAspectPlanetParas" destination="Qbw-jo-dj4" id="fg6-rm-DMw"/>
-                        <outlet property="dispAspectPlanetPluto" destination="G63-RH-uY3" id="yAr-UW-YOR"/>
-                        <outlet property="dispAspectPlanetPof" destination="uGC-QO-dwb" id="eo4-Ge-meu"/>
-                        <outlet property="dispAspectPlanetSaturn" destination="UGi-Qe-tzi" id="z3T-Xe-N1F"/>
-                        <outlet property="dispAspectPlanetSedna" destination="rBb-wF-gCJ" id="pSJ-Sm-z8y"/>
-                        <outlet property="dispAspectPlanetSun" destination="hik-8d-aiy" id="kkZ-EY-spx"/>
-                        <outlet property="dispAspectPlanetUranus" destination="x6a-Uh-Occ" id="559-39-7UO"/>
-                        <outlet property="dispAspectPlanetVenus" destination="HlR-ja-qbC" id="Lek-44-cKC"/>
-                        <outlet property="dispAspectPlanetVesta" destination="FdO-k7-tmK" id="d3O-Ww-Stx"/>
-                        <outlet property="dispAspectPlanetVt" destination="MZz-yG-DMg" id="PxN-vk-D94"/>
-                    </connections>
-                </viewController>
-                <customObject id="nxp-aL-IZ0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1751" y="783"/>
+            <point key="canvasLocation" x="2330" y="114"/>
         </scene>
         <!--オーブ設定-->
         <scene sceneID="J2u-wP-q9M">
@@ -4109,9 +3598,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="SubmitButtonClicked:" target="fJl-8Z-zFv" id="b0L-Mg-1Le"/>
-                                </connections>
                             </button>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lqs-yF-Ayz">
                                 <rect key="frame" x="29" y="305" width="76" height="26"/>
@@ -4159,7 +3645,7 @@
                 </viewController>
                 <customObject id="y5B-id-DyY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2120.5" y="802"/>
+            <point key="canvasLocation" x="1943" y="900"/>
         </scene>
     </scenes>
 </document>
