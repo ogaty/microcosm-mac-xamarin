@@ -331,6 +331,292 @@ namespace microcosm.Config
             ret.aspectDh44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
             ret.aspectDh55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_DH_TRUENODE];
 
+            ret.aspectVt11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_VT];
+            ret.aspectVt22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_VT];
+            ret.aspectVt33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_VT];
+            ret.aspectVt44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_VT];
+            ret.aspectVt55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_VT];
+
+            ret.aspectPof11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_POF];
+            ret.aspectPof22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_POF];
+            ret.aspectPof33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_POF];
+            ret.aspectPof44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_POF];
+            ret.aspectPof55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_POF];
+
+            ret.aspectCeres11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_CERES];
+            ret.aspectCeres22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_CERES];
+            ret.aspectCeres33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_CERES];
+            ret.aspectCeres44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_CERES];
+            ret.aspectCeres55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_CERES];
+
+            ret.aspectPallas11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_PALLAS];
+            ret.aspectPallas22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_PALLAS];
+            ret.aspectPallas33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_PALLAS];
+            ret.aspectPallas44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_PALLAS];
+            ret.aspectPallas55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_PALLAS];
+
+            ret.aspectJuno11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_JUNO];
+            ret.aspectJuno22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_JUNO];
+            ret.aspectJuno33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_JUNO];
+            ret.aspectJuno44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_JUNO];
+            ret.aspectJuno55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_JUNO];
+
+            ret.aspectVesta11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_VESTA];
+            ret.aspectVesta22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_VESTA];
+            ret.aspectVesta33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_VESTA];
+            ret.aspectVesta44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_VESTA];
+            ret.aspectVesta55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_VESTA];
+
+            ret.aspectEris11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_ERIS];
+            ret.aspectEris22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_ERIS];
+            ret.aspectEris33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_ERIS];
+            ret.aspectEris44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_ERIS];
+            ret.aspectEris55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_ERIS];
+
+            ret.aspectSedna11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_SEDNA];
+            ret.aspectSedna22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_SEDNA];
+            ret.aspectSedna33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_SEDNA];
+            ret.aspectSedna44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_SEDNA];
+            ret.aspectSedna55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_SEDNA];
+
+            ret.aspectHaumea11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_HAUMEA];
+            ret.aspectHaumea22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_HAUMEA];
+            ret.aspectHaumea33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_HAUMEA];
+            ret.aspectHaumea44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_HAUMEA];
+            ret.aspectHaumea55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_HAUMEA];
+
+            ret.aspectMakemake11 = setting.dispAspectPlanet[0][CommonData.ZODIAC_NUMBER_MAKEMAKE];
+            ret.aspectMakemake22 = setting.dispAspectPlanet[1][CommonData.ZODIAC_NUMBER_MAKEMAKE];
+            ret.aspectMakemake33 = setting.dispAspectPlanet[2][CommonData.ZODIAC_NUMBER_MAKEMAKE];
+            ret.aspectMakemake44 = setting.dispAspectPlanet[3][CommonData.ZODIAC_NUMBER_MAKEMAKE];
+            ret.aspectMakemake55 = setting.dispAspectPlanet[4][CommonData.ZODIAC_NUMBER_MAKEMAKE];
+
+            ret.aspectConjunction11 =  setting.aspectConjunction[0, 0];
+            ret.aspectConjunction12 = setting.aspectConjunction[0, 1];
+            ret.aspectConjunction13 = setting.aspectConjunction[0, 2];
+            ret.aspectConjunction14 = setting.aspectConjunction[0, 3];
+            ret.aspectConjunction15 = setting.aspectConjunction[0, 4];
+            ret.aspectConjunction22 = setting.aspectConjunction[1, 1];
+            ret.aspectConjunction23 = setting.aspectConjunction[1, 2];
+            ret.aspectConjunction24 = setting.aspectConjunction[1, 3];
+            ret.aspectConjunction25 = setting.aspectConjunction[1, 4];
+            ret.aspectConjunction33 = setting.aspectConjunction[2, 2];
+            ret.aspectConjunction34 = setting.aspectConjunction[2, 3];
+            ret.aspectConjunction35 = setting.aspectConjunction[2, 4];
+            ret.aspectConjunction44 = setting.aspectConjunction[3, 3];
+            ret.aspectConjunction45 = setting.aspectConjunction[3, 4];
+            ret.aspectConjunction55 = setting.aspectConjunction[4, 4];
+
+            ret.aspectOpposition11 = setting.aspectOpposition[0, 0];
+            ret.aspectOpposition12 = setting.aspectOpposition[0, 1];
+            ret.aspectOpposition13 = setting.aspectOpposition[0, 2];
+            ret.aspectOpposition14 = setting.aspectOpposition[0, 3];
+            ret.aspectOpposition15 = setting.aspectOpposition[0, 4];
+            ret.aspectOpposition22 = setting.aspectOpposition[1, 1];
+            ret.aspectOpposition23 = setting.aspectOpposition[1, 2];
+            ret.aspectOpposition24 = setting.aspectOpposition[1, 3];
+            ret.aspectOpposition25 = setting.aspectOpposition[1, 4];
+            ret.aspectOpposition33 = setting.aspectOpposition[2, 2];
+            ret.aspectOpposition34 = setting.aspectOpposition[2, 3];
+            ret.aspectOpposition35 = setting.aspectOpposition[2, 4];
+            ret.aspectOpposition44 = setting.aspectOpposition[3, 3];
+            ret.aspectOpposition45 = setting.aspectOpposition[3, 4];
+            ret.aspectOpposition55 = setting.aspectOpposition[4, 4];
+
+            ret.aspectTrine11 = setting.aspectTrine[0, 0];
+            ret.aspectTrine12 = setting.aspectTrine[0, 1];
+            ret.aspectTrine13 = setting.aspectTrine[0, 2];
+            ret.aspectTrine14 = setting.aspectTrine[0, 3];
+            ret.aspectTrine15 = setting.aspectTrine[0, 4];
+            ret.aspectTrine22 = setting.aspectTrine[1, 1];
+            ret.aspectTrine23 = setting.aspectTrine[1, 2];
+            ret.aspectTrine24 = setting.aspectTrine[1, 3];
+            ret.aspectTrine25 = setting.aspectTrine[1, 4];
+            ret.aspectTrine33 = setting.aspectTrine[2, 2];
+            ret.aspectTrine34 = setting.aspectTrine[2, 3];
+            ret.aspectTrine35 = setting.aspectTrine[2, 4];
+            ret.aspectTrine44 = setting.aspectTrine[3, 3];
+            ret.aspectTrine45 = setting.aspectTrine[3, 4];
+            ret.aspectTrine55 = setting.aspectTrine[4, 4];
+
+            ret.aspectSquare11 = setting.aspectSquare[0, 0];
+            ret.aspectSquare12 = setting.aspectSquare[0, 1];
+            ret.aspectSquare13 = setting.aspectSquare[0, 2];
+            ret.aspectSquare14 = setting.aspectSquare[0, 3];
+            ret.aspectSquare15 = setting.aspectSquare[0, 4];
+            ret.aspectSquare22 = setting.aspectSquare[1, 1];
+            ret.aspectSquare23 = setting.aspectSquare[1, 2];
+            ret.aspectSquare24 = setting.aspectSquare[1, 3];
+            ret.aspectSquare25 = setting.aspectSquare[1, 4];
+            ret.aspectSquare33 = setting.aspectSquare[2, 2];
+            ret.aspectSquare34 = setting.aspectSquare[2, 3];
+            ret.aspectSquare35 = setting.aspectSquare[2, 4];
+            ret.aspectSquare44 = setting.aspectSquare[3, 3];
+            ret.aspectSquare45 = setting.aspectSquare[3, 4];
+            ret.aspectSquare55 = setting.aspectSquare[4, 4];
+
+            ret.aspectSextile11 = setting.aspectSextile[0, 0];
+            ret.aspectSextile12 = setting.aspectSextile[0, 1];
+            ret.aspectSextile13 = setting.aspectSextile[0, 2];
+            ret.aspectSextile14 = setting.aspectSextile[0, 3];
+            ret.aspectSextile15 = setting.aspectSextile[0, 4];
+            ret.aspectSextile22 = setting.aspectSextile[1, 1];
+            ret.aspectSextile23 = setting.aspectSextile[1, 2];
+            ret.aspectSextile24 = setting.aspectSextile[1, 3];
+            ret.aspectSextile25 = setting.aspectSextile[1, 4];
+            ret.aspectSextile33 = setting.aspectSextile[2, 2];
+            ret.aspectSextile34 = setting.aspectSextile[2, 3];
+            ret.aspectSextile35 = setting.aspectSextile[2, 4];
+            ret.aspectSextile44 = setting.aspectSextile[3, 3];
+            ret.aspectSextile45 = setting.aspectSextile[3, 4];
+            ret.aspectSextile55 = setting.aspectSextile[4, 4];
+
+            ret.aspectInconjunct11 = setting.aspectInconjunct[0, 0];
+            ret.aspectInconjunct12 = setting.aspectInconjunct[0, 1];
+            ret.aspectInconjunct13 = setting.aspectInconjunct[0, 2];
+            ret.aspectInconjunct14 = setting.aspectInconjunct[0, 3];
+            ret.aspectInconjunct15 = setting.aspectInconjunct[0, 4];
+            ret.aspectInconjunct22 = setting.aspectInconjunct[1, 1];
+            ret.aspectInconjunct23 = setting.aspectInconjunct[1, 2];
+            ret.aspectInconjunct24 = setting.aspectInconjunct[1, 3];
+            ret.aspectInconjunct25 = setting.aspectInconjunct[1, 4];
+            ret.aspectInconjunct33 = setting.aspectInconjunct[2, 2];
+            ret.aspectInconjunct34 = setting.aspectInconjunct[2, 3];
+            ret.aspectInconjunct35 = setting.aspectInconjunct[2, 4];
+            ret.aspectInconjunct44 = setting.aspectInconjunct[3, 3];
+            ret.aspectInconjunct45 = setting.aspectInconjunct[3, 4];
+            ret.aspectInconjunct55 = setting.aspectInconjunct[4, 4];
+
+            ret.aspectSemiSquare11 = setting.aspectSemiSquare[0, 0];
+            ret.aspectSemiSquare12 = setting.aspectSemiSquare[0, 1];
+            ret.aspectSemiSquare13 = setting.aspectSemiSquare[0, 2];
+            ret.aspectSemiSquare14 = setting.aspectSemiSquare[0, 3];
+            ret.aspectSemiSquare15 = setting.aspectSemiSquare[0, 4];
+            ret.aspectSemiSquare22 = setting.aspectSemiSquare[1, 1];
+            ret.aspectSemiSquare23 = setting.aspectSemiSquare[1, 2];
+            ret.aspectSemiSquare24 = setting.aspectSemiSquare[1, 3];
+            ret.aspectSemiSquare25 = setting.aspectSemiSquare[1, 4];
+            ret.aspectSemiSquare33 = setting.aspectSemiSquare[2, 2];
+            ret.aspectSemiSquare34 = setting.aspectSemiSquare[2, 3];
+            ret.aspectSemiSquare35 = setting.aspectSemiSquare[2, 4];
+            ret.aspectSemiSquare44 = setting.aspectSemiSquare[3, 3];
+            ret.aspectSemiSquare45 = setting.aspectSemiSquare[3, 4];
+            ret.aspectSemiSquare55 = setting.aspectSemiSquare[4, 4];
+
+            ret.aspectSemiSextile11 = setting.aspectSemiSextile[0, 0];
+            ret.aspectSemiSextile12 = setting.aspectSemiSextile[0, 1];
+            ret.aspectSemiSextile13 = setting.aspectSemiSextile[0, 2];
+            ret.aspectSemiSextile14 = setting.aspectSemiSextile[0, 3];
+            ret.aspectSemiSextile15 = setting.aspectSemiSextile[0, 4];
+            ret.aspectSemiSextile22 = setting.aspectSemiSextile[1, 1];
+            ret.aspectSemiSextile23 = setting.aspectSemiSextile[1, 2];
+            ret.aspectSemiSextile24 = setting.aspectSemiSextile[1, 3];
+            ret.aspectSemiSextile25 = setting.aspectSemiSextile[1, 4];
+            ret.aspectSemiSextile33 = setting.aspectSemiSextile[2, 2];
+            ret.aspectSemiSextile34 = setting.aspectSemiSextile[2, 3];
+            ret.aspectSemiSextile35 = setting.aspectSemiSextile[2, 4];
+            ret.aspectSemiSextile44 = setting.aspectSemiSextile[3, 3];
+            ret.aspectSemiSextile45 = setting.aspectSemiSextile[3, 4];
+            ret.aspectSemiSextile55 = setting.aspectSemiSextile[4, 4];
+
+            ret.aspectQuintile11 = setting.aspectQuintile[0, 0];
+            ret.aspectQuintile12 = setting.aspectQuintile[0, 1];
+            ret.aspectQuintile13 = setting.aspectQuintile[0, 2];
+            ret.aspectQuintile14 = setting.aspectQuintile[0, 3];
+            ret.aspectQuintile15 = setting.aspectQuintile[0, 4];
+            ret.aspectQuintile22 = setting.aspectQuintile[1, 1];
+            ret.aspectQuintile23 = setting.aspectQuintile[1, 2];
+            ret.aspectQuintile24 = setting.aspectQuintile[1, 3];
+            ret.aspectQuintile25 = setting.aspectQuintile[1, 4];
+            ret.aspectQuintile33 = setting.aspectQuintile[2, 2];
+            ret.aspectQuintile34 = setting.aspectQuintile[2, 3];
+            ret.aspectQuintile35 = setting.aspectQuintile[2, 4];
+            ret.aspectQuintile44 = setting.aspectQuintile[3, 3];
+            ret.aspectQuintile45 = setting.aspectQuintile[3, 4];
+            ret.aspectQuintile55 = setting.aspectQuintile[4, 4];
+
+            ret.aspectBiQuintile11 = setting.aspectBiQuintile[0, 0];
+            ret.aspectBiQuintile12 = setting.aspectBiQuintile[0, 1];
+            ret.aspectBiQuintile13 = setting.aspectBiQuintile[0, 2];
+            ret.aspectBiQuintile14 = setting.aspectBiQuintile[0, 3];
+            ret.aspectBiQuintile15 = setting.aspectBiQuintile[0, 4];
+            ret.aspectBiQuintile22 = setting.aspectBiQuintile[1, 1];
+            ret.aspectBiQuintile23 = setting.aspectBiQuintile[1, 2];
+            ret.aspectBiQuintile24 = setting.aspectBiQuintile[1, 3];
+            ret.aspectBiQuintile25 = setting.aspectBiQuintile[1, 4];
+            ret.aspectBiQuintile33 = setting.aspectBiQuintile[2, 2];
+            ret.aspectBiQuintile34 = setting.aspectBiQuintile[2, 3];
+            ret.aspectBiQuintile35 = setting.aspectBiQuintile[2, 4];
+            ret.aspectBiQuintile44 = setting.aspectBiQuintile[3, 3];
+            ret.aspectBiQuintile45 = setting.aspectBiQuintile[3, 4];
+            ret.aspectBiQuintile55 = setting.aspectBiQuintile[4, 4];
+
+            ret.aspectSemiQuintile11 = setting.aspectSemiQuintile[0, 0];
+            ret.aspectSemiQuintile12 = setting.aspectSemiQuintile[0, 1];
+            ret.aspectSemiQuintile13 = setting.aspectSemiQuintile[0, 2];
+            ret.aspectSemiQuintile14 = setting.aspectSemiQuintile[0, 3];
+            ret.aspectSemiQuintile15 = setting.aspectSemiQuintile[0, 4];
+            ret.aspectSemiQuintile22 = setting.aspectSemiQuintile[1, 1];
+            ret.aspectSemiQuintile23 = setting.aspectSemiQuintile[1, 2];
+            ret.aspectSemiQuintile24 = setting.aspectSemiQuintile[1, 3];
+            ret.aspectSemiQuintile25 = setting.aspectSemiQuintile[1, 4];
+            ret.aspectSemiQuintile33 = setting.aspectSemiQuintile[2, 2];
+            ret.aspectSemiQuintile34 = setting.aspectSemiQuintile[2, 3];
+            ret.aspectSemiQuintile35 = setting.aspectSemiQuintile[2, 4];
+            ret.aspectSemiQuintile44 = setting.aspectSemiQuintile[3, 3];
+            ret.aspectSemiQuintile45 = setting.aspectSemiQuintile[3, 4];
+            ret.aspectSemiQuintile55 = setting.aspectSemiQuintile[4, 4];
+
+
+            ret.aspectNovile11 = setting.aspectNovile[0, 0];
+            ret.aspectNovile12 = setting.aspectNovile[0, 1];
+            ret.aspectNovile13 = setting.aspectNovile[0, 2];
+            ret.aspectNovile14 = setting.aspectNovile[0, 3];
+            ret.aspectNovile15 = setting.aspectNovile[0, 4];
+            ret.aspectNovile22 = setting.aspectNovile[1, 1];
+            ret.aspectNovile23 = setting.aspectNovile[1, 2];
+            ret.aspectNovile24 = setting.aspectNovile[1, 3];
+            ret.aspectNovile25 = setting.aspectNovile[1, 4];
+            ret.aspectNovile33 = setting.aspectNovile[2, 2];
+            ret.aspectNovile34 = setting.aspectNovile[2, 3];
+            ret.aspectNovile35 = setting.aspectNovile[2, 4];
+            ret.aspectNovile44 = setting.aspectNovile[3, 3];
+            ret.aspectNovile45 = setting.aspectNovile[3, 4];
+            ret.aspectNovile55 = setting.aspectNovile[4, 4];
+
+            ret.aspectSeptile11 = setting.aspectSeptile[0, 0];
+            ret.aspectSeptile12 = setting.aspectSeptile[0, 1];
+            ret.aspectSeptile13 = setting.aspectSeptile[0, 2];
+            ret.aspectSeptile14 = setting.aspectSeptile[0, 3];
+            ret.aspectSeptile15 = setting.aspectSeptile[0, 4];
+            ret.aspectSeptile22 = setting.aspectSeptile[1, 1];
+            ret.aspectSeptile23 = setting.aspectSeptile[1, 2];
+            ret.aspectSeptile24 = setting.aspectSeptile[1, 3];
+            ret.aspectSeptile25 = setting.aspectSeptile[1, 4];
+            ret.aspectSeptile33 = setting.aspectSeptile[2, 2];
+            ret.aspectSeptile34 = setting.aspectSeptile[2, 3];
+            ret.aspectSeptile35 = setting.aspectSeptile[2, 4];
+            ret.aspectSeptile44 = setting.aspectSeptile[3, 3];
+            ret.aspectSeptile45 = setting.aspectSeptile[3, 4];
+            ret.aspectSeptile55 = setting.aspectSeptile[4, 4];
+
+            ret.aspectSesquiquadrate11 = setting.aspectSesquiquadrate[0, 0];
+            ret.aspectSesquiquadrate12 = setting.aspectSesquiquadrate[0, 1];
+            ret.aspectSesquiquadrate13 = setting.aspectSesquiquadrate[0, 2];
+            ret.aspectSesquiquadrate14 = setting.aspectSesquiquadrate[0, 3];
+            ret.aspectSesquiquadrate15 = setting.aspectSesquiquadrate[0, 4];
+            ret.aspectSesquiquadrate22 = setting.aspectSesquiquadrate[1, 1];
+            ret.aspectSesquiquadrate23 = setting.aspectSesquiquadrate[1, 2];
+            ret.aspectSesquiquadrate24 = setting.aspectSesquiquadrate[1, 3];
+            ret.aspectSesquiquadrate25 = setting.aspectSesquiquadrate[1, 4];
+            ret.aspectSesquiquadrate33 = setting.aspectSesquiquadrate[2, 2];
+            ret.aspectSesquiquadrate34 = setting.aspectSesquiquadrate[2, 3];
+            ret.aspectSesquiquadrate35 = setting.aspectSesquiquadrate[2, 4];
+            ret.aspectSesquiquadrate44 = setting.aspectSesquiquadrate[3, 3];
+            ret.aspectSesquiquadrate45 = setting.aspectSesquiquadrate[3, 4];
+            ret.aspectSesquiquadrate55 = setting.aspectSesquiquadrate[4, 4];
+
+
             return ret;
         }
 

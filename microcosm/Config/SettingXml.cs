@@ -1053,6 +1053,20 @@ namespace microcosm.Config
         public bool aspectInconjunct11;
         [XmlElement("aspectSesquiquadrate11")]
         public bool aspectSesquiquadrate11;
+        [XmlElement("aspectSemiSextile11")]
+        public bool aspectSemiSextile11;
+        [XmlElement("aspectSemiQuintile11")]
+        public bool aspectSemiQuintile11;
+        [XmlElement("aspectNovile11")]
+        public bool aspectNovile11;
+        [XmlElement("aspectSemiSquare11")]
+        public bool aspectSemiSquare11;
+        [XmlElement("aspectSeptile11")]
+        public bool aspectSeptile11;
+        [XmlElement("aspectQuintile11")]
+        public bool aspectQuintile11;
+        [XmlElement("aspectBiQuintile11")]
+        public bool aspectBiQuintile11;
         [XmlElement("aspectConjunction22")]
         public bool aspectConjunction22;
         [XmlElement("aspectOpposition22")]
@@ -1067,6 +1081,20 @@ namespace microcosm.Config
         public bool aspectInconjunct22;
         [XmlElement("aspectSesquiquadrate22")]
         public bool aspectSesquiquadrate22;
+        [XmlElement("aspectSemiSextile22")]
+        public bool aspectSemiSextile22;
+        [XmlElement("aspectSemiQuintile22")]
+        public bool aspectSemiQuintile22;
+        [XmlElement("aspectNovile22")]
+        public bool aspectNovile22;
+        [XmlElement("aspectSemiSquare22")]
+        public bool aspectSemiSquare22;
+        [XmlElement("aspectSeptile22")]
+        public bool aspectSeptile22;
+        [XmlElement("aspectQuintile22")]
+        public bool aspectQuintile22;
+        [XmlElement("aspectBiQuintile22")]
+        public bool aspectBiQuintile22;
         [XmlElement("aspectConjunction33")]
         public bool aspectConjunction33;
         [XmlElement("aspectOpposition33")]
@@ -1081,6 +1109,20 @@ namespace microcosm.Config
         public bool aspectInconjunct33;
         [XmlElement("aspectSesquiquadrate33")]
         public bool aspectSesquiquadrate33;
+        [XmlElement("aspectSemiSextile33")]
+        public bool aspectSemiSextile33;
+        [XmlElement("aspectSemiQuintile33")]
+        public bool aspectSemiQuintile33;
+        [XmlElement("aspectNovile33")]
+        public bool aspectNovile33;
+        [XmlElement("aspectSemiSquare33")]
+        public bool aspectSemiSquare33;
+        [XmlElement("aspectSeptile33")]
+        public bool aspectSeptile33;
+        [XmlElement("aspectQuintile33")]
+        public bool aspectQuintile33;
+        [XmlElement("aspectBiQuintile33")]
+        public bool aspectBiQuintile33;
         [XmlElement("aspectConjunction12")]
         public bool aspectConjunction12;
         [XmlElement("aspectOpposition12")]
@@ -1095,6 +1137,20 @@ namespace microcosm.Config
         public bool aspectInconjunct12;
         [XmlElement("aspectSesquiquadrate12")]
         public bool aspectSesquiquadrate12;
+        [XmlElement("aspectSemiSextile12")]
+        public bool aspectSemiSextile12;
+        [XmlElement("aspectSemiQuintile12")]
+        public bool aspectSemiQuintile12;
+        [XmlElement("aspectNovile12")]
+        public bool aspectNovile12;
+        [XmlElement("aspectSemiSquare12")]
+        public bool aspectSemiSquare12;
+        [XmlElement("aspectSeptile12")]
+        public bool aspectSeptile12;
+        [XmlElement("aspectQuintile12")]
+        public bool aspectQuintile12;
+        [XmlElement("aspectBiQuintile12")]
+        public bool aspectBiQuintile12;
         [XmlElement("aspectConjunction13")]
         public bool aspectConjunction13;
         [XmlElement("aspectOpposition13")]
@@ -1109,6 +1165,20 @@ namespace microcosm.Config
         public bool aspectInconjunct13;
         [XmlElement("aspectSesquiquadrate13")]
         public bool aspectSesquiquadrate13;
+        [XmlElement("aspectSemiSextile13")]
+        public bool aspectSemiSextile13;
+        [XmlElement("aspectSemiQuintile13")]
+        public bool aspectSemiQuintile13;
+        [XmlElement("aspectNovile13")]
+        public bool aspectNovile13;
+        [XmlElement("aspectSemiSquare13")]
+        public bool aspectSemiSquare13;
+        [XmlElement("aspectSeptile13")]
+        public bool aspectSeptile13;
+        [XmlElement("aspectQuintile13")]
+        public bool aspectQuintile13;
+        [XmlElement("aspectBiQuintile13")]
+        public bool aspectBiQuintile13;
         [XmlElement("aspectConjunction23")]
         public bool aspectConjunction23;
         [XmlElement("aspectOpposition23")]
@@ -1123,6 +1193,273 @@ namespace microcosm.Config
         public bool aspectInconjunct23;
         [XmlElement("aspectSesquiquadrate23")]
         public bool aspectSesquiquadrate23;
+        [XmlElement("aspectSemiSextile23")]
+        public bool aspectSemiSextile23;
+        [XmlElement("aspectSemiQuintile23")]
+        public bool aspectSemiQuintile23;
+        [XmlElement("aspectNovile23")]
+        public bool aspectNovile23;
+        [XmlElement("aspectSemiSquare23")]
+        public bool aspectSemiSquare23;
+        [XmlElement("aspectSeptile23")]
+        public bool aspectSeptile23;
+        [XmlElement("aspectQuintile23")]
+        public bool aspectQuintile23;
+        [XmlElement("aspectBiQuintile23")]
+        public bool aspectBiQuintile23;
+        [XmlElement("aspectConjunction44")]
+        public bool aspectConjunction44;
+        [XmlElement("aspectOpposition44")]
+        public bool aspectOpposition44;
+        [XmlElement("aspectTrine44")]
+        public bool aspectTrine44;
+        [XmlElement("aspectSquare44")]
+        public bool aspectSquare44;
+        [XmlElement("aspectSextile44")]
+        public bool aspectSextile44;
+        [XmlElement("aspectInconjunct44")]
+        public bool aspectInconjunct44;
+        [XmlElement("aspectSesquiquadrate44")]
+        public bool aspectSesquiquadrate44;
+        [XmlElement("aspectSemiSextile44")]
+        public bool aspectSemiSextile44;
+        [XmlElement("aspectSemiQuintile44")]
+        public bool aspectSemiQuintile44;
+        [XmlElement("aspectNovile44")]
+        public bool aspectNovile44;
+        [XmlElement("aspectSemiSquare44")]
+        public bool aspectSemiSquare44;
+        [XmlElement("aspectSeptile44")]
+        public bool aspectSeptile44;
+        [XmlElement("aspectQuintile44")]
+        public bool aspectQuintile44;
+        [XmlElement("aspectBiQuintile44")]
+        public bool aspectBiQuintile44;
+        [XmlElement("aspectConjunction55")]
+        public bool aspectConjunction55;
+        [XmlElement("aspectOpposition55")]
+        public bool aspectOpposition55;
+        [XmlElement("aspectTrine55")]
+        public bool aspectTrine55;
+        [XmlElement("aspectSquare55")]
+        public bool aspectSquare55;
+        [XmlElement("aspectSextile55")]
+        public bool aspectSextile55;
+        [XmlElement("aspectInconjunct55")]
+        public bool aspectInconjunct55;
+        [XmlElement("aspectSesquiquadrate55")]
+        public bool aspectSesquiquadrate55;
+        [XmlElement("aspectSemiSextile55")]
+        public bool aspectSemiSextile55;
+        [XmlElement("aspectSemiQuintile55")]
+        public bool aspectSemiQuintile55;
+        [XmlElement("aspectNovile55")]
+        public bool aspectNovile55;
+        [XmlElement("aspectSemiSquare55")]
+        public bool aspectSemiSquare55;
+        [XmlElement("aspectSeptile55")]
+        public bool aspectSeptile55;
+        [XmlElement("aspectQuintile55")]
+        public bool aspectQuintile55;
+        [XmlElement("aspectBiQuintile55")]
+        public bool aspectBiQuintile55;
+        [XmlElement("aspectConjunction14")]
+        public bool aspectConjunction14;
+        [XmlElement("aspectOpposition14")]
+        public bool aspectOpposition14;
+        [XmlElement("aspectTrine14")]
+        public bool aspectTrine14;
+        [XmlElement("aspectSquare14")]
+        public bool aspectSquare14;
+        [XmlElement("aspectSextile14")]
+        public bool aspectSextile14;
+        [XmlElement("aspectInconjunct14")]
+        public bool aspectInconjunct14;
+        [XmlElement("aspectSesquiquadrate14")]
+        public bool aspectSesquiquadrate14;
+        [XmlElement("aspectSemiSextile14")]
+        public bool aspectSemiSextile14;
+        [XmlElement("aspectSemiQuintile14")]
+        public bool aspectSemiQuintile14;
+        [XmlElement("aspectNovile14")]
+        public bool aspectNovile14;
+        [XmlElement("aspectSemiSquare14")]
+        public bool aspectSemiSquare14;
+        [XmlElement("aspectSeptile14")]
+        public bool aspectSeptile14;
+        [XmlElement("aspectQuintile14")]
+        public bool aspectQuintile14;
+        [XmlElement("aspectBiQuintile14")]
+        public bool aspectBiQuintile14;
+        [XmlElement("aspectConjunction15")]
+        public bool aspectConjunction15;
+        [XmlElement("aspectOpposition15")]
+        public bool aspectOpposition15;
+        [XmlElement("aspectTrine15")]
+        public bool aspectTrine15;
+        [XmlElement("aspectSquare15")]
+        public bool aspectSquare15;
+        [XmlElement("aspectSextile15")]
+        public bool aspectSextile15;
+        [XmlElement("aspectInconjunct15")]
+        public bool aspectInconjunct15;
+        [XmlElement("aspectSesquiquadrate15")]
+        public bool aspectSesquiquadrate15;
+        [XmlElement("aspectSemiSextile15")]
+        public bool aspectSemiSextile15;
+        [XmlElement("aspectSemiQuintile15")]
+        public bool aspectSemiQuintile15;
+        [XmlElement("aspectNovile15")]
+        public bool aspectNovile15;
+        [XmlElement("aspectSemiSquare15")]
+        public bool aspectSemiSquare15;
+        [XmlElement("aspectSeptile15")]
+        public bool aspectSeptile15;
+        [XmlElement("aspectQuintile15")]
+        public bool aspectQuintile15;
+        [XmlElement("aspectBiQuintile15")]
+        public bool aspectBiQuintile15;
+        [XmlElement("aspectConjunction24")]
+        public bool aspectConjunction24;
+        [XmlElement("aspectOpposition24")]
+        public bool aspectOpposition24;
+        [XmlElement("aspectTrine24")]
+        public bool aspectTrine24;
+        [XmlElement("aspectSquare24")]
+        public bool aspectSquare24;
+        [XmlElement("aspectSextile24")]
+        public bool aspectSextile24;
+        [XmlElement("aspectInconjunct24")]
+        public bool aspectInconjunct24;
+        [XmlElement("aspectSesquiquadrate24")]
+        public bool aspectSesquiquadrate24;
+        [XmlElement("aspectSemiSextile24")]
+        public bool aspectSemiSextile24;
+        [XmlElement("aspectSemiQuintile24")]
+        public bool aspectSemiQuintile24;
+        [XmlElement("aspectNovile24")]
+        public bool aspectNovile24;
+        [XmlElement("aspectSemiSquare24")]
+        public bool aspectSemiSquare24;
+        [XmlElement("aspectSeptile24")]
+        public bool aspectSeptile24;
+        [XmlElement("aspectQuintile24")]
+        public bool aspectQuintile24;
+        [XmlElement("aspectBiQuintile24")]
+        public bool aspectBiQuintile24;
+        [XmlElement("aspectConjunction25")]
+        public bool aspectConjunction25;
+        [XmlElement("aspectOpposition25")]
+        public bool aspectOpposition25;
+        [XmlElement("aspectTrine25")]
+        public bool aspectTrine25;
+        [XmlElement("aspectSquare25")]
+        public bool aspectSquare25;
+        [XmlElement("aspectSextile25")]
+        public bool aspectSextile25;
+        [XmlElement("aspectInconjunct25")]
+        public bool aspectInconjunct25;
+        [XmlElement("aspectSesquiquadrate25")]
+        public bool aspectSesquiquadrate25;
+        [XmlElement("aspectSemiSextile25")]
+        public bool aspectSemiSextile25;
+        [XmlElement("aspectSemiQuintile25")]
+        public bool aspectSemiQuintile25;
+        [XmlElement("aspectNovile25")]
+        public bool aspectNovile25;
+        [XmlElement("aspectSemiSquare25")]
+        public bool aspectSemiSquare25;
+        [XmlElement("aspectSeptile25")]
+        public bool aspectSeptile25;
+        [XmlElement("aspectQuintile25")]
+        public bool aspectQuintile25;
+        [XmlElement("aspectBiQuintile25")]
+        public bool aspectBiQuintile25;
+        [XmlElement("aspectConjunction34")]
+        public bool aspectConjunction34;
+        [XmlElement("aspectOpposition34")]
+        public bool aspectOpposition34;
+        [XmlElement("aspectTrine34")]
+        public bool aspectTrine34;
+        [XmlElement("aspectSquare34")]
+        public bool aspectSquare34;
+        [XmlElement("aspectSextile34")]
+        public bool aspectSextile34;
+        [XmlElement("aspectInconjunct34")]
+        public bool aspectInconjunct34;
+        [XmlElement("aspectSesquiquadrate34")]
+        public bool aspectSesquiquadrate34;
+        [XmlElement("aspectSemiSextile34")]
+        public bool aspectSemiSextile34;
+        [XmlElement("aspectSemiQuintile34")]
+        public bool aspectSemiQuintile34;
+        [XmlElement("aspectNovile34")]
+        public bool aspectNovile34;
+        [XmlElement("aspectSemiSquare34")]
+        public bool aspectSemiSquare34;
+        [XmlElement("aspectSeptile34")]
+        public bool aspectSeptile34;
+        [XmlElement("aspectQuintile34")]
+        public bool aspectQuintile34;
+        [XmlElement("aspectBiQuintile34")]
+        public bool aspectBiQuintile34;
+        [XmlElement("aspectConjunction35")]
+        public bool aspectConjunction35;
+        [XmlElement("aspectOpposition35")]
+        public bool aspectOpposition35;
+        [XmlElement("aspectTrine35")]
+        public bool aspectTrine35;
+        [XmlElement("aspectSquare35")]
+        public bool aspectSquare35;
+        [XmlElement("aspectSextile35")]
+        public bool aspectSextile35;
+        [XmlElement("aspectInconjunct35")]
+        public bool aspectInconjunct35;
+        [XmlElement("aspectSesquiquadrate35")]
+        public bool aspectSesquiquadrate35;
+        [XmlElement("aspectSemiSextile35")]
+        public bool aspectSemiSextile35;
+        [XmlElement("aspectSemiQuintile35")]
+        public bool aspectSemiQuintile35;
+        [XmlElement("aspectNovile35")]
+        public bool aspectNovile35;
+        [XmlElement("aspectSemiSquare35")]
+        public bool aspectSemiSquare35;
+        [XmlElement("aspectSeptile35")]
+        public bool aspectSeptile35;
+        [XmlElement("aspectQuintile35")]
+        public bool aspectQuintile35;
+        [XmlElement("aspectBiQuintile35")]
+        public bool aspectBiQuintile35;
+        [XmlElement("aspectConjunction45")]
+        public bool aspectConjunction45;
+        [XmlElement("aspectOpposition45")]
+        public bool aspectOpposition45;
+        [XmlElement("aspectTrine45")]
+        public bool aspectTrine45;
+        [XmlElement("aspectSquare45")]
+        public bool aspectSquare45;
+        [XmlElement("aspectSextile45")]
+        public bool aspectSextile45;
+        [XmlElement("aspectInconjunct45")]
+        public bool aspectInconjunct45;
+        [XmlElement("aspectSesquiquadrate45")]
+        public bool aspectSesquiquadrate45;
+        [XmlElement("aspectSemiSextile45")]
+        public bool aspectSemiSextile45;
+        [XmlElement("aspectSemiQuintile45")]
+        public bool aspectSemiQuintile45;
+        [XmlElement("aspectNovile45")]
+        public bool aspectNovile45;
+        [XmlElement("aspectSemiSquare45")]
+        public bool aspectSemiSquare45;
+        [XmlElement("aspectSeptile45")]
+        public bool aspectSeptile45;
+        [XmlElement("aspectQuintile45")]
+        public bool aspectQuintile45;
+        [XmlElement("aspectBiQuintile45")]
+        public bool aspectBiQuintile45;
+
         #endregion
 
         public SettingXml()
