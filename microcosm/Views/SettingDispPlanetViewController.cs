@@ -337,7 +337,19 @@ namespace microcosm.Views
             aspectConjunction.State =
                                  settings[settingIndex].aspectConjunction[from, to] ?
                                  NSCellStateValue.On : NSCellStateValue.Off;
-        }
+            aspectOpposition.State =
+                                 settings[settingIndex].aspectOpposition[from, to] ?
+                                 NSCellStateValue.On : NSCellStateValue.Off;
+            aspectTrine.State =
+                                  settings[settingIndex].aspectTrine[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSquare.State =
+                                  settings[settingIndex].aspectSquare[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSextile.State =
+                                  settings[settingIndex].aspectSextile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+         }
 
         partial void ringsComboChanged(NSObject sender)
         {
@@ -499,6 +511,12 @@ namespace microcosm.Views
                                       aspectConjunction.State == NSCellStateValue.On ? true : false;
             settings[settingIndex].aspectOpposition[from, to] =
                                       aspectOpposition.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectTrine[from, to] =
+                                      aspectTrine.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSquare[from, to] =
+                                      aspectSquare.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSextile[from, to] =
+                                      aspectSextile.State == NSCellStateValue.On ? true : false;
 
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
@@ -621,6 +639,12 @@ namespace microcosm.Views
                           aspectInconjunct.State == NSCellStateValue.On ? true : false;
                 CommonInstance.getInstance().currentSetting.aspectSesquiquadrate[from, to] =
                           aspectSesquiquadrate.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSemiSquare[from, to] =
+                          aspectSemiSquare.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSemiSextile[from, to] =
+                          aspectSemiSextile.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSemiQuintile[from, to] =
+                          aspectSemiQuintile.State == NSCellStateValue.On ? true : false;
 
             }
 
