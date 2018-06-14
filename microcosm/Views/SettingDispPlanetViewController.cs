@@ -332,6 +332,22 @@ namespace microcosm.Views
                     from = 3;
                     to = 3;
                     break;
+                case 7:
+                    from = 4;
+                    to = 4;
+                    break;
+                case 8:
+                    from = 0;
+                    to = 3;
+                    break;
+                case 9:
+                    from = 1;
+                    to = 3;
+                    break;
+                case 10:
+                    from = 2;
+                    to = 3;
+                    break;
             }
 
             aspectConjunction.State =
@@ -348,6 +364,12 @@ namespace microcosm.Views
                                   NSCellStateValue.On : NSCellStateValue.Off;
             aspectSextile.State =
                                   settings[settingIndex].aspectSextile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectInconjunct.State =
+                                  settings[settingIndex].aspectInconjunct[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSesquiquadrate.State =
+                                  settings[settingIndex].aspectSesquiquadrate[from, to] ?
                                   NSCellStateValue.On : NSCellStateValue.Off;
          }
 
@@ -505,6 +527,22 @@ namespace microcosm.Views
                     from = 3;
                     to = 3;
                     break;
+                case 7:
+                    from = 4;
+                    to = 4;
+                    break;
+                case 8:
+                    from = 0;
+                    to = 3;
+                    break;
+                case 9:
+                    from = 1;
+                    to = 3;
+                    break;
+                case 10:
+                    from = 2;
+                    to = 3;
+                    break;
             }
 
             settings[settingIndex].aspectConjunction[from, to] =
@@ -517,6 +555,16 @@ namespace microcosm.Views
                                       aspectSquare.State == NSCellStateValue.On ? true : false;
             settings[settingIndex].aspectSextile[from, to] =
                                       aspectSextile.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectInconjunct[from, to] =
+                                      aspectInconjunct.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSesquiquadrate[from, to] =
+                                      aspectSesquiquadrate.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSemiSquare[from, to] =
+                                      aspectSemiSquare.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSemiQuintile[from, to] =
+                                      aspectSemiQuintile.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSemiSextile[from, to] =
+                                      aspectSemiSextile.State == NSCellStateValue.On ? true : false;
 
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
@@ -645,6 +693,14 @@ namespace microcosm.Views
                           aspectSemiSextile.State == NSCellStateValue.On ? true : false;
                 CommonInstance.getInstance().currentSetting.aspectSemiQuintile[from, to] =
                           aspectSemiQuintile.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectNovile[from, to] =
+                          aspectNovile.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectSeptile[from, to] =
+                          aspectSeptile.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectQuintile[from, to] =
+                          aspectQuintile.State == NSCellStateValue.On ? true : false;
+                CommonInstance.getInstance().currentSetting.aspectBiQuintile[from, to] =
+                          aspectBiQuintile.State == NSCellStateValue.On ? true : false;
 
             }
 
