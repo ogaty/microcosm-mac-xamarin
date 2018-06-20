@@ -58,6 +58,51 @@ namespace microcosm.Views
 		AppKit.NSButton aspectTrine { get; set; }
 
 		[Outlet]
+		AppKit.NSButton dispAspect11 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect12 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect13 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect14 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect15 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect22 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect23 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect24 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect25 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect33 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect34 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect35 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect44 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect45 { get; set; }
+
+		[Outlet]
+		AppKit.NSButton dispAspect55 { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dispAspectPlanetAsc { get; set; }
 
 		[Outlet]
@@ -245,6 +290,81 @@ namespace microcosm.Views
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (aspectBiQuintile != null) {
+				aspectBiQuintile.Dispose ();
+				aspectBiQuintile = null;
+			}
+
+			if (aspectConjunction != null) {
+				aspectConjunction.Dispose ();
+				aspectConjunction = null;
+			}
+
+			if (aspectInconjunct != null) {
+				aspectInconjunct.Dispose ();
+				aspectInconjunct = null;
+			}
+
+			if (aspectNovile != null) {
+				aspectNovile.Dispose ();
+				aspectNovile = null;
+			}
+
+			if (aspectOpposition != null) {
+				aspectOpposition.Dispose ();
+				aspectOpposition = null;
+			}
+
+			if (aspectQuintile != null) {
+				aspectQuintile.Dispose ();
+				aspectQuintile = null;
+			}
+
+			if (aspectRingCombo != null) {
+				aspectRingCombo.Dispose ();
+				aspectRingCombo = null;
+			}
+
+			if (aspectSemiQuintile != null) {
+				aspectSemiQuintile.Dispose ();
+				aspectSemiQuintile = null;
+			}
+
+			if (aspectSemiSextile != null) {
+				aspectSemiSextile.Dispose ();
+				aspectSemiSextile = null;
+			}
+
+			if (aspectSemiSquare != null) {
+				aspectSemiSquare.Dispose ();
+				aspectSemiSquare = null;
+			}
+
+			if (aspectSeptile != null) {
+				aspectSeptile.Dispose ();
+				aspectSeptile = null;
+			}
+
+			if (aspectSesquiquadrate != null) {
+				aspectSesquiquadrate.Dispose ();
+				aspectSesquiquadrate = null;
+			}
+
+			if (aspectSextile != null) {
+				aspectSextile.Dispose ();
+				aspectSextile = null;
+			}
+
+			if (aspectSquare != null) {
+				aspectSquare.Dispose ();
+				aspectSquare = null;
+			}
+
+			if (aspectTrine != null) {
+				aspectTrine.Dispose ();
+				aspectTrine = null;
+			}
+
 			if (dispAspectPlanetAsc != null) {
 				dispAspectPlanetAsc.Dispose ();
 				dispAspectPlanetAsc = null;
@@ -490,86 +610,6 @@ namespace microcosm.Views
 				dispPlanetUranus = null;
 			}
 
-			if (aspectConjunction != null) {
-				aspectConjunction.Dispose ();
-				aspectConjunction = null;
-			}
-
-			if (aspectOpposition != null) {
-				aspectOpposition.Dispose ();
-				aspectOpposition = null;
-			}
-
-			if (aspectTrine != null) {
-				aspectTrine.Dispose ();
-				aspectTrine = null;
-			}
-
-			if (aspectSquare != null) {
-				aspectSquare.Dispose ();
-				aspectSquare = null;
-			}
-
-			if (aspectSextile != null) {
-				aspectSextile.Dispose ();
-				aspectSextile = null;
-			}
-
-			if (aspectInconjunct != null) {
-				aspectInconjunct.Dispose ();
-				aspectInconjunct = null;
-			}
-
-			if (aspectSesquiquadrate != null) {
-				aspectSesquiquadrate.Dispose ();
-				aspectSesquiquadrate = null;
-			}
-
-			if (aspectSemiSquare != null) {
-				aspectSemiSquare.Dispose ();
-				aspectSemiSquare = null;
-			}
-
-			if (aspectSemiSextile != null) {
-				aspectSemiSextile.Dispose ();
-				aspectSemiSextile = null;
-			}
-
-			if (aspectSemiQuintile != null) {
-				aspectSemiQuintile.Dispose ();
-				aspectSemiQuintile = null;
-			}
-
-			if (aspectNovile != null) {
-				aspectNovile.Dispose ();
-				aspectNovile = null;
-			}
-
-			if (aspectSeptile != null) {
-				aspectSeptile.Dispose ();
-				aspectSeptile = null;
-			}
-
-			if (aspectQuintile != null) {
-				aspectQuintile.Dispose ();
-				aspectQuintile = null;
-			}
-
-			if (aspectBiQuintile != null) {
-				aspectBiQuintile.Dispose ();
-				aspectBiQuintile = null;
-			}
-
-			if (aspectRingCombo != null) {
-				aspectRingCombo.Dispose ();
-				aspectRingCombo = null;
-			}
-
-			if (planetRingCombo != null) {
-				planetRingCombo.Dispose ();
-				planetRingCombo = null;
-			}
-
 			if (dispPlanetVenus != null) {
 				dispPlanetVenus.Dispose ();
 				dispPlanetVenus = null;
@@ -585,6 +625,11 @@ namespace microcosm.Views
 				dispPlanetVt = null;
 			}
 
+			if (planetRingCombo != null) {
+				planetRingCombo.Dispose ();
+				planetRingCombo = null;
+			}
+
 			if (RingsCombo != null) {
 				RingsCombo.Dispose ();
 				RingsCombo = null;
@@ -598,6 +643,81 @@ namespace microcosm.Views
 			if (SettingsCombo != null) {
 				SettingsCombo.Dispose ();
 				SettingsCombo = null;
+			}
+
+			if (dispAspect11 != null) {
+				dispAspect11.Dispose ();
+				dispAspect11 = null;
+			}
+
+			if (dispAspect22 != null) {
+				dispAspect22.Dispose ();
+				dispAspect22 = null;
+			}
+
+			if (dispAspect33 != null) {
+				dispAspect33.Dispose ();
+				dispAspect33 = null;
+			}
+
+			if (dispAspect44 != null) {
+				dispAspect44.Dispose ();
+				dispAspect44 = null;
+			}
+
+			if (dispAspect55 != null) {
+				dispAspect55.Dispose ();
+				dispAspect55 = null;
+			}
+
+			if (dispAspect12 != null) {
+				dispAspect12.Dispose ();
+				dispAspect12 = null;
+			}
+
+			if (dispAspect13 != null) {
+				dispAspect13.Dispose ();
+				dispAspect13 = null;
+			}
+
+			if (dispAspect14 != null) {
+				dispAspect14.Dispose ();
+				dispAspect14 = null;
+			}
+
+			if (dispAspect15 != null) {
+				dispAspect15.Dispose ();
+				dispAspect15 = null;
+			}
+
+			if (dispAspect23 != null) {
+				dispAspect23.Dispose ();
+				dispAspect23 = null;
+			}
+
+			if (dispAspect24 != null) {
+				dispAspect24.Dispose ();
+				dispAspect24 = null;
+			}
+
+			if (dispAspect25 != null) {
+				dispAspect25.Dispose ();
+				dispAspect25 = null;
+			}
+
+			if (dispAspect34 != null) {
+				dispAspect34.Dispose ();
+				dispAspect34 = null;
+			}
+
+			if (dispAspect35 != null) {
+				dispAspect35.Dispose ();
+				dispAspect35 = null;
+			}
+
+			if (dispAspect45 != null) {
+				dispAspect45.Dispose ();
+				dispAspect45 = null;
 			}
 		}
 	}

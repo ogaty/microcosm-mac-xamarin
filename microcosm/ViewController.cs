@@ -145,7 +145,9 @@ namespace microcosm
                     if (ringIndexFrom == ringIndexTo) continue;
                     aspectsData[ringIndexFrom, ringIndexTo] =
                         aspect.AspectCalcOther(ringsData[ringIndexFrom].planetData,
-                                               ringsData[ringIndexTo].planetData, ringIndexFrom);
+                                               ringsData[ringIndexTo].planetData, 
+                                               ringIndexFrom,
+                                               ringIndexTo);
                 }
             }
 
@@ -623,7 +625,8 @@ namespace microcosm
                     if (ringIndexFrom == ringIndexTo) continue;
                     aspectsData[ringIndexFrom, ringIndexTo] = 
                         aspect.AspectCalcOther(ringsData[ringIndexFrom].planetData, 
-                                               ringsData[ringIndexTo].planetData, ringIndexFrom);
+                                               ringsData[ringIndexTo].planetData, 
+                                               ringIndexFrom, ringIndexTo);
                 }
             }
         }

@@ -42,7 +42,7 @@ namespace microcosm.Calc
 //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 
                     OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.OPPOSITION])
+                    if (!setting.aspectOpposition[ringIndex, ringIndex])
                     {
                         isDisp = false;
                     }
@@ -52,7 +52,7 @@ namespace microcosm.Calc
                     }
 
                     TrineAspect trine = new TrineAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.TRINE])
+                    if (!setting.aspectTrine[ringIndex, ringIndex])
                     {
                         isDisp = false;
                     }
@@ -62,7 +62,7 @@ namespace microcosm.Calc
                     }
 
                     SquareAspect square = new SquareAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.SQUARE])
+                    if (!setting.aspectSquare[ringIndex, ringIndex])
                     {
                         isDisp = false;
                     }
@@ -72,7 +72,7 @@ namespace microcosm.Calc
                     }
 
                     SextileAspect sextile = new SextileAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.SEXTILE])
+                    if (!setting.aspectSextile[ringIndex, ringIndex])
                     {
                         isDisp = false;
                     }
@@ -87,7 +87,7 @@ namespace microcosm.Calc
             return aspects;
         }
 
-        public List<AspectInfo> AspectCalcOther(List<PlanetData> planetListA, List<PlanetData> planetListB, int ringIndex)
+        public List<AspectInfo> AspectCalcOther(List<PlanetData> planetListA, List<PlanetData> planetListB, int ringIndex, int ringIndexTo)
         {
             List<AspectInfo> aspects = new List<AspectInfo>();
             int settingIndex = 0;
@@ -108,7 +108,7 @@ namespace microcosm.Calc
                     //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 
                     OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.OPPOSITION])
+                    if (!setting.aspectOpposition[ringIndex, ringIndexTo])
                     {
                         isDisp = false;
                     }
@@ -118,7 +118,7 @@ namespace microcosm.Calc
                     }
 
                     TrineAspect trine = new TrineAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.TRINE])
+                    if (!setting.aspectTrine[ringIndex, ringIndexTo])
                     {
                         isDisp = false;
                     }
@@ -128,7 +128,7 @@ namespace microcosm.Calc
                     }
 
                     SquareAspect square = new SquareAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.SQUARE])
+                    if (!setting.aspectSquare[ringIndex, ringIndexTo])
                     {
                         isDisp = false;
                     }
@@ -138,7 +138,7 @@ namespace microcosm.Calc
                     }
 
                     SextileAspect sextile = new SextileAspect(setting, ringIndex, i, j, planetListA[i], planetListB[j]);
-                    if (!setting.dispAspectCategory[ringIndex][AspectKind.SEXTILE])
+                    if (!setting.aspectSextile[ringIndex, ringIndexTo])
                     {
                         isDisp = false;
                     }

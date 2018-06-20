@@ -144,12 +144,11 @@ namespace microcosm.Config
                 this.dispName = xml.dispname;
             }
 
-            // N-N、N-P、N-Tのアスペクト
-            // dispAspectCategory/dispAspectPlanetに変更
+            // N-N、N-P、N-Tのアスペクトそのもの
+            // category, planetかかわらず表示させない
             // dispAspect[0][2] => N-T
             // dispAspect[1][3] => P-4
             // [0][2] と [2][0]は同じ
-            /*
             dispAspect = new bool[7, 7] {
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true },
@@ -159,7 +158,6 @@ namespace microcosm.Config
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true }
             };
-            */
 
             if (xmlData.version == 0)
             {
@@ -182,6 +180,7 @@ namespace microcosm.Config
             SetDispPlanet();
             SetDispAspectPlanet();
             SetDispAspectCategory();
+            SetDispAspect();
             SetOrbs();
         }
 
@@ -1256,6 +1255,247 @@ namespace microcosm.Config
 
         private void SetDispAspectCategory()
         {
+            aspectConjunction = new bool[7, 7];
+            aspectOpposition = new bool[7, 7];
+            aspectTrine = new bool[7, 7];
+            aspectSquare = new bool[7, 7];
+            aspectSextile = new bool[7, 7];
+            aspectInconjunct = new bool[7, 7];
+            aspectSesquiquadrate = new bool[7, 7];
+            aspectSemiSquare = new bool[7, 7];
+            aspectSemiSextile = new bool[7, 7];
+            aspectSemiQuintile = new bool[7, 7];
+            aspectNovile = new bool[7, 7];
+            aspectSeptile = new bool[7, 7];
+            aspectQuintile = new bool[7, 7];
+            aspectBiQuintile = new bool[7, 7];
+
+            aspectConjunction[0, 0] = xmlData.aspectConjunction11;
+            aspectOpposition[0, 0] = xmlData.aspectOpposition11;
+            aspectTrine[0, 0] = xmlData.aspectTrine11;
+            aspectSquare[0, 0] = xmlData.aspectSquare11;
+            aspectSextile[0, 0] = xmlData.aspectSextile11;
+            aspectInconjunct[0, 0] = xmlData.aspectInconjunct11;
+            aspectSesquiquadrate[0, 0] = xmlData.aspectSesquiquadrate11;
+            aspectSemiSquare[0, 0] = xmlData.aspectSemiSquare11;
+            aspectSemiSextile[0, 0] = xmlData.aspectSemiSextile11;
+            aspectSemiQuintile[0, 0] = xmlData.aspectSemiQuintile11;
+            aspectNovile[0, 0] = xmlData.aspectNovile11;
+            aspectSeptile[0, 0] = xmlData.aspectSeptile11;
+            aspectQuintile[0, 0] = xmlData.aspectQuintile11;
+            aspectBiQuintile[0, 0] = xmlData.aspectBiQuintile11;
+
+            aspectConjunction[1, 1] = xmlData.aspectConjunction22;
+            aspectOpposition[1, 1] = xmlData.aspectOpposition22;
+            aspectTrine[1, 1] = xmlData.aspectTrine22;
+            aspectSquare[1, 1] = xmlData.aspectSquare22;
+            aspectSextile[1, 1] = xmlData.aspectSextile22;
+            aspectInconjunct[1, 1] = xmlData.aspectInconjunct22;
+            aspectSesquiquadrate[1, 1] = xmlData.aspectSesquiquadrate22;
+            aspectSemiSquare[1, 1] = xmlData.aspectSemiSquare22;
+            aspectSemiSextile[1, 1] = xmlData.aspectSemiSextile22;
+            aspectSemiQuintile[1, 1] = xmlData.aspectSemiQuintile22;
+            aspectNovile[1, 1] = xmlData.aspectNovile22;
+            aspectSeptile[1, 1] = xmlData.aspectSeptile22;
+            aspectQuintile[1, 1] = xmlData.aspectQuintile22;
+            aspectBiQuintile[1, 1] = xmlData.aspectBiQuintile22;
+
+            aspectConjunction[2, 2] = xmlData.aspectConjunction33;
+            aspectOpposition[2, 2] = xmlData.aspectOpposition33;
+            aspectTrine[2, 2] = xmlData.aspectTrine33;
+            aspectSquare[2, 2] = xmlData.aspectSquare33;
+            aspectSextile[2, 2] = xmlData.aspectSextile33;
+            aspectInconjunct[2, 2] = xmlData.aspectInconjunct33;
+            aspectSesquiquadrate[2, 2] = xmlData.aspectSesquiquadrate33;
+            aspectSemiSquare[2, 2] = xmlData.aspectSemiSquare33;
+            aspectSemiSextile[2, 2] = xmlData.aspectSemiSextile33;
+            aspectSemiQuintile[2, 2] = xmlData.aspectSemiQuintile33;
+            aspectNovile[2, 2] = xmlData.aspectNovile33;
+            aspectSeptile[2, 2] = xmlData.aspectSeptile33;
+            aspectQuintile[2, 2] = xmlData.aspectQuintile33;
+            aspectBiQuintile[2, 2] = xmlData.aspectBiQuintile33;
+
+            aspectConjunction[0, 1] = xmlData.aspectConjunction12;
+            aspectOpposition[0, 1] = xmlData.aspectOpposition12;
+            aspectTrine[0, 1] = xmlData.aspectTrine12;
+            aspectSquare[0, 1] = xmlData.aspectSquare12;
+            aspectSextile[0, 1] = xmlData.aspectSextile12;
+            aspectInconjunct[0, 1] = xmlData.aspectInconjunct12;
+            aspectSesquiquadrate[0, 1] = xmlData.aspectSesquiquadrate12;
+            aspectSemiSquare[0, 1] = xmlData.aspectSemiSquare12;
+            aspectSemiSextile[0, 1] = xmlData.aspectSemiSextile12;
+            aspectSemiQuintile[0, 1] = xmlData.aspectSemiQuintile12;
+            aspectNovile[0, 1] = xmlData.aspectNovile12;
+            aspectSeptile[0, 1] = xmlData.aspectSeptile12;
+            aspectQuintile[0, 1] = xmlData.aspectQuintile12;
+            aspectBiQuintile[0, 1] = xmlData.aspectBiQuintile12;
+
+            aspectConjunction[0, 2] = xmlData.aspectConjunction13;
+            aspectOpposition[0, 2] = xmlData.aspectOpposition13;
+            aspectTrine[0, 2] = xmlData.aspectTrine13;
+            aspectSquare[0, 2] = xmlData.aspectSquare13;
+            aspectSextile[0, 2] = xmlData.aspectSextile13;
+            aspectInconjunct[0, 2] = xmlData.aspectInconjunct13;
+            aspectSesquiquadrate[0, 2] = xmlData.aspectSesquiquadrate13;
+            aspectSemiSquare[0, 2] = xmlData.aspectSemiSquare13;
+            aspectSemiSextile[0, 2] = xmlData.aspectSemiSextile13;
+            aspectSemiQuintile[0, 2] = xmlData.aspectSemiQuintile13;
+            aspectNovile[0, 2] = xmlData.aspectNovile13;
+            aspectSeptile[0, 2] = xmlData.aspectSeptile13;
+            aspectQuintile[0, 2] = xmlData.aspectQuintile13;
+            aspectBiQuintile[0, 2] = xmlData.aspectBiQuintile13;
+
+            aspectConjunction[1, 2] = xmlData.aspectConjunction23;
+            aspectOpposition[1, 2] = xmlData.aspectOpposition23;
+            aspectTrine[1, 2] = xmlData.aspectTrine23;
+            aspectSquare[1, 2] = xmlData.aspectSquare23;
+            aspectSextile[1, 2] = xmlData.aspectSextile23;
+            aspectInconjunct[1, 2] = xmlData.aspectInconjunct23;
+            aspectSesquiquadrate[1, 2] = xmlData.aspectSesquiquadrate23;
+            aspectSemiSquare[1, 2] = xmlData.aspectSemiSquare23;
+            aspectSemiSextile[1, 2] = xmlData.aspectSemiSextile23;
+            aspectSemiQuintile[1, 2] = xmlData.aspectSemiQuintile23;
+            aspectNovile[1, 2] = xmlData.aspectNovile23;
+            aspectSeptile[1, 2] = xmlData.aspectSeptile23;
+            aspectQuintile[1, 2] = xmlData.aspectQuintile23;
+            aspectBiQuintile[1, 2] = xmlData.aspectBiQuintile23;
+
+            aspectConjunction[3, 3] = xmlData.aspectConjunction44;
+            aspectOpposition[3, 3] = xmlData.aspectOpposition44;
+            aspectTrine[3, 3] = xmlData.aspectTrine44;
+            aspectSquare[3, 3] = xmlData.aspectSquare44;
+            aspectSextile[3, 3] = xmlData.aspectSextile44;
+            aspectInconjunct[3, 3] = xmlData.aspectInconjunct44;
+            aspectSesquiquadrate[3, 3] = xmlData.aspectSesquiquadrate44;
+            aspectSemiSquare[3, 3] = xmlData.aspectSemiSquare44;
+            aspectSemiSextile[3, 3] = xmlData.aspectSemiSextile44;
+            aspectSemiQuintile[3, 3] = xmlData.aspectSemiQuintile44;
+            aspectNovile[3, 3] = xmlData.aspectNovile44;
+            aspectSeptile[3, 3] = xmlData.aspectSeptile44;
+            aspectQuintile[3, 3] = xmlData.aspectQuintile44;
+            aspectBiQuintile[3, 3] = xmlData.aspectBiQuintile44;
+
+            aspectConjunction[0, 3] = xmlData.aspectConjunction14;
+            aspectOpposition[0, 3] = xmlData.aspectOpposition14;
+            aspectTrine[0, 3] = xmlData.aspectTrine14;
+            aspectSquare[0, 3] = xmlData.aspectSquare14;
+            aspectSextile[0, 3] = xmlData.aspectSextile14;
+            aspectInconjunct[0, 3] = xmlData.aspectInconjunct14;
+            aspectSesquiquadrate[0, 3] = xmlData.aspectSesquiquadrate14;
+            aspectSemiSquare[0, 3] = xmlData.aspectSemiSquare14;
+            aspectSemiSextile[0, 3] = xmlData.aspectSemiSextile14;
+            aspectSemiQuintile[0, 3] = xmlData.aspectSemiQuintile14;
+            aspectNovile[0, 3] = xmlData.aspectNovile14;
+            aspectSeptile[0, 3] = xmlData.aspectSeptile14;
+            aspectQuintile[0, 3] = xmlData.aspectQuintile14;
+            aspectBiQuintile[0, 3] = xmlData.aspectBiQuintile14;
+
+            aspectConjunction[1, 3] = xmlData.aspectConjunction24;
+            aspectOpposition[1, 3] = xmlData.aspectOpposition24;
+            aspectTrine[1, 3] = xmlData.aspectTrine24;
+            aspectSquare[1, 3] = xmlData.aspectSquare24;
+            aspectSextile[1, 3] = xmlData.aspectSextile24;
+            aspectInconjunct[1, 3] = xmlData.aspectInconjunct24;
+            aspectSesquiquadrate[1, 3] = xmlData.aspectSesquiquadrate24;
+            aspectSemiSquare[1, 3] = xmlData.aspectSemiSquare24;
+            aspectSemiSextile[1, 3] = xmlData.aspectSemiSextile24;
+            aspectSemiQuintile[1, 3] = xmlData.aspectSemiQuintile24;
+            aspectNovile[1, 3] = xmlData.aspectNovile24;
+            aspectSeptile[1, 3] = xmlData.aspectSeptile24;
+            aspectQuintile[1, 3] = xmlData.aspectQuintile24;
+            aspectBiQuintile[1, 3] = xmlData.aspectBiQuintile24;
+
+            aspectConjunction[2, 3] = xmlData.aspectConjunction34;
+            aspectOpposition[2, 3] = xmlData.aspectOpposition34;
+            aspectTrine[2, 3] = xmlData.aspectTrine34;
+            aspectSquare[2, 3] = xmlData.aspectSquare34;
+            aspectSextile[2, 3] = xmlData.aspectSextile34;
+            aspectInconjunct[2, 3] = xmlData.aspectInconjunct34;
+            aspectSesquiquadrate[2, 3] = xmlData.aspectSesquiquadrate34;
+            aspectSemiSquare[2, 3] = xmlData.aspectSemiSquare34;
+            aspectSemiSextile[2, 3] = xmlData.aspectSemiSextile34;
+            aspectSemiQuintile[2, 3] = xmlData.aspectSemiQuintile34;
+            aspectNovile[2, 3] = xmlData.aspectNovile34;
+            aspectSeptile[2, 3] = xmlData.aspectSeptile34;
+            aspectQuintile[2, 3] = xmlData.aspectQuintile34;
+            aspectBiQuintile[2, 3] = xmlData.aspectBiQuintile34;
+
+            aspectConjunction[4, 4] = xmlData.aspectConjunction55;
+            aspectOpposition[4, 4] = xmlData.aspectOpposition55;
+            aspectTrine[4, 4] = xmlData.aspectTrine55;
+            aspectSquare[4, 4] = xmlData.aspectSquare55;
+            aspectSextile[4, 4] = xmlData.aspectSextile55;
+            aspectInconjunct[4, 4] = xmlData.aspectInconjunct55;
+            aspectSesquiquadrate[4, 4] = xmlData.aspectSesquiquadrate55;
+            aspectSemiSquare[4, 4] = xmlData.aspectSemiSquare55;
+            aspectSemiSextile[4, 4] = xmlData.aspectSemiSextile55;
+            aspectSemiQuintile[4, 4] = xmlData.aspectSemiQuintile55;
+            aspectNovile[4, 4] = xmlData.aspectNovile55;
+            aspectSeptile[4, 4] = xmlData.aspectSeptile55;
+            aspectQuintile[4, 4] = xmlData.aspectQuintile55;
+            aspectBiQuintile[4, 4] = xmlData.aspectBiQuintile55;
+
+            aspectConjunction[0, 4] = xmlData.aspectConjunction15;
+            aspectOpposition[0, 4] = xmlData.aspectOpposition15;
+            aspectTrine[0, 4] = xmlData.aspectTrine15;
+            aspectSquare[0, 4] = xmlData.aspectSquare15;
+            aspectSextile[0, 4] = xmlData.aspectSextile15;
+            aspectInconjunct[0, 4] = xmlData.aspectInconjunct15;
+            aspectSesquiquadrate[0, 4] = xmlData.aspectSesquiquadrate15;
+            aspectSemiSquare[0, 4] = xmlData.aspectSemiSquare15;
+            aspectSemiSextile[0, 4] = xmlData.aspectSemiSextile15;
+            aspectSemiQuintile[0, 4] = xmlData.aspectSemiQuintile15;
+            aspectNovile[0, 4] = xmlData.aspectNovile15;
+            aspectSeptile[0, 4] = xmlData.aspectSeptile15;
+            aspectQuintile[0, 4] = xmlData.aspectQuintile15;
+            aspectBiQuintile[0, 4] = xmlData.aspectBiQuintile15;
+
+            aspectConjunction[1, 4] = xmlData.aspectConjunction25;
+            aspectOpposition[1, 4] = xmlData.aspectOpposition25;
+            aspectTrine[1, 4] = xmlData.aspectTrine25;
+            aspectSquare[1, 4] = xmlData.aspectSquare25;
+            aspectSextile[1, 4] = xmlData.aspectSextile25;
+            aspectInconjunct[1, 4] = xmlData.aspectInconjunct25;
+            aspectSesquiquadrate[1, 4] = xmlData.aspectSesquiquadrate25;
+            aspectSemiSquare[1, 4] = xmlData.aspectSemiSquare25;
+            aspectSemiSextile[1, 4] = xmlData.aspectSemiSextile25;
+            aspectSemiQuintile[1, 4] = xmlData.aspectSemiQuintile25;
+            aspectNovile[1, 4] = xmlData.aspectNovile25;
+            aspectSeptile[1, 4] = xmlData.aspectSeptile25;
+            aspectQuintile[1, 4] = xmlData.aspectQuintile25;
+            aspectBiQuintile[1, 4] = xmlData.aspectBiQuintile25;
+
+            aspectConjunction[2, 4] = xmlData.aspectConjunction35;
+            aspectOpposition[2, 4] = xmlData.aspectOpposition35;
+            aspectTrine[2, 4] = xmlData.aspectTrine35;
+            aspectSquare[2, 4] = xmlData.aspectSquare35;
+            aspectSextile[2, 4] = xmlData.aspectSextile35;
+            aspectInconjunct[2, 4] = xmlData.aspectInconjunct35;
+            aspectSesquiquadrate[2, 4] = xmlData.aspectSesquiquadrate35;
+            aspectSemiSquare[2, 4] = xmlData.aspectSemiSquare35;
+            aspectSemiSextile[2, 4] = xmlData.aspectSemiSextile35;
+            aspectSemiQuintile[2, 4] = xmlData.aspectSemiQuintile35;
+            aspectNovile[2, 4] = xmlData.aspectNovile35;
+            aspectSeptile[2, 4] = xmlData.aspectSeptile35;
+            aspectQuintile[2, 4] = xmlData.aspectQuintile35;
+            aspectBiQuintile[2, 4] = xmlData.aspectBiQuintile35;
+
+            aspectConjunction[3, 4] = xmlData.aspectConjunction45;
+            aspectOpposition[3, 4] = xmlData.aspectOpposition45;
+            aspectTrine[3, 4] = xmlData.aspectTrine45;
+            aspectSquare[3, 4] = xmlData.aspectSquare45;
+            aspectSextile[3, 4] = xmlData.aspectSextile45;
+            aspectInconjunct[3, 4] = xmlData.aspectInconjunct45;
+            aspectSesquiquadrate[3, 4] = xmlData.aspectSesquiquadrate45;
+            aspectSemiSquare[3, 4] = xmlData.aspectSemiSquare45;
+            aspectSemiSextile[3, 4] = xmlData.aspectSemiSextile45;
+            aspectSemiQuintile[3, 4] = xmlData.aspectSemiQuintile45;
+            aspectNovile[3, 4] = xmlData.aspectNovile45;
+            aspectSeptile[3, 4] = xmlData.aspectSeptile45;
+            aspectQuintile[3, 4] = xmlData.aspectQuintile45;
+            aspectBiQuintile[3, 4] = xmlData.aspectBiQuintile45;
+
+            /*
             SetDefaultAspectCategory();
             for (int i = 0; i < 7; i++)
             {
@@ -1267,6 +1507,26 @@ namespace microcosm.Config
                     }
                 }
             }
+            */
+        }
+
+        private void SetDispAspect()
+        {
+            dispAspect[0, 0] = xmlData.dispAspect[0];
+            dispAspect[1, 1] = xmlData.dispAspect[0];
+            dispAspect[2, 2] = xmlData.dispAspect[0];
+            dispAspect[0, 1] = xmlData.dispAspect[0];
+            dispAspect[0, 2] = xmlData.dispAspect[0];
+            dispAspect[1, 2] = xmlData.dispAspect[0];
+            dispAspect[0, 3] = xmlData.dispAspect[0];
+            dispAspect[1, 3] = xmlData.dispAspect[0];
+            dispAspect[2, 3] = xmlData.dispAspect[0];
+            dispAspect[3, 3] = xmlData.dispAspect[0];
+            dispAspect[0, 4] = xmlData.dispAspect[0];
+            dispAspect[1, 4] = xmlData.dispAspect[0];
+            dispAspect[2, 4] = xmlData.dispAspect[0];
+            dispAspect[3, 4] = xmlData.dispAspect[0];
+            dispAspect[4, 4] = xmlData.dispAspect[0];
         }
 
         private void SetDefaultAspectCategory()

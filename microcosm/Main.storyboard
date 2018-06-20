@@ -45,9 +45,6 @@
                                                             <segue destination="vgE-0B-NN2" kind="modal" id="PPW-Lg-KdR"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem title="アスペクト設定(カテゴリ)" id="Cyb-sL-1wh">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                    </menuItem>
                                                     <menuItem title="オーブ設定" id="FXH-KD-Kc9">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
@@ -1526,7 +1523,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="天体" identifier="1" id="QaL-Xc-NYe">
-                                        <view key="view" ambiguous="YES" id="7nN-1W-sk4">
+                                        <view key="view" id="7nN-1W-sk4">
                                             <rect key="frame" x="10" y="33" width="610" height="332"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -2191,6 +2188,161 @@
                                         <view key="view" id="Khl-eC-Sa5">
                                             <rect key="frame" x="10" y="33" width="610" height="332"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-mQ-KJB">
+                                                    <rect key="frame" x="15" y="305" width="76" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <popUpButtonCell key="cell" type="push" title="二重円" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9gf-R1-4Yw" id="vqm-Qn-01U">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="menu"/>
+                                                        <menu key="menu" id="Xfn-Bc-ZnH">
+                                                            <items>
+                                                                <menuItem title="二重円" state="on" id="9gf-R1-4Yw"/>
+                                                                <menuItem title="三重円" id="vhh-W9-6rM"/>
+                                                                <menuItem title="四重円" id="dD2-vb-672"/>
+                                                                <menuItem title="五重円" id="rrf-KZ-1Z6">
+                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpButtonCell>
+                                                </popUpButton>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nO-7z-u3O">
+                                                    <rect key="frame" x="13" y="234" width="131" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="1-1(NATAL)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6vh-tN-Apz">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aof-EN-Qoz">
+                                                    <rect key="frame" x="13" y="201" width="131" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="2-2(PROGRES)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0C-sc-8NF">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qO-5A-hFl">
+                                                    <rect key="frame" x="13" y="168" width="131" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="3-3(TRANSIT)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lrz-nl-Mfu">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aO5-D2-eht">
+                                                    <rect key="frame" x="13" y="135" width="131" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="4-4" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kWz-tF-210">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wr8-ZH-3Op">
+                                                    <rect key="frame" x="13" y="102" width="131" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="5-5" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hHt-Yy-gYp">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOG-o3-bhv">
+                                                    <rect key="frame" x="164" y="234" width="60" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="1-2" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UPL-0O-XUh">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqF-M3-UlX">
+                                                    <rect key="frame" x="164" y="201" width="61" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="1-3" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DYg-7U-cRd">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HBL-D5-IEW">
+                                                    <rect key="frame" x="164" y="168" width="61" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="1-4" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1yS-MF-1Hb">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmD-B0-kNg">
+                                                    <rect key="frame" x="164" y="135" width="61" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="1-5" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wzu-1C-jw0">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X39-ZK-XdM">
+                                                    <rect key="frame" x="247" y="234" width="62" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="2-3" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kwU-4g-7Mk">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-Wt-tKf">
+                                                    <rect key="frame" x="247" y="201" width="63" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="2-4" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d2J-uu-8TB">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUt-ZG-oTc">
+                                                    <rect key="frame" x="247" y="168" width="62" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="2-5" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fqh-Fo-eE6">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZG-Rv-Maw">
+                                                    <rect key="frame" x="334" y="234" width="63" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="3-4" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CRd-o7-O4i">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egU-v5-8BN">
+                                                    <rect key="frame" x="334" y="201" width="63" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="3-5" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wHt-fc-Pck">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-3a-Sph">
+                                                    <rect key="frame" x="420" y="234" width="63" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="4-5" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0S1-eL-a0C">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-zW-nNQ">
+                                                    <rect key="frame" x="17" y="277" width="89" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="表示アスペクト" id="Nw4-aG-DWn">
+                                                        <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="オーブ" identifier="" id="lGe-nA-BnL">
+                                        <view key="view" ambiguous="YES" id="T50-g6-NdO">
+                                            <rect key="frame" x="10" y="33" width="610" height="332"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
@@ -2224,8 +2376,24 @@
                         <outlet property="aspectSemiSquare" destination="BTM-S8-wcL" id="qlO-9I-yrb"/>
                         <outlet property="aspectSeptile" destination="xY8-RW-A5A" id="J4i-as-h0k"/>
                         <outlet property="aspectSesquiquadrate" destination="2F4-MO-QWr" id="8Us-ug-nXi"/>
+                        <outlet property="aspectSextile" destination="yNB-FW-h8F" id="a8g-On-JfK"/>
                         <outlet property="aspectSquare" destination="fiH-g8-pbk" id="LaG-c3-lPI"/>
                         <outlet property="aspectTrine" destination="wuu-HB-u9T" id="Dru-TC-uwh"/>
+                        <outlet property="dispAspect11" destination="8nO-7z-u3O" id="EIt-aK-EgF"/>
+                        <outlet property="dispAspect12" destination="ZOG-o3-bhv" id="ebh-Rl-NCR"/>
+                        <outlet property="dispAspect13" destination="kqF-M3-UlX" id="u4I-Lf-vKQ"/>
+                        <outlet property="dispAspect14" destination="HBL-D5-IEW" id="AjX-KN-q8c"/>
+                        <outlet property="dispAspect15" destination="gmD-B0-kNg" id="Lgd-3j-F7b"/>
+                        <outlet property="dispAspect22" destination="Aof-EN-Qoz" id="bOW-Ov-qaN"/>
+                        <outlet property="dispAspect23" destination="X39-ZK-XdM" id="Yf3-YJ-4zI"/>
+                        <outlet property="dispAspect24" destination="Mab-Wt-tKf" id="PSK-Ur-RUY"/>
+                        <outlet property="dispAspect25" destination="AUt-ZG-oTc" id="rHR-6u-qtE"/>
+                        <outlet property="dispAspect33" destination="5qO-5A-hFl" id="ajs-EA-wX0"/>
+                        <outlet property="dispAspect34" destination="BZG-Rv-Maw" id="1XP-Fg-0oX"/>
+                        <outlet property="dispAspect35" destination="egU-v5-8BN" id="ZQP-US-FHP"/>
+                        <outlet property="dispAspect44" destination="aO5-D2-eht" id="mxV-Ve-BIE"/>
+                        <outlet property="dispAspect45" destination="0Ek-3a-Sph" id="kg7-fE-b2W"/>
+                        <outlet property="dispAspect55" destination="Wr8-ZH-3Op" id="fgf-o8-9IY"/>
                         <outlet property="dispAspectPlanetAsc" destination="C6v-O4-NEw" id="FLc-gE-34Y"/>
                         <outlet property="dispAspectPlanetCeres" destination="6X5-8T-fPn" id="G2R-on-GFR"/>
                         <outlet property="dispAspectPlanetChiron" destination="XgR-kd-QuM" id="7s2-HN-Mm6"/>
@@ -2284,7 +2452,7 @@
                 </viewController>
                 <customObject id="8Gc-hX-8NY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="736"/>
+            <point key="canvasLocation" x="1360.5" y="735.5"/>
         </scene>
         <!--データベース-->
         <scene sceneID="iXA-dx-bil">

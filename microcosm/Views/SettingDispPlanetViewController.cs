@@ -303,52 +303,7 @@ namespace microcosm.Views
             int from = 0;
             int to = 0;
 
-            switch(aspectIndex) {
-                case 0:
-                    from = 0;
-                    to = 0;
-                    break;
-                case 1:
-                    from = 1;
-                    to = 1;
-                    break;
-                case 2:
-                    from = 2;
-                    to = 2;
-                    break;
-                case 3:
-                    from = 0;
-                    to = 1;
-                    break;
-                case 4:
-                    from = 0;
-                    to = 2;
-                    break;
-                case 5:
-                    from = 1;
-                    to = 2;
-                    break;
-                case 6:
-                    from = 3;
-                    to = 3;
-                    break;
-                case 7:
-                    from = 4;
-                    to = 4;
-                    break;
-                case 8:
-                    from = 0;
-                    to = 3;
-                    break;
-                case 9:
-                    from = 1;
-                    to = 3;
-                    break;
-                case 10:
-                    from = 2;
-                    to = 3;
-                    break;
-            }
+            GetFromTo(aspectIndex, ref from, ref to);
 
             aspectConjunction.State =
                                  settings[settingIndex].aspectConjunction[from, to] ?
@@ -370,6 +325,27 @@ namespace microcosm.Views
                                   NSCellStateValue.On : NSCellStateValue.Off;
             aspectSesquiquadrate.State =
                                   settings[settingIndex].aspectSesquiquadrate[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSemiSquare.State =
+                                  settings[settingIndex].aspectSemiSquare[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSemiSextile.State =
+                                  settings[settingIndex].aspectSemiSextile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSemiQuintile.State =
+                                  settings[settingIndex].aspectSemiQuintile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectNovile.State =
+                                  settings[settingIndex].aspectNovile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectSeptile.State =
+                                  settings[settingIndex].aspectSeptile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectQuintile.State =
+                                  settings[settingIndex].aspectQuintile[from, to] ?
+                                  NSCellStateValue.On : NSCellStateValue.Off;
+            aspectBiQuintile.State =
+                                  settings[settingIndex].aspectBiQuintile[from, to] ?
                                   NSCellStateValue.On : NSCellStateValue.Off;
          }
 
@@ -497,53 +473,7 @@ namespace microcosm.Views
             int from = 0;
             int to = 0;
 
-            switch (aspectIndex)
-            {
-                case 0:
-                    from = 0;
-                    to = 0;
-                    break;
-                case 1:
-                    from = 1;
-                    to = 1;
-                    break;
-                case 2:
-                    from = 2;
-                    to = 2;
-                    break;
-                case 3:
-                    from = 0;
-                    to = 1;
-                    break;
-                case 4:
-                    from = 0;
-                    to = 2;
-                    break;
-                case 5:
-                    from = 1;
-                    to = 2;
-                    break;
-                case 6:
-                    from = 3;
-                    to = 3;
-                    break;
-                case 7:
-                    from = 4;
-                    to = 4;
-                    break;
-                case 8:
-                    from = 0;
-                    to = 3;
-                    break;
-                case 9:
-                    from = 1;
-                    to = 3;
-                    break;
-                case 10:
-                    from = 2;
-                    to = 3;
-                    break;
-            }
+            GetFromTo(aspectIndex, ref from, ref to);
 
             settings[settingIndex].aspectConjunction[from, to] =
                                       aspectConjunction.State == NSCellStateValue.On ? true : false;
@@ -565,6 +495,14 @@ namespace microcosm.Views
                                       aspectSemiQuintile.State == NSCellStateValue.On ? true : false;
             settings[settingIndex].aspectSemiSextile[from, to] =
                                       aspectSemiSextile.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectNovile[from, to] =
+                                      aspectNovile.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectSeptile[from, to] =
+                                      aspectSeptile.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectQuintile[from, to] =
+                                      aspectQuintile.State == NSCellStateValue.On ? true : false;
+            settings[settingIndex].aspectBiQuintile[from, to] =
+                                      aspectBiQuintile.State == NSCellStateValue.On ? true : false;
 
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
@@ -717,6 +655,73 @@ namespace microcosm.Views
             get
             {
                 return (SettingDispPlanetView)base.View;
+            }
+        }
+
+        public void GetFromTo(int aspectIndex, ref int from, ref int to)
+        {
+            switch (aspectIndex)
+            {
+                case 0:
+                    from = 0;
+                    to = 0;
+                    break;
+                case 1:
+                    from = 1;
+                    to = 1;
+                    break;
+                case 2:
+                    from = 2;
+                    to = 2;
+                    break;
+                case 3:
+                    from = 0;
+                    to = 1;
+                    break;
+                case 4:
+                    from = 0;
+                    to = 2;
+                    break;
+                case 5:
+                    from = 1;
+                    to = 2;
+                    break;
+                case 6:
+                    from = 3;
+                    to = 3;
+                    break;
+                case 7:
+                    from = 4;
+                    to = 4;
+                    break;
+                case 8:
+                    from = 0;
+                    to = 3;
+                    break;
+                case 9:
+                    from = 1;
+                    to = 3;
+                    break;
+                case 10:
+                    from = 2;
+                    to = 3;
+                    break;
+                case 11:
+                    from = 0;
+                    to = 4;
+                    break;
+                case 12:
+                    from = 1;
+                    to = 4;
+                    break;
+                case 13:
+                    from = 2;
+                    to = 4;
+                    break;
+                case 14:
+                    from = 3;
+                    to = 4;
+                    break;
             }
         }
     }
