@@ -57,7 +57,10 @@ namespace microcosm.Config
 
         // [from, to]
         // アスペクトそのものを表示するか
-        public bool[,] dispAspect;
+        public bool[,] dispAspect2;
+        public bool[,] dispAspect3;
+        public bool[,] dispAspect4;
+        public bool[,] dispAspect5;
 
         // オーブ
         // ソフト/ハード、1種2種150、太陽/月/その他の組み合わせ 2*3*3=18通り
@@ -149,7 +152,34 @@ namespace microcosm.Config
             // dispAspect[0][2] => N-T
             // dispAspect[1][3] => P-4
             // [0][2] と [2][0]は同じ
-            dispAspect = new bool[7, 7] {
+            dispAspect2 = new bool[7, 7] {
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true }
+            };
+            dispAspect3 = new bool[7, 7] {
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true }
+            };
+            dispAspect4 = new bool[7, 7] {
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true },
+                { true, true, true, true, true, true, true }
+            };
+            dispAspect5 = new bool[7, 7] {
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true },
@@ -190,6 +220,7 @@ namespace microcosm.Config
             ConvertDispPlanet();
             ConvertDispAspectPlanet();
             ConvertDispAspectCategory();
+            ConvertDispAspect();
             ConvertOrbs();
         }
 
@@ -1510,23 +1541,80 @@ namespace microcosm.Config
             */
         }
 
+        /// <summary>
+        /// アスペクトそのものを表示
+        /// </summary>
         private void SetDispAspect()
         {
-            dispAspect[0, 0] = xmlData.dispAspect[0];
-            dispAspect[1, 1] = xmlData.dispAspect[0];
-            dispAspect[2, 2] = xmlData.dispAspect[0];
-            dispAspect[0, 1] = xmlData.dispAspect[0];
-            dispAspect[0, 2] = xmlData.dispAspect[0];
-            dispAspect[1, 2] = xmlData.dispAspect[0];
-            dispAspect[0, 3] = xmlData.dispAspect[0];
-            dispAspect[1, 3] = xmlData.dispAspect[0];
-            dispAspect[2, 3] = xmlData.dispAspect[0];
-            dispAspect[3, 3] = xmlData.dispAspect[0];
-            dispAspect[0, 4] = xmlData.dispAspect[0];
-            dispAspect[1, 4] = xmlData.dispAspect[0];
-            dispAspect[2, 4] = xmlData.dispAspect[0];
-            dispAspect[3, 4] = xmlData.dispAspect[0];
-            dispAspect[4, 4] = xmlData.dispAspect[0];
+            dispAspect2[0, 0] = xmlData.dispAspect211;
+            dispAspect2[1, 1] = xmlData.dispAspect222;
+            dispAspect2[2, 2] = xmlData.dispAspect233;
+            dispAspect2[0, 1] = xmlData.dispAspect212;
+            dispAspect2[0, 2] = xmlData.dispAspect213;
+            dispAspect2[1, 2] = xmlData.dispAspect223;
+            dispAspect2[0, 3] = xmlData.dispAspect214;
+            dispAspect2[1, 3] = xmlData.dispAspect224;
+            dispAspect2[2, 3] = xmlData.dispAspect234;
+            dispAspect2[3, 3] = xmlData.dispAspect244;
+            dispAspect2[0, 4] = xmlData.dispAspect215;
+            dispAspect2[1, 4] = xmlData.dispAspect225;
+            dispAspect2[2, 4] = xmlData.dispAspect235;
+            dispAspect2[3, 4] = xmlData.dispAspect245;
+            dispAspect2[4, 4] = xmlData.dispAspect255;
+
+            dispAspect3[0, 0] = xmlData.dispAspect311;
+            dispAspect3[1, 1] = xmlData.dispAspect322;
+            dispAspect3[2, 2] = xmlData.dispAspect333;
+            dispAspect3[0, 1] = xmlData.dispAspect312;
+            dispAspect3[0, 2] = xmlData.dispAspect313;
+            dispAspect3[1, 2] = xmlData.dispAspect323;
+            dispAspect3[0, 3] = xmlData.dispAspect314;
+            dispAspect3[1, 3] = xmlData.dispAspect324;
+            dispAspect3[2, 3] = xmlData.dispAspect334;
+            dispAspect3[3, 3] = xmlData.dispAspect344;
+            dispAspect3[0, 4] = xmlData.dispAspect315;
+            dispAspect3[1, 4] = xmlData.dispAspect325;
+            dispAspect3[2, 4] = xmlData.dispAspect335;
+            dispAspect3[3, 4] = xmlData.dispAspect345;
+            dispAspect3[4, 4] = xmlData.dispAspect355;
+
+            dispAspect4[0, 0] = xmlData.dispAspect411;
+            dispAspect4[1, 1] = xmlData.dispAspect422;
+            dispAspect4[2, 2] = xmlData.dispAspect433;
+            dispAspect4[0, 1] = xmlData.dispAspect412;
+            dispAspect4[0, 2] = xmlData.dispAspect413;
+            dispAspect4[1, 2] = xmlData.dispAspect423;
+            dispAspect4[0, 3] = xmlData.dispAspect414;
+            dispAspect4[1, 3] = xmlData.dispAspect424;
+            dispAspect4[2, 3] = xmlData.dispAspect434;
+            dispAspect4[3, 3] = xmlData.dispAspect444;
+            dispAspect4[0, 4] = xmlData.dispAspect415;
+            dispAspect4[1, 4] = xmlData.dispAspect425;
+            dispAspect4[2, 4] = xmlData.dispAspect435;
+            dispAspect4[3, 4] = xmlData.dispAspect445;
+            dispAspect4[4, 4] = xmlData.dispAspect455;
+
+            dispAspect5[0, 0] = xmlData.dispAspect511;
+            dispAspect5[1, 1] = xmlData.dispAspect522;
+            dispAspect5[2, 2] = xmlData.dispAspect533;
+            dispAspect5[0, 1] = xmlData.dispAspect512;
+            dispAspect5[0, 2] = xmlData.dispAspect513;
+            dispAspect5[1, 2] = xmlData.dispAspect523;
+            dispAspect5[0, 3] = xmlData.dispAspect514;
+            dispAspect5[1, 3] = xmlData.dispAspect524;
+            dispAspect5[2, 3] = xmlData.dispAspect534;
+            dispAspect5[3, 3] = xmlData.dispAspect544;
+            dispAspect5[0, 4] = xmlData.dispAspect515;
+            dispAspect5[1, 4] = xmlData.dispAspect525;
+            dispAspect5[2, 4] = xmlData.dispAspect535;
+            dispAspect5[3, 4] = xmlData.dispAspect545;
+            dispAspect5[4, 4] = xmlData.dispAspect555;
+
+        }
+
+        private vodi ConvertDispAspect()
+        {
+            
         }
 
         private void SetDefaultAspectCategory()

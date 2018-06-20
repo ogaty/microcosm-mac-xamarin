@@ -120,6 +120,129 @@ namespace microcosm.Config
 
         [XmlElement("dispAspect")]
         public bool[] dispAspect;
+        [XmlElement("dispAspect211")]
+        public bool dispAspect211;
+        [XmlElement("dispAspect222")]
+        public bool dispAspect222;
+        [XmlElement("dispAspect233")]
+        public bool dispAspect233;
+        [XmlElement("dispAspect212")]
+        public bool dispAspect212;
+        [XmlElement("dispAspect213")]
+        public bool dispAspect213;
+        [XmlElement("dispAspect223")]
+        public bool dispAspect223;
+        [XmlElement("dispAspect214")]
+        public bool dispAspect214;
+        [XmlElement("dispAspect224")]
+        public bool dispAspect224;
+        [XmlElement("dispAspect234")]
+        public bool dispAspect234;
+        [XmlElement("dispAspect244")]
+        public bool dispAspect244;
+        [XmlElement("dispAspect215")]
+        public bool dispAspect215;
+        [XmlElement("dispAspect225")]
+        public bool dispAspect225;
+        [XmlElement("dispAspect235")]
+        public bool dispAspect235;
+        [XmlElement("dispAspect245")]
+        public bool dispAspect245;
+        [XmlElement("dispAspect255")]
+        public bool dispAspect255;
+
+        [XmlElement("dispAspect311")]
+        public bool dispAspect311;
+        [XmlElement("dispAspect322")]
+        public bool dispAspect322;
+        [XmlElement("dispAspect333")]
+        public bool dispAspect333;
+        [XmlElement("dispAspect312")]
+        public bool dispAspect312;
+        [XmlElement("dispAspect313")]
+        public bool dispAspect313;
+        [XmlElement("dispAspect323")]
+        public bool dispAspect323;
+        [XmlElement("dispAspect314")]
+        public bool dispAspect314;
+        [XmlElement("dispAspect324")]
+        public bool dispAspect324;
+        [XmlElement("dispAspect334")]
+        public bool dispAspect334;
+        [XmlElement("dispAspect344")]
+        public bool dispAspect344;
+        [XmlElement("dispAspect315")]
+        public bool dispAspect315;
+        [XmlElement("dispAspect325")]
+        public bool dispAspect325;
+        [XmlElement("dispAspect335")]
+        public bool dispAspect335;
+        [XmlElement("dispAspect345")]
+        public bool dispAspect345;
+        [XmlElement("dispAspect355")]
+        public bool dispAspect355;
+
+        [XmlElement("dispAspect411")]
+        public bool dispAspect411;
+        [XmlElement("dispAspect422")]
+        public bool dispAspect422;
+        [XmlElement("dispAspect433")]
+        public bool dispAspect433;
+        [XmlElement("dispAspect412")]
+        public bool dispAspect412;
+        [XmlElement("dispAspect413")]
+        public bool dispAspect413;
+        [XmlElement("dispAspect423")]
+        public bool dispAspect423;
+        [XmlElement("dispAspect414")]
+        public bool dispAspect414;
+        [XmlElement("dispAspect424")]
+        public bool dispAspect424;
+        [XmlElement("dispAspect434")]
+        public bool dispAspect434;
+        [XmlElement("dispAspect444")]
+        public bool dispAspect444;
+        [XmlElement("dispAspect415")]
+        public bool dispAspect415;
+        [XmlElement("dispAspect425")]
+        public bool dispAspect425;
+        [XmlElement("dispAspect435")]
+        public bool dispAspect435;
+        [XmlElement("dispAspect445")]
+        public bool dispAspect445;
+        [XmlElement("dispAspect455")]
+        public bool dispAspect455;
+
+        [XmlElement("dispAspect511")]
+        public bool dispAspect511;
+        [XmlElement("dispAspect522")]
+        public bool dispAspect522;
+        [XmlElement("dispAspect533")]
+        public bool dispAspect533;
+        [XmlElement("dispAspect512")]
+        public bool dispAspect512;
+        [XmlElement("dispAspect513")]
+        public bool dispAspect513;
+        [XmlElement("dispAspect523")]
+        public bool dispAspect523;
+        [XmlElement("dispAspect514")]
+        public bool dispAspect514;
+        [XmlElement("dispAspect524")]
+        public bool dispAspect524;
+        [XmlElement("dispAspect534")]
+        public bool dispAspect534;
+        [XmlElement("dispAspect544")]
+        public bool dispAspect544;
+        [XmlElement("dispAspect515")]
+        public bool dispAspect515;
+        [XmlElement("dispAspect525")]
+        public bool dispAspect525;
+        [XmlElement("dispAspect535")]
+        public bool dispAspect535;
+        [XmlElement("dispAspect545")]
+        public bool dispAspect545;
+        [XmlElement("dispAspect555")]
+        public bool dispAspect555;
 
         #region aspect category
         [XmlElement("aspectConjunction")]
