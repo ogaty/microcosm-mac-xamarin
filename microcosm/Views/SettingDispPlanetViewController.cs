@@ -56,7 +56,7 @@ namespace microcosm.Views
             config = rootViewController.config;
             settings = rootViewController.settings;
             settingIndex = rootViewController.settingIndex;
-            planetIndex = (int)RingsCombo.SelectedIndex;
+            planetIndex = (int)planetRingCombo.IndexOfSelectedItem;
 
             SettingsCombo.RemoveAllItems();
             for (int i = 0; i < 10; i++) {
@@ -347,14 +347,157 @@ namespace microcosm.Views
             aspectBiQuintile.State =
                                   settings[settingIndex].aspectBiQuintile[from, to] ?
                                   NSCellStateValue.On : NSCellStateValue.Off;
+            
+            if (lineRingCombo.IndexOfSelectedItem == 0) {
+                dispAspect11.State = settings[settingIndex].dispAspect2[0, 0] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect12.State = settings[settingIndex].dispAspect2[0, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect13.State = settings[settingIndex].dispAspect2[0, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect14.State = settings[settingIndex].dispAspect2[0, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect15.State = settings[settingIndex].dispAspect2[0, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect22.State = settings[settingIndex].dispAspect2[1, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect23.State = settings[settingIndex].dispAspect2[1, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect24.State = settings[settingIndex].dispAspect2[1, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect25.State = settings[settingIndex].dispAspect2[1, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect33.State = settings[settingIndex].dispAspect2[2, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect34.State = settings[settingIndex].dispAspect2[2, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect35.State = settings[settingIndex].dispAspect2[2, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect44.State = settings[settingIndex].dispAspect2[3, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect45.State = settings[settingIndex].dispAspect2[3, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect55.State = settings[settingIndex].dispAspect2[4, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+            } 
+            else if (lineRingCombo.IndexOfSelectedItem == 1)
+            {
+                dispAspect11.State = settings[settingIndex].dispAspect3[0, 0] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect12.State = settings[settingIndex].dispAspect3[0, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect13.State = settings[settingIndex].dispAspect3[0, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect14.State = settings[settingIndex].dispAspect3[0, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect15.State = settings[settingIndex].dispAspect3[0, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect22.State = settings[settingIndex].dispAspect3[1, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect23.State = settings[settingIndex].dispAspect3[1, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect24.State = settings[settingIndex].dispAspect3[1, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect25.State = settings[settingIndex].dispAspect3[1, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect33.State = settings[settingIndex].dispAspect3[2, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect34.State = settings[settingIndex].dispAspect3[2, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect35.State = settings[settingIndex].dispAspect3[2, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect44.State = settings[settingIndex].dispAspect3[3, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect45.State = settings[settingIndex].dispAspect3[3, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect55.State = settings[settingIndex].dispAspect3[4, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+            }
+            else if (lineRingCombo.IndexOfSelectedItem == 2)
+            {
+                dispAspect11.State = settings[settingIndex].dispAspect4[0, 0] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect12.State = settings[settingIndex].dispAspect4[0, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect13.State = settings[settingIndex].dispAspect4[0, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect14.State = settings[settingIndex].dispAspect4[0, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect15.State = settings[settingIndex].dispAspect4[0, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect22.State = settings[settingIndex].dispAspect4[1, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect23.State = settings[settingIndex].dispAspect4[1, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect24.State = settings[settingIndex].dispAspect4[1, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect25.State = settings[settingIndex].dispAspect4[1, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect33.State = settings[settingIndex].dispAspect4[2, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect34.State = settings[settingIndex].dispAspect4[2, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect35.State = settings[settingIndex].dispAspect4[2, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect44.State = settings[settingIndex].dispAspect4[3, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect45.State = settings[settingIndex].dispAspect4[3, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect55.State = settings[settingIndex].dispAspect4[4, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+            }
+            else if (lineRingCombo.IndexOfSelectedItem == 3)
+            {
+                dispAspect11.State = settings[settingIndex].dispAspect5[0, 0] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect12.State = settings[settingIndex].dispAspect5[0, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect13.State = settings[settingIndex].dispAspect5[0, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect14.State = settings[settingIndex].dispAspect5[0, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect15.State = settings[settingIndex].dispAspect5[0, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect22.State = settings[settingIndex].dispAspect5[1, 1] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect23.State = settings[settingIndex].dispAspect5[1, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect24.State = settings[settingIndex].dispAspect5[1, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect25.State = settings[settingIndex].dispAspect5[1, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect33.State = settings[settingIndex].dispAspect5[2, 2] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect34.State = settings[settingIndex].dispAspect5[2, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect35.State = settings[settingIndex].dispAspect5[2, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect44.State = settings[settingIndex].dispAspect5[3, 3] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect45.State = settings[settingIndex].dispAspect5[3, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+                dispAspect55.State = settings[settingIndex].dispAspect5[4, 4] ?
+                    NSCellStateValue.On : NSCellStateValue.Off;
+            }
+
          }
 
-        partial void ringsComboChanged(NSObject sender)
+        partial void planetRingComboChanged(NSObject sender)
+        {
+            ReRender(rootViewController.settingIndex);
+        }
+
+        partial void aspectRingComboChanged(NSObject sender)
         {
             ReRender(rootViewController.settingIndex);
         }
 
         partial void settingsComboChanged(NSObject sender)
+        {
+            ReRender(rootViewController.settingIndex);
+        }
+
+        partial void lineRingComboChanged(NSObject sender)
         {
             ReRender(rootViewController.settingIndex);
         }
@@ -504,6 +647,80 @@ namespace microcosm.Views
             settings[settingIndex].aspectBiQuintile[from, to] =
                                       aspectBiQuintile.State == NSCellStateValue.On ? true : false;
 
+            if (lineRingCombo.IndexOfSelectedItem == 0)
+            {
+                settings[settingIndex].dispAspect2[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect2[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+            else if (lineRingCombo.IndexOfSelectedItem == 1)
+            {
+                settings[settingIndex].dispAspect3[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect3[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+            else if (lineRingCombo.IndexOfSelectedItem == 2)
+            {
+                settings[settingIndex].dispAspect4[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect4[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+            else if (lineRingCombo.IndexOfSelectedItem == 3)
+            {
+                settings[settingIndex].dispAspect5[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                settings[settingIndex].dispAspect5[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+
+            /*
+            */
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
                 CommonInstance.getInstance().currentSetting.dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
@@ -639,6 +856,79 @@ namespace microcosm.Views
                           aspectQuintile.State == NSCellStateValue.On ? true : false;
                 CommonInstance.getInstance().currentSetting.aspectBiQuintile[from, to] =
                           aspectBiQuintile.State == NSCellStateValue.On ? true : false;
+
+                if (lineRingCombo.IndexOfSelectedItem == 0)
+                {
+                    CommonInstance.getInstance().currentSetting.dispAspect2[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect2[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+                }
+                else if (lineRingCombo.IndexOfSelectedItem == 1)
+                {
+                    CommonInstance.getInstance().currentSetting.dispAspect3[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect3[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+                }
+                else if (lineRingCombo.IndexOfSelectedItem == 2)
+                {
+                    CommonInstance.getInstance().currentSetting.dispAspect4[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect4[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+                }
+                else if (lineRingCombo.IndexOfSelectedItem == 3)
+                {
+                    CommonInstance.getInstance().currentSetting.dispAspect5[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                    CommonInstance.getInstance().currentSetting.dispAspect5[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+                }
 
             }
 

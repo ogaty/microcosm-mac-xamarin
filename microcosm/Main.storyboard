@@ -1523,12 +1523,12 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="天体" identifier="1" id="QaL-Xc-NYe">
-                                        <view key="view" id="7nN-1W-sk4">
-                                            <rect key="frame" x="10" y="33" width="273" height="0.0"/>
+                                        <view key="view" ambiguous="YES" id="7nN-1W-sk4">
+                                            <rect key="frame" x="10" y="33" width="610" height="332"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box fixedFrame="YES" title="表示天体" translatesAutoresizingMaskIntoConstraints="NO" id="rNQ-wi-ntv">
-                                                    <rect key="frame" x="16" y="-316" width="298" height="285"/>
+                                                    <rect key="frame" x="16" y="16" width="298" height="285"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="Mmr-Vq-uid">
                                                         <rect key="frame" x="2" y="2" width="294" height="268"/>
@@ -1746,7 +1746,7 @@
                                                     </view>
                                                 </box>
                                                 <box fixedFrame="YES" title="アスペクト検出天体" translatesAutoresizingMaskIntoConstraints="NO" id="UAj-Gu-InV">
-                                                    <rect key="frame" x="316" y="-316" width="298" height="285"/>
+                                                    <rect key="frame" x="316" y="16" width="298" height="285"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="jOK-dX-0vJ">
                                                         <rect key="frame" x="2" y="2" width="294" height="268"/>
@@ -1963,27 +1963,8 @@
                                                         </subviews>
                                                     </view>
                                                 </box>
-                                                <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yE-XY-a2q">
-                                                    <rect key="frame" x="19" y="-27" width="99" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="7" id="IO4-VX-PMW">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        <objectValues>
-                                                            <string>ring 1</string>
-                                                            <string>ring 2</string>
-                                                            <string>ring 3</string>
-                                                            <string>ring 4</string>
-                                                            <string>ring 5</string>
-                                                        </objectValues>
-                                                    </comboBoxCell>
-                                                    <connections>
-                                                        <action selector="ringsComboChanged:" target="vgE-0B-NN2" id="x55-Hn-7IU"/>
-                                                    </connections>
-                                                </comboBox>
                                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ym-cL-KdE">
-                                                    <rect key="frame" x="128" y="-27" width="76" height="26"/>
+                                                    <rect key="frame" x="17" y="305" width="76" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="ring 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Cvg-fS-2Vw" id="0J9-sW-RRR">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2185,7 +2166,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="表示線種" identifier="3" id="li2-sL-LZe">
-                                        <view key="view" ambiguous="YES" id="Khl-eC-Sa5">
+                                        <view key="view" id="Khl-eC-Sa5">
                                             <rect key="frame" x="10" y="33" width="610" height="332"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -2206,6 +2187,9 @@
                                                             </items>
                                                         </menu>
                                                     </popUpButtonCell>
+                                                    <connections>
+                                                        <action selector="lineRingComboChanged:" target="vgE-0B-NN2" id="FI4-70-YWo"/>
+                                                    </connections>
                                                 </popUpButton>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nO-7z-u3O">
                                                     <rect key="frame" x="13" y="234" width="131" height="32"/>
@@ -2361,7 +2345,6 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="RingsCombo" destination="0yE-XY-a2q" id="Wd5-oL-ApA"/>
                         <outlet property="SettingsCombo" destination="5ji-n0-07s" id="PFS-f4-dic"/>
                         <outlet property="SubmitClicked" destination="Nl7-wv-ka7" id="YUO-et-jai"/>
                         <outlet property="aspectBiQuintile" destination="HyI-ka-LS2" id="bsV-jV-Voj"/>
@@ -2446,6 +2429,7 @@
                         <outlet property="dispPlanetVenus" destination="b84-uP-pWm" id="XT6-bc-9WN"/>
                         <outlet property="dispPlanetVesta" destination="FMY-21-nxa" id="oC7-k4-YpW"/>
                         <outlet property="dispPlanetVt" destination="nb1-hN-zgm" id="t8L-zf-zql"/>
+                        <outlet property="lineRingCombo" destination="OAp-mQ-KJB" id="DhA-NH-7yr"/>
                         <outlet property="planetRingCombo" destination="0ym-cL-KdE" id="JMp-Sg-7R8"/>
                         <outlet property="settingListTbl" destination="RNG-tl-AMg" id="vLm-eD-Wx9"/>
                     </connections>
