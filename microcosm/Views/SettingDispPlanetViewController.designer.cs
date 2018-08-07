@@ -262,6 +262,60 @@ namespace microcosm.Views
 		AppKit.NSPopUpButton lineRingCombo { get; set; }
 
 		[Outlet]
+		AppKit.NSTextField OrbMoonHard150 { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbMoonHard1st { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbMoonHard2nd { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbMoonSoft150 { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbMoonSoft1st { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbMoonSoft2nd { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbOtherHard150 { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbOtherHard1st { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbOtherHard2nd { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbOtherSoft150 { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbOtherSoft1st { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbOtherSoft2nd { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbSunHard150 { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbSunHard1st { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbSunHard2nd { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbSunSoft150 { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbSunSoft1st { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField OrbSunSoft2nd { get; set; }
+
+		[Outlet]
 		AppKit.NSPopUpButton planetRingCombo { get; set; }
 
 		[Outlet]
@@ -290,6 +344,9 @@ namespace microcosm.Views
 
 		[Action ("SettingsComboChanged:")]
 		partial void SettingsComboChanged (Foundation.NSObject sender);
+
+		[Action ("SettingsOrbChanged:")]
+		partial void SettingsOrbChanged (Foundation.NSObject sender);
 
 		[Action ("SubmitClicked:")]
 		partial void SubmitClicked (Foundation.NSObject sender);
@@ -706,6 +763,11 @@ namespace microcosm.Views
 				dispPlanetVt = null;
 			}
 
+			if (lineRingCombo != null) {
+				lineRingCombo.Dispose ();
+				lineRingCombo = null;
+			}
+
 			if (planetRingCombo != null) {
 				planetRingCombo.Dispose ();
 				planetRingCombo = null;
@@ -726,9 +788,94 @@ namespace microcosm.Views
 				SettingsCombo = null;
 			}
 
-			if (lineRingCombo != null) {
-				lineRingCombo.Dispose ();
-				lineRingCombo = null;
+			if (OrbSunSoft1st != null) {
+				OrbSunSoft1st.Dispose ();
+				OrbSunSoft1st = null;
+			}
+
+			if (OrbSunHard1st != null) {
+				OrbSunHard1st.Dispose ();
+				OrbSunHard1st = null;
+			}
+
+			if (OrbSunSoft2nd != null) {
+				OrbSunSoft2nd.Dispose ();
+				OrbSunSoft2nd = null;
+			}
+
+			if (OrbSunHard2nd != null) {
+				OrbSunHard2nd.Dispose ();
+				OrbSunHard2nd = null;
+			}
+
+			if (OrbSunSoft150 != null) {
+				OrbSunSoft150.Dispose ();
+				OrbSunSoft150 = null;
+			}
+
+			if (OrbSunHard150 != null) {
+				OrbSunHard150.Dispose ();
+				OrbSunHard150 = null;
+			}
+
+			if (OrbMoonSoft1st != null) {
+				OrbMoonSoft1st.Dispose ();
+				OrbMoonSoft1st = null;
+			}
+
+			if (OrbMoonHard1st != null) {
+				OrbMoonHard1st.Dispose ();
+				OrbMoonHard1st = null;
+			}
+
+			if (OrbMoonSoft2nd != null) {
+				OrbMoonSoft2nd.Dispose ();
+				OrbMoonSoft2nd = null;
+			}
+
+			if (OrbMoonHard2nd != null) {
+				OrbMoonHard2nd.Dispose ();
+				OrbMoonHard2nd = null;
+			}
+
+			if (OrbMoonSoft150 != null) {
+				OrbMoonSoft150.Dispose ();
+				OrbMoonSoft150 = null;
+			}
+
+			if (OrbMoonHard150 != null) {
+				OrbMoonHard150.Dispose ();
+				OrbMoonHard150 = null;
+			}
+
+			if (OrbOtherSoft1st != null) {
+				OrbOtherSoft1st.Dispose ();
+				OrbOtherSoft1st = null;
+			}
+
+			if (OrbOtherHard1st != null) {
+				OrbOtherHard1st.Dispose ();
+				OrbOtherHard1st = null;
+			}
+
+			if (OrbOtherSoft2nd != null) {
+				OrbOtherSoft2nd.Dispose ();
+				OrbOtherSoft2nd = null;
+			}
+
+			if (OrbOtherHard2nd != null) {
+				OrbOtherHard2nd.Dispose ();
+				OrbOtherHard2nd = null;
+			}
+
+			if (OrbOtherSoft150 != null) {
+				OrbOtherSoft150.Dispose ();
+				OrbOtherSoft150 = null;
+			}
+
+			if (OrbOtherHard150 != null) {
+				OrbOtherHard150.Dispose ();
+				OrbOtherHard150 = null;
 			}
 		}
 	}

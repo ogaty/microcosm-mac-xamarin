@@ -347,6 +347,26 @@ namespace microcosm.Views
             aspectBiQuintile.State =
                                   settings[settingIndex].aspectBiQuintile[from, to] ?
                                   NSCellStateValue.On : NSCellStateValue.Off;
+
+            OrbSunSoft1st.StringValue = settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_1ST].ToString();
+            OrbSunHard1st.StringValue = settings[settingIndex].orbs[0][OrbKind.SUN_HARD_1ST].ToString();
+            OrbMoonSoft1st.StringValue = settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_1ST].ToString();
+            OrbMoonHard1st.StringValue = settings[settingIndex].orbs[0][OrbKind.MOON_HARD_1ST].ToString();
+            OrbOtherSoft1st.StringValue = settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_1ST].ToString();
+            OrbOtherHard1st.StringValue = settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_1ST].ToString();
+            OrbSunSoft2nd.StringValue = settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_2ND].ToString();
+            OrbSunHard2nd.StringValue = settings[settingIndex].orbs[0][OrbKind.SUN_HARD_2ND].ToString();
+            OrbMoonSoft2nd.StringValue = settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_2ND].ToString();
+            OrbMoonHard2nd.StringValue = settings[settingIndex].orbs[0][OrbKind.MOON_HARD_2ND].ToString();
+            OrbOtherSoft2nd.StringValue = settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_2ND].ToString();
+            OrbOtherHard2nd.StringValue = settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_2ND].ToString();
+            OrbSunSoft150.StringValue = settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_150].ToString();
+            OrbSunHard150.StringValue = settings[settingIndex].orbs[0][OrbKind.SUN_HARD_150].ToString();
+            OrbMoonSoft150.StringValue = settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_150].ToString();
+            OrbMoonHard150.StringValue = settings[settingIndex].orbs[0][OrbKind.MOON_HARD_150].ToString();
+            OrbOtherSoft150.StringValue = settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_150].ToString();
+            OrbOtherHard150.StringValue = settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_150].ToString();
+
             
             if (lineRingCombo.IndexOfSelectedItem == 0) {
                 dispAspect11.State = settings[settingIndex].dispAspect2[0, 0] ?
@@ -647,6 +667,7 @@ namespace microcosm.Views
             settings[settingIndex].aspectBiQuintile[from, to] =
                                       aspectBiQuintile.State == NSCellStateValue.On ? true : false;
 
+
             if (lineRingCombo.IndexOfSelectedItem == 0)
             {
                 settings[settingIndex].dispAspect2[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
@@ -718,6 +739,25 @@ namespace microcosm.Views
                 settings[settingIndex].dispAspect5[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
                 settings[settingIndex].dispAspect5[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
             }
+
+            settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_1ST] = double.Parse(OrbSunSoft1st.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.SUN_HARD_1ST] = double.Parse(OrbSunHard1st.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_1ST] = double.Parse(OrbMoonSoft1st.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.MOON_HARD_1ST] = double.Parse(OrbMoonHard1st.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_1ST] = double.Parse(OrbOtherSoft1st.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_1ST] = double.Parse(OrbOtherHard1st.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_2ND] = double.Parse(OrbSunSoft2nd.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.SUN_HARD_2ND] = double.Parse(OrbSunHard2nd.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_2ND] = double.Parse(OrbMoonSoft2nd.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.MOON_HARD_2ND] = double.Parse(OrbMoonHard2nd.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_2ND] = double.Parse(OrbOtherSoft2nd.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_2ND] = double.Parse(OrbOtherHard2nd.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_150] = double.Parse(OrbSunSoft150.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.SUN_HARD_150] = double.Parse(OrbSunHard150.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_150] = double.Parse(OrbMoonSoft150.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.MOON_HARD_150] = double.Parse(OrbMoonHard150.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_150] = double.Parse(OrbOtherSoft150.StringValue);
+            settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_150] = double.Parse(OrbOtherHard150.StringValue);
 
             /*
             */
@@ -929,6 +969,25 @@ namespace microcosm.Views
                     CommonInstance.getInstance().currentSetting.dispAspect5[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
                     CommonInstance.getInstance().currentSetting.dispAspect5[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
                 }
+
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.SUN_SOFT_1ST] = double.Parse(OrbSunSoft1st.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.SUN_HARD_1ST] = double.Parse(OrbSunHard1st.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_SOFT_1ST] = double.Parse(OrbMoonSoft1st.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_HARD_1ST] = double.Parse(OrbMoonHard1st.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_SOFT_1ST] = double.Parse(OrbOtherSoft1st.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_HARD_1ST] = double.Parse(OrbOtherHard1st.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.SUN_SOFT_2ND] = double.Parse(OrbSunSoft2nd.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.SUN_HARD_2ND] = double.Parse(OrbSunHard2nd.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_SOFT_2ND] = double.Parse(OrbMoonSoft2nd.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_HARD_2ND] = double.Parse(OrbMoonHard2nd.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_SOFT_2ND] = double.Parse(OrbOtherSoft2nd.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_HARD_2ND] = double.Parse(OrbOtherHard2nd.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.SUN_SOFT_150] = double.Parse(OrbSunSoft150.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.SUN_HARD_150] = double.Parse(OrbSunHard150.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_SOFT_150] = double.Parse(OrbMoonSoft150.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_HARD_150] = double.Parse(OrbMoonHard150.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_SOFT_150] = double.Parse(OrbOtherSoft150.StringValue);
+                CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_HARD_150] = double.Parse(OrbOtherHard150.StringValue);
 
             }
 
