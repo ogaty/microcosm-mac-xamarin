@@ -35,6 +35,7 @@ namespace microcosm.Views
         public override void MouseDown(NSEvent theEvent)
         {
             base.MouseDown(theEvent);
+            vc.TempSave((int)SelectedRow);
             vc.ReRender((int)SelectedRow);
         }
 
