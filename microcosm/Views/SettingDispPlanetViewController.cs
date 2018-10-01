@@ -58,13 +58,6 @@ namespace microcosm.Views
             settingIndex = rootViewController.settingIndex;
             planetIndex = (int)planetRingCombo.IndexOfSelectedItem;
 
-            SettingsCombo.RemoveAllItems();
-            for (int i = 0; i < 10; i++) {
-                NSString obj = new NSString(settings[i].dispName);
-                SettingsCombo.AddItem(obj);
-            }
-
-            SettingsCombo.SelectItem(settingIndex);
 
             if (planetIndex == -1) {
                 planetIndex = 0;
@@ -508,11 +501,6 @@ namespace microcosm.Views
         }
 
         partial void aspectRingComboChanged(NSObject sender)
-        {
-            ReRender(rootViewController.settingIndex);
-        }
-
-        partial void settingsComboChanged(NSObject sender)
         {
             ReRender(rootViewController.settingIndex);
         }
