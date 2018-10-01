@@ -328,7 +328,6 @@ namespace microcosm
                 cvs.DrawLine((float)signPt.x, (float)signPt.y, (float)signPtEnd.x, (float)signPtEnd.y, lineStyle);
             }
 
-
             System.Reflection.Assembly asm =
                 System.Reflection.Assembly.GetExecutingAssembly();
             SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
@@ -553,7 +552,7 @@ namespace microcosm
             {
                 horoscopeCanvas.Subviews[0].RemoveFromSuperview();
             }
-            SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 580, 580));
+            CanvasView sk = new CanvasView(new CGRect(0, 0, 580, 580));
             sk.PaintSurface += CanvasPaint;
             horoscopeCanvas.AddSubview(sk);
         }
