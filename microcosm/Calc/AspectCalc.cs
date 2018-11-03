@@ -38,6 +38,12 @@ namespace microcosm.Calc
                         isDisp = false;
                         continue;
                     }
+                    if (!setting.dispPlanet[aspectIndex][planetList[i].no] ||
+                        !setting.dispPlanet[aspectIndex][planetList[j].no])
+                    {
+                        isDisp = false;
+                        continue;
+                    }
 
 //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 

@@ -9,6 +9,7 @@ namespace microcosm.Views
     public partial class SettingListView : NSTableView
     {
         public SettingDispPlanetViewController vc;
+        public int OldSelectedRow = 0;
 
         #region Constructors
 
@@ -35,8 +36,9 @@ namespace microcosm.Views
         public override void MouseDown(NSEvent theEvent)
         {
             base.MouseDown(theEvent);
-            vc.TempSave((int)SelectedRow);
+            vc.TempSave(OldSelectedRow);
             vc.ReRender((int)SelectedRow);
+            OldSelectedRow = (int)SelectedRow;
         }
 
     }

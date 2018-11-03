@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 namespace microcosm.Config
 {
     // ２次元配列がシリアライズできないのでコンバーターを用意
+    [XmlRoot("SettingXml")]
     public class SettingXml
     {
         [XmlElement("dispname")]
@@ -57,13 +58,7 @@ namespace microcosm.Config
         public string orb_other_hard_150;
 
         // アスペクト表示 28個
-        // 11, 22, 33, 44, 55, 66, 77
-        // 12, 13, 14, 15, 16, 17
-        // 23, 24, 25, 26, 27
-        // 34, 35, 36, 37
-        // 45, 46, 47
-        // 56, 57
-        // 67
+        /*
         [XmlElement("aspectSun")]
         public string aspectSun;
         [XmlElement("aspectMoon")]
@@ -116,7 +111,7 @@ namespace microcosm.Config
         public string aspectVt;
         [XmlElement("aspectPof")]
         public string aspectPof;
-
+        */
 
         [XmlElement("dispAspect")]
         public bool[] dispAspect;

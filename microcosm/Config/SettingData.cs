@@ -218,7 +218,6 @@ namespace microcosm.Config
         {
             xmlData.version = 2;
             ConvertDispPlanet();
-            ConvertDispAspectPlanet();
             ConvertDispAspectCategory();
             ConvertDispAspect();
             ConvertOrbs();
@@ -619,209 +618,6 @@ namespace microcosm.Config
 
         #endregion
 
-        #region olddispaspect
-        private void ConvertDispAspectPlanet()
-        {
-            bool[] bools = new bool[28];
-            bools[0] = xmlData.aspectSun11;
-            bools[1] = xmlData.aspectSun22;
-            bools[2] = xmlData.aspectSun33;
-            bools[3] = xmlData.aspectSun12;
-            bools[4] = xmlData.aspectSun13;
-            bools[5] = xmlData.aspectSun23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectSun = ConvertString(bools);
-
-            bools[0] = xmlData.aspectMoon11;
-            bools[1] = xmlData.aspectMoon22;
-            bools[2] = xmlData.aspectMoon33;
-            bools[3] = xmlData.aspectMoon12;
-            bools[4] = xmlData.aspectMoon13;
-            bools[5] = xmlData.aspectMoon23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectMoon = ConvertString(bools);
-
-            bools[0] = xmlData.aspectVenus11;
-            bools[1] = xmlData.aspectVenus22;
-            bools[2] = xmlData.aspectVenus33;
-            bools[3] = xmlData.aspectVenus12;
-            bools[4] = xmlData.aspectVenus13;
-            bools[5] = xmlData.aspectVenus23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectVenus = ConvertString(bools);
-
-            bools[0] = xmlData.aspectMars11;
-            bools[1] = xmlData.aspectMars22;
-            bools[2] = xmlData.aspectMars33;
-            bools[3] = xmlData.aspectMars12;
-            bools[4] = xmlData.aspectMars13;
-            bools[5] = xmlData.aspectMars23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectMars = ConvertString(bools);
-
-            bools[0] = xmlData.aspectJupiter11;
-            bools[1] = xmlData.aspectJupiter22;
-            bools[2] = xmlData.aspectJupiter33;
-            bools[3] = xmlData.aspectJupiter12;
-            bools[4] = xmlData.aspectJupiter13;
-            bools[5] = xmlData.aspectJupiter23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectJupiter = ConvertString(bools);
-
-            bools[0] = xmlData.aspectSaturn11;
-            bools[1] = xmlData.aspectSaturn22;
-            bools[2] = xmlData.aspectSaturn33;
-            bools[3] = xmlData.aspectSaturn12;
-            bools[4] = xmlData.aspectSaturn13;
-            bools[5] = xmlData.aspectSaturn23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectSaturn = ConvertString(bools);
-
-            bools[0] = xmlData.aspectUranus11;
-            bools[1] = xmlData.aspectUranus22;
-            bools[2] = xmlData.aspectUranus33;
-            bools[3] = xmlData.aspectUranus12;
-            bools[4] = xmlData.aspectUranus13;
-            bools[5] = xmlData.aspectUranus23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectUranus = ConvertString(bools);
-
-            bools[0] = xmlData.aspectNeptune11;
-            bools[1] = xmlData.aspectNeptune22;
-            bools[2] = xmlData.aspectNeptune33;
-            bools[3] = xmlData.aspectNeptune12;
-            bools[4] = xmlData.aspectNeptune13;
-            bools[5] = xmlData.aspectNeptune23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectNeptune = ConvertString(bools);
-
-            bools[0] = xmlData.aspectPluto11;
-            bools[1] = xmlData.aspectPluto22;
-            bools[2] = xmlData.aspectPluto33;
-            bools[3] = xmlData.aspectPluto12;
-            bools[4] = xmlData.aspectPluto13;
-            bools[5] = xmlData.aspectPluto23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectPluto = ConvertString(bools);
-
-            bools[0] = xmlData.aspectDh11;
-            bools[1] = xmlData.aspectDh22;
-            bools[2] = xmlData.aspectDh33;
-            bools[3] = xmlData.aspectDh12;
-            bools[4] = xmlData.aspectDh13;
-            bools[5] = xmlData.aspectDh23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectDh = ConvertString(bools);
-
-            bools[0] = xmlData.aspectChiron11;
-            bools[1] = xmlData.aspectChiron22;
-            bools[2] = xmlData.aspectChiron33;
-            bools[3] = xmlData.aspectChiron12;
-            bools[4] = xmlData.aspectChiron13;
-            bools[5] = xmlData.aspectChiron23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectChiron = ConvertString(bools);
-
-            bools[0] = xmlData.aspectAsc11;
-            bools[1] = xmlData.aspectAsc22;
-            bools[2] = xmlData.aspectAsc33;
-            bools[3] = xmlData.aspectAsc12;
-            bools[4] = xmlData.aspectAsc13;
-            bools[5] = xmlData.aspectAsc23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectAsc = ConvertString(bools);
-
-            bools[0] = xmlData.aspectMc11;
-            bools[1] = xmlData.aspectMc22;
-            bools[2] = xmlData.aspectMc33;
-            bools[3] = xmlData.aspectMc12;
-            bools[4] = xmlData.aspectMc13;
-            bools[5] = xmlData.aspectMc23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectMc = ConvertString(bools);
-
-            bools[0] = xmlData.aspectEarth11;
-            bools[1] = xmlData.aspectEarth22;
-            bools[2] = xmlData.aspectEarth33;
-            bools[3] = xmlData.aspectEarth12;
-            bools[4] = xmlData.aspectEarth13;
-            bools[5] = xmlData.aspectEarth23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectEarth = ConvertString(bools);
-
-            bools[0] = xmlData.aspectLilith11;
-            bools[1] = xmlData.aspectLilith22;
-            bools[2] = xmlData.aspectLilith33;
-            bools[3] = xmlData.aspectLilith12;
-            bools[4] = xmlData.aspectLilith13;
-            bools[5] = xmlData.aspectLilith23;
-            for (int i = 6; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            xmlData.aspectLilith = ConvertString(bools);
-
-            for (int i = 0; i < 28; i++)
-            {
-                bools[i] = false;
-            }
-            string allFalse = ConvertString(bools);
-            xmlData.aspectCeres = allFalse;
-            xmlData.aspectParas = allFalse;
-            xmlData.aspectJuno = allFalse;
-            xmlData.aspectVesta = allFalse;
-            xmlData.aspectEris = allFalse;
-            xmlData.aspectSedna = allFalse;
-            xmlData.aspectHaumea = allFalse;
-            xmlData.aspectMakemake = allFalse;
-            xmlData.aspectVt = allFalse;
-            xmlData.aspectPof = allFalse;
-        }
-
-        #endregion
-
         private void ConvertDispAspectCategory()
         {
             Dictionary<AspectKind, bool> dac11 = new Dictionary<AspectKind, bool>();
@@ -1163,10 +959,151 @@ namespace microcosm.Config
 
         public void SetDispAspectPlanet()
         {
-            for (int i = 0; i < 28; i++)
-            {
-                dispAspectPlanet.Add(GetDispAspectDictionary(i));
-            }
+            Dictionary<int, bool> da = new Dictionary<int, bool>();
+            da.Add(CommonData.ZODIAC_NUMBER_SUN, xmlData.aspectSun11);
+            da.Add(CommonData.ZODIAC_NUMBER_MOON, xmlData.aspectMoon11);
+            da.Add(CommonData.ZODIAC_NUMBER_MERCURY, xmlData.aspectMercury11);
+            da.Add(CommonData.ZODIAC_NUMBER_VENUS, xmlData.aspectVenus11);
+            da.Add(CommonData.ZODIAC_NUMBER_MARS, xmlData.aspectMars11);
+            da.Add(CommonData.ZODIAC_NUMBER_JUPITER, xmlData.aspectJupiter11);
+            da.Add(CommonData.ZODIAC_NUMBER_SATURN, xmlData.aspectSaturn11);
+            da.Add(CommonData.ZODIAC_NUMBER_URANUS, xmlData.aspectUranus11);
+            da.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.aspectNeptune11);
+            da.Add(CommonData.ZODIAC_NUMBER_PLUTO, xmlData.aspectPluto11);
+            da.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.aspectDh11);
+            da.Add(CommonData.ZODIAC_NUMBER_ASC, xmlData.aspectAsc11);
+            da.Add(CommonData.ZODIAC_NUMBER_MC, xmlData.aspectMc11);
+            da.Add(CommonData.ZODIAC_NUMBER_CHIRON, xmlData.aspectChiron11);
+            da.Add(CommonData.ZODIAC_NUMBER_EARTH, xmlData.aspectEarth11);
+            da.Add(CommonData.ZODIAC_NUMBER_LILITH, xmlData.aspectLilith11);
+            da.Add(CommonData.ZODIAC_NUMBER_CERES, xmlData.aspectCeres11);
+            da.Add(CommonData.ZODIAC_NUMBER_PALLAS, xmlData.aspectPallas11);
+            da.Add(CommonData.ZODIAC_NUMBER_JUNO, xmlData.aspectJuno11);
+            da.Add(CommonData.ZODIAC_NUMBER_VESTA, xmlData.aspectVesta11);
+            da.Add(CommonData.ZODIAC_NUMBER_ERIS, xmlData.aspectEris11);
+            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, xmlData.aspectSedna11);
+            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, xmlData.aspectHaumea11);
+            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, xmlData.aspectMakemake11);
+            da.Add(CommonData.ZODIAC_NUMBER_VT, xmlData.aspectVt11);
+            da.Add(CommonData.ZODIAC_NUMBER_POF, xmlData.aspectPof11);
+
+            Dictionary<int, bool> da2 = new Dictionary<int, bool>();
+            da2.Add(CommonData.ZODIAC_NUMBER_SUN, xmlData.aspectSun22);
+            da2.Add(CommonData.ZODIAC_NUMBER_MOON, xmlData.aspectMoon22);
+            da2.Add(CommonData.ZODIAC_NUMBER_MERCURY, xmlData.aspectMercury22);
+            da2.Add(CommonData.ZODIAC_NUMBER_VENUS, xmlData.aspectVenus22);
+            da2.Add(CommonData.ZODIAC_NUMBER_MARS, xmlData.aspectMars22);
+            da2.Add(CommonData.ZODIAC_NUMBER_JUPITER, xmlData.aspectJupiter22);
+            da2.Add(CommonData.ZODIAC_NUMBER_SATURN, xmlData.aspectSaturn22);
+            da2.Add(CommonData.ZODIAC_NUMBER_URANUS, xmlData.aspectUranus22);
+            da2.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.aspectNeptune22);
+            da2.Add(CommonData.ZODIAC_NUMBER_PLUTO, xmlData.aspectPluto22);
+            da2.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.aspectDh22);
+            da2.Add(CommonData.ZODIAC_NUMBER_ASC, xmlData.aspectAsc22);
+            da2.Add(CommonData.ZODIAC_NUMBER_MC, xmlData.aspectMc22);
+            da2.Add(CommonData.ZODIAC_NUMBER_CHIRON, xmlData.aspectChiron22);
+            da2.Add(CommonData.ZODIAC_NUMBER_EARTH, xmlData.aspectEarth22);
+            da2.Add(CommonData.ZODIAC_NUMBER_LILITH, xmlData.aspectLilith22);
+            da2.Add(CommonData.ZODIAC_NUMBER_CERES, xmlData.aspectCeres22);
+            da2.Add(CommonData.ZODIAC_NUMBER_PALLAS, xmlData.aspectPallas22);
+            da2.Add(CommonData.ZODIAC_NUMBER_JUNO, xmlData.aspectJuno22);
+            da2.Add(CommonData.ZODIAC_NUMBER_VESTA, xmlData.aspectVesta22);
+            da2.Add(CommonData.ZODIAC_NUMBER_ERIS, xmlData.aspectEris22);
+            da2.Add(CommonData.ZODIAC_NUMBER_SEDNA, xmlData.aspectSedna22);
+            da2.Add(CommonData.ZODIAC_NUMBER_HAUMEA, xmlData.aspectHaumea22);
+            da2.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, xmlData.aspectMakemake22);
+            da2.Add(CommonData.ZODIAC_NUMBER_VT, xmlData.aspectVt22);
+            da2.Add(CommonData.ZODIAC_NUMBER_POF, xmlData.aspectPof22);
+
+            Dictionary<int, bool> da3 = new Dictionary<int, bool>();
+            da3.Add(CommonData.ZODIAC_NUMBER_SUN, xmlData.aspectSun33);
+            da3.Add(CommonData.ZODIAC_NUMBER_MOON, xmlData.aspectMoon33);
+            da3.Add(CommonData.ZODIAC_NUMBER_MERCURY, xmlData.aspectMercury33);
+            da3.Add(CommonData.ZODIAC_NUMBER_VENUS, xmlData.aspectVenus33);
+            da3.Add(CommonData.ZODIAC_NUMBER_MARS, xmlData.aspectMars33);
+            da3.Add(CommonData.ZODIAC_NUMBER_JUPITER, xmlData.aspectJupiter33);
+            da3.Add(CommonData.ZODIAC_NUMBER_SATURN, xmlData.aspectSaturn33);
+            da3.Add(CommonData.ZODIAC_NUMBER_URANUS, xmlData.aspectUranus33);
+            da3.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.aspectNeptune33);
+            da3.Add(CommonData.ZODIAC_NUMBER_PLUTO, xmlData.aspectPluto33);
+            da3.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.aspectDh33);
+            da3.Add(CommonData.ZODIAC_NUMBER_ASC, xmlData.aspectAsc33);
+            da3.Add(CommonData.ZODIAC_NUMBER_MC, xmlData.aspectMc33);
+            da3.Add(CommonData.ZODIAC_NUMBER_CHIRON, xmlData.aspectChiron33);
+            da3.Add(CommonData.ZODIAC_NUMBER_EARTH, xmlData.aspectEarth33);
+            da3.Add(CommonData.ZODIAC_NUMBER_LILITH, xmlData.aspectLilith33);
+            da3.Add(CommonData.ZODIAC_NUMBER_CERES, xmlData.aspectCeres33);
+            da3.Add(CommonData.ZODIAC_NUMBER_PALLAS, xmlData.aspectPallas33);
+            da3.Add(CommonData.ZODIAC_NUMBER_JUNO, xmlData.aspectJuno33);
+            da3.Add(CommonData.ZODIAC_NUMBER_VESTA, xmlData.aspectVesta33);
+            da3.Add(CommonData.ZODIAC_NUMBER_ERIS, xmlData.aspectEris33);
+            da3.Add(CommonData.ZODIAC_NUMBER_SEDNA, xmlData.aspectSedna33);
+            da3.Add(CommonData.ZODIAC_NUMBER_HAUMEA, xmlData.aspectHaumea33);
+            da3.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, xmlData.aspectMakemake33);
+            da3.Add(CommonData.ZODIAC_NUMBER_VT, xmlData.aspectVt33);
+            da3.Add(CommonData.ZODIAC_NUMBER_POF, xmlData.aspectPof33);
+
+            Dictionary<int, bool> da4 = new Dictionary<int, bool>();
+            da4.Add(CommonData.ZODIAC_NUMBER_SUN, xmlData.aspectSun44);
+            da4.Add(CommonData.ZODIAC_NUMBER_MOON, xmlData.aspectMoon44);
+            da4.Add(CommonData.ZODIAC_NUMBER_MERCURY, xmlData.aspectMercury44);
+            da4.Add(CommonData.ZODIAC_NUMBER_VENUS, xmlData.aspectVenus44);
+            da4.Add(CommonData.ZODIAC_NUMBER_MARS, xmlData.aspectMars44);
+            da4.Add(CommonData.ZODIAC_NUMBER_JUPITER, xmlData.aspectJupiter44);
+            da4.Add(CommonData.ZODIAC_NUMBER_SATURN, xmlData.aspectSaturn44);
+            da4.Add(CommonData.ZODIAC_NUMBER_URANUS, xmlData.aspectUranus44);
+            da4.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.aspectNeptune44);
+            da4.Add(CommonData.ZODIAC_NUMBER_PLUTO, xmlData.aspectPluto44);
+            da4.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.aspectDh44);
+            da4.Add(CommonData.ZODIAC_NUMBER_ASC, xmlData.aspectAsc44);
+            da4.Add(CommonData.ZODIAC_NUMBER_MC, xmlData.aspectMc44);
+            da4.Add(CommonData.ZODIAC_NUMBER_CHIRON, xmlData.aspectChiron44);
+            da4.Add(CommonData.ZODIAC_NUMBER_EARTH, xmlData.aspectEarth44);
+            da4.Add(CommonData.ZODIAC_NUMBER_LILITH, xmlData.aspectLilith44);
+            da4.Add(CommonData.ZODIAC_NUMBER_CERES, xmlData.aspectCeres44);
+            da4.Add(CommonData.ZODIAC_NUMBER_PALLAS, xmlData.aspectPallas44);
+            da4.Add(CommonData.ZODIAC_NUMBER_JUNO, xmlData.aspectJuno44);
+            da4.Add(CommonData.ZODIAC_NUMBER_VESTA, xmlData.aspectVesta44);
+            da4.Add(CommonData.ZODIAC_NUMBER_ERIS, xmlData.aspectEris44);
+            da4.Add(CommonData.ZODIAC_NUMBER_SEDNA, xmlData.aspectSedna44);
+            da4.Add(CommonData.ZODIAC_NUMBER_HAUMEA, xmlData.aspectHaumea44);
+            da4.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, xmlData.aspectMakemake44);
+            da4.Add(CommonData.ZODIAC_NUMBER_VT, xmlData.aspectVt44);
+            da4.Add(CommonData.ZODIAC_NUMBER_POF, xmlData.aspectPof44);
+
+            Dictionary<int, bool> da5 = new Dictionary<int, bool>();
+            da5.Add(CommonData.ZODIAC_NUMBER_SUN, xmlData.aspectSun55);
+            da5.Add(CommonData.ZODIAC_NUMBER_MOON, xmlData.aspectMoon55);
+            da5.Add(CommonData.ZODIAC_NUMBER_MERCURY, xmlData.aspectMercury55);
+            da5.Add(CommonData.ZODIAC_NUMBER_VENUS, xmlData.aspectVenus55);
+            da5.Add(CommonData.ZODIAC_NUMBER_MARS, xmlData.aspectMars55);
+            da5.Add(CommonData.ZODIAC_NUMBER_JUPITER, xmlData.aspectJupiter55);
+            da5.Add(CommonData.ZODIAC_NUMBER_SATURN, xmlData.aspectSaturn55);
+            da5.Add(CommonData.ZODIAC_NUMBER_URANUS, xmlData.aspectUranus55);
+            da5.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.aspectNeptune55);
+            da5.Add(CommonData.ZODIAC_NUMBER_PLUTO, xmlData.aspectPluto55);
+            da5.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.aspectDh55);
+            da5.Add(CommonData.ZODIAC_NUMBER_ASC, xmlData.aspectAsc55);
+            da5.Add(CommonData.ZODIAC_NUMBER_MC, xmlData.aspectMc55);
+            da5.Add(CommonData.ZODIAC_NUMBER_CHIRON, xmlData.aspectChiron55);
+            da5.Add(CommonData.ZODIAC_NUMBER_EARTH, xmlData.aspectEarth55);
+            da5.Add(CommonData.ZODIAC_NUMBER_LILITH, xmlData.aspectLilith55);
+            da5.Add(CommonData.ZODIAC_NUMBER_CERES, xmlData.aspectCeres55);
+            da5.Add(CommonData.ZODIAC_NUMBER_PALLAS, xmlData.aspectPallas55);
+            da5.Add(CommonData.ZODIAC_NUMBER_JUNO, xmlData.aspectJuno55);
+            da5.Add(CommonData.ZODIAC_NUMBER_VESTA, xmlData.aspectVesta55);
+            da5.Add(CommonData.ZODIAC_NUMBER_ERIS, xmlData.aspectEris55);
+            da5.Add(CommonData.ZODIAC_NUMBER_SEDNA, xmlData.aspectSedna55);
+            da5.Add(CommonData.ZODIAC_NUMBER_HAUMEA, xmlData.aspectHaumea55);
+            da5.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, xmlData.aspectMakemake55);
+            da5.Add(CommonData.ZODIAC_NUMBER_VT, xmlData.aspectVt55);
+            da5.Add(CommonData.ZODIAC_NUMBER_POF, xmlData.aspectPof55);
+
+            dispAspectPlanet.Add(da);
+            dispAspectPlanet.Add(da2);
+            dispAspectPlanet.Add(da3);
+            dispAspectPlanet.Add(da4);
+            dispAspectPlanet.Add(da5);
         }
 
         /// <summary>
@@ -1177,109 +1114,32 @@ namespace microcosm.Config
         private Dictionary<int, bool> GetDispAspectDictionary(int n)
         {
             Dictionary<int, bool> da = new Dictionary<int, bool>();
-            xmlData.aspectSun = xmlData.aspectSun ?? defaultAspect;
-            bool[] bools = ConvertBool(xmlData.aspectSun.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_SUN, bools[n]);
-
-            xmlData.aspectMoon = xmlData.aspectMoon ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectMoon.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_MOON, bools[n]);
-
-            xmlData.aspectMercury = xmlData.aspectMercury ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectMercury.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_MERCURY, bools[n]);
-
-            xmlData.aspectVenus = xmlData.aspectVenus ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectVenus.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_VENUS, bools[n]);
-
-            xmlData.aspectMars = xmlData.aspectMars ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectMars.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_MARS, bools[n]);
-
-            xmlData.aspectJupiter = xmlData.aspectJupiter ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectJupiter.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_JUPITER, bools[n]);
-
-            xmlData.aspectSaturn = xmlData.aspectSaturn ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectSaturn.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_SATURN, bools[n]);
-
-            xmlData.aspectUranus = xmlData.aspectUranus ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectUranus.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_URANUS, bools[n]);
-
-            xmlData.aspectNeptune = xmlData.aspectNeptune ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectNeptune.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, bools[n]);
-
-            xmlData.aspectPluto = xmlData.aspectPluto ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectPluto.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_PLUTO, bools[n]);
-
-            xmlData.aspectDh = xmlData.aspectDh ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectDh.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, bools[n]);
-
-            xmlData.aspectAsc = xmlData.aspectAsc ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectAsc.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_ASC, bools[n]);
-
-            xmlData.aspectMc = xmlData.aspectMc ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectMc.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_MC, bools[n]);
-
-            xmlData.aspectChiron = xmlData.aspectChiron ?? defaultAspect;
-            bools = ConvertBool(xmlData.aspectChiron.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_CHIRON, bools[n]);
-
-            xmlData.aspectEarth = xmlData.aspectEarth ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectEarth.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_EARTH, bools[n]);
-
-            xmlData.aspectLilith = xmlData.aspectLilith ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectLilith.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_LILITH, bools[n]);
-
-            xmlData.aspectCeres = xmlData.aspectCeres ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectCeres.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_CERES, bools[n]);
-
-            xmlData.aspectParas = xmlData.aspectParas ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectParas.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_PALLAS, bools[n]);
-
-            xmlData.aspectJuno = xmlData.aspectJuno ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectJuno.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_JUNO, bools[n]);
-
-            xmlData.aspectVesta = xmlData.aspectVesta ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectVesta.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_VESTA, bools[n]);
-
-            xmlData.aspectEris = xmlData.aspectEris ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectEris.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_ERIS, bools[n]);
-
-            xmlData.aspectSedna = xmlData.aspectSedna ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectSedna.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, bools[n]);
-
-            xmlData.aspectHaumea = xmlData.aspectHaumea ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectHaumea.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, bools[n]);
-
-            xmlData.aspectMakemake = xmlData.aspectMakemake ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectMakemake.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, bools[n]);
-
-            xmlData.aspectVt = xmlData.aspectVt ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectVt.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_VT, bools[n]);
-
-            xmlData.aspectPof = xmlData.aspectPof ?? defaultAspectAllfalse;
-            bools = ConvertBool(xmlData.aspectPof.Split(','));
-            da.Add(CommonData.ZODIAC_NUMBER_POF, bools[n]);
+            da.Add(CommonData.ZODIAC_NUMBER_SUN, xmlData.aspectSun11);
+            da.Add(CommonData.ZODIAC_NUMBER_MOON, xmlData.aspectMoon11);
+            da.Add(CommonData.ZODIAC_NUMBER_MERCURY, xmlData.aspectMercury11);
+            da.Add(CommonData.ZODIAC_NUMBER_VENUS, xmlData.aspectVenus11);
+            da.Add(CommonData.ZODIAC_NUMBER_MARS, xmlData.aspectMars11);
+            da.Add(CommonData.ZODIAC_NUMBER_JUPITER, xmlData.aspectJupiter11);
+            da.Add(CommonData.ZODIAC_NUMBER_SATURN, xmlData.aspectSaturn11);
+            da.Add(CommonData.ZODIAC_NUMBER_URANUS, xmlData.aspectUranus11);
+            da.Add(CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.aspectNeptune11);
+            da.Add(CommonData.ZODIAC_NUMBER_PLUTO, xmlData.aspectPluto11);
+            da.Add(CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.aspectDh11);
+            da.Add(CommonData.ZODIAC_NUMBER_ASC, xmlData.aspectAsc11);
+            da.Add(CommonData.ZODIAC_NUMBER_MC, xmlData.aspectMc11);
+            da.Add(CommonData.ZODIAC_NUMBER_CHIRON, xmlData.aspectChiron11);
+            da.Add(CommonData.ZODIAC_NUMBER_EARTH, xmlData.aspectEarth11);
+            da.Add(CommonData.ZODIAC_NUMBER_LILITH, xmlData.aspectLilith11);
+            da.Add(CommonData.ZODIAC_NUMBER_CERES, xmlData.aspectCeres11);
+            da.Add(CommonData.ZODIAC_NUMBER_PALLAS, xmlData.aspectPallas11);
+            da.Add(CommonData.ZODIAC_NUMBER_JUNO, xmlData.aspectJuno11);
+            da.Add(CommonData.ZODIAC_NUMBER_VESTA, xmlData.aspectVesta11);
+            da.Add(CommonData.ZODIAC_NUMBER_ERIS, xmlData.aspectEris11);
+            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, xmlData.aspectSedna11);
+            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, xmlData.aspectHaumea11);
+            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, xmlData.aspectMakemake11);
+            da.Add(CommonData.ZODIAC_NUMBER_VT, xmlData.aspectVt11);
+            da.Add(CommonData.ZODIAC_NUMBER_POF, xmlData.aspectPof11);
 
             return da;
         }

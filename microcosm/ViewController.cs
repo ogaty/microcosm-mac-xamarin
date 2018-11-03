@@ -125,22 +125,22 @@ namespace microcosm
             //            Console.WriteLine(config.defaultPlace);
 
             // aspect calc
-            for (int i = 0; i < 7; i++) {
-                for (int j = 0; j < 7; j++) {
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
                     aspectsData[i,j] = new List<AspectInfo>();
                 }
             }
             aspect = new AspectCalc();
-            foreach (int i in Enumerable.Range(0, 6))
+            foreach (int i in Enumerable.Range(0, 4))
             {
                 aspectsData[i, i] = aspect.AspectCalcSame(ringsData[i].planetData, i);
             }
 
             int ringIndexFrom = 0;
             int ringIndexTo = 0;
-            for (ringIndexFrom = 0; ringIndexFrom < 7; ringIndexFrom++)
+            for (ringIndexFrom = 0; ringIndexFrom < 5; ringIndexFrom++)
             {
-                for (ringIndexTo = 0; ringIndexTo < 7; ringIndexTo++)
+                for (ringIndexTo = 0; ringIndexTo < 5; ringIndexTo++)
                 {
                     if (ringIndexFrom == ringIndexTo) continue;
                     aspectsData[ringIndexFrom, ringIndexTo] =
@@ -602,7 +602,7 @@ namespace microcosm
             }
         }
 
-        void ReCalc()
+        public void ReCalc()
         {
             ringsData[0] = ringsData[3] = 
                 ringsData[4] = ringsData[5] = ringsData[6] = calc.ReCalc(config, settings[0], udata1);
@@ -610,16 +610,16 @@ namespace microcosm
             ReCalcUserDbProgress(1, EVENT1);
             ReCalcUserDb(2, EVENT1);
 
-            foreach (int i in Enumerable.Range(0, 6))
+            foreach (int i in Enumerable.Range(0, 4))
             {
                 aspectsData[i, i] = aspect.AspectCalcSame(ringsData[i].planetData, i);
             }
 
             int ringIndexFrom = 0;
             int ringIndexTo = 0;
-            for (ringIndexFrom = 0; ringIndexFrom < 7; ringIndexFrom++)
+            for (ringIndexFrom = 0; ringIndexFrom < 5; ringIndexFrom++)
             {
-                for (ringIndexTo = 0; ringIndexTo < 7; ringIndexTo++)
+                for (ringIndexTo = 0; ringIndexTo < 5; ringIndexTo++)
                 {
                     if (ringIndexFrom == ringIndexTo) continue;
                     aspectsData[ringIndexFrom, ringIndexTo] = 
