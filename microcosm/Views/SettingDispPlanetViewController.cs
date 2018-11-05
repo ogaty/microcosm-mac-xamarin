@@ -682,8 +682,12 @@ namespace microcosm.Views
             planetIndex = (int)planetRingCombo.IndexOfSelectedItem;
             settingListIndex = (int)settingListTbl.SelectedRow;
 
+            int aspectIndex = (int)aspectRingCombo.IndexOfSelectedItem;
+            int from = 0;
+            int to = 0;
+            TempSave(settingListIndex);
             for (int i = 0; i < 10; i++) {
-                if (i == settingListIndex) continue;
+//                if (i == settingListIndex) continue;
                 settings[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
                     tempIndex[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN];
                 settings[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
@@ -757,12 +761,35 @@ namespace microcosm.Views
                 settings[i].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
                                           tempIndex[i].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO];
 
+                // TODO aspectIndexループ
+                GetFromTo(aspectIndex, ref from, ref to);
+                settings[i].aspectConjunction[from, to] =
+                    tempIndex[i].aspectConjunction[from, to];
             }
 
+            // settingIndexはOnChangeでtempに書かれるためtempに入っていない
+            // けど一旦退避の関数挟んだほうが早いか
+            /*
             settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
                                           dispPlanetSun.State == NSCellStateValue.On ? true : false;
             settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
                                           dispPlanetMoon.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] =
+                                          dispPlanetMercury.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] =
+                                          dispPlanetVenus.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] =
+                                          dispPlanetMars.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] =
+                                          dispPlanetJupiter.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] =
+                                          dispPlanetSaturn.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] =
+                                          dispPlanetUranus.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] =
+                                          dispPlanetNeptune.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
+                                          dispPlanetPluto.State == NSCellStateValue.On ? true : false;
 
             // TODO
 
@@ -819,11 +846,6 @@ namespace microcosm.Views
             settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MAKEMAKE] =
                 dispAspectPlanetMakemake.State == NSCellStateValue.On ? true : false;
 
-            /*
-
-            int aspectIndex = (int)aspectRingCombo.IndexOfSelectedItem;
-            int from = 0;
-            int to = 0;
 
             GetFromTo(aspectIndex, ref from, ref to);
 
@@ -855,7 +877,6 @@ namespace microcosm.Views
                                       aspectQuintile.State == NSCellStateValue.On ? true : false;
             settings[settingIndex].aspectBiQuintile[from, to] =
                                       aspectBiQuintile.State == NSCellStateValue.On ? true : false;
-
 
             if (lineRingCombo.IndexOfSelectedItem == 0)
             {
@@ -947,6 +968,9 @@ namespace microcosm.Views
             settings[settingIndex].orbs[0][OrbKind.MOON_HARD_150] = double.Parse(OrbMoonHard150.StringValue);
             settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_150] = double.Parse(OrbOtherSoft150.StringValue);
             settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_150] = double.Parse(OrbOtherHard150.StringValue);
+*/
+
+            // top画面表示中のindexと設定画面のindexが同じならばcurrentSettingも書き換え
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)
             {
                 CommonInstance.getInstance().currentSetting.dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
@@ -1174,9 +1198,8 @@ namespace microcosm.Views
                 CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.MOON_HARD_150] = double.Parse(OrbMoonHard150.StringValue);
                 CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_SOFT_150] = double.Parse(OrbOtherSoft150.StringValue);
                 CommonInstance.getInstance().currentSetting.orbs[0][OrbKind.OTHER_HARD_150] = double.Parse(OrbOtherHard150.StringValue);
-*/
 
-//            }
+            }
 
             SettingSave.SaveXml(settings);
             rootViewController.ReCalc();
