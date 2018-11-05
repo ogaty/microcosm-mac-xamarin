@@ -765,6 +765,38 @@ namespace microcosm.Views
                 GetFromTo(aspectIndex, ref from, ref to);
                 settings[i].aspectConjunction[from, to] =
                     tempIndex[i].aspectConjunction[from, to];
+                settings[i].aspectOpposition[from, to] =
+                    tempIndex[i].aspectOpposition[from, to];
+                settings[i].aspectTrine[from, to] =
+                    tempIndex[i].aspectTrine[from, to];
+                settings[i].aspectSquare[from, to] =
+                    tempIndex[i].aspectSquare[from, to];
+                settings[i].aspectSextile[from, to] =
+                    tempIndex[i].aspectSextile[from, to];
+                settings[i].aspectInconjunct[from, to] =
+                    tempIndex[i].aspectInconjunct[from, to];
+                settings[i].aspectSesquiquadrate[from, to] =
+                    tempIndex[i].aspectSesquiquadrate[from, to];
+                settings[i].aspectSemiSquare[from, to] =
+                    tempIndex[i].aspectSemiSquare[from, to];
+                settings[i].aspectSemiQuintil[from, to] =
+                    tempIndex[i].aspectSemiQuintile[from, to];
+                settings[i].aspectSemiSextile[from, to] =
+                    tempIndex[i].aspectSemiSextile[from, to];
+                settings[i].aspectNovile[from, to] =
+                    tempIndex[i].aspectNovile[from, to];
+                settings[i].aspectSeptile[from, to] =
+                    tempIndex[i].aspectSeptile[from, to];
+                settings[i].aspectQintile[from, to] =
+                    tempIndex[i].aspectQintile[from, to];
+                settings[i].aspectBiQintile[from, to] =
+                    tempIndex[i].aspectBiQintile[from, to];
+                if (lineRingCombo.IndexOfSelectedItem == 0)
+                {
+                    settings[i].dispAspect2[0, 0] = tempIndex[i].dispAspect2[0, 0];
+                    settings[i].dispAspect2[1, 1] = tempIndex[i].dispAspect2[1, 1];
+                    settings[i].dispAspect2[2, 2] = tempIndex[i].dispAspect2[2, 2];
+                }
             }
 
             // settingIndexはOnChangeでtempに書かれるためtempに入っていない
