@@ -284,6 +284,7 @@
     <Compile Include="Views\SettingListView.designer.cs">
       <DependentUpon>SettingListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllerTimeSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

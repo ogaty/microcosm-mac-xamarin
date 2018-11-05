@@ -91,16 +91,52 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="表示" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="一重円" id="ssV-9l-hG9">
+                                        <menuItem title="一重円(N)" id="ssV-9l-hG9">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="SingleRingClicked:" target="Voe-Tx-rLC" id="Mex-f7-k8Y"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="三重円" id="enB-HT-vrW">
+                                        <menuItem title="一重円(T)" id="zSe-Az-TLj">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="SingleRingTClicked:" target="Voe-Tx-rLC" id="FRc-IS-Hgd"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="二重円(N-N)" id="bKu-ec-hu4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="DualRingNNClicked:" target="Voe-Tx-rLC" id="Rdg-dH-XfA"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="二重円(N-T)" id="ang-ei-rwD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="DualRingNTClicked:" target="Voe-Tx-rLC" id="1j1-ac-rEO"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="三重円(N-P-T)" id="enB-HT-vrW">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="TripleRingClicked:" target="Voe-Tx-rLC" id="Dj3-1Y-hBV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="三重円(N-T-T)" id="Sag-YJ-qO0">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="TripleRingNTTClicked:" target="Voe-Tx-rLC" id="AHq-q7-YMk"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="四重円(N-P-T-T)" id="WRO-OP-4dd">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="FourthRingNPTTClicked:" target="Voe-Tx-rLC" id="fMY-1e-P3d"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="五重円(N-P-N-P-T)" id="RA3-gq-FfM">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="FifthRingNPNPTClicked:" target="Voe-Tx-rLC" id="bUh-xs-d48"/>
                                             </connections>
                                         </menuItem>
                                     </items>

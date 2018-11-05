@@ -56,9 +56,40 @@ namespace microcosm
             CommonInstance.getInstance().controller.SingleRingClicked();
         }
 
+        partial void SingleRingTClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.SingleRingTClicked();
+        }
+
+        partial void DualRingNNClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.DualRingNNClicked();
+        }
+
+        partial void DualRingNTClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.DualRingNTClicked();
+        }
+
         partial void TripleRingClicked(NSObject sender)
         {
             CommonInstance.getInstance().controller.TripleRingClicked();
         }
+
+        partial void TripleRingNTTClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.TripleRingNTTClicked();
+        }
+
+        partial void FourthRingNPTTClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.FourthRingNPTTClicked();
+        }
+
+        partial void FifthRingNPNPTClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().controller.FifthRingNPNPTClicked();
+        }
+
     }
 }

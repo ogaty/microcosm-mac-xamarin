@@ -1279,7 +1279,7 @@ namespace microcosm.Views
             }
 
             SettingSave.SaveXml(settings);
-            rootViewController.ReCalc();
+            rootViewController.ReCalcAll();
             rootViewController.ReRender();
 
             DismissViewController(this);
