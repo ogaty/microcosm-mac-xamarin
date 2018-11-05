@@ -17,6 +17,9 @@ namespace microcosm.Views
         private int settingIndex;
         private int planetIndex;
         private int settingListIndex = 0;
+        private int oldPlanetIndex = 0;
+        private int oldAspectIndex = 0;
+        private int oldRingIndex = 0;
 
         private ViewController rootViewController;
 
@@ -503,23 +506,180 @@ namespace microcosm.Views
 
         partial void planetRingComboChanged(NSObject sender)
         {
+            TempSavePlanet(oldPlanetIndex);
+            oldPlanetIndex = (int)((NSPopUpButton)sender).IndexOfSelectedItem;
             ReRender(rootViewController.settingIndex);
         }
 
         partial void aspectRingComboChanged(NSObject sender)
         {
+            TempSaveAspect(oldAspectIndex);
+            oldAspectIndex = (int)((NSPopUpButton)sender).IndexOfSelectedItem;
             ReRender(rootViewController.settingIndex);
         }
 
         partial void lineRingComboChanged(NSObject sender)
         {
+            TempSaveRing(oldRingIndex);
+            oldRingIndex = (int)((NSPopUpButton)sender).IndexOfSelectedItem;
             ReRender(rootViewController.settingIndex);
+        }
+
+        public void TempSavePlanet(int planetIndex)
+        {
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] = dispPlanetSun.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] = dispPlanetMoon.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] = dispPlanetMercury.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] = dispPlanetVenus.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] = dispPlanetMars.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] = dispPlanetJupiter.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] = dispPlanetSaturn.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] = dispPlanetUranus.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] = dispPlanetNeptune.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] = dispPlanetPluto.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ASC] = dispPlanetAsc.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] = dispPlanetMc.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CHIRON] = dispPlanetChiron.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] = dispPlanetDh.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] = dispPlanetEarth.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] = dispPlanetLilith.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CERES] = dispPlanetCeres.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PALLAS] = dispPlanetParas.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUNO] = dispPlanetJuno.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VESTA] = dispPlanetVesta.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VT] = dispPlanetVt.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] = dispPlanetPof.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ERIS] = dispPlanetEris.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SEDNA] = dispPlanetSedna.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_HAUMEA] = dispPlanetHaumea.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MAKEMAKE] = dispPlanetMakemake.State == NSCellStateValue.On ? true : false;
+
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] = dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] = dispAspectPlanetMoon.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] = dispAspectPlanetMercury.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] = dispAspectPlanetVenus.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] = dispAspectPlanetMars.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] = dispAspectPlanetJupiter.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] = dispAspectPlanetSaturn.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] = dispAspectPlanetUranus.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] = dispAspectPlanetNeptune.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] = dispAspectPlanetPluto.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ASC] = dispAspectPlanetAsc.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] = dispAspectPlanetMc.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CHIRON] = dispAspectPlanetChiron.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] = dispAspectPlanetDh.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] = dispAspectPlanetEarth.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] = dispAspectPlanetLilith.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CERES] = dispAspectPlanetCeres.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PALLAS] = dispAspectPlanetPallas.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUNO] = dispAspectPlanetJuno.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VESTA] = dispAspectPlanetVesta.State == NSCellStateValue.On ? true : false;
+        }
+
+        public void TempSaveAspect(int aspectIndex)
+        {
+            int from = 0;
+            int to = 0;
+
+            GetFromTo(aspectIndex, ref from, ref to);
+
+            tempIndex[settingIndex].aspectConjunction[from, to] = aspectConjunction.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectOpposition[from, to] = aspectOpposition.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectTrine[from, to] = aspectTrine.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectSquare[from, to] = aspectSquare.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectSextile[from, to] = aspectSextile.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectInconjunct[from, to] = aspectInconjunct.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectSesquiquadrate[from, to] = aspectSesquiquadrate.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectSemiSquare[from, to] = aspectSemiSquare.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectSemiSextile[from, to] = aspectSemiSextile.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectSemiQuintile[from, to] = aspectSemiQuintile.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectNovile[from, to] = aspectNovile.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectQuintile[from, to] = aspectQuintile.State == NSCellStateValue.On ? true : false;
+            tempIndex[settingIndex].aspectBiQuintile[from, to] = aspectBiQuintile.State == NSCellStateValue.On ? true : false;
+        }
+
+        public void TempSaveRing(int ringIndex)
+        {
+            if (ringIndex == 0)
+            {
+                tempIndex[settingIndex].dispAspect2[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect2[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+            else if (ringIndex == 1)
+            {
+                tempIndex[settingIndex].dispAspect3[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect3[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+            else if (ringIndex == 2)
+            {
+                tempIndex[settingIndex].dispAspect4[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect4[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
+            else if (ringIndex == 3)
+            {
+                tempIndex[settingIndex].dispAspect5[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
+                tempIndex[settingIndex].dispAspect5[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
+            }
         }
 
         // これsettingIndexに限らずplanetIndex変更時もいれたほうがいいね
         public void TempSave(int settingIndex)
         {
+            #region tempsave
             planetIndex = (int)planetRingCombo.IndexOfSelectedItem;
+
             tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] = dispPlanetSun.State == NSCellStateValue.On ? true : false;
             tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] = dispPlanetMoon.State == NSCellStateValue.On ? true : false;
             tempIndex[settingIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] = dispPlanetMercury.State == NSCellStateValue.On ? true : false;
@@ -673,7 +833,7 @@ namespace microcosm.Views
             tempIndex[settingIndex].orbs[0][OrbKind.MOON_HARD_2ND] = double.Parse(OrbMoonHard2nd.StringValue);
             tempIndex[settingIndex].orbs[0][OrbKind.MOON_SOFT_150] = double.Parse(OrbMoonSoft150.StringValue);
             tempIndex[settingIndex].orbs[0][OrbKind.MOON_HARD_150] = double.Parse(OrbMoonHard150.StringValue);
-            
+            #endregion
         }
 
         partial void SubmitClicked(NSObject sender)
@@ -687,7 +847,8 @@ namespace microcosm.Views
             int to = 0;
             TempSave(settingListIndex);
             for (int i = 0; i < 10; i++) {
-//                if (i == settingListIndex) continue;
+                //                if (i == settingListIndex) continue;
+                #region dispplanet
                 settings[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
                     tempIndex[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN];
                 settings[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
@@ -740,6 +901,7 @@ namespace microcosm.Views
                                           tempIndex[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VT];
                 settings[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] =
                                           tempIndex[i].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF];
+                #endregion
                 settings[i].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
                                           tempIndex[i].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN];
                 settings[i].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
@@ -779,7 +941,7 @@ namespace microcosm.Views
                     tempIndex[i].aspectSesquiquadrate[from, to];
                 settings[i].aspectSemiSquare[from, to] =
                     tempIndex[i].aspectSemiSquare[from, to];
-                settings[i].aspectSemiQuintil[from, to] =
+                settings[i].aspectSemiQuintile[from, to] =
                     tempIndex[i].aspectSemiQuintile[from, to];
                 settings[i].aspectSemiSextile[from, to] =
                     tempIndex[i].aspectSemiSextile[from, to];
@@ -787,10 +949,10 @@ namespace microcosm.Views
                     tempIndex[i].aspectNovile[from, to];
                 settings[i].aspectSeptile[from, to] =
                     tempIndex[i].aspectSeptile[from, to];
-                settings[i].aspectQintile[from, to] =
-                    tempIndex[i].aspectQintile[from, to];
-                settings[i].aspectBiQintile[from, to] =
-                    tempIndex[i].aspectBiQintile[from, to];
+                settings[i].aspectQuintile[from, to] =
+                    tempIndex[i].aspectQuintile[from, to];
+                settings[i].aspectBiQuintile[from, to] =
+                    tempIndex[i].aspectBiQuintile[from, to];
                 if (lineRingCombo.IndexOfSelectedItem == 0)
                 {
                     settings[i].dispAspect2[0, 0] = tempIndex[i].dispAspect2[0, 0];
@@ -822,6 +984,18 @@ namespace microcosm.Views
                                           dispPlanetNeptune.State == NSCellStateValue.On ? true : false;
             settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
                                           dispPlanetPluto.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ASC] =
+                                          dispPlanetAsc.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] =
+                                          dispPlanetMc.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CHIRON] =
+                                          dispPlanetChiron.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] =
+                                          dispPlanetDh.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] =
+                                          dispPlanetEarth.State == NSCellStateValue.On ? true : false;
+            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] =
+                                          dispPlanetLilith.State == NSCellStateValue.On ? true : false;
 
             // TODO
 
@@ -1237,7 +1411,6 @@ namespace microcosm.Views
             rootViewController.ReCalc();
             rootViewController.ReRender();
 
-            CommonInstance.getInstance().controller.ReRender();
             DismissViewController(this);
         }
 

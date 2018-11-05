@@ -35,12 +35,14 @@ namespace microcosm.Calc
                     if (!setting.dispAspectPlanet[aspectIndex][planetList[i].no] ||
                         !setting.dispAspectPlanet[aspectIndex][planetList[j].no])
                     {
+                        Console.WriteLine(String.Format("{0} {1} planet nodisp", i.ToString(), j.ToString()));
                         isDisp = false;
                         continue;
                     }
                     if (!setting.dispPlanet[aspectIndex][planetList[i].no] ||
                         !setting.dispPlanet[aspectIndex][planetList[j].no])
                     {
+                        Console.WriteLine(String.Format("{0} {1} aspect nodisp", i.ToString(), j.ToString()));
                         isDisp = false;
                         continue;
                     }
@@ -48,44 +50,58 @@ namespace microcosm.Calc
 //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 
                     OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.aspectOpposition[ringIndex, ringIndex])
-                    {
-                        isDisp = false;
-                    }
                     if (opposition.Between(planetList[j].absolute_position - planetList[i].absolute_position)) 
                     {
-                        aspects.Add(opposition.CreateAspectInfo(i, j, isDisp));
+                        if (!setting.aspectOpposition[ringIndex, ringIndex])
+                        {
+                            isDisp = false;
+                        }
+                        else 
+                        {
+                            aspects.Add(opposition.CreateAspectInfo(i, j, isDisp));
+                        }
+                        continue;
                     }
 
                     TrineAspect trine = new TrineAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.aspectTrine[ringIndex, ringIndex])
-                    {
-                        isDisp = false;
-                    }
                     if (trine.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
-                        aspects.Add(trine.CreateAspectInfo(i, j, isDisp));
+                        if (!setting.aspectTrine[ringIndex, ringIndex])
+                        {
+                            isDisp = false;
+                        }
+                        else 
+                        {
+                            aspects.Add(trine.CreateAspectInfo(i, j, isDisp));
+                        }
+                        continue;
                     }
 
                     SquareAspect square = new SquareAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.aspectSquare[ringIndex, ringIndex])
-                    {
-                        isDisp = false;
-                    }
                     if (square.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
-                        aspects.Add(square.CreateAspectInfo(i, j, isDisp));
+                        if (!setting.aspectSquare[ringIndex, ringIndex])
+                        {
+                            isDisp = false;
+                        }
+                        else {
+                            aspects.Add(square.CreateAspectInfo(i, j, isDisp));
+                        }
+                        continue;
                     }
 
                     SextileAspect sextile = new SextileAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
-                    if (!setting.aspectSextile[ringIndex, ringIndex])
-                    {
-                        isDisp = false;
-                    }
                     if (sextile.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
-                        aspects.Add(sextile.CreateAspectInfo(i, j, isDisp));
+                        if (!setting.aspectSextile[ringIndex, ringIndex])
+                        {
+                            isDisp = false;
+                        }
+                        else {
+                            aspects.Add(sextile.CreateAspectInfo(i, j, isDisp));
+                        }
                     }
+                    // TODO
                 }
             }
             

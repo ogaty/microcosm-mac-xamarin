@@ -67,6 +67,9 @@ namespace microcosm
 		AppKit.NSImageCell img { get; set; }
 
 		[Outlet]
+		AppKit.NSMenu settingMenu { get; set; }
+
+		[Outlet]
 		AppKit.NSButton testButton { get; set; }
 
 		[Outlet]
@@ -214,6 +217,11 @@ namespace microcosm
 				Event2Name = null;
 			}
 
+			if (horoscopeCanvas != null) {
+				horoscopeCanvas.Dispose ();
+				horoscopeCanvas = null;
+			}
+
 			if (img != null) {
 				img.Dispose ();
 				img = null;
@@ -259,9 +267,9 @@ namespace microcosm
 				web = null;
 			}
 
-			if (horoscopeCanvas != null) {
-				horoscopeCanvas.Dispose ();
-				horoscopeCanvas = null;
+			if (settingMenu != null) {
+				settingMenu.Dispose ();
+				settingMenu = null;
 			}
 		}
 	}

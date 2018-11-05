@@ -118,6 +118,8 @@ namespace microcosm
             CommonInstance.getInstance().currentSetting = settings[0];
             CommonInstance.getInstance().currentSettingIndex = 0;
 
+            ReSetSettingMenu();
+
             calc = new AstroCalc();
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6] = 
                 calc.ReCalc(config, settings[0], new UserData());
@@ -367,6 +369,7 @@ namespace microcosm
                     continue;
                 }
 
+                #region createbox1
                 // 重ならないようにずらしを入れる
                 // 1サインに6度単位5個までデータが入る
                 int index = (int)(planet.absolute_position / 5);
@@ -386,6 +389,7 @@ namespace microcosm
                 {
                     box[index] = 1;
                 }
+                #endregion
 
                 // 天体そのもの
                 planetOffset = GetPlanetOffset(1);
@@ -403,6 +407,7 @@ namespace microcosm
                         continue;
                     }
 
+                    #region createbox2
                     // 重ならないようにずらしを入れる
                     // 1サインに6度単位5個までデータが入る
                     int index = (int)(planet.absolute_position / 5);
@@ -422,6 +427,7 @@ namespace microcosm
                     {
                         box2[index] = 1;
                     }
+                    #endregion
 
                     planetOffset = GetPlanetOffset(2);
                     DrawPlanetText(index, ringsData[1].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
@@ -438,7 +444,7 @@ namespace microcosm
                     {
                         continue;
                     }
-
+                    #region create box3
                     // 重ならないようにずらしを入れる
                     // 1サインに6度単位5個までデータが入る
                     int index = (int)(planet.absolute_position / 5);
@@ -458,6 +464,7 @@ namespace microcosm
                     {
                         box3[index] = 1;
                     }
+                    #endregion
 
                     planetOffset = GetPlanetOffset(3);
                     DrawPlanetText(index, ringsData[2].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
@@ -479,14 +486,14 @@ namespace microcosm
             SKPaint aspectSymboolText = new SKPaint()
             {
                 TextSize = 24,
-                Style = SKPaintStyle.Fill,
-                Typeface = SKTypeface.FromStream(stream)
+                Style = SKPaintStyle.Fill
             };
             // aspectsData[0, 0] => natal-natal
             for (int i = 0; i < aspectsData[0, 0].Count; i++)
             {
                 if (!aspectsData[0, 0][i].isDisp)
                 {
+                    Console.WriteLine(String.Format("{0} nodisp", i.ToString()));
                     continue;
                 }
                 aspectPt = Util.Rotate(centerRadius, 0, aspectsData[0, 0][i].absoluteDegree - ringsData[0].cusps[1]);
@@ -502,12 +509,13 @@ namespace microcosm
                 aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
 
 
+
                 if (aspectsData[0, 0][i].aspectKind == AspectKind.OPPOSITION)
                 {
                     aspectLine.Color = crimson;
                     aspectSymboolText.Color = crimson;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                    cvs.DrawText("☍",
                                  (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else if (aspectsData[0, 0][i].aspectKind == AspectKind.TRINE)
@@ -515,7 +523,7 @@ namespace microcosm
                     aspectLine.Color = orange;
                     aspectSymboolText.Color = orange;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                    cvs.DrawText("△",
                                  (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else if (aspectsData[0, 0][i].aspectKind == AspectKind.SQUARE) 
@@ -523,7 +531,7 @@ namespace microcosm
                     aspectLine.Color = purple;
                     aspectSymboolText.Color = purple;
                     cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
+                    cvs.DrawText("a",
                                  (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
                 }
                 else if (aspectsData[0, 0][i].aspectKind == AspectKind.SEXTILE)
@@ -1187,6 +1195,7 @@ namespace microcosm
         {
             Position planetPt;
             Position planetDegreePt;
+            Position planetRetrogradePt;
 
             planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - cusp0);
             planetPt.x = planetPt.x + CenterX - textXoffset;
@@ -1201,6 +1210,15 @@ namespace microcosm
             p.Color = SKColors.Black;
             cvs.DrawText(((int)(planet.absolute_position % 30)).ToString(), (float)planetDegreePt.x, (float)planetDegreePt.y, degreeText);
 
+            // 逆行
+            if (planet.speed < 0)
+            {
+                planetRetrogradePt = Util.Rotate(radius - 25 - (planetOffset + planetROffset), 0, 5 * index - cusp0);
+                planetRetrogradePt.x = planetRetrogradePt.x + CenterX - degreeXoffset;
+                planetRetrogradePt.y = -1 * planetRetrogradePt.y + CenterY + degreeYoffset;
+                p.Color = SKColors.Black;
+                cvs.DrawText("R", (float)planetRetrogradePt.x, (float)planetRetrogradePt.y, degreeText);
+            }
         }
 
         public int GetPlanetOffset(int bandIndex)
@@ -1265,6 +1283,14 @@ namespace microcosm
             }
 
             return planetOffset;
+        }
+
+        public void ReSetSettingMenu() {
+            settingMenu.RemoveAllItems();
+            for (int i = 0; i < 10; i++)
+            {
+                settingMenu.AddItem(new NSMenuItem(settings[i].dispName));
+            }
         }
     }
 }

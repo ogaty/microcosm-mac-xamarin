@@ -909,6 +909,7 @@
                         <outlet property="User2Date" destination="BOF-Jn-kzl" id="Gg9-Yo-aSm"/>
                         <outlet property="User2Name" destination="Fqh-zW-ViE" id="1Z2-rQ-qiw"/>
                         <outlet property="horoscopeCanvas" destination="GSm-lZ-57D" id="Ml1-kW-7gy"/>
+                        <outlet property="settingMenu" destination="rvh-a8-2Jq" id="UhP-Xe-X1M"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1419,9 +1420,24 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="SubmitClicked:" target="ZHE-Zx-ejl" id="RUC-sH-wET"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="disp0" destination="Cqr-xu-kNQ" id="cJi-tr-tbO"/>
+                        <outlet property="disp1" destination="rKY-Hv-iMF" id="bI5-YI-tqN"/>
+                        <outlet property="disp2" destination="Oq0-rQ-JGT" id="QDl-P1-y0D"/>
+                        <outlet property="disp3" destination="d0W-9u-Ffg" id="O6C-9S-KyC"/>
+                        <outlet property="disp4" destination="hLm-CX-cwv" id="cSV-QP-Z51"/>
+                        <outlet property="disp5" destination="a0O-g6-Mdt" id="Gqb-6h-gFg"/>
+                        <outlet property="disp6" destination="qAD-6t-qwP" id="fhh-nm-iCB"/>
+                        <outlet property="disp7" destination="Vja-oA-XJs" id="zQN-7Z-GoI"/>
+                        <outlet property="disp8" destination="Mn0-7f-2u0" id="8Y9-We-RuS"/>
+                        <outlet property="disp9" destination="R1r-vk-5mX" id="viu-he-6R5"/>
+                    </connections>
                 </viewController>
                 <customObject id="ftA-P7-ONi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
