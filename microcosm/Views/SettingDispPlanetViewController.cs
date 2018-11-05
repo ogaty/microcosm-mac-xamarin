@@ -956,225 +956,96 @@ namespace microcosm.Views
                 if (lineRingCombo.IndexOfSelectedItem == 0)
                 {
                     settings[i].dispAspect2[0, 0] = tempIndex[i].dispAspect2[0, 0];
+                    settings[i].dispAspect2[0, 1] = tempIndex[i].dispAspect2[0, 1];
+                    settings[i].dispAspect2[0, 2] = tempIndex[i].dispAspect2[0, 2];
+                    settings[i].dispAspect2[0, 3] = tempIndex[i].dispAspect2[0, 3];
+                    settings[i].dispAspect2[0, 4] = tempIndex[i].dispAspect2[0, 4];
                     settings[i].dispAspect2[1, 1] = tempIndex[i].dispAspect2[1, 1];
+                    settings[i].dispAspect2[1, 2] = tempIndex[i].dispAspect2[1, 2];
+                    settings[i].dispAspect2[1, 3] = tempIndex[i].dispAspect2[1, 3];
+                    settings[i].dispAspect2[1, 4] = tempIndex[i].dispAspect2[1, 4];
                     settings[i].dispAspect2[2, 2] = tempIndex[i].dispAspect2[2, 2];
+                    settings[i].dispAspect2[2, 3] = tempIndex[i].dispAspect2[2, 3];
+                    settings[i].dispAspect2[2, 4] = tempIndex[i].dispAspect2[2, 4];
+                    settings[i].dispAspect2[3, 3] = tempIndex[i].dispAspect2[3, 3];
+                    settings[i].dispAspect2[3, 4] = tempIndex[i].dispAspect2[3, 4];
+                    settings[i].dispAspect2[4, 4] = tempIndex[i].dispAspect2[4, 4];
                 }
+                else if (lineRingCombo.IndexOfSelectedItem == 1)
+                {
+                    settings[i].dispAspect3[0, 0] = tempIndex[i].dispAspect3[0, 0];
+                    settings[i].dispAspect3[0, 1] = tempIndex[i].dispAspect3[0, 1];
+                    settings[i].dispAspect3[0, 2] = tempIndex[i].dispAspect3[0, 2];
+                    settings[i].dispAspect3[0, 3] = tempIndex[i].dispAspect3[0, 3];
+                    settings[i].dispAspect3[0, 4] = tempIndex[i].dispAspect3[0, 4];
+                    settings[i].dispAspect3[1, 1] = tempIndex[i].dispAspect3[1, 1];
+                    settings[i].dispAspect3[1, 2] = tempIndex[i].dispAspect3[1, 2];
+                    settings[i].dispAspect3[1, 3] = tempIndex[i].dispAspect3[1, 3];
+                    settings[i].dispAspect3[1, 4] = tempIndex[i].dispAspect3[1, 4];
+                    settings[i].dispAspect3[2, 2] = tempIndex[i].dispAspect3[2, 2];
+                    settings[i].dispAspect3[2, 3] = tempIndex[i].dispAspect3[2, 3];
+                    settings[i].dispAspect3[2, 4] = tempIndex[i].dispAspect3[2, 4];
+                    settings[i].dispAspect3[3, 3] = tempIndex[i].dispAspect3[3, 3];
+                    settings[i].dispAspect3[3, 4] = tempIndex[i].dispAspect3[3, 4];
+                    settings[i].dispAspect3[4, 4] = tempIndex[i].dispAspect3[4, 4];
+                }
+                else if (lineRingCombo.IndexOfSelectedItem == 2)
+                {
+                    settings[i].dispAspect4[0, 0] = tempIndex[i].dispAspect4[0, 0];
+                    settings[i].dispAspect4[0, 1] = tempIndex[i].dispAspect4[0, 1];
+                    settings[i].dispAspect4[0, 2] = tempIndex[i].dispAspect4[0, 2];
+                    settings[i].dispAspect4[0, 3] = tempIndex[i].dispAspect4[0, 3];
+                    settings[i].dispAspect4[0, 4] = tempIndex[i].dispAspect4[0, 4];
+                    settings[i].dispAspect4[1, 1] = tempIndex[i].dispAspect4[1, 1];
+                    settings[i].dispAspect4[1, 2] = tempIndex[i].dispAspect4[1, 2];
+                    settings[i].dispAspect4[1, 3] = tempIndex[i].dispAspect4[1, 3];
+                    settings[i].dispAspect4[1, 4] = tempIndex[i].dispAspect4[1, 4];
+                    settings[i].dispAspect4[2, 2] = tempIndex[i].dispAspect4[2, 2];
+                    settings[i].dispAspect4[2, 3] = tempIndex[i].dispAspect4[2, 3];
+                    settings[i].dispAspect4[2, 4] = tempIndex[i].dispAspect4[2, 4];
+                    settings[i].dispAspect4[3, 3] = tempIndex[i].dispAspect4[3, 3];
+                    settings[i].dispAspect4[3, 4] = tempIndex[i].dispAspect4[3, 4];
+                    settings[i].dispAspect4[4, 4] = tempIndex[i].dispAspect4[4, 4];
+                }
+                else if (lineRingCombo.IndexOfSelectedItem == 3)
+                {
+                    settings[i].dispAspect5[0, 0] = tempIndex[i].dispAspect5[0, 0];
+                    settings[i].dispAspect5[0, 1] = tempIndex[i].dispAspect5[0, 1];
+                    settings[i].dispAspect5[0, 2] = tempIndex[i].dispAspect5[0, 2];
+                    settings[i].dispAspect5[0, 3] = tempIndex[i].dispAspect5[0, 3];
+                    settings[i].dispAspect5[0, 4] = tempIndex[i].dispAspect5[0, 4];
+                    settings[i].dispAspect5[1, 1] = tempIndex[i].dispAspect5[1, 1];
+                    settings[i].dispAspect5[1, 2] = tempIndex[i].dispAspect5[1, 2];
+                    settings[i].dispAspect5[1, 3] = tempIndex[i].dispAspect5[1, 3];
+                    settings[i].dispAspect5[1, 4] = tempIndex[i].dispAspect5[1, 4];
+                    settings[i].dispAspect5[2, 2] = tempIndex[i].dispAspect5[2, 2];
+                    settings[i].dispAspect5[2, 3] = tempIndex[i].dispAspect5[2, 3];
+                    settings[i].dispAspect5[2, 4] = tempIndex[i].dispAspect5[2, 4];
+                    settings[i].dispAspect5[3, 3] = tempIndex[i].dispAspect5[3, 3];
+                    settings[i].dispAspect5[3, 4] = tempIndex[i].dispAspect5[3, 4];
+                    settings[i].dispAspect5[4, 4] = tempIndex[i].dispAspect5[4, 4];
+                }
+
+                settings[i].orbs[0][OrbKind.SUN_SOFT_1ST] = tempIndex[i].orbs[0][OrbKind.SUN_SOFT_1ST];
+                settings[i].orbs[0][OrbKind.SUN_HARD_1ST] = tempIndex[i].orbs[0][OrbKind.SUN_HARD_1ST];
+                settings[i].orbs[0][OrbKind.MOON_SOFT_1ST] = tempIndex[i].orbs[0][OrbKind.MOON_SOFT_1ST];
+                settings[i].orbs[0][OrbKind.MOON_HARD_1ST] = tempIndex[i].orbs[0][OrbKind.MOON_HARD_1ST];
+                settings[i].orbs[0][OrbKind.OTHER_SOFT_1ST] = tempIndex[i].orbs[0][OrbKind.OTHER_SOFT_1ST];
+                settings[i].orbs[0][OrbKind.OTHER_HARD_1ST] = tempIndex[i].orbs[0][OrbKind.OTHER_HARD_1ST];
+                settings[i].orbs[0][OrbKind.SUN_SOFT_2ND] = tempIndex[i].orbs[0][OrbKind.SUN_SOFT_2ND];
+                settings[i].orbs[0][OrbKind.SUN_HARD_2ND] = tempIndex[i].orbs[0][OrbKind.SUN_HARD_2ND];
+                settings[i].orbs[0][OrbKind.MOON_SOFT_2ND] = tempIndex[i].orbs[0][OrbKind.MOON_SOFT_2ND];
+                settings[i].orbs[0][OrbKind.MOON_HARD_2ND] = tempIndex[i].orbs[0][OrbKind.MOON_HARD_2ND];
+                settings[i].orbs[0][OrbKind.OTHER_SOFT_2ND] = tempIndex[i].orbs[0][OrbKind.OTHER_SOFT_2ND];
+                settings[i].orbs[0][OrbKind.OTHER_HARD_2ND] = tempIndex[i].orbs[0][OrbKind.OTHER_HARD_2ND];
+                settings[i].orbs[0][OrbKind.SUN_SOFT_150] = tempIndex[i].orbs[0][OrbKind.SUN_SOFT_150];
+                settings[i].orbs[0][OrbKind.SUN_HARD_150] = tempIndex[i].orbs[0][OrbKind.SUN_HARD_150];
+                settings[i].orbs[0][OrbKind.MOON_SOFT_150] = tempIndex[i].orbs[0][OrbKind.MOON_SOFT_150];
+                settings[i].orbs[0][OrbKind.MOON_HARD_150] = tempIndex[i].orbs[0][OrbKind.MOON_HARD_150];
+                settings[i].orbs[0][OrbKind.OTHER_SOFT_150] = tempIndex[i].orbs[0][OrbKind.OTHER_SOFT_150];
+                settings[i].orbs[0][OrbKind.OTHER_HARD_150] = tempIndex[i].orbs[0][OrbKind.OTHER_HARD_150];
+
             }
-
-            // settingIndexはOnChangeでtempに書かれるためtempに入っていない
-            // けど一旦退避の関数挟んだほうが早いか
-            /*
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
-                                          dispPlanetSun.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
-                                          dispPlanetMoon.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] =
-                                          dispPlanetMercury.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] =
-                                          dispPlanetVenus.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] =
-                                          dispPlanetMars.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] =
-                                          dispPlanetJupiter.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] =
-                                          dispPlanetSaturn.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] =
-                                          dispPlanetUranus.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] =
-                                          dispPlanetNeptune.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
-                                          dispPlanetPluto.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ASC] =
-                                          dispPlanetAsc.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] =
-                                          dispPlanetMc.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CHIRON] =
-                                          dispPlanetChiron.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] =
-                                          dispPlanetDh.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] =
-                                          dispPlanetEarth.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] =
-                                          dispPlanetLilith.State == NSCellStateValue.On ? true : false;
-
-            // TODO
-
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SUN] =
-                dispAspectPlanetSun.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MOON] =
-                dispAspectPlanetMoon.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MERCURY] =
-                dispAspectPlanetMercury.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VENUS] =
-                dispAspectPlanetVenus.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MARS] =
-                dispAspectPlanetMars.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUPITER] =
-                dispAspectPlanetJupiter.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SATURN] =
-                dispAspectPlanetSaturn.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_URANUS] =
-                dispAspectPlanetUranus.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_NEPTUNE] =
-                dispAspectPlanetNeptune.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PLUTO] =
-                dispAspectPlanetPluto.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ASC] =
-                dispAspectPlanetAsc.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MC] =
-                dispAspectPlanetAsc.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CHIRON] =
-                dispAspectPlanetChiron.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_EARTH] =
-                dispAspectPlanetEarth.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_LILITH] =
-                dispAspectPlanetLilith.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_DH_TRUENODE] =
-                dispAspectPlanetDh.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VT] =
-                dispAspectPlanetVt.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_POF] =
-                dispAspectPlanetPof.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_CERES] =
-                dispAspectPlanetCeres.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_PALLAS] =
-                dispAspectPlanetPallas.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_JUNO] =
-                dispAspectPlanetJuno.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_VESTA] =
-                dispAspectPlanetVesta.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_ERIS] =
-                dispAspectPlanetEris.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_SEDNA] =
-                dispAspectPlanetSedna.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_HAUMEA] =
-                dispAspectPlanetHaumea.State == NSCellStateValue.On ? true : false;
-            settings[settingListIndex].dispAspectPlanet[planetIndex][CommonData.ZODIAC_NUMBER_MAKEMAKE] =
-                dispAspectPlanetMakemake.State == NSCellStateValue.On ? true : false;
-
-
-            GetFromTo(aspectIndex, ref from, ref to);
-
-            settings[settingIndex].aspectConjunction[from, to] =
-                                      aspectConjunction.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectOpposition[from, to] =
-                                      aspectOpposition.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectTrine[from, to] =
-                                      aspectTrine.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSquare[from, to] =
-                                      aspectSquare.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSextile[from, to] =
-                                      aspectSextile.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectInconjunct[from, to] =
-                                      aspectInconjunct.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSesquiquadrate[from, to] =
-                                      aspectSesquiquadrate.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSemiSquare[from, to] =
-                                      aspectSemiSquare.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSemiQuintile[from, to] =
-                                      aspectSemiQuintile.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSemiSextile[from, to] =
-                                      aspectSemiSextile.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectNovile[from, to] =
-                                      aspectNovile.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectSeptile[from, to] =
-                                      aspectSeptile.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectQuintile[from, to] =
-                                      aspectQuintile.State == NSCellStateValue.On ? true : false;
-            settings[settingIndex].aspectBiQuintile[from, to] =
-                                      aspectBiQuintile.State == NSCellStateValue.On ? true : false;
-
-            if (lineRingCombo.IndexOfSelectedItem == 0)
-            {
-                settings[settingIndex].dispAspect2[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect2[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
-            }
-            else if (lineRingCombo.IndexOfSelectedItem == 1)
-            {
-                settings[settingIndex].dispAspect3[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect3[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
-            }
-            else if (lineRingCombo.IndexOfSelectedItem == 2)
-            {
-                settings[settingIndex].dispAspect4[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect4[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
-            }
-            else if (lineRingCombo.IndexOfSelectedItem == 3)
-            {
-                settings[settingIndex].dispAspect5[0, 0] = dispAspect11.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[0, 1] = dispAspect12.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[0, 2] = dispAspect13.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[0, 3] = dispAspect14.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[0, 4] = dispAspect15.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[1, 1] = dispAspect22.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[1, 2] = dispAspect23.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[1, 3] = dispAspect24.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[1, 4] = dispAspect25.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[2, 2] = dispAspect33.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[2, 3] = dispAspect34.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[2, 4] = dispAspect35.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[3, 3] = dispAspect44.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[3, 4] = dispAspect45.State == NSCellStateValue.On ? true : false;
-                settings[settingIndex].dispAspect5[4, 4] = dispAspect55.State == NSCellStateValue.On ? true : false;
-            }
-
-            settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_1ST] = double.Parse(OrbSunSoft1st.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.SUN_HARD_1ST] = double.Parse(OrbSunHard1st.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_1ST] = double.Parse(OrbMoonSoft1st.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.MOON_HARD_1ST] = double.Parse(OrbMoonHard1st.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_1ST] = double.Parse(OrbOtherSoft1st.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_1ST] = double.Parse(OrbOtherHard1st.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_2ND] = double.Parse(OrbSunSoft2nd.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.SUN_HARD_2ND] = double.Parse(OrbSunHard2nd.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_2ND] = double.Parse(OrbMoonSoft2nd.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.MOON_HARD_2ND] = double.Parse(OrbMoonHard2nd.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_2ND] = double.Parse(OrbOtherSoft2nd.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_2ND] = double.Parse(OrbOtherHard2nd.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.SUN_SOFT_150] = double.Parse(OrbSunSoft150.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.SUN_HARD_150] = double.Parse(OrbSunHard150.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.MOON_SOFT_150] = double.Parse(OrbMoonSoft150.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.MOON_HARD_150] = double.Parse(OrbMoonHard150.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.OTHER_SOFT_150] = double.Parse(OrbOtherSoft150.StringValue);
-            settings[settingIndex].orbs[0][OrbKind.OTHER_HARD_150] = double.Parse(OrbOtherHard150.StringValue);
-*/
 
             // top画面表示中のindexと設定画面のindexが同じならばcurrentSettingも書き換え
             if (settingIndex == CommonInstance.getInstance().currentSettingIndex)

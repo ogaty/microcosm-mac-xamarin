@@ -11,6 +11,7 @@ namespace microcosm.Config
 {
     
     /// <summary>
+    /// settingXmlをもとに生成
     /// 実際のsettingが最終的に格納されるところ
     /// 複数クラスが存在（0～9）
     /// </summary>

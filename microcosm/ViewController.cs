@@ -26,9 +26,11 @@ namespace microcosm
 
         public int CenterX = 580;
         public int CenterY = 580;
-        public float radius = 580;
+        // 外側の直径
+        public float diameter = 580;
         public float zodiacWidth = 60;
-        public float centerRadiusBase = 360;
+        // 中心円
+        public float centerDiameterBase = 360;
 
 
         NSObject NSWindowDidResizeNotificationObject;
@@ -235,58 +237,63 @@ namespace microcosm
             SKPaint p = new SKPaint();
             p.Style = SKPaintStyle.Fill;
             // outer
-            cvs.DrawCircle(CenterX, CenterY, radius, lineStyle);
+            cvs.DrawCircle(CenterX, CenterY, diameter, lineStyle);
             // inner
-            cvs.DrawCircle(CenterX, CenterY, radius - zodiacWidth, lineStyle);
+            cvs.DrawCircle(CenterX, CenterY, diameter - zodiacWidth, lineStyle);
 
             double offset = 0;
-            float centerRadius = centerRadiusBase;
+            float centerDiameter = centerDiameterBase;
+            // ring描画
             if (CommonInstance.getInstance().currentSetting.bands == 1) 
             {
                 // center
-                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, centerDiameter, lineStyle);
             }
             else if (CommonInstance.getInstance().currentSetting.bands == 2) 
             {
                 // center
-                centerRadius = centerRadiusBase - 80;
-                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+                // 中心円を少し縮める
+                centerDiameter = centerDiameterBase - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerDiameter, lineStyle);
 
-                offset = (radius - zodiacWidth - centerRadius) / 2;
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
+                offset = (diameter - zodiacWidth - centerDiameter) / 2;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset), lineStyle);
             }
             else if (CommonInstance.getInstance().currentSetting.bands == 3)
             {
                 // center
-                centerRadius = centerRadiusBase - 80;
-                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+                // 中心円を少し縮める
+                centerDiameter = centerDiameterBase - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerDiameter, lineStyle);
 
-                offset = (radius - zodiacWidth - centerRadius) / 3;
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 2), lineStyle);
+                offset = (diameter - zodiacWidth - centerDiameter) / 3;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset * 2), lineStyle);
             }
             else if (CommonInstance.getInstance().currentSetting.bands == 4)
             {
                 // center
-                centerRadius = centerRadiusBase - 80;
-                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+                // 中心円を少し縮める
+                centerDiameter = centerDiameterBase - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerDiameter, lineStyle);
 
-                offset = (radius - zodiacWidth - centerRadius) / 4;
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 2), lineStyle);
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 3), lineStyle);
+                offset = (diameter - zodiacWidth - centerDiameter) / 4;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset * 2), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset * 3), lineStyle);
             }
             else if (CommonInstance.getInstance().currentSetting.bands == 5)
             {
                 // center
-                centerRadius = centerRadiusBase - 80;
-                cvs.DrawCircle(CenterX, CenterY, centerRadius, lineStyle);
+                // 中心円を少し縮める
+                centerDiameter = centerDiameterBase - 80;
+                cvs.DrawCircle(CenterX, CenterY, centerDiameter, lineStyle);
 
-                offset = (radius - zodiacWidth - centerRadius) / 5;
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset), lineStyle);
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 2), lineStyle);
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 3), lineStyle);
-                cvs.DrawCircle(CenterX, CenterY, (float)(centerRadius + offset * 4), lineStyle);
+                offset = (diameter - zodiacWidth - centerDiameter) / 5;
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset * 2), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset * 3), lineStyle);
+                cvs.DrawCircle(CenterX, CenterY, (float)(centerDiameter + offset * 4), lineStyle);
             }
 
 
@@ -300,10 +307,10 @@ namespace microcosm
             lineStyle2.StrokeWidth = 1.5F;
             for (int i = 1; i <= 12; i++) 
             {
-                housePt = Util.Rotate(radius - zodiacWidth, 0, ringsData[0].cusps[i] - ringsData[0].cusps[1]);
+                housePt = Util.Rotate(diameter - zodiacWidth, 0, ringsData[0].cusps[i] - ringsData[0].cusps[1]);
                 housePt.x = housePt.x + CenterX;
                 housePt.y = -1 * housePt.y + CenterY;
-                housePtEnd = Util.Rotate(centerRadius, 0, ringsData[0].cusps[i] - ringsData[0].cusps[1]);
+                housePtEnd = Util.Rotate(centerDiameter, 0, ringsData[0].cusps[i] - ringsData[0].cusps[1]);
                 housePtEnd.x = housePtEnd.x + CenterX;
                 housePtEnd.y = -1 * housePtEnd.y + CenterY;
                 if (i == 1 || i == 4 || i == 7 || i == 10)
@@ -321,10 +328,10 @@ namespace microcosm
             Position signPtEnd;
             for (int i = 1; i <= 12; i++)
             {
-                signPt = Util.Rotate(radius, 0, 30 * i - ringsData[0].cusps[1]);
+                signPt = Util.Rotate(diameter, 0, 30 * i - ringsData[0].cusps[1]);
                 signPt.x = signPt.x + CenterX;
                 signPt.y = -1 * signPt.y + CenterY;
-                signPtEnd = Util.Rotate(radius - zodiacWidth, 0, 30 * i - ringsData[0].cusps[1]);
+                signPtEnd = Util.Rotate(diameter - zodiacWidth, 0, 30 * i - ringsData[0].cusps[1]);
                 signPtEnd.x = signPtEnd.x + CenterX;
                 signPtEnd.y = -1 * signPtEnd.y + CenterY;
                 cvs.DrawLine((float)signPt.x, (float)signPt.y, (float)signPtEnd.x, (float)signPtEnd.y, lineStyle);
@@ -342,7 +349,7 @@ namespace microcosm
                 p.Color = pink;
                 for (int i = 0; i < signs.Length; i++)
                 {
-                    signValuePt = Util.Rotate(radius - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
+                    signValuePt = Util.Rotate(diameter - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
                     signValuePt.x = signValuePt.x + CenterX - 15;
                     signValuePt.y = -1 * signValuePt.y + CenterY + 20;
                     p.Color = CommonData.getSignColor(30 * i);
@@ -396,6 +403,7 @@ namespace microcosm
                 DrawPlanetText(index, ringsData[0].cusps[1], planet, p, cvs, degreeText, planetOffset, 40, 5, 20, 10, 10);
             }
 //            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
+            // 二重円
             if (CommonInstance.getInstance().currentSetting.bands > 1)
             {
                 int[] box2 = new int[72];
@@ -496,62 +504,109 @@ namespace microcosm
                     Console.WriteLine(String.Format("{0} nodisp", i.ToString()));
                     continue;
                 }
-                aspectPt = Util.Rotate(centerRadius, 0, aspectsData[0, 0][i].absoluteDegree - ringsData[0].cusps[1]);
+                aspectPt = Util.Rotate(centerDiameter, 0, aspectsData[0, 0][i].absoluteDegree - ringsData[0].cusps[1]);
                 aspectPt.x = aspectPt.x + CenterX;
                 aspectPt.y = -1 * aspectPt.y + CenterY;
 
-                aspectPtEnd = Util.Rotate(centerRadius, 0, aspectsData[0, 0][i].targetDegree - ringsData[0].cusps[1]);
+                aspectPtEnd = Util.Rotate(centerDiameter, 0, aspectsData[0, 0][i].targetDegree - ringsData[0].cusps[1]);
                 aspectPtEnd.x = aspectPtEnd.x + CenterX;
                 aspectPtEnd.y = -1 * aspectPtEnd.y + CenterY;
 
-                aspectSymbolPt = Util.Rotate(radius - 160, 0, aspectsData[0, 0][i].targetDegree - ringsData[0].cusps[1]);
+                aspectSymbolPt = Util.Rotate(diameter - 160, 0, aspectsData[0, 0][i].targetDegree - ringsData[0].cusps[1]);
                 aspectSymbolPt.x = aspectSymbolPt.x + CenterX;
                 aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
 
+                GetAspectLineAndText(aspectsData[0, 0][i].aspectKind, ref aspectLine, ref aspectSymboolText);
+                DrawAspect(cvs, aspectsData[0, 1][i], aspectPt, aspectPtEnd, aspectLine, degreeText);
+
+            }
+            if (CommonInstance.getInstance().currentSetting.bands > 1)
+            {
+                offset = (diameter - zodiacWidth - centerDiameter) / CommonInstance.getInstance().currentSetting.bands;
+
+                // aspectsData[0, 1] => natal-progress
+                for (int i = 0; i < aspectsData[0, 1].Count; i++)
+                {
+                    if (!aspectsData[0, 1][i].isDisp)
+                    {
+                        Console.WriteLine(String.Format("{0} nodisp", i.ToString()));
+                        continue;
+                    }
+                    aspectPt = Util.Rotate(centerDiameter, 0, aspectsData[0, 1][i].absoluteDegree - ringsData[0].cusps[1]);
+                    aspectPt.x = aspectPt.x + CenterX;
+                    aspectPt.y = -1 * aspectPt.y + CenterY;
+
+                    aspectPtEnd = Util.Rotate(centerDiameter + offset, 0, aspectsData[0, 1][i].targetDegree - ringsData[0].cusps[1]);
+                    aspectPtEnd.x = aspectPtEnd.x + CenterX;
+                    aspectPtEnd.y = -1 * aspectPtEnd.y + CenterY;
+
+                    aspectSymbolPt = Util.Rotate(diameter - 160, 0, aspectsData[0, 1][i].targetDegree - ringsData[0].cusps[1]);
+                    aspectSymbolPt.x = aspectSymbolPt.x + CenterX;
+                    aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
 
 
-                if (aspectsData[0, 0][i].aspectKind == AspectKind.OPPOSITION)
-                {
-                    aspectLine.Color = crimson;
-                    aspectSymboolText.Color = crimson;
-                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText("☍",
-                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
+                    GetAspectLineAndText(aspectsData[0, 1][i].aspectKind, ref aspectLine, ref aspectSymboolText);
+                    DrawAspect(cvs, aspectsData[0, 1][i], aspectPt, aspectPtEnd, aspectLine, degreeText);
                 }
-                else if (aspectsData[0, 0][i].aspectKind == AspectKind.TRINE)
+                for (int i = 0; i < aspectsData[1, 1].Count; i++)
                 {
-                    aspectLine.Color = orange;
-                    aspectSymboolText.Color = orange;
-                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText("△",
-                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
+                    if (!aspectsData[1, 1][i].isDisp)
+                    {
+                        Console.WriteLine(String.Format("{0} nodisp", i.ToString()));
+                        continue;
+                    }
+                    aspectPt = Util.Rotate(centerDiameter + offset, 0, aspectsData[0, 1][i].absoluteDegree - ringsData[0].cusps[1]);
+                    aspectPt.x = aspectPt.x + CenterX;
+                    aspectPt.y = -1 * aspectPt.y + CenterY;
+
+                    aspectPtEnd = Util.Rotate(centerDiameter + offset, 0, aspectsData[0, 1][i].targetDegree - ringsData[0].cusps[1]);
+                    aspectPtEnd.x = aspectPtEnd.x + CenterX;
+                    aspectPtEnd.y = -1 * aspectPtEnd.y + CenterY;
+
+                    aspectSymbolPt = Util.Rotate(diameter - 160, 0, aspectsData[0, 1][i].targetDegree - ringsData[0].cusps[1]);
+                    aspectSymbolPt.x = aspectSymbolPt.x + CenterX;
+                    aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
+
+
+                    GetAspectLineAndText(aspectsData[1, 1][i].aspectKind, ref aspectLine, ref aspectSymboolText);
+                    DrawAspect(cvs, aspectsData[1, 1][i], aspectPt, aspectPtEnd, aspectLine, degreeText);
                 }
-                else if (aspectsData[0, 0][i].aspectKind == AspectKind.SQUARE) 
-                {
-                    aspectLine.Color = purple;
-                    aspectSymboolText.Color = purple;
-                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText("a",
-                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
-                }
-                else if (aspectsData[0, 0][i].aspectKind == AspectKind.SEXTILE)
-                {
-                    aspectLine.Color = green;
-                    aspectSymboolText.Color = green;
-                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, aspectLine);
-                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
-                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
-                }
-                else 
-                {
-                    aspectSymboolText.Color = green;
-                    cvs.DrawLine((float)aspectPt.x, (float)aspectPt.y, (float)aspectPtEnd.x, (float)aspectPtEnd.y, lineStyle);
-                    cvs.DrawText(CommonData.getAspectSymbol(aspectsData[0, 0][i].aspectKind),
-                                 (float)((aspectPt.x + aspectPtEnd.x) / 2), (float)((aspectPt.y + aspectPtEnd.y) / 2), aspectSymboolText);
-                }
+
             }
             cvs.Flush();
 
+        }
+
+        public void GetAspectLineAndText(AspectKind kind, ref SKPaint line, ref SKPaint symbol)
+        {
+            if (kind == AspectKind.OPPOSITION)
+            {
+                line.Color = SKColors.Crimson;
+                symbol.Color = SKColors.Crimson;
+            }
+            else if (kind == AspectKind.TRINE)
+            {
+                line.Color = SKColors.Orange;
+                symbol.Color = SKColors.Orange;
+            }
+            else if (kind == AspectKind.SQUARE)
+            {
+                line.Color = SKColors.Purple;
+                symbol.Color = SKColors.Purple;
+            }
+            else if (kind == AspectKind.SEXTILE)
+            {
+                line.Color = SKColors.Green;
+                symbol.Color = SKColors.Green;
+            }
+        }
+
+        public void DrawAspect(SKCanvas cvs, AspectInfo info, Position from, Position to, SKPaint aspectLine, SKPaint symbol)
+        {
+            cvs.DrawLine((float)from.x, (float)from.y, (float)to.x, (float)to.y, aspectLine);
+            cvs.DrawText(CommonData.getAspectSymbol(info.aspectKind),
+             (float)((from.x + to.x) / 2), (float)((from.y + to.y) / 2), symbol);
+            
         }
 
         public void ReRender() 
@@ -1197,14 +1252,14 @@ namespace microcosm
             Position planetDegreePt;
             Position planetRetrogradePt;
 
-            planetPt = Util.Rotate(radius - planetOffset, 0, 5 * index - cusp0);
+            planetPt = Util.Rotate(diameter - planetOffset, 0, 5 * index - cusp0);
             planetPt.x = planetPt.x + CenterX - textXoffset;
             planetPt.y = -1 * planetPt.y + CenterY + textYoffset;
             p.Color = CommonData.getPlanetColor(planet.no);
             cvs.DrawText(CommonData.getPlanetSymbol(planet.no), (float)planetPt.x, (float)planetPt.y, p);
 
             // 天体度数
-            planetDegreePt = Util.Rotate(radius - (planetOffset + planetROffset), 0, 5 * index - cusp0);
+            planetDegreePt = Util.Rotate(diameter - (planetOffset + planetROffset), 0, 5 * index - cusp0);
             planetDegreePt.x = planetDegreePt.x + CenterX - degreeXoffset;
             planetDegreePt.y = -1 * planetDegreePt.y + CenterY + degreeYoffset;
             p.Color = SKColors.Black;
@@ -1213,7 +1268,7 @@ namespace microcosm
             // 逆行
             if (planet.speed < 0)
             {
-                planetRetrogradePt = Util.Rotate(radius - 25 - (planetOffset + planetROffset), 0, 5 * index - cusp0);
+                planetRetrogradePt = Util.Rotate(diameter - 25 - (planetOffset + planetROffset), 0, 5 * index - cusp0);
                 planetRetrogradePt.x = planetRetrogradePt.x + CenterX - degreeXoffset;
                 planetRetrogradePt.y = -1 * planetRetrogradePt.y + CenterY + degreeYoffset;
                 p.Color = SKColors.Black;
@@ -1283,6 +1338,17 @@ namespace microcosm
             }
 
             return planetOffset;
+        }
+
+
+        public double GetRingOffset(int bandnum)
+        {
+            double offset = 0;
+            if (CommonInstance.getInstance().currentSetting.bands == 2)
+            {
+                // TODO
+            }
+            return offset;
         }
 
         public void ReSetSettingMenu() {
