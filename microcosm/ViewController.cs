@@ -23,6 +23,10 @@ namespace microcosm
         const int USER2 = 2;
         const int EVENT1 = 3;
         const int EVENT2 = 4;
+        const int PUSER1EVENT1 = 5;
+        const int PUSER2EVENT1 = 6;
+        const int PUSER1EVENT2 = 7;
+        const int PUSER2EVENT2 = 8;
 
         public int CenterX = 580;
         public int CenterY = 580;
@@ -376,27 +380,9 @@ namespace microcosm
                     continue;
                 }
 
-                #region createbox1
-                // 重ならないようにずらしを入れる
-                // 1サインに6度単位5個までデータが入る
                 int index = (int)(planet.absolute_position / 5);
-                if (box[index] == 1)
-                {
-                    while (box[index] == 1)
-                    {
-                        index++;
-                        if (index == 72)
-                        {
-                            index = 0;
-                        }
-                    }
-                    box[index] = 1;
-                }
-                else
-                {
-                    box[index] = 1;
-                }
-                #endregion
+
+                BoxInit(ref box, ref index, planet.absolute_position);
 
                 // 天体そのもの
                 planetOffset = GetPlanetOffset(1);
@@ -415,27 +401,9 @@ namespace microcosm
                         continue;
                     }
 
-                    #region createbox2
-                    // 重ならないようにずらしを入れる
-                    // 1サインに6度単位5個までデータが入る
                     int index = (int)(planet.absolute_position / 5);
-                    if (box2[index] == 1)
-                    {
-                        while (box2[index] == 1)
-                        {
-                            index++;
-                            if (index == 72)
-                            {
-                                index = 0;
-                            }
-                        }
-                        box2[index] = 1;
-                    }
-                    else
-                    {
-                        box2[index] = 1;
-                    }
-                    #endregion
+
+                    BoxInit(ref box2, ref index, planet.absolute_position);
 
                     planetOffset = GetPlanetOffset(2);
                     DrawPlanetText(index, ringsData[1].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
@@ -448,34 +416,57 @@ namespace microcosm
                 IOrderedEnumerable<PlanetData> sortPlanetData3 = ringsData[2].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
                 foreach (PlanetData planet in sortPlanetData3)
                 {
-                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[0][planet.no])
+                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[2][planet.no])
                     {
                         continue;
                     }
-                    #region create box3
-                    // 重ならないようにずらしを入れる
-                    // 1サインに6度単位5個までデータが入る
+
                     int index = (int)(planet.absolute_position / 5);
-                    if (box3[index] == 1)
-                    {
-                        while (box3[index] == 1)
-                        {
-                            index++;
-                            if (index == 72)
-                            {
-                                index = 0;
-                            }
-                        }
-                        box3[index] = 1;
-                    }
-                    else
-                    {
-                        box3[index] = 1;
-                    }
-                    #endregion
+
+                    BoxInit(ref box3, ref index, planet.absolute_position);
 
                     planetOffset = GetPlanetOffset(3);
                     DrawPlanetText(index, ringsData[2].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
+                }
+            }
+
+            if (CommonInstance.getInstance().currentSetting.bands > 3)
+            {
+                int[] box4 = new int[72];
+                IOrderedEnumerable<PlanetData> sortPlanetData4 = ringsData[3].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
+                foreach (PlanetData planet in sortPlanetData4)
+                {
+                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[3][planet.no])
+                    {
+                        continue;
+                    }
+
+                    int index = (int)(planet.absolute_position / 5);
+
+                    BoxInit(ref box4, ref index, planet.absolute_position);
+
+                    planetOffset = GetPlanetOffset(4);
+                    DrawPlanetText(index, ringsData[3].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
+                }
+            }
+
+            if (CommonInstance.getInstance().currentSetting.bands > 4)
+            {
+                int[] box5 = new int[72];
+                IOrderedEnumerable<PlanetData> sortPlanetData5 = ringsData[4].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
+                foreach (PlanetData planet in sortPlanetData5)
+                {
+                    if (!CommonInstance.getInstance().currentSetting.dispPlanet[4][planet.no])
+                    {
+                        continue;
+                    }
+
+                    int index = (int)(planet.absolute_position / 5);
+
+                    BoxInit(ref box5, ref index, planet.absolute_position);
+
+                    planetOffset = GetPlanetOffset(5);
+                    DrawPlanetText(index, ringsData[4].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
                 }
             }
 
@@ -626,6 +617,28 @@ namespace microcosm
 //            ReRender();
         }
 
+        public void BoxInit(ref int[] box, ref int index, double absolute_position){
+            // 重ならないようにずらしを入れる
+            // 1サインに6度単位5個までデータが入る
+            if (box[index] == 1)
+            {
+                while (box[index] == 1)
+                {
+                    index++;
+                    if (index == 72)
+                    {
+                        index = 0;
+                    }
+                }
+                box[index] = 1;
+            }
+            else
+            {
+                box[index] = 1;
+            }
+
+        }
+
         /// <summary>
         /// ユーザーボックスに再度バインディング
         /// </summary>
@@ -667,11 +680,18 @@ namespace microcosm
 
         public void ReCalcAll()
         {
-            ringsData[0] = ringsData[3] = 
-                ringsData[4] = ringsData[5] = ringsData[6] = calc.ReCalc(config, settings[0], udata1);
+            for (int i = 0; i < 5; i++) {
+                if (CommonInstance.getInstance().currentSetting.ringUE[i] >= USER1 &&
+                    CommonInstance.getInstance().currentSetting.ringUE[i] <= EVENT2)
+                {
+                    ReCalcUserDb(i, CommonInstance.getInstance().currentSetting.ringUE[i]);
+                }
+                else
+                {
+                    ReCalcUserDbProgress(i, CommonInstance.getInstance().currentSetting.ringUE[i]);
+                }
+            }
 
-            ReCalcUserDbProgress(1, EVENT1);
-            ReCalcUserDb(2, EVENT1);
 
             foreach (int i in Enumerable.Range(0, 4))
             {
@@ -747,6 +767,7 @@ namespace microcosm
         public void SingleRingClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 1;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ReRender();
         }
@@ -754,6 +775,7 @@ namespace microcosm
         public void SingleRingTClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 1;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = EVENT1;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
             ReRender();
         }
@@ -761,6 +783,8 @@ namespace microcosm
         public void DualRingNNClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 2;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
+            CommonInstance.getInstance().currentSetting.ringUE[1] = USER2;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ringsData[1] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata2);
             ReRender();
@@ -769,6 +793,8 @@ namespace microcosm
         public void DualRingNTClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 2;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
+            CommonInstance.getInstance().currentSetting.ringUE[1] = EVENT1;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ringsData[1] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
             ReRender();
@@ -777,6 +803,9 @@ namespace microcosm
         public void TripleRingClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 3;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
+            CommonInstance.getInstance().currentSetting.ringUE[1] = PUSER1EVENT1;
+            CommonInstance.getInstance().currentSetting.ringUE[2] = EVENT1;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ringsData[1] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata1);
             ringsData[2] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
@@ -786,6 +815,9 @@ namespace microcosm
         public void TripleRingNTTClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 3;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
+            CommonInstance.getInstance().currentSetting.ringUE[1] = EVENT1;
+            CommonInstance.getInstance().currentSetting.ringUE[2] = EVENT2;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ringsData[1] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
             ringsData[2] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata2);
@@ -795,6 +827,10 @@ namespace microcosm
         public void FourthRingNPTTClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 4;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
+            CommonInstance.getInstance().currentSetting.ringUE[1] = PUSER1EVENT1;
+            CommonInstance.getInstance().currentSetting.ringUE[2] = EVENT1;
+            CommonInstance.getInstance().currentSetting.ringUE[3] = EVENT2;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ringsData[1] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata1);
             ringsData[2] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, edata1);
@@ -805,6 +841,11 @@ namespace microcosm
         public void FifthRingNPNPTClicked()
         {
             CommonInstance.getInstance().currentSetting.bands = 5;
+            CommonInstance.getInstance().currentSetting.ringUE[0] = USER1;
+            CommonInstance.getInstance().currentSetting.ringUE[1] = PUSER1EVENT1;
+            CommonInstance.getInstance().currentSetting.ringUE[2] = USER2;
+            CommonInstance.getInstance().currentSetting.ringUE[3] = PUSER2EVENT2;
+            CommonInstance.getInstance().currentSetting.ringUE[4] = EVENT1;
             ringsData[0] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata1);
             ringsData[1] = calc.ReCalcProgress(config, CommonInstance.getInstance().currentSetting, edata1);
             ringsData[2] = calc.ReCalc(config, CommonInstance.getInstance().currentSetting, udata2);
@@ -897,7 +938,7 @@ namespace microcosm
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 2)
                 {
-                    planetOffset = 90;
+                    planetOffset = 210;
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 3)
                 {
@@ -905,11 +946,11 @@ namespace microcosm
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 4)
                 {
-                    planetOffset = 90;
+                    planetOffset = 270;
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 5)
                 {
-                    planetOffset = 90;
+                    planetOffset = 280;
                 }
             }
             else if (bandIndex == 2)
@@ -924,11 +965,11 @@ namespace microcosm
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 4)
                 {
-                    planetOffset = 90;
+                    planetOffset = 200;
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 5)
                 {
-                    planetOffset = 90;
+                    planetOffset = 240;
                 }
             }
             else if (bandIndex == 3)
@@ -939,9 +980,27 @@ namespace microcosm
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 4)
                 {
+                    planetOffset = 130;
+                }
+                else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                {
+                    planetOffset = 190;
+                }
+            }
+            else if (bandIndex == 4)
+            {
+                if (CommonInstance.getInstance().currentSetting.bands == 4)
+                {
                     planetOffset = 90;
                 }
                 else if (CommonInstance.getInstance().currentSetting.bands == 5)
+                {
+                    planetOffset = 140;
+                }
+            }
+            else if (bandIndex == 5)
+            {
+                if (CommonInstance.getInstance().currentSetting.bands == 5)
                 {
                     planetOffset = 90;
                 }

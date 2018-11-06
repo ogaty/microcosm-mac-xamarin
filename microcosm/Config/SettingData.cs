@@ -25,6 +25,8 @@ namespace microcosm.Config
         public string dispName { get; set; }
 
         public int bands;
+        // 0:user1 1:user2 2:event1 3:event2
+        public int[] ringUE;
 
         public bool[] dispCircle = new bool[] {
             true, false, false, false, false, false
@@ -121,8 +123,8 @@ namespace microcosm.Config
         private bool[] aspectVt = new bool[28];
         private bool[] aspectPof = new bool[28];
 
-        string defaultAspect = "true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
-        string defaultAspectAllfalse = "false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
+//        string defaultAspect = "true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
+//        string defaultAspectAllfalse = "false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false";
 
         /// <summary>
         /// 初期化
@@ -188,6 +190,10 @@ namespace microcosm.Config
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true }
+            };
+
+            ringUE = new int[5] {
+                1, 3, 3, 3, 3
             };
 
             if (xmlData.version == 0)

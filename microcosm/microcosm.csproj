@@ -260,10 +260,6 @@
     <Compile Include="Models\SettingNameList.cs" />
     <Compile Include="Models\SettingNameDataSource.cs" />
     <Compile Include="Models\SettingNameDelegate.cs" />
-    <Compile Include="SettingListsTableView.cs" />
-    <Compile Include="SettingListsTableView.designer.cs">
-      <DependentUpon>SettingListsTableView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserImportView.cs" />
     <Compile Include="Views\UserImportViewController.cs" />
     <Compile Include="Views\UserImportView.designer.cs">

@@ -3630,7 +3630,7 @@
         <!--インポート-->
         <scene sceneID="h3S-mj-RxD">
             <objects>
-                <viewController title="インポート" id="JYl-ii-ZeI" sceneMemberID="viewController">
+                <viewController title="インポート" id="JYl-ii-ZeI" customClass="UserImportViewController" sceneMemberID="viewController">
                     <view key="view" id="M7I-6x-ge4" customClass="UserImportView">
                         <rect key="frame" x="0.0" y="0.0" width="237" height="174"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3657,6 +3657,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="OpenDialogClicked:" target="JYl-ii-ZeI" id="302-CZ-amX"/>
+                                </connections>
                             </button>
                             <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Mti-72-78f">
                                 <rect key="frame" x="20" y="92" width="186" height="20"/>
@@ -3678,9 +3681,18 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="CloseBtnClicked:" target="JYl-ii-ZeI" id="2pN-HR-alb"/>
+                                </connections>
                             </button>
                         </subviews>
+                        <connections>
+                            <outlet property="ImportTarget" destination="8I0-Uz-JFY" id="U1p-Je-6h4"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="ImportTarget" destination="8I0-Uz-JFY" id="6Ds-d5-rUe"/>
+                    </connections>
                 </viewController>
                 <customObject id="b0h-HO-m1Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
