@@ -179,25 +179,25 @@ namespace microcosm.Common
             switch (kind)
             {
                 case AspectKind.OPPOSITION:
-                    return "\u260d";
+                    return "n";
                 case AspectKind.TRINE:
-                    return "\u25b3";
+                    return "p";
                 case AspectKind.SQUARE:
-                    return "\u25a1";
+                    return "o";
                 case AspectKind.SEXTILE:
-                    return "\u26b9";
+                    return "q";
                 case AspectKind.INCONJUNCT:
-                    return "\u26bb";
+                    return "r";
                 case AspectKind.SESQUIQUADRATE:
-                    return "\u26bc";
+                    return "u";
                 case AspectKind.SEMISQUARE:
-                    return "\u2220";
+                    return "t";
                 case AspectKind.SEMISEXTILE:
-                    return "\u26ba";
+                    return "s";
                 case AspectKind.QUINTILE:
-                    return "\u2b20";
+                    return "w";
                 case AspectKind.BIQUINTILE:
-                    return "bQ";
+                    return "v";
                 case AspectKind.SEMIQINTILE:
                     return "SQ";
                 case AspectKind.NOVILE:

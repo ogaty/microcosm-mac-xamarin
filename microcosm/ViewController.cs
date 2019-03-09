@@ -389,7 +389,8 @@ namespace microcosm
                 DrawPlanetText(index, ringsData[0].cusps[1], planet, p, cvs, degreeText, planetOffset, 40, 5, 20, 10, 10);
             }
 //            cvs.DrawText(ringsData[0].cusps[1].ToString(), 80, 250, new SKPaint());
-            // 二重円
+
+            // 二重円の天体
             if (CommonInstance.getInstance().currentSetting.bands > 1)
             {
                 int[] box2 = new int[72];
@@ -410,6 +411,7 @@ namespace microcosm
                 }
             }
 
+            // 三重円の天体
             if (CommonInstance.getInstance().currentSetting.bands > 2)
             {
                 int[] box3 = new int[72];
@@ -426,10 +428,11 @@ namespace microcosm
                     BoxInit(ref box3, ref index, planet.absolute_position);
 
                     planetOffset = GetPlanetOffset(3);
-                    DrawPlanetText(index, ringsData[2].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
+                    DrawPlanetText(index, ringsData[0].cusps[1], planet, p, cvs, degreeText, planetOffset, 35, 10, 20, 15, 10);
                 }
             }
 
+            // 四重円の天体
             if (CommonInstance.getInstance().currentSetting.bands > 3)
             {
                 int[] box4 = new int[72];
@@ -450,6 +453,7 @@ namespace microcosm
                 }
             }
 
+            // 五重円の天体
             if (CommonInstance.getInstance().currentSetting.bands > 4)
             {
                 int[] box5 = new int[72];
@@ -508,7 +512,7 @@ namespace microcosm
                 aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
 
                 GetAspectLineAndText(aspectsData[0, 0][i].aspectKind, ref aspectLine, ref aspectSymboolText);
-                DrawAspect(cvs, aspectsData[0, 1][i], aspectPt, aspectPtEnd, aspectLine, degreeText);
+                DrawAspect(cvs, aspectsData[0, 0][i], aspectPt, aspectPtEnd, aspectLine, degreeText);
 
             }
             if (CommonInstance.getInstance().currentSetting.bands > 1)
@@ -546,15 +550,15 @@ namespace microcosm
                         Console.WriteLine(String.Format("{0} nodisp", i.ToString()));
                         continue;
                     }
-                    aspectPt = Util.Rotate(centerDiameter + offset, 0, aspectsData[0, 1][i].absoluteDegree - ringsData[0].cusps[1]);
+                    aspectPt = Util.Rotate(centerDiameter + offset, 0, aspectsData[1, 1][i].absoluteDegree - ringsData[0].cusps[1]);
                     aspectPt.x = aspectPt.x + CenterX;
                     aspectPt.y = -1 * aspectPt.y + CenterY;
 
-                    aspectPtEnd = Util.Rotate(centerDiameter + offset, 0, aspectsData[0, 1][i].targetDegree - ringsData[0].cusps[1]);
+                    aspectPtEnd = Util.Rotate(centerDiameter + offset, 0, aspectsData[1, 1][i].targetDegree - ringsData[0].cusps[1]);
                     aspectPtEnd.x = aspectPtEnd.x + CenterX;
                     aspectPtEnd.y = -1 * aspectPtEnd.y + CenterY;
 
-                    aspectSymbolPt = Util.Rotate(diameter - 160, 0, aspectsData[0, 1][i].targetDegree - ringsData[0].cusps[1]);
+                    aspectSymbolPt = Util.Rotate(diameter - 160, 0, aspectsData[1, 1][i].targetDegree - ringsData[0].cusps[1]);
                     aspectSymbolPt.x = aspectSymbolPt.x + CenterX;
                     aspectSymbolPt.y = -1 * aspectSymbolPt.y + CenterY + 10;
 
@@ -592,12 +596,48 @@ namespace microcosm
             }
         }
 
+        /// <summary>
+        /// アスペクトを描画
+        /// </summary>
+        /// <param name="cvs">Cvs.</param>
+        /// <param name="info">Info.</param>
+        /// <param name="from">From.</param>
+        /// <param name="to">To.</param>
+        /// <param name="aspectLine">Aspect line.</param>
+        /// <param name="symbol">Symbol.</param>
         public void DrawAspect(SKCanvas cvs, AspectInfo info, Position from, Position to, SKPaint aspectLine, SKPaint symbol)
         {
-            cvs.DrawLine((float)from.x, (float)from.y, (float)to.x, (float)to.y, aspectLine);
-            cvs.DrawText(CommonData.getAspectSymbol(info.aspectKind),
-             (float)((from.x + to.x) / 2), (float)((from.y + to.y) / 2), symbol);
-            
+            System.Reflection.Assembly asm =
+    System.Reflection.Assembly.GetExecutingAssembly();
+            SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
+            {
+                symbol.Typeface = SKTypeface.FromStream(stream);
+                /*
+                p.TextSize = 48;
+                Position signValuePt;
+                SKColor pink = SKColors.Pink;
+                p.Color = pink;
+                for (int i = 0; i < signs.Length; i++)
+                {
+                    signValuePt = Util.Rotate(diameter - 30, 0, 15 + 30 * i - ringsData[0].cusps[1]);
+                    signValuePt.x = signValuePt.x + CenterX - 15;
+                    signValuePt.y = -1 * signValuePt.y + CenterY + 20;
+                    p.Color = CommonData.getSignColor(30 * i);
+                    cvs.DrawText(signs[i], (float)signValuePt.x, (float)signValuePt.y, p);
+                }
+                p.Color = SKColors.Black;
+                */
+                Console.WriteLine(info.aspectKind.ToString());
+                Console.WriteLine(info.absoluteDegree);
+                Console.WriteLine(info.targetDegree);
+                Console.WriteLine("");
+
+                cvs.DrawLine((float)from.x, (float)from.y, (float)to.x, (float)to.y, aspectLine);
+                cvs.DrawText(CommonData.getAspectSymbol(info.aspectKind),
+                 (float)((from.x + to.x) / 2), (float)((from.y + to.y) / 2), symbol);
+            }
+
+
         }
 
         public void ReRender() 

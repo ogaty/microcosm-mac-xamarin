@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using AppKit;
+using System.Xml.Linq;
+using System.Web.Services;
+using System.Net;
+using System.Web;
+using System.Net.Http;
 
 namespace microcosm.Views
 {
@@ -35,6 +40,7 @@ namespace microcosm.Views
         }
 
         #endregion
+
 
         //strongly typed view accessor
         public new PlaceSearchView View

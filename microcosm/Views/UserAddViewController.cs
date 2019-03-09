@@ -140,7 +140,6 @@ namespace microcosm.Views
 
         public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
         {
-            ((SearchLatLngViewController)segue.DestinationController).inputPlace = UserPlace.StringValue;
             base.PrepareForSegue(segue, sender);
         }
     }

@@ -35,14 +35,14 @@ namespace microcosm.Calc
                     if (!setting.dispAspectPlanet[aspectIndex][planetList[i].no] ||
                         !setting.dispAspectPlanet[aspectIndex][planetList[j].no])
                     {
-                        Console.WriteLine(String.Format("{0} {1} planet nodisp", i.ToString(), j.ToString()));
+//                        Console.WriteLine(String.Format("{0} {1} planet nodisp", i.ToString(), j.ToString()));
                         isDisp = false;
                         continue;
                     }
                     if (!setting.dispPlanet[aspectIndex][planetList[i].no] ||
                         !setting.dispPlanet[aspectIndex][planetList[j].no])
                     {
-                        Console.WriteLine(String.Format("{0} {1} aspect nodisp", i.ToString(), j.ToString()));
+//                        Console.WriteLine(String.Format("{0} {1} aspect nodisp", i.ToString(), j.ToString()));
                         isDisp = false;
                         continue;
                     }
@@ -80,6 +80,8 @@ namespace microcosm.Calc
                     SquareAspect square = new SquareAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
                     if (square.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
+                        Console.WriteLine(i);
+                        Console.WriteLine(j);
                         if (!setting.aspectSquare[ringIndex, ringIndex])
                         {
                             isDisp = false;

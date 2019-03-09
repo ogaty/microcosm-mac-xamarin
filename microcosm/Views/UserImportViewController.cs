@@ -51,6 +51,43 @@ namespace microcosm.Views
             base.ViewDidLoad();
         }
 
+        partial void OpenDialogClicked(NSObject e)
+        {
+            var dialog = NSOpenPanel.OpenPanel;
+            dialog.Title = "ファイルを選択してください";
+            dialog.AllowedFileTypes = new string[]{"csv"};
+            var result = dialog.RunModal();
+            if (result == 1)
+            {
+                Console.WriteLine(dialog.Url);
+            }
+            /*
+            dialog.showsResizeIndicator = true;
+            dialog.showsHiddenFiles = false;
+            dialog.canChooseDirectories = true;
+            dialog.canCreateDirectories = true;
+            dialog.allowsMultipleSelection = false;
+            dialog.allowedFileTypes = ["txt"];
+
+            if (dialog.runModal() == NSModalResponseOK)
+            {
+                let result = dialog.URL // Pathname of the file
+
+
+        if (result != nil)
+                {
+                    let path = result!.path!
+                    filename_field.stringValue = path
+        }
+            }
+            else
+            {
+                // User clicked on "Cancel"
+                return
+          }
+          */
+        }
+
         partial void CloseBtnClicked(NSObject e)
         {
             DismissViewController(this);

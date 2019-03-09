@@ -50,6 +50,10 @@ namespace microcosm.Calc
 //            Console.WriteLine("{0},{1},{2}", absTargetDegree, from, to);
             if (from <= absTargetDegree && absTargetDegree < to)
             {
+                Console.WriteLine(aspectDegree);
+                Console.WriteLine(absTargetDegree);
+                Console.WriteLine();
+
                 return true;
             }
             return false;

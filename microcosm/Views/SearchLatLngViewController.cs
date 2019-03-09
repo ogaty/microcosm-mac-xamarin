@@ -4,6 +4,11 @@ using System.Linq;
 using Foundation;
 using AppKit;
 using microcosm.Common;
+using System.Net.Http;
+using System.Xml.Linq;
+using System.Web.Services;
+using System.Net;
+using System.Web;
 
 namespace microcosm.Views
 {
@@ -53,6 +58,41 @@ namespace microcosm.Views
             Place.StringValue = inputPlace;
 
             
+        }
+
+        partial void SearchButtonClicked(NSObject sender)
+        {
+            Search();
+        }
+
+        public async void Search()
+        {
+            HttpClient http = new HttpClient();
+            string url = "https://map.yahooapis.jp/geocode/V1/geoCoder?appid=dj00aiZpPTRwdkZPOXdKZGtNdCZzPWNvbnN1bWVyc2VjcmV0Jng9ZGE-&query=" + HttpUtility.UrlEncode(inputPlace);
+            var response = await http.GetAsync(url);
+
+            var contents = await response.Content.ReadAsStringAsync();
+
+            try
+            {
+                XDocument xml = XDocument.Parse(contents);
+                var root = xml.Root;
+                var feature = root.Elements();
+                var id = xml.Elements("Id");
+                foreach (XElement row in feature) {
+                    XElement item = row.Element("Name");
+                    Console.WriteLine(item.Name);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message.ToString());
+            }
+        }
+
+        partial void SubmitClicked(NSObject sender)
+        {
+            DismissViewController(this);
         }
 
         public void GoogleSearch()

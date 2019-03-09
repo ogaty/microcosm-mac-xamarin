@@ -23,17 +23,20 @@ namespace microcosm.Views
 
 		[Action ("SearchButtonClicked:")]
 		partial void SearchButtonClicked (Foundation.NSObject sender);
+
+		[Action ("SubmitClicked:")]
+		partial void SubmitClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (Place != null) {
-				Place.Dispose ();
-				Place = null;
-			}
-
 			if (LatLngTable != null) {
 				LatLngTable.Dispose ();
 				LatLngTable = null;
+			}
+
+			if (Place != null) {
+				Place.Dispose ();
+				Place = null;
 			}
 
 			if (SubmitButtonClicked != null) {
