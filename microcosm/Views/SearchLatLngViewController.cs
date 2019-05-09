@@ -55,9 +55,8 @@ namespace microcosm.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Place.StringValue = inputPlace;
+            Place.StringValue = CommonInstance.getInstance().searchPlace;
 
-            
         }
 
         partial void SearchButtonClicked(NSObject sender)

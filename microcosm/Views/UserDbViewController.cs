@@ -11,7 +11,7 @@ using microcosm.Common;
 namespace microcosm.Views
 {
     /// <summary>
-    /// データベースビューコントローラー
+    /// ユーザーリスト一覧部分
     /// </summary>
     public partial class UserDbViewController : AppKit.NSViewController
     {

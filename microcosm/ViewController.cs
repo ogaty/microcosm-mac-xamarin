@@ -113,6 +113,11 @@ namespace microcosm
                 }
             }
 
+            if (!File.Exists(root + "/system/addr.csv"))
+            {
+                File.Copy(bundle + "/addr.csv", root + "/system/addr.csv");
+            }
+
             config = ConfigFromXml.GetConfigFromXml(root + "/system/config.csm");
             settings = new SettingData[10];
             for (int i = 0; i < 10; i++) {

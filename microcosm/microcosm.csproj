@@ -94,6 +94,9 @@
     </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\netstandard2.0\CsvHelper.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -283,6 +286,17 @@
       <DependentUpon>SettingListView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllerTimeSetter.cs" />
+    <Compile Include="Views\UserEditView.cs" />
+    <Compile Include="Views\UserEditViewController.cs" />
+    <Compile Include="Views\UserEditView.designer.cs">
+      <DependentUpon>UserEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserEditViewController.designer.cs">
+      <DependentUpon>UserEditViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchLatLngDataSource.cs" />
+    <Compile Include="Models\SearchLatLngData.cs" />
+    <Compile Include="Models\SearchLatLngDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -299,6 +313,7 @@
     <InterfaceDefinition Include="Views\UserImportView.xib" />
     <InterfaceDefinition Include="Views\PlaceSearchView.xib" />
     <InterfaceDefinition Include="Views\SettingListView.xib" />
+    <InterfaceDefinition Include="Views\UserEditView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="system\config.csm" />

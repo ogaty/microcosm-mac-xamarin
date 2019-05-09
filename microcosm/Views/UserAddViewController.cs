@@ -36,6 +36,7 @@ namespace microcosm.Views
         // Shared initialization code
         void Initialize()
         {
+            CommonInstance.getInstance().userAdd = this;
         }
 
         #endregion
@@ -138,9 +139,26 @@ namespace microcosm.Views
             CommonInstance.getInstance().searchPlace = UserPlace.StringValue;
         }
 
+        partial void OfflineSearchButtonClicked(NSObject sender)
+        {
+            CommonInstance.getInstance().searchPlace = UserPlace.StringValue;
+        }
+
         public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
+        }
+
+        public string GetUserPlace()
+        {
+            return UserPlace.StringValue;
+        }
+
+        public void SetUserPlace(string place, double lat, double lng)
+        {
+            UserPlace.StringValue = place;
+            UserLat.StringValue = lat.ToString();
+            UserLng.StringValue = lng.ToString();
         }
     }
 }
