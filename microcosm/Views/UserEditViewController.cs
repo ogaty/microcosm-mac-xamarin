@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using AppKit;
+using microcosm.Common;
+using System.IO;
+using microcosm.User;
 
 namespace microcosm.Views
 {
@@ -111,6 +114,23 @@ namespace microcosm.Views
 
             // ファイル名が変わっていたら移動
             // 元のファイル名を保持が必要
+            if (fileName.StringValue != CommonInstance.getInstance().SelectedFileName)
+            {
+                string fName = fileName.StringValue;
+                string fullPath = CommonInstance.getInstance().SelectedDirectoryFullPath;
+                string FilePath = CommonInstance.getInstance().SelectedDirectoryFullPath + "/" + fName + ".csm";
+                UserXml.SaveUserData(FilePath, new UserData(
+                    userName.StringValue,
+                    furigana.StringValue,
+                    date,
+                    userLat,
+                    userLng,
+                    userPlace.StringValue,
+                    memo.TextStorage.MutableString.ToString(),
+                    "JST"
+                ));
+
+            }
 
             DismissViewController(this);
         }

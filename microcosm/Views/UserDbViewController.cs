@@ -161,6 +161,10 @@ namespace microcosm.Views
                 CommonInstance.getInstance().SelectedDirectoryName = item.fileName;
                 CommonInstance.getInstance().SelectedDirectoryFullPath = item.FullPath;
                 return;
+            } else {
+                CommonInstance.getInstance().SelectedDirectoryFullPath = item.FullPath;
+                CommonInstance.getInstance().SelectedFileName = item.fileName;
+                CommonInstance.getInstance().SelectedUserData = item.udata;
             }
 
             UserTable.AllowsColumnSelection = true;
@@ -178,6 +182,7 @@ namespace microcosm.Views
             UserTable.Delegate = new UserTableDelegate(DataSource);
             UserTable.ReloadData();
 //                        ReSetDbTree();
+
 
         }
 

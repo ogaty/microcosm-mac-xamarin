@@ -1,5 +1,6 @@
 ﻿using System;
 using microcosm.Config;
+using microcosm.User;
 using microcosm.Views;
 
 namespace microcosm.Common
@@ -19,6 +20,8 @@ namespace microcosm.Common
 
         public string SelectedDirectoryName;
         public string SelectedDirectoryFullPath;
+        public string SelectedFileName = "";
+        public UserData SelectedUserData;
 
         public string searchPlace = "";
 

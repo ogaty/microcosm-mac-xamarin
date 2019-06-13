@@ -25,6 +25,12 @@ namespace microcosm.Views
 		AppKit.NSTextField memo { get; set; }
 
 		[Outlet]
+		AppKit.NSTextField userLat { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField userLng { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField userName { get; set; }
 
 		[Outlet]
@@ -35,14 +41,14 @@ namespace microcosm.Views
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (birthDay != null) {
+				birthDay.Dispose ();
+				birthDay = null;
+			}
+
 			if (fileName != null) {
 				fileName.Dispose ();
 				fileName = null;
-			}
-
-			if (userName != null) {
-				userName.Dispose ();
-				userName = null;
 			}
 
 			if (furigana != null) {
@@ -50,9 +56,14 @@ namespace microcosm.Views
 				furigana = null;
 			}
 
-			if (birthDay != null) {
-				birthDay.Dispose ();
-				birthDay = null;
+			if (memo != null) {
+				memo.Dispose ();
+				memo = null;
+			}
+
+			if (userName != null) {
+				userName.Dispose ();
+				userName = null;
 			}
 
 			if (userPlace != null) {
@@ -60,9 +71,14 @@ namespace microcosm.Views
 				userPlace = null;
 			}
 
-			if (memo != null) {
-				memo.Dispose ();
-				memo = null;
+			if (userLat != null) {
+				userLat.Dispose ();
+				userLat = null;
+			}
+
+			if (userLng != null) {
+				userLng.Dispose ();
+				userLng = null;
 			}
 		}
 	}
