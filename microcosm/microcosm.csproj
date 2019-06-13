@@ -287,16 +287,16 @@
     </Compile>
     <Compile Include="ViewControllerTimeSetter.cs" />
     <Compile Include="Views\UserEditView.cs" />
-    <Compile Include="Views\UserEditViewController.cs" />
     <Compile Include="Views\UserEditView.designer.cs">
       <DependentUpon>UserEditView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserEditViewController.designer.cs">
-      <DependentUpon>UserEditViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SearchLatLngDataSource.cs" />
     <Compile Include="Models\SearchLatLngData.cs" />
     <Compile Include="Models\SearchLatLngDelegate.cs" />
+    <Compile Include="Views\UserEditViewController.cs" />
+    <Compile Include="Views\UserEditViewController.designer.cs">
+      <DependentUpon>UserEditViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

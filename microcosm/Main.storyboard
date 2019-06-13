@@ -4020,7 +4020,7 @@
         <!--ユーザー編集-->
         <scene sceneID="sju-dB-MOt">
             <objects>
-                <viewController title="ユーザー編集" id="8LY-qS-gtd" sceneMemberID="viewController">
+                <viewController title="ユーザー編集" id="8LY-qS-gtd" customClass="UserEditViewController" sceneMemberID="viewController">
                     <view key="view" id="fRf-OR-8JF">
                         <rect key="frame" x="0.0" y="0.0" width="299" height="299"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -4143,6 +4143,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="SubmitClicked:" target="8LY-qS-gtd" id="N0o-8n-BlU"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3k-Yw-YKT">
                                 <rect key="frame" x="34" y="211" width="53" height="17"/>
@@ -4173,6 +4176,14 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="birthDay" destination="Tk5-Xh-zlR" id="jQB-iV-9Ef"/>
+                        <outlet property="fileName" destination="7I8-4E-FUH" id="7uQ-ff-hjw"/>
+                        <outlet property="furigana" destination="hoJ-Tf-6ZP" id="GXe-Ej-Jog"/>
+                        <outlet property="memo" destination="S6Q-Sm-yMH" id="Qz2-0D-75Q"/>
+                        <outlet property="userName" destination="x9U-OT-Nbz" id="gIu-fR-RFg"/>
+                        <outlet property="userPlace" destination="qjX-Ql-hKq" id="Mdb-9e-cE0"/>
+                    </connections>
                 </viewController>
                 <customObject id="yrI-Fr-3an" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
