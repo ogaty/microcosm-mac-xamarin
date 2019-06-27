@@ -117,7 +117,7 @@ namespace microcosm.Views
             {
                 selectedPath = Path.GetDirectoryName(selectedPath);
             }
-            string FilePath = CommonInstance.getInstance().SelectedDirectoryFullPath + "/" + FileName.StringValue + ".csm";
+            string FilePath = selectedPath + "/" + FileName.StringValue + ".csm";
             UserXml.SaveUserData(FilePath, new UserData(
                 UserName.StringValue,
                 UserFurigana.StringValue,

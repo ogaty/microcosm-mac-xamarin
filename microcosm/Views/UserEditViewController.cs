@@ -48,6 +48,24 @@ namespace microcosm.Views
             }
         }
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            UserData userData = CommonInstance.getInstance().SelectedUserData;
+            fileName.StringValue = Path.GetFileNameWithoutExtension(CommonInstance.getInstance().SelectedFileName);
+            userName.StringValue = userData.name;
+            furigana.StringValue = userData.furigana;
+            DateTime d = new DateTime(userData.birth_year, userData.birth_month, userData.birth_day,
+                                     userData.birth_hour, userData.birth_minute, userData.birth_second);
+            DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(2001, 1, 1, 0, 0, 0));
+            birthDay.DateValue = NSDate.FromTimeIntervalSinceReferenceDate((d - reference).TotalSeconds);
+            userLat.StringValue = userData.lat.ToString();
+            userLng.StringValue = userData.lng.ToString();
+            userPlace.StringValue = userData.birth_place;
+            memo.StringValue = userData.memo;
+
+        }
 
         partial void SubmitClicked(NSObject sender)
         {
@@ -109,12 +127,10 @@ namespace microcosm.Views
                 alert.RunModal();
                 return;
             }
-            UserDbViewController dbvc = this.PresentingViewController as UserDbViewController;
-            dbvc.ReSetDbTree();
 
             // ファイル名が変わっていたら移動
             // 元のファイル名を保持が必要
-            if (fileName.StringValue != CommonInstance.getInstance().SelectedFileName)
+            if (fileName.StringValue + ".csm" != CommonInstance.getInstance().SelectedFileName)
             {
                 string fName = fileName.StringValue;
                 string fullPath = CommonInstance.getInstance().SelectedDirectoryFullPath;
@@ -123,14 +139,35 @@ namespace microcosm.Views
                     userName.StringValue,
                     furigana.StringValue,
                     date,
-                    userLat,
-                    userLng,
+                    double.Parse(userLat.StringValue),
+                    double.Parse(userLng.StringValue),
                     userPlace.StringValue,
-                    memo.TextStorage.MutableString.ToString(),
+                    memo.StringValue,
                     "JST"
                 ));
 
+            } else {
+                string fName = fileName.StringValue;
+                string selectedPath = CommonInstance.getInstance().SelectedDirectoryFullPath;
+                if (File.Exists(selectedPath)) 
+                {
+                    selectedPath = Path.GetDirectoryName(selectedPath);
+                }
+                string FilePath = selectedPath + "/" + fName + ".csm";
+                UserXml.SaveUserData(FilePath, new UserData(
+                    userName.StringValue,
+                    furigana.StringValue,
+                    date,
+                    double.Parse(userLat.StringValue),
+                    double.Parse(userLng.StringValue),
+                    userPlace.StringValue,
+                    memo.StringValue,
+                    "JST"
+                ));
             }
+
+            UserDbViewController dbvc = this.PresentingViewController as UserDbViewController;
+            dbvc.ReSetDbTree();
 
             DismissViewController(this);
         }

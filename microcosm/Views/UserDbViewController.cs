@@ -157,6 +157,7 @@ namespace microcosm.Views
             }
             TreeViewItem item = (TreeViewItem)UserDbDirOutline.ItemAtRow(index);
 
+            // ここtodoね
             if (item.isDir) {
                 CommonInstance.getInstance().SelectedDirectoryName = item.fileName;
                 CommonInstance.getInstance().SelectedDirectoryFullPath = item.FullPath;
@@ -253,6 +254,10 @@ namespace microcosm.Views
             dataSource.list = root;
             UserDbDirOutline.DataSource = dataSource;
             UserDbDirOutline.ExpandItem(rootNode);
+            UserTableDataSource data = (UserTableDataSource)UserTable.DataSource;
+            data.dataList.Clear();
+            UserTable.ReloadData();
+
         }
 
 
