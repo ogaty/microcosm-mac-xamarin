@@ -28,13 +28,13 @@ namespace microcosm
         const int PUSER1EVENT2 = 7;
         const int PUSER2EVENT2 = 8;
 
-        public int CenterX = 580;
-        public int CenterY = 580;
+        public int CenterX = 290;
+        public int CenterY = 290;
         // 外側の直径
-        public float diameter = 580;
+        public float diameter = 290;
         public float zodiacWidth = 60;
         // 中心円
-        public float centerDiameterBase = 360;
+        public float centerDiameterBase = 180;
 
 
         NSObject NSWindowDidResizeNotificationObject;
@@ -226,6 +226,11 @@ namespace microcosm
         //    }
         //}
 
+        /// <summary>
+        /// 描画部分
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void CanvasPaint(object sender, SKPaintSurfaceEventArgs e) 
         {
             string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };

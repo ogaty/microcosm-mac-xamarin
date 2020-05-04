@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SettingXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <dispname>設定３</dispname>
+  <version>1</version>
   <orb_sun_soft_1st_0>8</orb_sun_soft_1st_0>
   <orb_sun_soft_1st_1>8</orb_sun_soft_1st_1>
   <orb_sun_soft_1st_2>8</orb_sun_soft_1st_2>
